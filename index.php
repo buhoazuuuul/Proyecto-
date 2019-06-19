@@ -72,26 +72,10 @@ if ($tem->execute()) {
           <li class="menu-active"><a href="#intro">Inicio</a></li>
           <li><a href="#pricing">Sobre nosotros</a></li>
           <li><a href="#features">Aprende</a></li>
-         <!-- <li><a href="#about">Noticias</a></li>-->
+
           <li><a href="#team">Secretarios</a></li>
           <li><a href="#gallery">Galeria</a></li>
-          <!--<li class="menu-has-children"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="menu-has-children"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li> -->
+     
           <li><a href="#contact">Contactenos</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
@@ -125,12 +109,12 @@ if ($tem->execute()) {
             <div class="modal-body">
               <form>
                  <div class="form-group col-lg-6">
-                 <input type="text" name="usuario" class="form-control" id="name" placeholder="Usuario" data-rule="minlen:4" data-msg="Usuario no registrado" />
+                 <input type="text" name="usuario" class="form-control"  placeholder="Usuario" data-rule="minlen:4" data-msg="Usuario no registrado" />
                   <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                  <input type="password" name="pass" class="form-control" id="name" placeholder="Contraseña" data-rule="minlen:4" data-msg="Contraseña incorrecta" />
+                  <input type="password" name="pass" class="form-control"  placeholder="Contraseña" data-rule="minlen:4" data-msg="Contraseña incorrecta" />
                   <div class="validation"></div>
                   </div>
               </form>
@@ -159,58 +143,57 @@ if ($tem->execute()) {
               </button>
             </div>
             <div class="modal-body">
-              <form action="index.php" method="post" role="form" class="contactForm">
+              <form method="post" role="form" class="contactForm" action="index.php">
                 <div class="form-row">
 
                    <div class="form-group col-lg-6">
-                    <input type="number" name="num_doc" class="form-control" id="name" placeholder="Documento de identidad" data-rule="minlen:4" data-msg="Por favor ingrese su numero de documento" />
+                    <input type="number" name="num_doc" class="form-control"  placeholder="Documento de identidad" data-rule="minlen:4" data-msg="Por favor ingrese su numero de documento" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <select name="tipo_doc" class="form-control" id="name" placeholder="Tipo de documento" data-rule="minlen:4">
+                    <select name="tipo_doc" class="form-control"  placeholder="Tipo de documento" data-rule="minlen:4">
                       <option>Cedula de ciudadania</option>
                       <option>Tarjeta de identidad</option>
                     </select>
                   </div>
-
                   <div class="form-group col-lg-6">
-                    <input type="name" name="nombre" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese su nombre" />
+                    <input type="name" name="nombre" class="form-control"  placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese su nombre" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="text" name="apellido" class="form-control" id="name" placeholder="Apellido" data-rule="minlen:4" data-msg="Por favor ingrese su apellido" />
+                    <input type="text" name="apellido" class="form-control"  placeholder="Apellido" data-rule="minlen:4" data-msg="Por favor ingrese su apellido" />
                     <div class="validation"></div>
                   </div>
 
                    <div class="form-group col-lg-6">
-                    <input type="number" name="telefono" class="form-control" id="name" placeholder="Telefono" data-rule="minlen:4" data-msg="Por favor ingrese su telefono" />
+                    <input type="number" name="telefono" class="form-control" placeholder="Telefono" data-rule="minlen:4" data-msg="Por favor ingrese su telefono" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Correo electronico" data-rule="email" data-msg="Por favor ingrese su correo electronico" />
+                    <input type="email" class="form-control" name="email"  placeholder="Correo electronico" data-rule="email" data-msg="Por favor ingrese su correo electronico" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="text" name="residencia" class="form-control" id="name" placeholder="Lugar donde vive" data-rule="minlen:4" data-msg="Por favor ingrese el lugar donde vive" />
+                    <input type="text" name="residencia" class="form-control"  placeholder="Lugar donde vive" data-rule="minlen:4" data-msg="Por favor ingrese el lugar donde vive" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="date" name="fecha" class="form-control" id="name" placeholder="Fecha de nacimiento" data-rule="minlen:8" data-msg="Por favor ingrese su fecha de nacimiento" />
+                    <input type="date" name="fecha" class="form-control"  placeholder="Fecha de nacimiento" data-rule="minlen:8" data-msg="Por favor ingrese su fecha de nacimiento" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="text" name="usuario" class="form-control" id="name" placeholder="Usuario" data-rule="minlen:4" data-msg="Por favor ingrese su usuario" />
+                    <input type="text" name="usuario" class="form-control"  placeholder="Usuario" data-rule="minlen:4" data-msg="Por favor ingrese su usuario" />
                     <div class="validation"></div>
                   </div>
 
                    <div class="form-group col-lg-6">
-                    <input type="password" name="pass" class="form-control" id="name" placeholder="Contraseña" data-rule="minlen:4" data-msg="Por favor ingrese su contraseña" />
+                    <input type="password" name="pass" class="form-control"  placeholder="Contraseña" data-rule="minlen:4" data-msg="Por favor ingrese su contraseña" />
                     <div class="validation"></div>
                   </div>
                   <div class="modal-footer">
