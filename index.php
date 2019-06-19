@@ -16,7 +16,10 @@ if (!empty($_POST['num_doc'])) {
   $tem->bindParam(':pass',$password);
 
 if ($tem->execute()) {
-  echo "Creado";
+  echo "<script>
+  $('#modalRegistro').modal('show');
+  $('#registrarse').modal('hide');
+  </script>";
 } else {
   echo "No creado";
 }
@@ -52,7 +55,11 @@ if ($tem->execute()) {
   <link href="css/style.css" rel="stylesheet">
 
 </head>
-
+<script type="text/javascript">
+function linkar(link){
+  location.href=link;
+}
+</script>
 <body>
 
   <!--==========================
@@ -199,10 +206,29 @@ if ($tem->execute()) {
                   <div class="modal-footer">
               <input type="submit" class="btn btn-primary" value="Registrarse">
             </div>
-</form>
+          </form>
         </div>
       </div>
     </div>
+    <!-- Modal -->
+<div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Te has registrado en</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       Su registro ha sido satisfactorio
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="linkar('index.php')" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
   </section>
 
   <main id="main">
