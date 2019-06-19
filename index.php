@@ -15,14 +15,13 @@ if (!empty($_POST['num_doc'])) {
   $password=password_hash($_POST['pass'], PASSWORD_BCRYPT);
   $tem->bindParam(':pass',$password);
 
-if ($tem->execute()) {
-  echo "<script>
-  $('#modalRegistro').modal('show');
-  $('#registrarse').modal('hide');
-  </script>";
-} else {
-  echo "No creado";
-}
+  if (mysqli_query($conn, $sql)) {
+		echo json_encode(array("statusCode"=>200));
+	} 
+	else {
+		echo json_encode(array("statusCode"=>201));
+	}
+	mysqli_close($conn);
 }
 ?>
 
@@ -55,11 +54,7 @@ if ($tem->execute()) {
   <link href="css/style.css" rel="stylesheet">
 
 </head>
-<script type="text/javascript">
-function linkar(link){
-  location.href=link;
-}
-</script>
+
 <body>
 
   <!--==========================
@@ -154,57 +149,57 @@ function linkar(link){
                 <div class="form-row">
 
                    <div class="form-group col-lg-6">
-                    <input type="number" name="num_doc" class="form-control"  placeholder="Documento de identidad" data-rule="minlen:4" data-msg="Por favor ingrese su numero de documento" />
+                    <input type="number" name="num_doc" id="num_doc" class="form-control"  placeholder="Documento de identidad" data-rule="minlen:4" data-msg="Por favor ingrese su numero de documento" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <select name="tipo_doc" class="form-control"  placeholder="Tipo de documento" data-rule="minlen:4">
+                    <select name="tipo_doc" class="form-control" id="tipo_doc"  placeholder="Tipo de documento" data-rule="minlen:4">
                       <option>Cedula de ciudadania</option>
                       <option>Tarjeta de identidad</option>
                     </select>
                   </div>
                   <div class="form-group col-lg-6">
-                    <input type="name" name="nombre" class="form-control"  placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese su nombre" />
+                    <input type="name" name="nombre" id="nombre" class="form-control"  placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese su nombre" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="text" name="apellido" class="form-control"  placeholder="Apellido" data-rule="minlen:4" data-msg="Por favor ingrese su apellido" />
+                    <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" data-rule="minlen:4" data-msg="Por favor ingrese su apellido" />
                     <div class="validation"></div>
                   </div>
 
                    <div class="form-group col-lg-6">
-                    <input type="number" name="telefono" class="form-control" placeholder="Telefono" data-rule="minlen:4" data-msg="Por favor ingrese su telefono" />
+                    <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Telefono" data-rule="minlen:4" data-msg="Por favor ingrese su telefono" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="email" class="form-control" name="email"  placeholder="Correo electronico" data-rule="email" data-msg="Por favor ingrese su correo electronico" />
+                    <input type="email" id="email" class="form-control" name="email"  placeholder="Correo electronico" data-rule="email" data-msg="Por favor ingrese su correo electronico" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="text" name="residencia" class="form-control"  placeholder="Lugar donde vive" data-rule="minlen:4" data-msg="Por favor ingrese el lugar donde vive" />
+                    <input type="text" name="residencia" id="residencia" class="form-control"  placeholder="Lugar donde vive" data-rule="minlen:4" data-msg="Por favor ingrese el lugar donde vive" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="date" name="fecha" class="form-control"  placeholder="Fecha de nacimiento" data-rule="minlen:8" data-msg="Por favor ingrese su fecha de nacimiento" />
+                    <input type="date" name="fecha" id="fecha" class="form-control"  placeholder="Fecha de nacimiento" data-rule="minlen:8" data-msg="Por favor ingrese su fecha de nacimiento" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="text" name="usuario" class="form-control"  placeholder="Usuario" data-rule="minlen:4" data-msg="Por favor ingrese su usuario" />
+                    <input type="text" name="usuario" id="usuario" class="form-control"  placeholder="Usuario" data-rule="minlen:4" data-msg="Por favor ingrese su usuario" />
                     <div class="validation"></div>
                   </div>
 
                    <div class="form-group col-lg-6">
-                    <input type="password" name="pass" class="form-control"  placeholder="Contraseña" data-rule="minlen:4" data-msg="Por favor ingrese su contraseña" />
+                    <input type="password" name="pass" id="pass" class="form-control"  placeholder="Contraseña" data-rule="minlen:4" data-msg="Por favor ingrese su contraseña" />
                     <div class="validation"></div>
                   </div>
                   <div class="modal-footer">
-              <input type="submit" class="btn btn-primary" value="Registrarse">
+              <input type="submit" class="btn btn-primary" id="btnRegistrarse" value="Registrarse">
             </div>
           </form>
         </div>
@@ -224,7 +219,7 @@ function linkar(link){
        Su registro ha sido satisfactorio
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" onclick="linkar('index.php')" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
@@ -908,7 +903,7 @@ function linkar(link){
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Correo electronico" data-rule="email" data-msg="Please enter a valid email" />
+                    <input type="email" class="form-control" name="email" id="emailContacto" placeholder="Correo electronico" data-rule="email" data-msg="Please enter a valid email" />
                     <div class="validation"></div>
                   </div>
                 </div>
@@ -972,6 +967,58 @@ function linkar(link){
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+  <script>
+
+$(document).ready(function() {
+
+	$('#registrarse').on('click', function() {
+
+		var num_doc = $('#num_doc').val();
+		var tipo_doc = $('#tipo_doc').val();
+		var nombre = $('#nombre').val();
+		var apellido = $('#apellido').val();
+    var telefono = $('#telefono').val();
+    var email = $('#email').val();
+    var residencia = $('#residencia').val();
+    var fecha = $('#fecha').val();
+    var usuario = $('#usuario').val();
+    var pass = $('#pass').val();
+        
+
+		if(true){
+			$.ajax({
+				url: "index.php",
+				type: "POST",
+				data: {
+					num_doc: num_doc,
+					tipo_doc: tipo_doc,
+					nombre: nombre,
+					apellido: apellido,
+          telefono: telefono,
+          email: email,
+          residencia: residencia,
+          fecha: fecha,
+          usuario: usuario, 
+          pass : pass		
+				},
+				cache: false,
+				success: function(dataResult){
+					var dataResult = JSON.parse(dataResult);
+					if(dataResult.statusCode==200){
+            alert("Se guardo el usuario");		
+					}
+					else if(dataResult.statusCode==201){
+					   alert("Error occured !");
+					}
+					
+				}
+			});
+		}
+	
+	});
+});
+</script>
 
 </body>
 </html>
