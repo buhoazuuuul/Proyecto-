@@ -1,30 +1,3 @@
-<?php
-require 'php/conexion.php';
-if (!empty($_POST['num_doc'])) {
-  $tem=$conn->prepare('INSERT INTO usuario (num_doc,tipo_doc,nombre,apellido,telefono,email,residencia,fecha,usuario,pass) VALUES
-  (:num_doc,:tipo_doc,:nombre,:apellido,:telefono,:email,:residencia,:fecha,:usuario,:pass)');
-  $tem->bindParam(':num_doc',$_POST['num_doc']);
-  $tem->bindParam(':tipo_doc',$_POST['tipo_doc']);
-  $tem->bindParam(':nombre',$_POST['nombre']);
-  $tem->bindParam(':apellido',$_POST['apellido']);
-  $tem->bindParam(':telefono',$_POST['telefono']);
-  $tem->bindParam(':email',$_POST['email']);
-  $tem->bindParam(':residencia',$_POST['residencia']);
-  $tem->bindParam(':fecha',$_POST['fecha']);
-  $tem->bindParam(':usuario',$_POST['usuario']);
-  $password=password_hash($_POST['pass'], PASSWORD_BCRYPT);
-  $tem->bindParam(':pass',$password);
-
-  if (mysqli_query($conn, $sql)) {
-		echo json_encode(array("statusCode"=>200));
-	} 
-	else {
-		echo json_encode(array("statusCode"=>201));
-	}
-	mysqli_close($conn);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -949,9 +922,7 @@ if (!empty($_POST['num_doc'])) {
       </div>
     </div>
   </footer><!-- #footer -->
-
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-migrate.min.js"></script>
@@ -961,64 +932,12 @@ if (!empty($_POST['num_doc'])) {
   <script src="lib/superfish/hoverIntent.js"></script>
   <script src="lib/superfish/superfish.min.js"></script>
   <script src="lib/magnific-popup/magnific-popup.min.js"></script>
-
   <!-- Contact Form JavaScript File -->
   <script src="js/contactform.js"></script>
-
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-
-  <script>
-
-$(document).ready(function() {
-
-	$('#registrarse').on('click', function() {
-
-		var num_doc = $('#num_doc').val();
-		var tipo_doc = $('#tipo_doc').val();
-		var nombre = $('#nombre').val();
-		var apellido = $('#apellido').val();
-    var telefono = $('#telefono').val();
-    var email = $('#email').val();
-    var residencia = $('#residencia').val();
-    var fecha = $('#fecha').val();
-    var usuario = $('#usuario').val();
-    var pass = $('#pass').val();
-        
-
-		if(true){
-			$.ajax({
-				url: "index.php",
-				type: "POST",
-				data: {
-					num_doc: num_doc,
-					tipo_doc: tipo_doc,
-					nombre: nombre,
-					apellido: apellido,
-          telefono: telefono,
-          email: email,
-          residencia: residencia,
-          fecha: fecha,
-          usuario: usuario, 
-          pass : pass		
-				},
-				cache: false,
-				success: function(dataResult){
-					var dataResult = JSON.parse(dataResult);
-					if(dataResult.statusCode==200){
-            alert("Se guardo el usuario");		
-					}
-					else if(dataResult.statusCode==201){
-					   alert("Error occured !");
-					}
-					
-				}
-			});
-		}
-	
-	});
-});
-</script>
+  <!-- Archivo js para los usuarios -->
+  <script src="js/usuario.js" ></script>
 
 </body>
 </html>
