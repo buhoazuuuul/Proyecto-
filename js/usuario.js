@@ -10,15 +10,18 @@ var usuario ;
 var pass ;
 
 $(document).ready(function() {
+
     console.log('Documento usuario.js cargado');
 
 	$('#btnRegistrarse').on('click', function() {
-
+       
         guardarDatosRegistro();
         InsertarDatosBD();
 
+
 	});
 });
+
 
 function guardarDatosRegistro(){
 
@@ -38,21 +41,17 @@ function guardarDatosRegistro(){
 function InsertarDatosBD(){
 
     $.ajax({
-        type: "POST",
-        url: './php/usuarios.php',
-        data: {num_doc: num_doc,tipo_doc: tipo_doc,nombre: nombre,apellido: apellido,telefono: telefono,email: email,
+        url:"php/usuarios.php",
+        method:"POST",
+        data:{num_doc: num_doc,tipo_doc: tipo_doc,nombre: nombre,apellido: apellido,telefono: telefono,email: email,
             residencia: residencia,
             fecha: fecha,
             usuario: usuario, 
-            pass : pass		
-        },
-        dataType: "JSON",
-        success: function(data) {
-        alert("Se registro el usuario");
-        },
-        error: function(err) {
-        alert("No se pudo registrar");
+            pass : pass	},
+        success:function(data)
+        {
+         alert("Se Registro el usuario");
         }
-    });
-
+        
+       });
 }

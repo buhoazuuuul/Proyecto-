@@ -108,7 +108,7 @@
       </button>
 
       <!-- Modal Registrarse-->
-      <div class="modal fade" id="registrarse" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade" id="registrarse"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -118,7 +118,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form method="post" role="form" class="contactForm" action="index.php">
+              <form method="post" role="form" class="contactForm" action="php/usuarios.php">
                 <div class="form-row">
 
                    <div class="form-group col-lg-6">
@@ -179,7 +179,7 @@
       </div>
     </div>
     <!-- Modal -->
-<div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalRegistro" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
