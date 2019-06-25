@@ -1,40 +1,19 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "innexu";
+require_once("DbPDO.class.php");
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$database;charset=utf8", $username, $password);
-    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "<script>alert('Se hizo la conexion')</script>";
-    }
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
+// Instancia de la clase DbPDO
+$mipdo=new DbPDO();
 
-  $tem = $conn->prepare("INSERT INTO usuario (num_doc,tipo_doc,nombre,apellido,telefono,email,residencia,fecha,usuario,pass) VALUES
-  (:num_doc,:tipo_doc,:nombre,:apellido,:telefono,:email,:residencia,:fecha,:usuario,:pass)");
+//Encriptando la contrasenna
+$mipdosword=password_hash($_POST['pass'], PASSWORD_BCRYPT);
+// Haciendo el binding mediante el método bindMas
+$mipdo->bindMas(array("num_doc"=>$_POST['num_doc'],"tipo_doc"=>$_POST['tipo_doc'],"nombre"=>$_POST['nombre'],"apellido"=>$_POST['apellido'],"telefono"=>$_POST['telefono'],"email"=>$_POST['email'],"residencia"=>$_POST['residencia'],"fecha"=>$_POST['fecha'],"usuario"=>$_POST['usuario'],"pass"=>$mipdosword));
+  
+$datos=$mipdo->query("INSERT INTO usuario (num_doc,tipo_doc,nombre,apellido,telefono,email,residencia,fecha,usuario,pass) VALUES
+(:num_doc,:tipo_doc,:nombre,:apellido,:telefono,:email,:residencia,:fecha,:usuario,:pass)");
 
-  $tem->bindParam(':num_doc',$_POST['num_doc']);
-  $tem->bindParam(':tipo_doc',$_POST['tipo_doc']);
-  $tem->bindParam(':nombre',$_POST['nombre']);
-  $tem->bindParam(':apellido',$_POST['apellido']);
-  $tem->bindParam(':telefono',$_POST['telefono']);
-  $tem->bindParam(':email',$_POST['email']);
-  $tem->bindParam(':residencia',$_POST['residencia']);
-  $tem->bindParam(':fecha',$_POST['fecha']);
-  $tem->bindParam(':usuario',$_POST['usuario']);
-  //$password=password_hash($_POST['pass'], PASSWORD_BCRYPT);
-  $tem->bindParam(':pass',$_POST['pass']);
+$datos1 = $mipdo->query("SELECT * FROM usuario");
 
-   if ($tem->execute()) { 		
-     echo "<script>alert('Se guardo')</script>";
-	} 
-	else {
- 		echo "<script>alert('No se guardo')</script>";
-	}
-  $conn = null;
+echo json_encode($datos1)
 
 ?>
