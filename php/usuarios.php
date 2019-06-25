@@ -12,8 +12,6 @@ $mipdo->bindMas(array("num_doc"=>$_POST['num_doc'],"tipo_doc"=>$_POST['tipo_doc'
 $datos=$mipdo->query("INSERT INTO usuario (num_doc,tipo_doc,nombre,apellido,telefono,email,residencia,fecha,usuario,pass) VALUES
 (:num_doc,:tipo_doc,:nombre,:apellido,:telefono,:email,:residencia,:fecha,:usuario,:pass)");
 
-$datos1 = $mipdo->query("SELECT * FROM usuario");
-
-echo json_encode($datos1)
+echo $datos;
 
 ?>

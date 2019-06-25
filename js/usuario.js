@@ -51,8 +51,8 @@ function InsertarDatosBD() {
             pass: pass
         },
         success: function (data) {
-            var contact = JSON.parse(data);
-            console.log(contact);
+
+            console.log(data);
 
         }
 
