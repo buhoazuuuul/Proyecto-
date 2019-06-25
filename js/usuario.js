@@ -52,7 +52,11 @@ function InsertarDatosBD() {
         },
         success: function (data) {
 
-            console.log(data);
+            if (data > 0) {
+                window.location = "http://localhost/Proyecto-/index.php"
+                modalRegistro.modal("show");
+            }
+
 
         }
 

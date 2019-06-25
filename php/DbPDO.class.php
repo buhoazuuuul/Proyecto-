@@ -91,11 +91,17 @@ class DbPDO
      *   No es obligatorio, ya que PHP la cierra cuando termina el script
      *   Ver: http://es.stackoverflow.com/questions/50083/50097#50097
      */
+    
     public function closeConnection()
     {
         # Setea el objeto PDO a null para cerrar la conexion
         # http://www.php.net/manual/en/pdo.connections.php
         $this->pdo = null;
+    }
+
+    public function getPDO(){
+
+        return $this->pdo;
     }
     
     /**
