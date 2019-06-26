@@ -68,9 +68,11 @@
       <p>Comunica tus problemas y encuentra soluciones rápidas</p>
   
       <!-- Button modal iniciar sesión -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#iniciarsesion">
+      <a href="login.php">
+      <button type="button" class="btn btn-primary" >
         Iniciar Sesión
       </button>
+      </a>
       <!-- Modal Iniciar Sesión-->
       <div class="modal fade" id="iniciarsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

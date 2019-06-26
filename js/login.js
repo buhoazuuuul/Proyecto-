@@ -34,7 +34,7 @@ function submitForm() {
                     toast: true,
                     position: 'top-end',
                     showConfirmButton: false,
-                    timer: 5000
+                    timer: 3000
                 });
 
                 Toast.fire({
@@ -42,7 +42,7 @@ function submitForm() {
                     title: 'Datos de inicio de sesion correctos'
                 })
 
-                setTimeout(function () { window.location = 'userProfile.php?userName=' + usuario; }, 5000);
+                setTimeout(function () { window.location = 'userProfile.php?userName=' + usuario; }, 3000);
 
 
             } else {
