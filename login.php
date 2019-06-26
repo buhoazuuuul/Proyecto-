@@ -29,30 +29,24 @@
       *********************************************************************************************************************************************************** -->
   <div id="login-page">
     <div class="container">
-      <form class="form-login" action="index.html">
-        <h2 class="form-login-heading">sign in now</h2>
+      <form  method="post" role="form" class="form-login" id="login-form">
+        <h2 class="form-login-heading">Entre ahora a INNEXU</h2>
         <div class="login-wrap">
-          <input type="text" id="nomUsuario" class="form-control" placeholder="Nombre de usuario" autofocus>
+          <input type="text" name="nomUsuario" id="nomUsuario"  class="form-control" placeholder="Nombre de usuario" autofocus>
           <br>
-          <input type="password" id="passUsuario" class="form-control" placeholder="Contraseña">
+          <input type="password" name="passUsuario" class="form-control" placeholder="Contraseña">
           <label class="checkbox">
             <input class="mt-3" type="checkbox" value="remember-me"> Recordarme
             <span class="mt-3"><br>
-              <a data-toggle="modal" href="login.html#myModal"> Olvidaste la contraseña?</a>
+              <a data-toggle="modal" href="login.php#myModal"> Olvidaste la contraseña?</a>
             </span>
           </label>
-          <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN
-            IN</button>
+          <button id="btnLogin" name="btnLogin" class="btn btn-theme btn-block"  type="button"><i class="fa fa-lock"></i> Entrar</button>
           <hr>
-          <div class="login-social-link centered">
-            <p>or you can sign in via your social network</p>
-            <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
-            <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
-          </div>
           <div class="registration">
-            Don't have an account yet?<br />
-            <a class="" href="#">
-              Create an account
+            No tiene una cuenta aun?<br />
+            <a class="" href="index.php">
+              Cree una!
             </a>
           </div>
         </div>
@@ -86,9 +80,11 @@
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <!--BACKSTRETCH-->
   <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
-  <script type="text/javascript" src="lib/jquery.backstretch.min.js"></script>
+  <script type="text/javascript" src="lib/jquery/jquery.backstretch.min.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
   <script>
-    $.backstretch("img/login-bg.jpg", {
+    $.backstretch("img/abejorral3.jpg", {
       speed: 500
     });
   </script>

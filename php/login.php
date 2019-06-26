@@ -7,26 +7,25 @@ $mipdo=new DbPDO();
 
 //Datos del inicio de sesion
 
-$pass = $_POST['passususario'];
-$username = $_POST['nomusuario'];
+$pass = $_POST['passUsuario'];
+$username = $_POST['nomUsuario'];
 
 $query = $mipdo->query("SELECT * FROM usuario WHERE usuario = :usuario",array("usuario"=>$username));
 
-if(count($query>0)){
-
-    echo json_encode($query);
+if(count($query)>0){
+    
     //Verificar contrasenna
-     if (password_verify($pass, $query['pass'])) {
-     // Success!
+     if (password_verify($pass, $query[0]["pass"])) {
+    //Success!
      echo 'Password Matches';
      } else {
-    // // Invalid credentials
-     echo 'Password Mismatch';
+    //Invalid credentials
+     echo "Contraseña incorrecta";
      }
 
 }else{
     
-  echo "No registered";
+  echo "No esta registrado ese usuario";
 
 }
 

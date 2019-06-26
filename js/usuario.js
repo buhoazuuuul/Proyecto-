@@ -53,10 +53,25 @@ function InsertarDatosBD() {
         success: function (data) {
             console.log(data);
             if (data > 0) {
-                window.location = "http://localhost/Proyecto-/index.php"
-                // $('#modalRegistro').modal('show');
+                Swal.fire({
+                    position: 'center',
+                    type: 'success',
+                    title: 'Se he registrado satisfactoriamente',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                //window.location = "http://localhost/Proyecto-/index.php"
+
             } else {
-                window.location = "http://localhost/Proyecto-/index.php"
+
+                Swal.fire({
+                    position: 'center',
+                    type: 'error',
+                    title: 'Error al registrarse',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                //window.location = "http://localhost/Proyecto-/index.php"
                 // $('#modalNoRegistro').modal('show');
 
             }
