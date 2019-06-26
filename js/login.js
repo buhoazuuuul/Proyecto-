@@ -34,14 +34,16 @@ function submitForm() {
                     toast: true,
                     position: 'top-end',
                     showConfirmButton: false,
-                    timer: 3000
+                    timer: 5000
                 });
 
                 Toast.fire({
                     type: 'success',
                     title: 'Datos de inicio de sesion correctos'
                 })
-                window.location = 'userProfile.php?userName=' + usuario;
+
+                setTimeout(function () { window.location = 'userProfile.php?userName=' + usuario; }, 5000);
+
 
             } else {
 

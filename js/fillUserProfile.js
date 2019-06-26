@@ -19,18 +19,16 @@ function fillUser() {
         },
         success: function (response) {
 
-            console.log(response);
+            datos = JSON.parse(response);
 
-            if (true) {
-
-
-
-            } else {
-
-
-            }
+            $('#userName').text(datos[0].nombre + '  ' + datos[0].apellido);
         },
     });
+
+}
+
+function llenarPerfil() {
+
 
 }
 
