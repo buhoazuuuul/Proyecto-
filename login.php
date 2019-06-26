@@ -18,15 +18,9 @@
   <!--external css-->
   <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/styleLogin.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
 </head>
 
 <body>
@@ -38,13 +32,13 @@
       <form class="form-login" action="index.html">
         <h2 class="form-login-heading">sign in now</h2>
         <div class="login-wrap">
-          <input type="text" class="form-control" placeholder="User ID" autofocus>
+          <input type="text" id="nomUsuario" class="form-control" placeholder="Nombre de usuario" autofocus>
           <br>
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" id="passUsuario" class="form-control" placeholder="Contraseña">
           <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
-            <span class="pull-right">
-              <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
+            <input class="mt-3" type="checkbox" value="remember-me"> Recordarme
+            <span class="mt-3"><br>
+              <a data-toggle="modal" href="login.html#myModal"> Olvidaste la contraseña?</a>
             </span>
           </label>
           <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN
