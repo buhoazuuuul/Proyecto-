@@ -1,15 +1,15 @@
 var usuario;
 var pass;
+var url;
 
 $(document).ready(function () {
 
-    usuario = $('#nomUsuario').val();
-    pass = $('#passUsuario').val();
-
     $('#btnLogin').on('click', function () {
 
+        usuario = $('#nomUsuario').val();
+        pass = $('#passUsuario').val();
+        url = 'userProfile.php?userName=' + usuario;
         submitForm();
-        console.log('click');
 
     });
     console.log('Documento login.js cargado');
@@ -42,7 +42,8 @@ function submitForm() {
                     title: 'Datos de inicio de sesion correctos'
                 })
 
-                setTimeout(function () { window.location = 'userProfile.php?userName=' + usuario; }, 3000);
+                //Redireccionamos
+                setTimeout(function () { window.location = url; }, 3000);
 
 
             } else {
@@ -60,17 +61,4 @@ function submitForm() {
         },
     });
 
-}
-
-function verifyLogin() {
-    $.ajax({
-        url: "php/login.php",
-        method: "POST",
-        data: { usuario: usuario, pass: pass },
-        success: function (data) {
-            console.log(data);
-
-        }
-
-    });
 }

@@ -1,11 +1,10 @@
 var username = getParameterByName('userName');
 var datos;
-
 $(document).ready(function () {
 
-    console.log('Documento fillUserProfile.js cargado');
+    console.log('Documento cargado');
     fillUser();
-    llenarPerfil();
+
 });
 
 function fillUser() {
@@ -22,7 +21,7 @@ function fillUser() {
         success: function (response) {
 
             datos = JSON.parse(response);
-
+            llenarPerfil();
         },
     });
 
@@ -30,7 +29,8 @@ function fillUser() {
 
 function llenarPerfil() {
 
-    $('#userName').text(datos[0].nombre + '  ' + datos[0].apellido);
+    console.log('llenando perfil');
+    $('#userName').text(datos[0].nombre + ' ' + datos[0].apellido);
 
 }
 
