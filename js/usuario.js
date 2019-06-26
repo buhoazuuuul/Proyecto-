@@ -51,10 +51,14 @@ function InsertarDatosBD() {
             pass: pass
         },
         success: function (data) {
-
+            console.log(data);
             if (data > 0) {
                 window.location = "http://localhost/Proyecto-/index.php"
-                modalRegistro.modal("show");
+                // $('#modalRegistro').modal('show');
+            } else {
+                window.location = "http://localhost/Proyecto-/index.php"
+                // $('#modalNoRegistro').modal('show');
+
             }
 
 

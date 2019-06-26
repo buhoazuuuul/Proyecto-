@@ -82,20 +82,20 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form method="post" role="form" action="php/login.php">
                  <div class="form-group col-lg-6">
-                 <input type="text" name="usuario" class="form-control"  placeholder="Usuario" data-rule="minlen:4" data-msg="Usuario no registrado" />
+                 <input type="text" name="nomusuario" id="nomusuario" class="form-control"  placeholder="Usuario" data-rule="minlen:4" data-msg="Usuario no registrado" />
                   <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                  <input type="password" name="pass" class="form-control"  placeholder="Contraseña" data-rule="minlen:4" data-msg="Contraseña incorrecta" />
+                  <input type="password" name="passususario" id="passususario" class="form-control"  placeholder="Contraseña" data-rule="minlen:4" data-msg="Contraseña incorrecta" />
                   <div class="validation"></div>
                   </div>
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button"  class="btn btn-primary">Entrar</button>
+              <button type="submit" id="btnLogin" class="btn btn-primary">Entrar</button>
             </div>
           </div>
         </div>
@@ -106,7 +106,6 @@
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrarse">
         Registrarse
       </button>
-
       <!-- Modal Registrarse-->
       <div class="modal fade" id="registrarse"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -178,18 +177,37 @@
         </div>
       </div>
     </div>
-    <!-- Modal -->
+<!-- Modal -->
 <div class="modal fade" id="modalRegistro" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Te has registrado en</h5>
+        <h5 class="modal-title text-success" id="exampleModalLongTitle">Te has registrado en</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
        Su registro ha sido satisfactorio
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal no registro -->
+<div class="modal fade" id="modalNoRegistro" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <h5 class="modal-title text-danger" id="exampleModalLongTitle">Tu registro NO ha sido existoso</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       Asi que disculpa las molestias e intentalo de nuevo en un par minutos
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cerrar</button>
@@ -938,6 +956,9 @@
   <script src="js/main.js"></script>
   <!-- Archivo js para los usuarios -->
   <script src="js/usuario.js" ></script>
+  <script src="js/login.js" ></script>
+  <!-- Sweet alert plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 </body>
 </html>
