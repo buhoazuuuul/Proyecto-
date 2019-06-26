@@ -888,6 +888,7 @@
     }
   </script>
   <script src="js/fillUserProfile.js"></script>
+  <script src="lib/popper.min.js"></script>
 </body>
 
 </html>
