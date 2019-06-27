@@ -23,10 +23,9 @@ function submitForm() {
         type: 'POST',
         data: data,
         beforeSend: function () {
-            console.log('Enviando');
+            console.log('Enviando...');
         },
         success: function (response) {
-            console.log(response);
             if (response == "Password Matches") {
 
                 const Toast = Swal.mixin({

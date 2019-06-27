@@ -12,7 +12,8 @@
   <!-- Favicons -->
   <link href="libUsuarios/img/favicon.png" rel="icon">
   <link href="libUsuarios/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+  <!-- css Animated -->
+  <link rel="stylesheet" href="lib/animate/animate.min.css">
   <!-- Bootstrap core CSS -->
   <link href="libUsuarios/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
@@ -246,7 +247,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 id="userName" class="centered"></h5>
+          <h5 id="userName" class="centered animated fadeInLeft"></h5>
           <li class="mt">
             <a class="active" href="index.html">
               <i class="fa fa-dashboard"></i>

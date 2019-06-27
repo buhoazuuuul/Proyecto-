@@ -52,6 +52,7 @@ function InsertarDatosBD() {
         },
         success: function (data) {
             console.log(data);
+
             if (data > 0) {
                 Swal.fire({
                     position: 'center',
