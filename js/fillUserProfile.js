@@ -1,5 +1,6 @@
 var username = getParameterByName('userName');
 var datos;
+
 $(document).ready(function () {
 
     console.log('Documento cargado');
@@ -19,7 +20,7 @@ function fillUser() {
             console.log('Enviando..');
         },
         success: function (response) {
-
+            console.log(response);
             datos = JSON.parse(response);
             llenarPerfil();
         },

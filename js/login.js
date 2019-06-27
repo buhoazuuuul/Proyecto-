@@ -1,14 +1,13 @@
 var usuario;
 var pass;
 var url;
-url = 'userProfile.php?userName=' + usuario;
-
 $(document).ready(function () {
 
     $('#btnLogin').on('click', function () {
 
         usuario = $('#nomUsuario').val();
         pass = $('#passUsuario').val();
+        url = 'userProfile.php?userName=' + usuario;
         submitForm();
 
     });

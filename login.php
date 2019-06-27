@@ -36,9 +36,9 @@
           <br>
           <input type="password" name="passUsuario" class="form-control" placeholder="Contraseña">
           <label class="checkbox">
-            <input class="mt-3" type="checkbox" value="remember-me"> Recordarme
+            <input class="mt-3" type="checkbox" value="remember-me">Recordarme
             <span class="mt-3"><br>
-              <a data-toggle="modal" href="login.php#myModal"> Olvidaste la contraseña?</a>
+              <a data-toggle="modal" href="login.php#myModal">Olvidaste la contraseña?</a>
             </span>
           </label>
           <button id="btnLogin" name="btnLogin" class="btn btn-theme btn-block"  type="button"><i class="fa fa-lock"></i> Entrar</button>
