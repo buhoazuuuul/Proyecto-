@@ -1,6 +1,7 @@
 var usuario;
 var pass;
 var url;
+url = 'userProfile.php?userName=' + usuario;
 
 $(document).ready(function () {
 
@@ -8,7 +9,6 @@ $(document).ready(function () {
 
         usuario = $('#nomUsuario').val();
         pass = $('#passUsuario').val();
-        url = 'userProfile.php?userName=' + usuario;
         submitForm();
 
     });
