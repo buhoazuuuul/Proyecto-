@@ -249,20 +249,20 @@
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 id="userName" class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a class="active" href="index.html">
+            <a class="active" href="userProfile.php">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
               </a>
           </li>
           <li>
-            <a href="inbox.html">
+            <a href="Usuario/inbox.html">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
               </a>
           </li>
           <li class="sub-menu">
-            <a id="editarPerfil" href="index.php">
+            <a id="editarPerfil" href="profile.php">
               <i class="fa fa-cogs"></i>
               <span>Editar mi perfil</span>
             </a>
