@@ -24,15 +24,21 @@
 </head>
 
 <body>
+  <?php
+  // session_start();
+  // if (!empty($_SESSION['login_user'])) {
+  //   header('Location: userProfile.php');
+  // }
+  ?>
   <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
   <div id="login-page">
     <div class="container">
-      <form  method="post" role="form" class="form-login" id="login-form">
+      <form method="post" role="form" class="form-login" id="login-form">
         <h2 class="form-login-heading">Entre ahora a INNEXU</h2>
         <div class="login-wrap">
-          <input type="text" name="nomUsuario" id="nomUsuario"  class="form-control" placeholder="Nombre de usuario" autofocus>
+          <input type="text" name="nomUsuario" id="nomUsuario" class="form-control" placeholder="Nombre de usuario" autofocus>
           <br>
           <input type="password" name="passUsuario" class="form-control" placeholder="Contraseña">
           <label class="checkbox">
@@ -41,7 +47,7 @@
               <a data-toggle="modal" href="login.php#myModal">Olvidaste la contraseña?</a>
             </span>
           </label>
-          <button id="btnLogin" name="btnLogin" class="btn btn-theme btn-block"  type="button"><i class="fa fa-lock"></i> Entrar</button>
+          <button id="btnLogin" name="btnLogin" class="btn btn-theme btn-block" type="button"><i class="fa fa-lock"></i> Entrar</button>
           <hr>
           <div class="registration">
             No tiene una cuenta aun?<br />
@@ -51,8 +57,7 @@
           </div>
         </div>
         <!-- Modal -->
-        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal"
-          class="modal fade">
+        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -61,8 +66,7 @@
               </div>
               <div class="modal-body">
                 <p>Enter your e-mail address below to reset your password.</p>
-                <input type="text" name="email" placeholder="Email" autocomplete="off"
-                  class="form-control placeholder-no-fix">
+                <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
               </div>
               <div class="modal-footer">
                 <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>

@@ -63,8 +63,7 @@
                     <div class="percent">40%</div>
                   </div>
                   <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                      aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                       <span class="sr-only">40% Complete (success)</span>
                     </div>
                   </div>
@@ -77,8 +76,7 @@
                     <div class="percent">60%</div>
                   </div>
                   <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
-                      aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                       <span class="sr-only">60% Complete (warning)</span>
                     </div>
                   </div>
@@ -91,8 +89,7 @@
                     <div class="percent">80%</div>
                   </div>
                   <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                      aria-valuemax="100" style="width: 80%">
+                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                       <span class="sr-only">80% Complete</span>
                     </div>
                   </div>
@@ -105,8 +102,7 @@
                     <div class="percent">70%</div>
                   </div>
                   <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70"
-                      aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
                       <span class="sr-only">70% Complete (Important)</span>
                     </div>
                   </div>
@@ -233,7 +229,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.html">Logout</a></li>
+          <li><i style="font-size: 18px;" id="btnLogout" class="logout fa fa-sign-out"></i></li>
         </ul>
       </div>
     </header>
@@ -247,19 +243,19 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <h5 id="userName" class="centered">Sam Soffes</h5>
           <li class="mt">
             <a class="" href="index.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
-              </a>
+            </a>
           </li>
           <li>
             <a href="">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
-              </a>
+            </a>
           </li>
           <li class="sub-menu">
             <a class="active" href="javascript:;">
@@ -394,48 +390,37 @@
                         <div class="row centered mb">
                           <ul class="my-friends">
                             <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35"
-                                  src="img/friends/fr-01.jpg"></div>
+                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-01.jpg"></div>
                             </li>
                             <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35"
-                                  src="img/friends/fr-02.jpg"></div>
+                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-02.jpg"></div>
                             </li>
                             <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35"
-                                  src="img/friends/fr-03.jpg"></div>
+                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-03.jpg"></div>
                             </li>
                             <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35"
-                                  src="img/friends/fr-04.jpg"></div>
+                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-04.jpg"></div>
                             </li>
                             <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35"
-                                  src="img/friends/fr-05.jpg"></div>
+                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-05.jpg"></div>
                             </li>
                             <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35"
-                                  src="img/friends/fr-06.jpg"></div>
+                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-06.jpg"></div>
                             </li>
                             <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35"
-                                  src="img/friends/fr-07.jpg"></div>
+                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-07.jpg"></div>
                             </li>
                             <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35"
-                                  src="img/friends/fr-08.jpg"></div>
+                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-08.jpg"></div>
                             </li>
                             <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35"
-                                  src="img/friends/fr-09.jpg"></div>
+                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-09.jpg"></div>
                             </li>
                             <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35"
-                                  src="img/friends/fr-10.jpg"></div>
+                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-10.jpg"></div>
                             </li>
                             <li>
-                              <div class="friends-pic"><img class="img-circle" width="35" height="35"
-                                  src="img/friends/fr-11.jpg"></div>
+                              <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-11.jpg"></div>
                             </li>
                           </ul>
                           <div class="row mt">
@@ -450,29 +435,25 @@
                           <div class="col-md-8 col-md-offset-2">
                             <h5>Dashboard Update (40%)</h5>
                             <div class="progress">
-                              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40"
-                                aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                 <span class="sr-only">40% Complete (success)</span>
                               </div>
                             </div>
                             <h5>Unanswered Messages (80%)</h5>
                             <div class="progress">
-                              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40"
-                                aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                 <span class="sr-only">80% Complete (success)</span>
                               </div>
                             </div>
                             <h5>Product Review (60%)</h5>
                             <div class="progress">
-                              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40"
-                                aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                 <span class="sr-only">60% Complete (success)</span>
                               </div>
                             </div>
                             <h5>Friend Requests (90%)</h5>
                             <div class="progress">
-                              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40"
-                                aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
                                 <span class="sr-only">90% Complete (success)</span>
                               </div>
                             </div>
@@ -655,10 +636,9 @@
   <script src="libUsuarios/lib/common-scripts.js"></script>
   <!--script for this page-->
   <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
-  <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
   <script>
-    $('.contact-map').click(function () {
+    $('.contact-map').click(function() {
 
       //google map in tab click initialize
       function initialize() {
@@ -679,6 +659,8 @@
       google.maps.event.addDomListener(window, 'click', initialize);
     });
   </script>
+  <script src="js/logout.js"></script>
+  <script src="js/fillUserProfile.js"></script>
 </body>
 
 </html>

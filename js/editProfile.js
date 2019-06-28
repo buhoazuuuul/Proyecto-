@@ -16,7 +16,6 @@ function fillUser() {
             console.log('Enviando..');
         },
         success: function (response) {
-            console.log(response);
             datos = JSON.parse(response);
             llenarPerfil();
         },

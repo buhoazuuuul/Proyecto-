@@ -2,32 +2,29 @@
 
 require_once("DbPDO.class.php");
 
+
 // Instancia de la clase DbPDO
-$mipdo=new DbPDO();
+$mipdo = new DbPDO();
 
 //Datos del inicio de sesion
 
 $pass = $_POST['passUsuario'];
 $username = $_POST['nomUsuario'];
 
-$query = $mipdo->query("SELECT * FROM usuario WHERE usuario = :usuario",array("usuario"=>$username));
+$query = $mipdo->query("SELECT * FROM usuario WHERE usuario = :usuario", array("usuario" => $username));
 
-if(count($query)>0){
-    
-    //Verificar contrasenna
-     if (password_verify($pass, $query[0]["pass"])) {
+if (count($query) > 0) {
+
+  //Verificar contrasenna
+  if (password_verify($pass, $query[0]["pass"])) {
     //Success!
-     echo 'Password Matches';
-     } else {
+    $_SESSION['login_user'] = $query[0]["usuario"];
+    echo 'Password Matches';
+  } else {
     //Invalid credentials
-     echo "Contraseña incorrecta";
-     }
+    echo "Contraseña incorrecta";
+  }
+} else {
 
-}else{
-    
   echo "No esta registrado ese usuario";
-
 }
-
-
-?>

@@ -54,7 +54,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-tasks"></i>
               <span class="badge bg-theme">4</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended tasks-bar">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -123,7 +123,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-envelope-o"></i>
               <span class="badge bg-theme">5</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended inbox">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -133,49 +133,49 @@
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
                   <span class="subject">
-                  <span class="from">Zac Snider</span>
-                  <span class="time">Just now</span>
+                    <span class="from">Zac Snider</span>
+                    <span class="time">Just now</span>
                   </span>
                   <span class="message">
-                  Hi mate, how is everything?
+                    Hi mate, how is everything?
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
                   <span class="subject">
-                  <span class="from">Divya Manian</span>
-                  <span class="time">40 mins.</span>
+                    <span class="from">Divya Manian</span>
+                    <span class="time">40 mins.</span>
                   </span>
                   <span class="message">
-                  Hi, I need your help with this.
+                    Hi, I need your help with this.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
                   <span class="subject">
-                  <span class="from">Dan Rogers</span>
-                  <span class="time">2 hrs.</span>
+                    <span class="from">Dan Rogers</span>
+                    <span class="time">2 hrs.</span>
                   </span>
                   <span class="message">
-                  Love your new Dashboard.
+                    Love your new Dashboard.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-sherman.jpg"></span>
                   <span class="subject">
-                  <span class="from">Dj Sherman</span>
-                  <span class="time">4 hrs.</span>
+                    <span class="from">Dj Sherman</span>
+                    <span class="time">4 hrs.</span>
                   </span>
                   <span class="message">
-                  Please, answer asap.
+                    Please, answer asap.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">See all messages</a>
@@ -188,7 +188,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-bell-o"></i>
               <span class="badge bg-warning">7</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended notification">
               <div class="notify-arrow notify-arrow-yellow"></div>
               <li>
@@ -199,28 +199,28 @@
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Server Overloaded.
                   <span class="small italic">4 mins.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-warning"><i class="fa fa-bell"></i></span>
                   Memory #2 Not Responding.
                   <span class="small italic">30 mins.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Disk Space Reached 85%.
                   <span class="small italic">2 hrs.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-success"><i class="fa fa-plus"></i></span>
                   New User Registered.
                   <span class="small italic">3 hrs.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">See all notifications</a>
@@ -233,7 +233,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.html">Cerrar sesión</a></li>
+          <li><i style="font-size: 18px;" id="btnLogout" class="logout fa fa-sign-out"></i></li>
         </ul>
       </div>
     </header>
@@ -252,14 +252,14 @@
             <a class="active" href="index.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
-              </a>
+            </a>
           </li>
           <li>
             <a href="inbox.html">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
-              </a>
+            </a>
           </li>
           <li class="sub-menu">
             <a id="editarPerfil" href="index.php">
@@ -345,7 +345,7 @@
                   </script>
                   <div class="row">
                     <div class="col-sm-6 col-xs-6 goleft">
-                      <p>Usage<br/>Increase:</p>
+                      <p>Usage<br />Increase:</p>
                     </div>
                     <div class="col-sm-6 col-xs-6">
                       <h2>21%</h2>
@@ -395,7 +395,7 @@
                   <div class="chart mt">
                     <div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,464,655]"></div>
                   </div>
-                  <p class="mt"><b>$ 17,980</b><br/>Month Income</p>
+                  <p class="mt"><b>$ 17,980</b><br />Month Income</p>
                 </div>
               </div>
               <!-- /col-md-4 -->
@@ -476,7 +476,7 @@
                 <!-- INSTAGRAM PANEL -->
                 <div class="instagram-panel pn">
                   <i class="fa fa-instagram fa-4x"></i>
-                  <p>@THISISYOU<br/> 5 min. ago
+                  <p>@THISISYOU<br /> 5 min. ago
                   </p>
                   <p><i class="fa fa-comment"></i> 18 | <i class="fa fa-heart"></i> 49</p>
                 </div>
@@ -584,8 +584,8 @@
               <div class="details">
                 <p>
                   <muted>Just Now</muted>
-                  <br/>
-                  <a href="#">Paul Rudd</a> purchased an item.<br/>
+                  <br />
+                  <a href="#">Paul Rudd</a> purchased an item.<br />
                 </p>
               </div>
             </div>
@@ -597,8 +597,8 @@
               <div class="details">
                 <p>
                   <muted>2 Minutes Ago</muted>
-                  <br/>
-                  <a href="#">James Brown</a> subscribed to your newsletter.<br/>
+                  <br />
+                  <a href="#">James Brown</a> subscribed to your newsletter.<br />
                 </p>
               </div>
             </div>
@@ -610,8 +610,8 @@
               <div class="details">
                 <p>
                   <muted>3 Hours Ago</muted>
-                  <br/>
-                  <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
+                  <br />
+                  <a href="#">Diana Kennedy</a> purchased a year subscription.<br />
                 </p>
               </div>
             </div>
@@ -623,8 +623,8 @@
               <div class="details">
                 <p>
                   <muted>7 Hours Ago</muted>
-                  <br/>
-                  <a href="#">Brando Page</a> purchased a year subscription.<br/>
+                  <br />
+                  <a href="#">Brando Page</a> purchased a year subscription.<br />
                 </p>
               </div>
             </div>
@@ -637,7 +637,7 @@
               </div>
               <div class="details">
                 <p>
-                  <a href="#">DIVYA MANIAN</a><br/>
+                  <a href="#">DIVYA MANIAN</a><br />
                   <muted>Available</muted>
                 </p>
               </div>
@@ -649,7 +649,7 @@
               </div>
               <div class="details">
                 <p>
-                  <a href="#">DJ SHERMAN</a><br/>
+                  <a href="#">DJ SHERMAN</a><br />
                   <muted>I am Busy</muted>
                 </p>
               </div>
@@ -661,7 +661,7 @@
               </div>
               <div class="details">
                 <p>
-                  <a href="#">DAN ROGERS</a><br/>
+                  <a href="#">DAN ROGERS</a><br />
                   <muted>Available</muted>
                 </p>
               </div>
@@ -673,7 +673,7 @@
               </div>
               <div class="details">
                 <p>
-                  <a href="#">Zac Sniders</a><br/>
+                  <a href="#">Zac Sniders</a><br />
                   <muted>Available</muted>
                 </p>
               </div>
@@ -716,7 +716,7 @@
         </div>
         <a href="index.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
-          </a>
+        </a>
       </div>
     </footer>
     <!--footer end-->
@@ -736,7 +736,6 @@
   <script src="lib/sparkline-chart.js"></script>
   <script src="lib/zabuto_calendar.js"></script>
   <script type="text/javascript">
-
     $(document).ready(function() {
       var unique_id = $.gritter.add({
         // (string | mandatory) the heading of the notification
@@ -800,6 +799,7 @@
   </script>
   <script src="lib/popper.min.js"></script>
   <script src="js/fillUserProfile.js"></script>
+  <script src="js/logout.js"></script>
 </body>
 
 </html>
