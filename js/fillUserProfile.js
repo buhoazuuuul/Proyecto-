@@ -6,16 +6,21 @@ $(document).ready(function () {
 
     console.log('Documento filluser cargado');
     fillUser();
+    setHrefs();
+
+
+});
+
+function setHrefs() {
+
     document.getElementById("btnLogout").style.cursor = "pointer";
-    $("#editarPerfil").attr("href", url);
+    $("#btnEditarPerfil").attr("href", url);
     $("#btnLogout").hover(function () {
         $(this).fadeOut(100);
         $(this).fadeIn(500);
     });
 
-
-});
-
+}
 function fillUser() {
 
     var dataString = 'userName=' + username;
@@ -28,30 +33,55 @@ function fillUser() {
             console.log('Enviando..');
         },
         success: function (response) {
-            console.log(response);
+            //console.log(response);
             datos = JSON.parse(response);
             llenarPerfil();
         },
     });
 
 }
-
 function llenarPerfil() {
 
     console.log('llenando perfil');
     $('#userName').text(datos[0].nombre + ' ' + datos[0].apellido);
+    filluserForm();
+
+
 
 }
-
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+function filluserForm() {
 
+    var btnEditarPerfil = $("#btnEditarPerfil").attr("class");
+
+    if (btnEditarPerfil == "active") {
+
+        //Datos al principio del form
+        $('#secondUserName').text(datos[0].nombre + ' ' + datos[0].apellido);
+        $("#pMunicipio").append("<strong>" + datos[0] + "</strong>");
+        //Datos del form
+        $('#num_doc').val(datos[0].num_doc);
+        $('#tipo_doc').val(datos[0].tipo_doc);
+        $('#nombre').val(datos[0].nombre);
+        $('#apellido').val(datos[0].apellido);
+        $('#telefono').val(datos[0].telefono);
+        $('#email').val(datos[0].email);
+        $('#residencia').val(datos[0].residencia);
+        $('#fecha').val(datos[0].fecha);
+        $('#usuario').val(datos[0].usuario);
+        $('#pass').val("Encriptada");
+
+    }
+
+
+
+}
 function logout() {
-
 
     $.ajax({
         url: 'php/logout.php',
@@ -61,7 +91,7 @@ function logout() {
             console.log('Saliendo..');
         },
         success: function (response) {
-            console.log(response);
+            //console.log(response);
 
         },
     });

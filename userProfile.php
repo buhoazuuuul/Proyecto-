@@ -262,7 +262,7 @@
             </a>
           </li>
           <li class="sub-menu">
-            <a id="editarPerfil" href="profile.php">
+            <a id="btnEditarPerfil">
               <i class="fa fa-cogs"></i>
               <span>Editar mi perfil</span>
             </a>

@@ -14,7 +14,7 @@
   <link href="libUsuarios/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="libUsuarios/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="libUsuarios/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
   <!--external css-->
   <link href="libUsuarios/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
@@ -258,7 +258,7 @@
             </a>
           </li>
           <li class="sub-menu">
-            <a class="active" href="javascript:;">
+            <a id="btnEditarPerfil" class="active" href="javascript:;">
               <i class="fa fa-cogs"></i>
               <span>Editar mi perfil</span>
             </a>
@@ -289,12 +289,11 @@
               </div>
               <!-- /col-md-4 -->
               <div class="col-md-4 profile-text">
-                <h3>Sam Soffes</h3>
-                <h6>Main Administrator</h6>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                  classical Latin literature from 45 BC.</p>
+                <h3 id="secondUserName"></h3>
+                <h6>Beneficiario Innexu</h6>
+                <p id="pMunicipio">Eres un beneficiario para la gestion del riesgo del municipio de</p>
                 <br>
-                <p><button class="btn btn-theme"><i class="fa fa-envelope"></i> Send Message</button></p>
+                <p><button class="mt-5 btn btn-theme"><i class="fa fa-thermometer-three-quarters"></i> Reportar un riesgo</button></p>
               </div>
               <!-- /col-md-4 -->
               <div class="col-md-4 centered">
@@ -503,6 +502,7 @@
                   <div id="edit" class="tab-pane">
                     <div class="row">
                       <div class="col-lg-8 col-lg-offset-2 detailed">
+                        <!-- Informacion personal -->
                         <h4 class="mb">Información personal</h4>
                         <form role="form" class="form-horizontal">
                           <div class="form-group">
@@ -512,7 +512,7 @@
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Numero de documento</label>
+                            <label class="col-lg-2  control-label">Numero de documento</label>
                             <div class="col-lg-6">
                               <input type="text" placeholder=" " id="num_doc" class="form-control">
                             </div>
@@ -520,7 +520,10 @@
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Tipo de documento</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="tipo_doc" class="form-control">
+                              <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="Tipo de documento" data-rule="minlen:4">
+                                <option>Cedula de ciudadania</option>
+                                <option>Tarjeta de identidad</option>
+                              </select>
                             </div>
                           </div>
                           <div class="form-group">
@@ -567,7 +570,7 @@
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Contraseña</label>
-                            <div class="col-lg-6">
+                            <div class="text-danger col-lg-6">
                               <input type="text" placeholder=" " id="pass" class="form-control">
                             </div>
                           </div>
