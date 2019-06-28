@@ -279,19 +279,20 @@
             <div class="row content-panel">
               <div class="col-md-4 profile-text mt mb centered">
                 <div class="right-divider hidden-sm hidden-xs">
-                  <h4>1922</h4>
-                  <h6>FOLLOWERS</h6>
-                  <h4>290</h4>
-                  <h6>FOLLOWING</h6>
-                  <h4>$ 13,980</h4>
-                  <h6>MONTHLY EARNINGS</h6>
+                  <h4 id="Nacimiento">1922</h4>
+                  <h6>Fecha de nacimiento</h6>
+                  <h4 id="nomUser">290</h4>
+                  <h6>Nombre de usuario</h6>
+                  <h4 id="documento">$ 13,980</h4>
+                  <h6>Numero de documento</h6>
                 </div>
               </div>
               <!-- /col-md-4 -->
               <div class="col-md-4 profile-text">
                 <h3 id="secondUserName"></h3>
                 <h6>Beneficiario Innexu</h6>
-                <p id="pMunicipio">Eres un beneficiario para la gestion del riesgo del municipio de</p>
+                <p id="pMunicipio">Eres un beneficiario para la gestion del riesgo del municipio de </p>
+
                 <br>
                 <p><button class="mt-5 btn btn-theme"><i class="fa fa-thermometer-three-quarters"></i> Reportar un riesgo</button></p>
               </div>

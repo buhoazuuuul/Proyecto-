@@ -63,7 +63,11 @@ function filluserForm() {
 
         //Datos al principio del form
         $('#secondUserName').text(datos[0].nombre + ' ' + datos[0].apellido);
-        $("#pMunicipio").append("<strong>" + datos[0] + "</strong>");
+        $('#Nacimiento').text(datos[0].fecha);
+        $('#nomUser').text(datos[0].usuario);
+        $('#documento').text(datos[0].num_doc);
+        $("#pMunicipio").append("<strong>" + datos[0].residencia + "</strong>");
+
         //Datos del form
         $('#num_doc').val(datos[0].num_doc);
         $('#tipo_doc').val(datos[0].tipo_doc);
