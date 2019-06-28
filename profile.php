@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <title>Innexu-Usuario</title>
 
   <!-- Favicons -->
   <link href="libUsuarios/img/favicon.png" rel="icon">
@@ -245,13 +245,13 @@
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 id="userName" class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a class="" href="index.html">
+            <a class="" href="userProfile.php">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="Usuario/inbox.html">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
@@ -322,7 +322,7 @@
                     <a data-toggle="tab" href="#contact" class="contact-map">Contact</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#edit">Edit Profile</a>
+                    <a data-toggle="tab" href="#edit">Editar mi perfil</a>
                   </li>
                 </ul>
               </div>
@@ -503,83 +503,78 @@
                   <div id="edit" class="tab-pane">
                     <div class="row">
                       <div class="col-lg-8 col-lg-offset-2 detailed">
-                        <h4 class="mb">Personal Information</h4>
+                        <h4 class="mb">Información personal</h4>
                         <form role="form" class="form-horizontal">
                           <div class="form-group">
-                            <label class="col-lg-2 control-label"> Avatar</label>
+                            <label class="col-lg-2 control-label">Foto</label>
                             <div class="col-lg-6">
                               <input type="file" id="exampleInputFile" class="file-pos">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Company</label>
+                            <label class="col-lg-2 control-label">Numero de documento</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="c-name" class="form-control">
+                              <input type="text" placeholder=" " id="num_doc" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Lives In</label>
+                            <label class="col-lg-2 control-label">Tipo de documento</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="lives-in" class="form-control">
+                              <input type="text" placeholder=" " id="tipo_doc" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Country</label>
+                            <label class="col-lg-2 control-label">Nombre</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="country" class="form-control">
+                              <input type="text" placeholder=" " id="nombre" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Description</label>
-                            <div class="col-lg-10">
-                              <textarea rows="10" cols="30" class="form-control" id="" name=""></textarea>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                      <div class="col-lg-8 col-lg-offset-2 detailed mt">
-                        <h4 class="mb">Contact Information</h4>
-                        <form role="form" class="form-horizontal">
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Address 1</label>
+                            <label class="col-lg-2 control-label">Apellido</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="addr1" class="form-control">
+                              <input type="text" placeholder=" " id="apellido" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Address 2</label>
+                            <label class="col-lg-2 control-label">Telefono</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="addr2" class="form-control">
+                              <input type="text" placeholder=" " id="telefono" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Phone</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="phone" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Cell</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="cell" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Email</label>
+                            <label class="col-lg-2 control-label">Correo electronico</label>
                             <div class="col-lg-6">
                               <input type="text" placeholder=" " id="email" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Skype</label>
+                            <label class="col-lg-2 control-label">Lugar donde vive</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="skype" class="form-control">
+                              <input type="text" placeholder=" " id="residencia" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Fecha de nacimiento</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="fecha" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Usuario</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="usuario" class="form-control">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Contraseña</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="pass" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
-                              <button class="btn btn-theme" type="submit">Save</button>
-                              <button class="btn btn-theme04" type="button">Cancel</button>
+                              <button class="btn btn-theme" type="submit">Guardar</button>
+                              <button class="btn btn-theme04" type="button">Cancelar</button>
                             </div>
                           </div>
                         </form>
@@ -608,7 +603,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>Innexu</strong>. Todos los derechos reservados
         </p>
         <div class="credits">
           <!--
@@ -617,7 +612,7 @@
             Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
             Licensing information: https://templatemag.com/license/
           -->
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+          <a href="https://templatemag.com/"></a>
         </div>
         <a href="profile.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
