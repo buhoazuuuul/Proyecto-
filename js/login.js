@@ -1,6 +1,7 @@
 var usuario;
 var pass;
 var url;
+
 $(document).ready(function () {
 
     $('#btnLogin').on('click', function () {

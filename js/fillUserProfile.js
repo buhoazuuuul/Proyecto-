@@ -1,10 +1,13 @@
 var username = getParameterByName('userName');
 var datos;
+var url = 'profile.php?userName' + username;
 
 $(document).ready(function () {
 
-    console.log('Documento cargado');
+    console.log('Documento filluser cargado');
     fillUser();
+    $("#editarPerfil").attr("href", url);
+
 
 });
 
