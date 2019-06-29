@@ -20,13 +20,6 @@
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
-
-  <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
 </head>
 
 <body>
@@ -256,7 +249,7 @@
               <span>Formularios</span>
               </a>
             <ul class="sub">
-              <li><a href="RegistroSecre.html">Registrar un secretario</a></li>
+              <li><a href="RegistroSecre.php">Registrar un secretario</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -293,7 +286,7 @@
           <div class="col-lg-12">
             <div class="form-panel">
               <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="../php/secretarios.php">
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Numero de documento</label>
                     <div class="col-lg-10">
@@ -350,7 +343,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit">Guardar</button>
+                      <input type="submit" class="btn btn-theme" id="btnRegistrar" value="Guardar">
                       <button class="btn btn-theme04" type="button">Cancelar</button>
                     </div>
                   </div>
@@ -399,6 +392,13 @@
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
   <script src="lib/form-validation-script.js"></script>
+
+
+<!-- Archivo js para los usuarios -->
+<script src="../js/usuario.js" ></script>
+<script src="../js/login.js" ></script>
+<!-- Sweet alert plugin -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 </body>
 
