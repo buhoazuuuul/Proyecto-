@@ -58,7 +58,7 @@ function getParameterByName(name) {
 function filluserForm() {
 
     var dialog = bootbox.dialog({
-        title: 'A custom dialog with init',
+        title: 'Este es tu perfil de Innexu',
         message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando tu perfil...</p>'
     });
 

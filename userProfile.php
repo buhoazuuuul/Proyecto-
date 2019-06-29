@@ -10,8 +10,8 @@
   <title>Innexu-Usuario</title>
 
   <!-- Favicons -->
-  <link href="libUsuarios/img/favicon.png" rel="icon">
-  <link href="libUsuarios/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="" rel="icon">
+  <link href="" rel="apple-touch-icon">
   <!-- css Animated -->
   <link rel="stylesheet" href="lib/animate/animate.min.css">
   <!-- Bootstrap core CSS -->
@@ -500,7 +500,7 @@
                 <div class="content-panel pn">
                   <div id="profile-02">
                     <div class="user">
-                      <img src="img/friends/fr-06.jpg" class="img-circle" width="80">
+                      <img src="" class="img-circle" width="80">
                       <h4>DJ SHERMAN</h4>
                     </div>
                   </div>
