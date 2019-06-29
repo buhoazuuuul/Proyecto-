@@ -728,6 +728,9 @@
   <script src="lib/jquery.scrollTo.min.js"></script>
   <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
   <script src="lib/jquery.sparkline.js"></script>
+  <!-- bootbox code -->
+  <script src="lib/bootbox.js"></script>
+  <script src="lib/bootbox.locales.js"></script>
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <script type="text/javascript" src="lib/gritter/js/jquery.gritter.js"></script>

@@ -625,6 +625,7 @@
     </footer>
     <!--footer end-->
   </section>
+
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="libUsuarios/lib/jquery/jquery.min.js"></script>
   <script src="libUsuarios/lib/bootstrap/js/bootstrap.min.js"></script>
@@ -636,6 +637,9 @@
   <!--script for this page-->
   <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+  <!-- bootbox code -->
+  <script src="lib/bootbox.js"></script>
+  <script src="lib/bootbox.locales.js"></script>
   <script>
     $('.contact-map').click(function() {
 
@@ -660,9 +664,7 @@
   </script>
   <script src="js/logout.js"></script>
   <script src="js/fillUserProfile.js"></script>
-  <script src="lib/bootbox.min.js"></script>
-  <script src="lib/bootbox.locales.min.js"></script>
-  <!-- bootbox code -->
+
 </body>
 
 </html>

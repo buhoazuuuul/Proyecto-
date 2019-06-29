@@ -1,10 +1,7 @@
 var username = getParameterByName('userName');
 var datos;
 var url = 'profile.php?userName=' + username;
-var dialog = bootbox.dialog({
-    message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i>Cargando tu perfil...</p>',
-    closeButton: false
-});
+
 
 $(document).ready(function () {
 
@@ -60,8 +57,10 @@ function getParameterByName(name) {
 }
 function filluserForm() {
 
-
-    console.log('usando bootbox.js');
+    var dialog = bootbox.dialog({
+        title: 'A custom dialog with init',
+        message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando tu perfil...</p>'
+    });
 
     var btnEditarPerfil = $("#btnEditarPerfil").attr("class");
 
@@ -86,7 +85,11 @@ function filluserForm() {
         $('#usuario').val(datos[0].usuario);
         $('#pass').val("Encriptada");
 
-        dialog.modal('hide');
+        dialog.init(function () {
+            setTimeout(function () {
+                dialog.find('.bootbox-body').html('Estas listo para reportar un riesgo!');
+            }, 3000);
+        });
 
     }
 
@@ -103,7 +106,8 @@ function logout() {
             console.log('Saliendo..');
         },
         success: function (response) {
-            //console.log(response);
+
+            window.location = response;
 
         },
     });
