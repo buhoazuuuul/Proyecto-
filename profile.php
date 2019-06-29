@@ -660,6 +660,9 @@
   </script>
   <script src="js/logout.js"></script>
   <script src="js/fillUserProfile.js"></script>
+  <script src="lib/bootbox.min.js"></script>
+  <script src="lib/bootbox.locales.min.js"></script>
+  <!-- bootbox code -->
 </body>
 
 </html>

@@ -1,13 +1,16 @@
 var username = getParameterByName('userName');
 var datos;
 var url = 'profile.php?userName=' + username;
+var dialog = bootbox.dialog({
+    message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i>Cargando tu perfil...</p>',
+    closeButton: false
+});
 
 $(document).ready(function () {
 
-    console.log('Documento filluser cargado');
+    console.log('Documento filluserProfile cargado');
     fillUser();
     setHrefs();
-
 
 });
 
@@ -57,6 +60,9 @@ function getParameterByName(name) {
 }
 function filluserForm() {
 
+
+    console.log('usando bootbox.js');
+
     var btnEditarPerfil = $("#btnEditarPerfil").attr("class");
 
     if (btnEditarPerfil == "active") {
@@ -79,6 +85,8 @@ function filluserForm() {
         $('#fecha').val(datos[0].fecha);
         $('#usuario').val(datos[0].usuario);
         $('#pass').val("Encriptada");
+
+        dialog.modal('hide');
 
     }
 
