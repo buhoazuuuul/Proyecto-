@@ -577,7 +577,7 @@
                           </div>
                           <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
-                              <button class="btn btn-theme" type="submit">Guardar</button>
+                              <button id="btnUpdateUser" class="btn btn-theme" type="button">Guardar</button>
                               <button class="btn btn-theme04" type="button">Cancelar</button>
                             </div>
                           </div>
@@ -664,6 +664,8 @@
   </script>
   <script src="js/logout.js"></script>
   <script src="js/fillUserProfile.js"></script>
+  <script src="js/editProfile.js"></script>
+
 
 </body>
 

@@ -1,15 +1,16 @@
 var username = getParameterByName('userName');
 var datos;
 var url = 'profile.php?userName=' + username;
+var btnSaveProfileChanges =
 
 
-$(document).ready(function () {
+    $(document).ready(function () {
 
-    console.log('Documento filluserProfile cargado');
-    fillUser();
-    setHrefs();
+        console.log('Documento filluserProfile cargado');
+        fillUser();
+        setHrefs();
 
-});
+    });
 
 function setHrefs() {
 
