@@ -6,23 +6,24 @@ try {
     $db = $database->openConnection();
     $doc = intval($_POST['num_doc']);
     $tel = intval($_POST['telefono']);
-    $sql = "UPDATE `usuario` SET `num_doc` = :num_doc , `tipo_doc`=:tipo_doc, `nombre` = :nombre,`apellido`=:apellido,`telefono` =:telefono,`email`=:email, `residencia` = :residencia, `fecha`=:fecha,`usuario`=:usuario WHERE `num_doc` = :num_doc";
+    $sql = "UPDATE `usuario` SET `num_doc` = :num_doc , `tipo_doc`=:tipo_doc, `nombre` = :nombre,`apellido`=:apellido,`telefono` =:telefono,`email`=:email, `residencia` = :residencia, `fecha`=:fecha,`usuario`=:usuario WHERE `num_doc` = :last_doc";
     $sth = $db->prepare($sql);
-    $affectedrows  = $db->exec($sql);
-    if (isset($affectedrows)) {
-        echo "Record has been successfully updated";
+    $sth->bindParam(':num_doc', $doc);
+    $sth->bindParam(':tipo_doc', $_POST['tipo_doc']);
+    $sth->bindParam(':nombre', $_POST['nombre']);
+    $sth->bindParam(':apellido', $_POST['apellido']);
+    $sth->bindParam(':telefono', $tel);
+    $sth->bindParam(':email', $_POST['email']);
+    $sth->bindParam(':residencia', $_POST['residencia']);
+    $sth->bindParam(':fecha', $_POST['fecha']);
+    $sth->bindParam(':usuario', $_POST['usuario']);
+    $sth->bindParam(':last_doc', $_POST['last_doc']);
+    // $affectedrows  = $db->exec($sth);
+    // echo  $_POST['last_doc'];
+    if ($sth->execute()) {
+        echo "successfully";
     }
 } catch (PDOException $e) {
-    echo "There is some problem in connection: " . $e->getMessage();
+
+    echo "error" . $e->getMessage();
 }
-
-
-// Instancia de la clase DbPDO
-// $mipdo = new DbPDO();
-// $doc = intval($_POST['num_doc']);
-// $tel = intval($_POST['telefono']);
-
-// $updateUser = $mipdo->query("UPDATE `usuario` SET `num_doc` = :num_doc , `tipo_doc`=:tipo_doc, `nombre` = :nombre,`apellido`=:apellido,`telefono` =:telefono,`email=:email, `residencia` = :residencia, `fecha`=:fecha,`usuario`=:usuario WHERE `num_doc` = :num_doc");
-// $updateUser = $mipdo->query("UPDATE usuario SET apellido = 'Rosas' WHERE num_doc = 12345678");
-
-// echo $updateUser;

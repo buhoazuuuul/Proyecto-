@@ -1,16 +1,16 @@
 var username = getParameterByName('userName');
 var datos;
 var url = 'profile.php?userName=' + username;
-var btnSaveProfileChanges =
+var lastDoc;
 
 
-    $(document).ready(function () {
+$(document).ready(function () {
 
-        console.log('Documento filluserProfile cargado');
-        fillUser();
-        setHrefs();
+    console.log('Documento filluserProfile cargado');
+    fillUser();
+    setHrefs();
 
-    });
+});
 
 function setHrefs() {
 
@@ -43,7 +43,6 @@ function fillUser() {
 }
 function llenarPerfil() {
 
-    console.log('llenando perfil');
     $('#userName').text(datos[0].nombre + ' ' + datos[0].apellido);
     filluserForm();
 
@@ -66,7 +65,7 @@ function filluserForm() {
     var btnEditarPerfil = $("#btnEditarPerfil").attr("class");
 
     if (btnEditarPerfil == "active") {
-
+        lastDoc = datos[0].num_doc;
         //Datos al principio del form
         $('#secondUserName').text(datos[0].nombre + ' ' + datos[0].apellido);
         $('#Nacimiento').text(datos[0].fecha);

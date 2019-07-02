@@ -640,6 +640,7 @@
   <!-- bootbox code -->
   <script src="lib/bootbox.js"></script>
   <script src="lib/bootbox.locales.js"></script>
+  <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
   <script>
     $('.contact-map').click(function() {
 

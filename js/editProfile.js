@@ -40,7 +40,7 @@ function updateProfile() {
         url: "php/updateUser.php",
         method: "POST",
         data: {
-            num_doc: num_doc, tipo_doc: tipo_doc, nombre: nombre, apellido: apellido, telefono: telefono, email: email,
+            last_doc: lastDoc, num_doc: num_doc, tipo_doc: tipo_doc, nombre: nombre, apellido: apellido, telefono: telefono, email: email,
             residencia: residencia,
             fecha: fecha,
             usuario: usuario,
@@ -48,30 +48,28 @@ function updateProfile() {
         },
         success: function (data) {
             console.log(data);
+            if (data == "successfully") {
+                Swal.fire({
+                    position: 'center',
+                    type: 'success',
+                    title: 'Se he actualizado satisfactoriamente tu perfil',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                location.reload();
 
-            // if (data > 0) {
-            //     Swal.fire({
-            //         position: 'center',
-            //         type: 'success',
-            //         title: 'Se he registrado satisfactoriamente',
-            //         showConfirmButton: false,
-            //         timer: 1500
-            //     });
-            //     //window.location = "http://localhost/Proyecto-/index.php"
+            }
+            else {
 
-            // } else {
+                Swal.fire({
+                    position: 'center',
+                    type: 'error',
+                    title: 'Error al actualizar tu perfil',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
 
-            //     Swal.fire({
-            //         position: 'center',
-            //         type: 'error',
-            //         title: 'Error al registrarse',
-            //         showConfirmButton: false,
-            //         timer: 1500
-            //     });
-            //     //window.location = "http://localhost/Proyecto-/index.php"
-            //     // $('#modalNoRegistro').modal('show');
-
-            // }
+            }
 
 
         }
