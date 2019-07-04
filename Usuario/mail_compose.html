@@ -442,17 +442,12 @@
                     Envia tu reporte
                     <form action="#" class="pull-right mail-src-position">
                       <div class="input-append">
-                        <input type="text" class="form-control " placeholder="Search Mail">
+                        <input type="text" class="form-control " placeholder="Buscar correo">
                       </div>
                     </form>
                   </h4>
               </header>
               <div class="panel-body">
-                <div class="compose-btn pull-right">
-                  <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
-                  <button class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
-                  <button class="btn btn-sm">Eliminar</button>
-                </div>
                 <div class="compose-mail">
                   <form role="form-horizontal" method="post">
                     <div class="form-group">
@@ -473,11 +468,23 @@
                     </div>
                     <div class="form-group">
                       <label for="subject" class="">Asunto:</label>
-                      <input type="text" tabindex="1" id="subject" class="form-control">
+                      <input type="text" tabindex="1" id="asunto" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="subject" class="">Lugar:</label>
+                      <input type="text" tabindex="1" id="lugar" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="subject" class="">Fecha y hora:</label>
+                      <input type="datetime-local" tabindex="1" id="fecha_hora" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="subject" class="">Confidencialidad:</label>
+                      <input type="text" tabindex="1" id="confidencialidad" class="form-control">
                     </div>
                     <div class="compose-editor">
-                      <textarea class="wysihtml5 form-control" rows="9"></textarea>
-                      <input type="file" class="default">
+                      <textarea class="wysihtml5 form-control" id="texto" rows="9"></textarea>
+                      <input type="file" id="adjunto" class="default">
                     </div>
                     <div class="compose-btn">
                       <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
@@ -499,7 +506,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>Innexu</strong>. Todos los derechos reservados
         </p>
         <div class="credits">
           <!--
@@ -508,7 +515,7 @@
             Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
             Licensing information: https://templatemag.com/license/
           -->
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+          <a href="https://templatemag.com/"></a>
         </div>
         <a href="mail_compose.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
