@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-06-2019 a las 03:58:02
+-- Tiempo de generación: 04-07-2019 a las 05:55:30
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -34,8 +34,9 @@ CREATE TABLE `administrador` (
   `nombres` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `apellidos` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `telefono` bigint(10) NOT NULL,
+  `email` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `usuario` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
-  `contraseña` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
+  `pass` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -48,10 +49,11 @@ CREATE TABLE `mensaje` (
   `id_mensaje` bigint(10) NOT NULL,
   `categoria` varchar(75) COLLATE utf8_spanish2_ci NOT NULL,
   `lugar` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
+  `fecha_hora` datetime NOT NULL,
+  `prioridad` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
+  `confidencialidad` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `texto` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `foto` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `video` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `audio` varchar(45) COLLATE utf8_spanish2_ci NOT NULL
+  `adjunto` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -94,7 +96,7 @@ CREATE TABLE `secretario` (
   `telefono` bigint(10) NOT NULL,
   `email` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
   `usuario` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
-  `contraseña` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
+  `pass` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -121,13 +123,16 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`num_doc`, `tipo_doc`, `nombre`, `apellido`, `telefono`, `email`, `residencia`, `fecha`, `usuario`, `pass`) VALUES
-(1123455, 'Tarjeta de identidad', 'jose', 'Echeverri', 24423412, 'aoajsd@hotmial.com', 'Abejorral', '2000-01-01', 'jmep', '$2y$10$mJbEB57jhvaIKMundxLQq.R3/hsFv/UgE2ON9gamsVfgsv73jkwte'),
 (1234566, 'cedula', 'Maria', 'Florez', 3124456545, 'maria@gmail.com', 'Barrio Obrero', '2001-02-09', 'root', '123'),
 (1234567, 'Cedula de ciudadania', 'Jose Manuel', 'Echeverri', 233442234, 'palacio.90@hotmail.com', 'Abejorral', '2000-06-20', 'jemp', '$2y$10$wRNhNhpWXsayiasxiyUkyuRA/GMqaMiop5QX0fb8hH5DNUamIbv1m'),
-(12345678, 'Cedula de ciudadania', 'ghjkl', 'ghjkl', 45678, 'ghjk@gmail.com', 'rftgyuj', '0056-04-23', 'qwewertyujio', '$2y$10$Ko8YyBJ.9ffmu9DO0SfHXu11doEHqOWlSz4Rx2sidORkLDWlTLCZK'),
 (23456789, 'Tarjeta de identidad', 'Karyme ', 'Cardona Botero', 55555, 'aleja@hotmail.com', 'abejorro', '2000-06-20', 'kary', '$2y$10$HN6/RTMPVDgQo4zMCIVK5OfG.Y6owO1pYV8k5w2osWuEUzguBTLOW'),
-(120394566, 'Tarjeta de identidad', 'Aleja', 'Botero', 123456, 'palacio.90@hotmail.com', 'asdfghj', '2000-02-12', 'jhgg', '$2y$10$TaXyHSWfZUXZRwVF3CDXZ.ihr1OPnjhV9Q0iFqbE0qgf.uB8paIXe'),
-(123456789, 'Cedula de ciudadania', 'edfgthjk', 'rtyujio', 3456789, 'dfghj@gmail.com', 'dfghjkl', '0078-06-05', 'qwertyuio', '$2y$10$4djKTKFTnILnyjHA1fO4nuOcb3sIttsdEwWbuuw/zwjifA.17aSpe');
+(123456734, 'Cedula de ciudadania', 'Rosa', 'Botero', 33333333333, 'rosa@gmail.com', 'La Ceja', '0000-00-00', 'Rosa12', '$2y$10$UTLhBTpoEjzrITEzZteMOuYcrV6Zwo3lh8ooZYV6t6yhdHhOq.Inu'),
+(1001247029, 'Tarjeta de identidad', 'Tatiana', 'Duque Cortes', 2147483647, 'dtatiana310@gmail.com', 'Abejorral', '2003-08-30', 'Tatis2003', '$2y$10$KeCbiee8dSpmLQQ/iJ2KbOABwcxELQqli/uvRskGgxXa1uMiokDa6'),
+(1001446777, 'Cedula de ciudadania', 'Karyme', 'Cardona Botero', 2147483647, 'karymecardona@gmail.com', 'Abejorral', '1998-01-02', 'Mime', '$2y$10$6GliFqioo43UvE9rP9O5EOmVI2e6fV9dX5Ys9OdeEiQ4L.YFt9KGa'),
+(1001765567, 'Tarjeta de identidad', 'Mauricio', 'Grajales', 3123455432, 'mauro@gmail.com', 'Abejorral', '2003-08-07', 'Mauro', '$2y$10$MiUI7NCRL674a/I3HDvtt.Nc7A26Pb1gs7eQNyu.dhEigKFpN2H.m'),
+(1234567890, 'Cedula de ciudadania', 'Paola', 'Pavas', 123456789, 'paolap@gmail.com', 'abejorral', '0000-00-00', 'paola', '345'),
+(4444444444, 'Cedula de ciudadania', 'Antonio', 'Muñoz', 43434343, 'ant@gmail.com', 'La Ceja', '0009-07-05', 'antonio43', '$2y$10$BQcE0Pg1GiXU4Lg2xj2zlO6410iYr/7uYjcMBUW9vGth1vo7lDT8S'),
+(10012470290, 'Tarjeta de identidad', 'Tatiana', 'Duque ', 3128495810, 'dtatiana310@gmail.com', 'Abejorral', '2003-08-30', 'Tatisbi', '$2y$10$vhv794dJX36RD3obUFxuoOp.WpV/g.sFv8Vh5cS4LjShzv8WsI/ra');
 
 -- --------------------------------------------------------
 

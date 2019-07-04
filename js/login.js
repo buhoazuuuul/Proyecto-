@@ -8,7 +8,7 @@ $(document).ready(function () {
 
         usuario = $('#nomUsuario').val();
         pass = $('#passUsuario').val();
-        url = 'userProfile.php?userName=' + usuario;
+        url = 'profile.php?userName=' + usuario;
         submitForm();
 
     });
