@@ -286,7 +286,7 @@
           <div class="col-lg-12">
             <div class="form-panel">
               <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="../php/secretarios.php">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="../php/secretarios.php">
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Numero de documento</label>
                     <div class="col-lg-10">

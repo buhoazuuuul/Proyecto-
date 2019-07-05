@@ -19,6 +19,7 @@
   <link href="libUsuarios/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
   <link href="libUsuarios/css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
 
 
   <!-- =======================================================
@@ -244,9 +245,9 @@
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 id="userName" class="centered">Sam Soffes</h5>
-          <li class="mt">
-            <a class="" href="userProfile.php">
-              <i class="fa fa-dashboard"></i>
+          <li class="sub-menu">
+            <a id="btnEditarPerfil" class="active" href="javascript:;">
+              <i class="fa fa-cogs"></i>
               <span>Inicio</span>
             </a>
           </li>
@@ -255,12 +256,6 @@
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
-            </a>
-          </li>
-          <li class="sub-menu">
-            <a id="btnEditarPerfil" class="active" href="javascript:;">
-              <i class="fa fa-cogs"></i>
-              <span>Editar mi perfil</span>
             </a>
           </li>
         </ul>
@@ -667,7 +662,5 @@
   <script src="js/fillUserProfile.js"></script>
   <script src="js/editProfile.js"></script>
 
-
 </body>
-
 </html>

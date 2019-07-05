@@ -237,43 +237,16 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="box wow fadeInLeft">
-              <h3>Misión</h3>
-              <ul>
-                <li><i class="ion-android-checkmark-circle"></i> Quam adipiscing vitae proin</li>
-                <li><i class="ion-android-checkmark-circle"></i> Nec feugiat nisl pretium</li>
-                <li><i class="ion-android-checkmark-circle"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="ion-android-checkmark-circle"></i> Pharetra massa massa ultricies</li>
-                <li><i class="ion-android-checkmark-circle"></i> Massa ultricies mi quis hendrerit</li>
-              </ul>
-              <a href="#" class="get-started-btn">Get Started</a>
+            <img src="img/logo.png" class="d-block w-100" alt="...">
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="box featured wow fadeInUp">
-              <h3>Visión</h3>
-              <ul>
-                <li><i class="ion-android-checkmark-circle"></i> Quam adipiscing vitae proin</li>
-                <li><i class="ion-android-checkmark-circle"></i> Nec feugiat nisl pretium</li>
-                <li><i class="ion-android-checkmark-circle"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="ion-android-checkmark-circle"></i> Pharetra massa massa ultricies</li>
-                <li><i class="ion-android-checkmark-circle"></i> Massa ultricies mi quis hendrerit</li>
-              </ul>
-              <a href="#" class="get-started-btn">Get Started</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-8 col-md-6">
             <div class="box wow fadeInRight">
-              <h3>Objetivos</h3>
+              <h3>...</h3>
               <ul>
-                <li><i class="ion-android-checkmark-circle"></i> Quam adipiscing vitae proin</li>
-                <li><i class="ion-android-checkmark-circle"></i> Nec feugiat nisl pretium</li>
-                <li><i class="ion-android-checkmark-circle"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="ion-android-checkmark-circle"></i> Pharetra massa massa ultricies</li>
-                <li><i class="ion-android-checkmark-circle"></i> Massa ultricies mi quis hendrerit</li>
+                <li><i class="ion-android-checkmark-circle"></i>Innexu es un aplicativo web enfocado a la gestión de riesgo que está siendo desarrollado por un grupo de estudiantes de la Institución Educativa Fundación Celia Duque de Duque, con el principal objetivo de facilitar la comunicación entre las diferentes dependencias/secretarias de la alcaldía y las comunidades con el fin de prevenir y dar soluciones rápidas a situaciones que pongan en peligro a los habitantes de determinado territorio. Además, se quiere subir información para que la comunidad tenga fácil acceso a ella y pueda estar bien informada. </li>
               </ul>
-              <a href="#" class="get-started-btn">Get Started</a>
             </div>
           </div>
 
@@ -892,11 +865,11 @@
               <form action="" method="post" role="form" class="contactForm">
                 <div class="form-row">
                   <div class="form-group col-lg-6">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <input type="text" name="nameContacto" class="form-control" id="nameContacto" placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
-                    <input type="email" class="form-control" name="email" id="emailContacto" placeholder="Correo electronico" data-rule="email" data-msg="Please enter a valid email" />
+                    <input type="email" class="form-control" name="emailContacto" id="emailContacto" placeholder="Correo electronico" data-rule="email" data-msg="Please enter a valid email" />
                     <div class="validation"></div>
                   </div>
                 </div>
@@ -933,9 +906,10 @@
         </div>
         <div class="col-lg-6">
           <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-            <a href="#intro" class="scrollto">Home</a>
-            <a href="#about" class="scrollto">About</a>
-            <a href="#">Privacy Policy</a>
+            <a href="#intro" class="scrollto">Inicio</a>
+            <a href="#pricing">Sobre nosotros</a>
+            <a href="#features" class="scrollto">Aprende</a>
+            
             <a href="#">Terms of Use</a>
           </nav>
         </div>
