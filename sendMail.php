@@ -21,8 +21,8 @@
     <link href="libUsuarios/css/style.css" rel="stylesheet">
     <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
     <!-- Pickdate js styles -->
-    <link href="libUsuarios\lib\pickadate\default.date.css" rel="stylesheet">
-    <link href="libUsuarios\lib\pickadate\default.time.css" rel="stylesheet">
+    <link href="libUsuarios/lib/air-datepicker/datepicker.min.css" rel="stylesheet">
+
     <!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
@@ -252,73 +252,6 @@
                             <span>Inicio</span>
                         </a>
                     </li>
-                    <!--<li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-desktop"></i>
-              <span>UI Elements</span>
-              </a>
-            <ul class="sub">
-              <li><a href="general.html">General</a></li>
-              <li><a href="buttons.html">Buttons</a></li>
-              <li><a href="panels.html">Panels</a></li>
-              <li><a href="font_awesome.html">Font Awesome</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-cogs"></i>
-              <span>Components</span>
-              </a>
-            <ul class="sub">
-              <li><a href="grids.html">Grids</a></li>
-              <li><a href="calendar.html">Calendar</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="todo_list.html">Todo List</a></li>
-              <li><a href="dropzone.html">Dropzone File Upload</a></li>
-              <li><a href="inline_editor.html">Inline Editor</a></li>
-              <li><a href="file_upload.html">Multiple File Upload</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-book"></i>
-              <span>Extra Pages</span>
-              </a>
-            <ul class="sub">
-              <li><a href="blank.html">Blank Page</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="lock_screen.html">Lock Screen</a></li>
-              <li><a href="profile.html">Profile</a></li>
-              <li><a href="invoice.html">Invoice</a></li>
-              <li><a href="pricing_table.html">Pricing Table</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="404.html">404 Error</a></li>
-              <li><a href="500.html">500 Error</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-tasks"></i>
-              <span>Forms</span>
-              </a>
-            <ul class="sub">
-              <li><a href="form_component.html">Form Components</a></li>
-              <li><a href="advanced_form_components.html">Advanced Components</a></li>
-              <li><a href="form_validation.html">Form Validation</a></li>
-              <li><a href="contactform.html">Contact Form</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-th"></i>
-              <span>Data Tables</span>
-              </a>
-            <ul class="sub">
-              <li><a href="basic_table.html">Basic Table</a></li>
-              <li><a href="responsive_table.html">Responsive Table</a></li>
-              <li><a href="advanced_table.html">Advanced Table</a></li>
-            </ul>
-          </li>-->
                     <li>
                         <a class="active" href="inbox.html">
                             <i class="fa fa-envelope"></i>
@@ -326,36 +259,6 @@
                             <span class="label label-theme pull-right mail-info">3</span>
                         </a>
                     </li>
-                    <!--<li class="sub-menu">
-            <a href="javascript:;">
-              <i class=" fa fa-bar-chart-o"></i>
-              <span>Charts</span>
-              </a>
-            <ul class="sub">
-              <li><a href="morris.html">Morris</a></li>
-              <li><a href="chartjs.html">Chartjs</a></li>
-              <li><a href="flot_chart.html">Flot Charts</a></li>
-              <li><a href="xchart.html">xChart</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-comments-o"></i>
-              <span>Chat Room</span>
-              </a>
-            <ul class="sub">
-              <li><a href="lobby.html">Lobby</a></li>
-              <li><a href="chat_room.html"> Chat Room</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="google_maps.html">
-              <i class="fa fa-map-marker"></i>
-              <span>Google Maps </span>
-              </a>
-          </li>
-        </ul>-->
-                    <!-- sidebar menu end-->
             </div>
         </aside>
         <!--sidebar end-->
@@ -447,8 +350,9 @@
                                 <div class="compose-mail">
                                     <form role="form-horizontal" method="post">
                                         <div class="form-group">
-                                            <label for="to" class="">Para:</label>
-                                            <input type="text" tabindex="1" id="categoria" class="form-control">
+                                            <label style="margin-bottom : 10px;" for="to" class="">Para:</label>
+                                            <select style="display:block;" class="form-control" id="secetrariosSelect">
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Asunto:</label>
@@ -459,12 +363,8 @@
                                             <input type="text" tabindex="1" id="lugar" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label for="subject" class="">Fecha:</label>
-                                            <input class="form-control" type="text" id="date" value="10/24/1984" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="subject" class="">Hora:</label>
-                                            <input class="form-control" type="text" name="time" value="" />
+                                            <label for="subject" class="">Fecha y hora:</label>
+                                            <input class="form-control" type="text" id='timepicker-actions-exmpl' />
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Confidencialidad:</label>
@@ -528,27 +428,10 @@
     <script src="lib/bootbox.locales.js"></script>
     <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
     <!-- Datatime Pikcer js -->
-    <script type="text/javascript" src="libUsuarios\lib\pickadate\picker.js"></script>
-    <script type="text/javascript" src="libUsuarios\lib\pickadate\picker.date.js"></script>
-    <script type="text/javascript" src="libUsuarios\lib\pickadate\picker.time.js"></script>
-    <script type="text/javascript" src="libUsuarios\lib\pickadate\translations\es_ES.js"></script>
-    <!-- <script type="text/javascript" src="libUsuarios\lib\pickadate\legacy.js"></script> -->
-    <script>
-        // $(document).ready(function() {
-
-        //     $("input").click(function() {
-
-        //         var picker = $("#date").pickadate();
-
-        //     });
-
-        //     $("#time").on('click', function() {
-        //         picker.close()
-
-        //     })
-        // });
-    </script>
-
+    <script type="text/javascript" src="libUsuarios/lib/air-datepicker/datepicker.min.js"></script>
+    <script src="js/airDateTime.js"></script>
+    <script src="libUsuarios/lib/air-datepicker/i18n/datepicker.es.js"></script>
+    <script src="js/sendUserMessage.js"></script>
 </body>
 
 </html>
