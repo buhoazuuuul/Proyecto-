@@ -339,7 +339,7 @@
                             <header class="panel-heading wht-bg">
                                 <h4 class="gen-case">
                                     Envia tu reporte
-                                    <form action="#" class="pull-right mail-src-position">
+                                    <form class="pull-right mail-src-position">
                                         <div class="input-append">
                                             <input type="text" class="form-control " placeholder="Buscar correo">
                                         </div>
@@ -348,7 +348,7 @@
                             </header>
                             <div class="panel-body">
                                 <div class="compose-mail">
-                                    <form role="form-horizontal" method="post">
+                                    <form role="form-horizontal">
                                         <div class="form-group">
                                             <label style="margin-bottom : 10px;" for="to" class="">Para:</label>
                                             <select style="display:block;" class="form-control" id="secetrariosSelect">
@@ -368,16 +368,20 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Confidencialidad:</label>
-                                            <input type="text" tabindex="1" id="confidencialidad" class="form-control">
+                                            <select class="form-control" id="confidencialidad">
+                                                <option value="1">Poco Confidencial</option>
+                                                <option value="2">Medianamente Confidencial</option>
+                                                <option value="2">Muy Confidencial</option>
+                                            </select>
                                         </div>
                                         <div class="compose-editor">
+                                            <label for="subject" class="">Mensaje:</label>
                                             <textarea class="wysihtml5 form-control" id="texto" rows="9"></textarea>
                                             <input type="file" id="adjunto" class="default">
                                         </div>
                                         <div class="compose-btn">
-                                            <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
-                                            <button class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
-                                            <button class="btn btn-sm">Eliminar</button>
+                                            <button id="btnEnviarMsm" type="button" class="btn btn-theme btn-sm" href=""><i class="fa fa-check"></i>Enviar</button>
+                                            <button type="button" class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
                                         </div>
                                     </form>
                                 </div>

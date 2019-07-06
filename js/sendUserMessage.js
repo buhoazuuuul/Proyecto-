@@ -1,4 +1,9 @@
 var datos;
+var asunto;
+var lugar;
+var fechaHora;
+var confidencialidad;
+var mensaje;
 
 $(document).ready(function () {
 
@@ -6,6 +11,16 @@ $(document).ready(function () {
     getSecretarios();
 
 });
+
+function getMailFields() {
+
+    asunto = $('#asunto').val();
+    lugar = $('#lugar').val();
+    fechaHora = $('#timepicker-actions-exmpl').val();
+    confidencialidad = $('#confidencialidad').val();
+    mensaje = $('#mensaje').val();
+
+}
 
 function getSecretarios() {
 
@@ -18,7 +33,6 @@ function getSecretarios() {
         },
         success: function (response) {
             datos = JSON.parse(response);
-
             $.each(datos, function (i, item) {
                 $('#secetrariosSelect').append($('<option>', {
                     value: item.num_doc,
