@@ -374,6 +374,14 @@
                                                 <option value="2">Muy Confidencial</option>
                                             </select>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="subject" class="">Prioridad:</label>
+                                            <select class="form-control" id="prioridad">
+                                                <option value="1">Muy prioritario</option>
+                                                <option value="2">Medianamente prioritario</option>
+                                                <option value="2">Muy prioritario</option>
+                                            </select>
+                                        </div>
                                         <div class="compose-editor">
                                             <label for="subject" class="">Mensaje:</label>
                                             <textarea class="wysihtml5 form-control" id="texto" rows="9"></textarea>
