@@ -55,12 +55,11 @@ function sendUserMessage() {
     $.ajax({
         url: "php/sendMail.php",
         method: "POST",
-        data: {
-            num_doc: num_doc, tipo_doc: tipo_doc, nombre: nombre, apellido: apellido, telefono: telefono, email: email,
-            residencia: residencia,
-            fecha: fecha,
-            usuario: usuario,
-            pass: pass
+        data: {id_mensaje: id_mensaje, categoria: categoria, asunto: asunto , lugar: lugar, fecha_hora: fecha_hora,
+            prioridad: prioridad,
+            confidencialidad: confidencialidad,
+            texto: texto,
+            adjunto: adjunto
         },
         success: function (data) {
             console.log(data);
