@@ -1,17 +1,18 @@
 var arraySecretarios;
 var asunto;
 var lugar;
-var fechaHora;
+var fecha_hora;
 var confidencialidad;
 var mensaje;
 var categoria;
 var prioridad;
-var adjunto;
+var adjunto = '/Admin/img/404.png';
 
 $(document).ready(function () {
 
     console.log('Documento sendUserMessage.js cargado');
     getSecretarios();
+    setButtonsFunctions();
 
 });
 
@@ -19,7 +20,7 @@ function getMailFields() {
 
     asunto = $('#asunto').val();
     lugar = $('#lugar').val();
-    fechaHora = $('#timepicker-actions-exmpl').val();
+    fecha_hora = $('#timepicker-actions-exmpl').val();
     confidencialidad = $('#confidencialidad').val();
     mensaje = $('#mensaje').val();
     categoria = "";
@@ -41,7 +42,7 @@ function getSecretarios() {
             $.each(arraySecretarios, function (i, item) {
                 $('#secetrariosSelect').append($('<option>', {
                     value: item.num_doc,
-                    text: item.nombre + ' ' + item.apellido + '' + 'De la dependencia de ' + item.dependencia
+                    text: item.nombre + ' ' + item.apellido + '' + ' De la dependencia de ' + item.dependencia
                 }));
             });
 
@@ -53,12 +54,13 @@ function getSecretarios() {
 function sendUserMessage() {
 
     $.ajax({
-        url: "php/sendMail.php",
+        url: 'php/createMenssage.php',
         method: "POST",
-        data: {id_mensaje: id_mensaje, categoria: categoria, asunto: asunto , lugar: lugar, fecha_hora: fecha_hora,
+        data: {
+            categoria: categoria, asunto: asunto, lugar: lugar, fecha_hora: fecha_hora,
             prioridad: prioridad,
             confidencialidad: confidencialidad,
-            texto: texto,
+            mensaje: mensaje,
             adjunto: adjunto
         },
         success: function (data) {
@@ -68,23 +70,21 @@ function sendUserMessage() {
                 Swal.fire({
                     position: 'center',
                     type: 'success',
-                    title: 'Se he registrado satisfactoriamente',
+                    title: 'Se he enviado satisfactoriamente',
                     showConfirmButton: false,
                     timer: 1500
                 });
-                //window.location = "http://localhost/Proyecto-/index.php"
+
 
             } else {
 
                 Swal.fire({
                     position: 'center',
                     type: 'error',
-                    title: 'Error al registrarse',
+                    title: 'Error al enviar el mensaje',
                     showConfirmButton: false,
                     timer: 1500
                 });
-                //window.location = "http://localhost/Proyecto-/index.php"
-                // $('#modalNoRegistro').modal('show');
 
             }
 
@@ -92,4 +92,16 @@ function sendUserMessage() {
         }
 
     });
+}
+
+function setButtonsFunctions() {
+
+    // Eventos del click
+    $('#btnEnviarMsm').on('click', function () {
+        getMailFields();
+        sendUserMessage();
+    });
+
+    // Propiedades href
+
 }

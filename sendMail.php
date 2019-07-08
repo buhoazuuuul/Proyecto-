@@ -384,11 +384,11 @@
                                         </div>
                                         <div class="compose-editor">
                                             <label for="subject" class="">Mensaje:</label>
-                                            <textarea class="wysihtml5 form-control" id="texto" rows="9"></textarea>
+                                            <textarea class="wysihtml5 form-control" id="mensaje" rows="9"></textarea>
                                             <input type="file" id="adjunto" class="default">
                                         </div>
                                         <div class="compose-btn">
-                                            <button id="btnEnviarMsm" type="button" class="btn btn-theme btn-sm" href=""><i class="fa fa-check"></i>Enviar</button>
+                                            <button type="button" class="btn btn-theme btn-sm" id="btnEnviarMsm"><i class="fa fa-check"></i>Enviar</button>
                                             <button type="button" class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
                                         </div>
                                     </form>
@@ -443,6 +443,7 @@
     <script type="text/javascript" src="libUsuarios/lib/air-datepicker/datepicker.min.js"></script>
     <script src="js/airDateTime.js"></script>
     <script src="libUsuarios/lib/air-datepicker/i18n/datepicker.es.js"></script>
+    <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
     <script src="js/sendUserMessage.js"></script>
 </body>
 

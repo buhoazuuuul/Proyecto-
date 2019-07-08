@@ -14,11 +14,8 @@ $(document).ready(function () {
     console.log('Documento usuario.js cargado');
 
     $('#btnRegistrarse').on('click', function () {
-
         guardarDatosRegistro();
         InsertarDatosBD();
-
-
     });
 });
 
