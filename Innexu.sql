@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2019 a las 19:46:37
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.2
+-- Tiempo de generación: 08-07-2019 a las 21:13:33
+-- Versión del servidor: 10.3.15-MariaDB
+-- Versión de PHP: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,10 +34,8 @@ CREATE TABLE `administrador` (
   `nombres` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `apellidos` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `telefono` bigint(10) NOT NULL,
-  `email` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `usuario` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
-  `pass` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `foto` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
+  `contraseña` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -49,14 +47,32 @@ CREATE TABLE `administrador` (
 CREATE TABLE `mensaje` (
   `id_mensaje` bigint(10) NOT NULL,
   `categoria` varchar(75) COLLATE utf8_spanish2_ci NOT NULL,
-  `asunto` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `asunto` varchar(60) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `lugar` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `fecha_hora` datetime NOT NULL,
-  `prioridad` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
-  `confidencialidad` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
+  `fecha_hora` datetime DEFAULT NULL,
+  `prioridad` smallint(6) DEFAULT NULL,
+  `confidencialidad` smallint(6) DEFAULT NULL,
   `texto` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `adjunto` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
+  `adjunto` varchar(20) COLLATE utf8_spanish2_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `mensaje`
+--
+
+INSERT INTO `mensaje` (`id_mensaje`, `categoria`, `asunto`, `lugar`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`, `adjunto`) VALUES
+(1, '1', 'Nada', 'abejorral', '2013-11-24 17:15:10', 1, 1, '0', ''),
+(2, '1', 'Nada', 'abejorral', '2013-11-24 17:15:10', 1, 1, '0', ''),
+(3, '1', 'Nada', 'Abejorral', '2013-11-24 17:15:10', 1, 1, '', ''),
+(4, '1', 'Nada', 'Abejorral', '2013-11-24 17:15:10', 1, 1, '', ''),
+(5, '1', 'Nada', 'Abejorral', '2013-11-24 17:15:10', 1, 1, '', ''),
+(6, '1', 'No se', 'Abejorral', '2013-11-24 17:15:10', 1, 1, '', ''),
+(7, '1', 'No se', 'Abejorral', '2013-11-24 17:15:10', 1, 1, '', ''),
+(8, '1', 'No se', 'Abejorral', '2013-11-24 17:15:10', 1, 1, '', ''),
+(9, '', 'Epa pea', 'aaaaaa', '2019-07-08 19:07:31', 1, 1, '', '/Admin/img/404.png'),
+(10, '', 'Borrasca', 'La esperanza', '2019-07-08 19:07:58', 2, 2, 'Ayuda!!', '/Admin/img/404.png'),
+(11, '', 'aa', 'aaa', '2019-07-08 19:09:12', 1, 1, 'aaa', 'Admin/img/404.png'),
+(12, '', 'Probando', 'Abejorral', '2019-07-08 20:14:18', 2, 2, 'Eso!!', 'Admin/img/404.png');
 
 -- --------------------------------------------------------
 
@@ -98,9 +114,16 @@ CREATE TABLE `secretario` (
   `telefono` bigint(10) NOT NULL,
   `email` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
   `usuario` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
-  `pass` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `foto` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
+  `contraseña` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `secretario`
+--
+
+INSERT INTO `secretario` (`num_doc`, `tipo_doc`, `nombre`, `apellido`, `dependencia`, `telefono`, `email`, `usuario`, `contraseña`) VALUES
+(10233695, 'Cedula', 'Juan Pablo', 'Cuadros', 'Salud Abejorral', 31224632, 'cuadros@abejorral.gov', 'juancuadros', '123456'),
+(1022036395, 'Cedula', 'Juan Jose', 'Eceheverri', 'Catastro Abejorral', 55555, 'juanpala@abejorral.gov', 'juanpala', '123456');
 
 -- --------------------------------------------------------
 
@@ -118,25 +141,24 @@ CREATE TABLE `usuario` (
   `residencia` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
   `fecha` date NOT NULL,
   `usuario` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `pass` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `foto` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
+  `pass` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`num_doc`, `tipo_doc`, `nombre`, `apellido`, `telefono`, `email`, `residencia`, `fecha`, `usuario`, `pass`, `foto`) VALUES
-(1234566, 'cedula', 'Maria', 'Florez', 3124456545, 'maria@gmail.com', 'Barrio Obrero', '2001-02-09', 'root', '123', ''),
-(1234567, 'Cedula de ciudadania', 'Jose Manuel', 'Echeverri', 233442234, 'palacio.90@hotmail.com', 'Abejorral', '2000-06-20', 'jemp', '$2y$10$wRNhNhpWXsayiasxiyUkyuRA/GMqaMiop5QX0fb8hH5DNUamIbv1m', ''),
-(23456789, 'Tarjeta de identidad', 'Karyme ', 'Cardona Botero', 55555, 'aleja@hotmail.com', 'abejorro', '2000-06-20', 'kary', '$2y$10$HN6/RTMPVDgQo4zMCIVK5OfG.Y6owO1pYV8k5w2osWuEUzguBTLOW', ''),
-(123456734, 'Cedula de ciudadania', 'Rosa', 'Botero', 33333333333, 'rosa@gmail.com', 'La Ceja', '0000-00-00', 'Rosa12', '$2y$10$UTLhBTpoEjzrITEzZteMOuYcrV6Zwo3lh8ooZYV6t6yhdHhOq.Inu', ''),
-(1001247029, 'Tarjeta de identidad', 'Tatiana', 'Duque Cortes', 2147483647, 'dtatiana310@gmail.com', 'Abejorral', '2003-08-30', 'Tatis2003', '$2y$10$KeCbiee8dSpmLQQ/iJ2KbOABwcxELQqli/uvRskGgxXa1uMiokDa6', ''),
-(1001446777, 'Cedula de ciudadania', 'Karyme', 'Cardona Botero', 2147483647, 'karymecardona@gmail.com', 'Abejorral', '1998-01-02', 'Mime', '$2y$10$6GliFqioo43UvE9rP9O5EOmVI2e6fV9dX5Ys9OdeEiQ4L.YFt9KGa', ''),
-(1001765567, 'Tarjeta de identidad', 'Mauricio', 'Grajales', 3123455432, 'mauro@gmail.com', 'Abejorral', '2003-08-07', 'Mauro', '$2y$10$MiUI7NCRL674a/I3HDvtt.Nc7A26Pb1gs7eQNyu.dhEigKFpN2H.m', ''),
-(1234567890, 'Cedula de ciudadania', 'Paola', 'Pavas', 123456789, 'paolap@gmail.com', 'abejorral', '0000-00-00', 'paola', '345', ''),
-(4444444444, 'Cedula de ciudadania', 'Antonio', 'Muñoz', 43434343, 'ant@gmail.com', 'La Ceja', '0009-07-05', 'antonio43', '$2y$10$BQcE0Pg1GiXU4Lg2xj2zlO6410iYr/7uYjcMBUW9vGth1vo7lDT8S', ''),
-(10012470290, 'Tarjeta de identidad', 'Tatiana', 'Duque ', 3128495810, 'dtatiana310@gmail.com', 'Abejorral', '2003-08-30', 'Tatisbi', '$2y$10$vhv794dJX36RD3obUFxuoOp.WpV/g.sFv8Vh5cS4LjShzv8WsI/ra', '');
+INSERT INTO `usuario` (`num_doc`, `tipo_doc`, `nombre`, `apellido`, `telefono`, `email`, `residencia`, `fecha`, `usuario`, `pass`) VALUES
+(123456, 'Tarjeta de identidad', 'Jose', 'Palacio', 312546, 'palacio@hotmal.com', 'asdfghj', '2019-06-11', 'fddsaa', '$2y$10$drriO2NVhLBUAuDeguUO9.29MGIHVZBHhmZ8N6s/YQid19qgEDdsC'),
+(234244, 'Cedula de ciudadania', 'Jose', 'Palacio', 312546, 'palacio@hotmal.com', 'asdfghj', '2019-06-11', '7263443', '$2y$10$JMQToeS.RSz/fOYZSrZWcu1CElOfNtDFSTJDeK4yGOMiXNoAb/1P2'),
+(466666, 'Tarjeta de identidad', 'Jose ', 'Palacio', 132364, 'jose@hotmail.com', 'Abejorral', '1998-06-26', 'jose', '$2y$10$8FLhk9vCG2HDueT1iyyti.7hmZBcudzlzlTi07XR7FBuB3m/ADo3C'),
+(12014662, 'Cedula de ciudadania', 'Juan ', 'Echeverri', 31245875, 'juan@ht.com', 'Abejorral', '2019-06-07', 'jddmm', '$2y$10$4st80toSUGhvBVLkMpv/D.M/AA6oX3vAdPFIQKgx0T5B47pLZ1/gq'),
+(23456789, 'Tarjeta de identidad', 'Karyme ', 'Cardona Botero', 55555, 'aleja@hotmail.com', 'abejorro', '2000-06-20', 'kary', '$2y$10$HN6/RTMPVDgQo4zMCIVK5OfG.Y6owO1pYV8k5w2osWuEUzguBTLOW'),
+(120123445, 'Cedula de ciudadania', 'Juan', 'Cuadros', 32146925, 'juanpala@hotmail.com', 'Abejorral', '2019-07-16', 'juan90@hotmail.com', '$2y$10$XoQrK3XZ2IYD2Ik54NoneeXCN1JrDX2pcEYqVbRZEv9HyrygM0oz2'),
+(345678899, 'Tarjeta de identidad', 'Pablo', 'Palacio', 312546, 'palacio@hotmal.com', 'asdfghj', '2019-06-11', 'weer', '$2y$10$07ERFrqJIc7OfEVC1TjlZenvkyi3uJ1E11NdZGieGC2hI/SFuOObe'),
+(1001446794, 'Tarjeta de identidad', 'Alejandra', 'Cardona Botero', 55555, 'aleja@hotmail.com', 'Abejorral', '2003-01-02', 'alejacardona', '$2y$10$2RvTSdNwwBSiTJWh8OIX3eqBgqCEZxNjcCE8aAO8HForG7RveySo.'),
+(1022036398, 'Cedula de ciudadania', 'Predo', 'Perez', 25465444, 'pedro@gmail.com', 'Abejorrall', '2019-06-11', 'pedro', '$2y$10$f7xaRW1iZafLBuD.xx39lee1cXs.CsFHe/W/cCp.sKIvGlsw3jODK'),
+(102203631254, 'Cedula de ciudadania', 'Jose Manuel', 'Echeverri', 3225443771, 'pls@hotmail.co', 'Abejorral', '1998-06-25', 'palacio.90@hotmail.com', '$2y$10$BPeA/fsqKVHfIiNzjbc6ae2uD8OeY2PRW97O./41q7WDpPH9mShEO');
 
 -- --------------------------------------------------------
 
@@ -212,7 +234,7 @@ ALTER TABLE `usuario_mens`
 -- AUTO_INCREMENT de la tabla `mensaje`
 --
 ALTER TABLE `mensaje`
-  MODIFY `id_mensaje` bigint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mensaje` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `mensaje_cat`
