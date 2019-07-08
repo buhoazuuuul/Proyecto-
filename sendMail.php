@@ -231,7 +231,7 @@
             </div>
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../index.php">Cerrar sesión</a></li>
+                    <li><i style="font-size: 18px;" id="btnLogout" class="logout fa fa-sign-out"></i></li>
                 </ul>
             </div>
         </header>
@@ -245,7 +245,7 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-                    <h5 class="centered">Sam Soffes</h5>
+                    <h5 id="userName" class="centered">Sam Soffes</h5>
                     <li class="mt">
                         <a href="index.html">
                             <i class="fa fa-dashboard"></i>
@@ -253,7 +253,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="active" href="inbox.html">
+                        <a id="btnCorreo" class="active">
                             <i class="fa fa-envelope"></i>
                             <span>Correo </span>
                             <span class="label label-theme pull-right mail-info">3</span>
@@ -445,6 +445,7 @@
     <script src="libUsuarios/lib/air-datepicker/i18n/datepicker.es.js"></script>
     <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
     <script src="js/sendUserMessage.js"></script>
+    <script src="js/fillUserProfile.js"></script>
 </body>
 
 </html>

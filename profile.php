@@ -252,8 +252,8 @@
             </a>
           </li>
           <li>
-            <a href="sendMail.php">
-              <i class="fa fa-envelope"></i>
+            <a id="btnCorreo">
+              <i class=" fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
             </a>
@@ -317,7 +317,7 @@
                     <a data-toggle="tab" href="#contact" class="contact-map">Contact</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#edit">Editar mi perfil</a>
+                    <a id="btnEditarPerfil" data-toggle="tab" href="#edit">Editar mi perfil</a>
                   </li>
                 </ul>
               </div>

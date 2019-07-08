@@ -6,7 +6,7 @@ var confidencialidad;
 var mensaje;
 var categoria;
 var prioridad;
-var adjunto = '/Admin/img/404.png';
+var adjunto = 'Admin/img/404.png';
 
 $(document).ready(function () {
 
@@ -64,9 +64,8 @@ function sendUserMessage() {
             adjunto: adjunto
         },
         success: function (data) {
-            console.log(data);
 
-            if (data > 0) {
+            if (data == 'successfully') {
                 Swal.fire({
                     position: 'center',
                     type: 'success',

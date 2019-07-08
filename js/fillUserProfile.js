@@ -1,13 +1,15 @@
 var username = getParameterByName('userName');
 var datos;
-var url = 'profile.php?userName=' + username;
 var lastDoc;
+var url = 'profile.php?userName=' + username;
+var urlCorreo = 'sendMail.php?userName=' + username;
+
 
 
 $(document).ready(function () {
 
     console.log('Documento filluserProfile cargado');
-    fillUser();
+    getUser();
     setHrefs();
 
 });
@@ -16,13 +18,14 @@ function setHrefs() {
 
     document.getElementById("btnLogout").style.cursor = "pointer";
     $("#btnEditarPerfil").attr("href", url);
+    $("#btnCorreo").attr("href", urlCorreo);
     $("#btnLogout").hover(function () {
         $(this).fadeOut(100);
         $(this).fadeIn(500);
     });
 
 }
-function fillUser() {
+function getUser() {
 
     var dataString = 'userName=' + username;
 
@@ -34,18 +37,20 @@ function fillUser() {
             console.log('Enviando..');
         },
         success: function (response) {
-            //console.log(response);
             datos = JSON.parse(response);
-            llenarPerfil();
+            setUserName(datos);
         },
     });
 
 }
-function llenarPerfil() {
+function setUserName(array) {
 
-    $('#userName').text(datos[0].nombre + ' ' + datos[0].apellido);
-    filluserForm();
+    $('#userName').text(array[0].nombre + ' ' + array[0].apellido);
+    if ($('#btnEditarPerfil').attr('class') == 'active') {
 
+        filluserForm();
+
+    }
 
 
 }

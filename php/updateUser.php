@@ -18,8 +18,7 @@ try {
     $sth->bindParam(':fecha', $_POST['fecha']);
     $sth->bindParam(':usuario', $_POST['usuario']);
     $sth->bindParam(':last_doc', $_POST['last_doc']);
-    // $affectedrows  = $db->exec($sth);
-    // echo  $_POST['last_doc'];
+
     if ($sth->execute()) {
         echo "successfully";
     }
