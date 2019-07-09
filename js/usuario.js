@@ -38,7 +38,7 @@ function guardarDatosRegistro() {
 function InsertarDatosBD() {
 
     $.ajax({
-        url: "php/usuarios.php",
+        url: "php/createUser.php",
         method: "POST",
         data: {
             num_doc: num_doc, tipo_doc: tipo_doc, nombre: nombre, apellido: apellido, telefono: telefono, email: email,
@@ -50,27 +50,24 @@ function InsertarDatosBD() {
         success: function (data) {
             console.log(data);
 
-            if (data > 0) {
+            if (data == "successfully") {
                 Swal.fire({
                     position: 'center',
                     type: 'success',
-                    title: 'Se he registrado satisfactoriamente',
+                    title: 'Se he registrado satisfactoriamente, vaya al inicio de sesion',
                     showConfirmButton: false,
                     timer: 1500
                 });
-                //window.location = "http://localhost/Proyecto-/index.php"
 
             } else {
 
                 Swal.fire({
                     position: 'center',
                     type: 'error',
-                    title: 'Error al registrarse',
+                    title: 'Error al registrarse, revise su documento de identidad',
                     showConfirmButton: false,
                     timer: 1500
                 });
-                //window.location = "http://localhost/Proyecto-/index.php"
-                // $('#modalNoRegistro').modal('show');
 
             }
 
