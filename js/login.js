@@ -4,6 +4,7 @@ var url;
 
 $(document).ready(function () {
 
+    getSecretarios();
     $('#btnLogin').on('click', function () {
 
         usuario = $('#nomUsuario').val();
@@ -13,6 +14,7 @@ $(document).ready(function () {
 
     });
     console.log('Documento login.js cargado');
+
 });
 
 function submitForm() {
@@ -47,7 +49,6 @@ function submitForm() {
 
             } else {
 
-                console.log(response);
 
                 Swal.fire({
                     position: 'center',
@@ -59,5 +60,23 @@ function submitForm() {
             }
         },
     });
+
+}
+
+function getSecretarios() {
+
+    $.ajax({
+        url: 'php/getSecretarios.php',
+        type: 'GET',
+        data: "",
+        beforeSend: function () {
+            console.log('Enviando...');
+        },
+        success: function (response) {
+            console.log(response);
+        },
+    });
+
+
 
 }

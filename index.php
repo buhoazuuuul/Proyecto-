@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Innexu(En conexión)</title>
@@ -50,7 +51,7 @@
 
           <li><a href="#team">Secretarios</a></li>
           <li><a href="#gallery">Galeria</a></li>
-     
+
           <li><a href="#contact">Contactenos</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
@@ -60,40 +61,40 @@
   <!--==========================
     Intro Section
   ============================-->
- <section id="intro">
+  <section id="intro">
     <!-- As a link -->
 
-     <div class="intro-text">
+    <div class="intro-text">
       <h2 class="animated slideInRight">Bienvenido a Innexu</h2>
       <p>Comunica tus problemas y encuentra soluciones rápidas</p>
-  
+
       <!-- Button modal iniciar sesión -->
       <a href="login.php">
-      <button type="button" class="btn btn-primary" >
-        Iniciar Sesión
-      </button>
+        <button type="button" class="btn btn-primary">
+          Iniciar Sesión
+        </button>
       </a>
       <!-- Modal Iniciar Sesión-->
       <div class="modal fade" id="iniciarsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-             <h4 class="modal-title" id="exampleModalLongTitle">Iniciar Sesión</h4>
+              <h4 class="modal-title" id="exampleModalLongTitle">Iniciar Sesión</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <form method="post" role="form" action="php/login.php">
-                 <div class="form-group col-lg-6">
-                 <input type="text" name="nomusuario" id="nomusuario" class="form-control"  placeholder="Usuario" data-rule="minlen:4" data-msg="Usuario no registrado" />
+                <div class="form-group col-lg-6">
+                  <input type="text" name="nomusuario" id="nomusuario" class="form-control" placeholder="Usuario" data-rule="minlen:4" data-msg="Usuario no registrado" />
                   <div class="validation"></div>
-                  </div>
+                </div>
 
-                  <div class="form-group col-lg-6">
-                  <input type="password" name="passususario" id="passususario" class="form-control"  placeholder="Contraseña" data-rule="minlen:4" data-msg="Contraseña incorrecta" />
+                <div class="form-group col-lg-6">
+                  <input type="password" name="passususario" id="passususario" class="form-control" placeholder="Contraseña" data-rule="minlen:4" data-msg="Contraseña incorrecta" />
                   <div class="validation"></div>
-                  </div>
+                </div>
               </form>
             </div>
             <div class="modal-footer">
@@ -101,19 +102,19 @@
             </div>
           </div>
         </div>
-       </div> 
-       
+      </div>
+
 
       <!-- Button modal Registro usuario -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrarse">
         Registrarse
       </button>
       <!-- Modal Registrarse-->
-      <div class="modal fade" id="registrarse"  role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade" id="registrarse" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-             <h4 class="modal-title" id="exampleModalLongTitle">Registrarse</h4>
+              <h4 class="modal-title" id="exampleModalLongTitle">Registrarse</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -122,19 +123,19 @@
               <form method="post" role="form" class="contactForm" action="php/usuarios.php">
                 <div class="form-row">
 
-                   <div class="form-group col-lg-6">
-                    <input type="number" name="num_doc" id="num_doc" class="form-control"  placeholder="Documento de identidad" data-rule="minlen:4" data-msg="Por favor ingrese su numero de documento" />
+                  <div class="form-group col-lg-6">
+                    <input type="number" name="num_doc" id="num_doc" class="form-control" placeholder="Documento de identidad" data-rule="minlen:4" data-msg="Por favor ingrese su numero de documento" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <select name="tipo_doc" class="form-control" id="tipo_doc"  placeholder="Tipo de documento" data-rule="minlen:4">
+                    <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="Tipo de documento" data-rule="minlen:4">
                       <option>Cedula de ciudadania</option>
                       <option>Tarjeta de identidad</option>
                     </select>
                   </div>
                   <div class="form-group col-lg-6">
-                    <input type="name" name="nombre" id="nombre" class="form-control"  placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese su nombre" />
+                    <input type="name" name="nombre" id="nombre" class="form-control" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese su nombre" />
                     <div class="validation"></div>
                   </div>
 
@@ -143,85 +144,85 @@
                     <div class="validation"></div>
                   </div>
 
-                   <div class="form-group col-lg-6">
+                  <div class="form-group col-lg-6">
                     <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Telefono" data-rule="minlen:4" data-msg="Por favor ingrese su telefono" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="email" id="email" class="form-control" name="email"  placeholder="Correo electronico" data-rule="email" data-msg="Por favor ingrese su correo electronico" />
+                    <input type="email" id="email" class="form-control" name="email" placeholder="Correo electronico" data-rule="email" data-msg="Por favor ingrese su correo electronico" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="text" name="residencia" id="residencia" class="form-control"  placeholder="Lugar donde vive" data-rule="minlen:4" data-msg="Por favor ingrese el lugar donde vive" />
+                    <input type="text" name="residencia" id="residencia" class="form-control" placeholder="Lugar donde vive" data-rule="minlen:4" data-msg="Por favor ingrese el lugar donde vive" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="date" name="fecha" id="fecha" class="form-control"  placeholder="Fecha de nacimiento" data-rule="minlen:8" data-msg="Por favor ingrese su fecha de nacimiento" />
+                    <input type="date" name="fecha" id="fecha" class="form-control" placeholder="Fecha de nacimiento" data-rule="minlen:8" data-msg="Por favor ingrese su fecha de nacimiento" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
-                    <input type="text" name="usuario" id="usuario" class="form-control"  placeholder="Usuario" data-rule="minlen:4" data-msg="Por favor ingrese su usuario" />
+                    <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario" data-rule="minlen:4" data-msg="Por favor ingrese su usuario" />
                     <div class="validation"></div>
                   </div>
 
-                   <div class="form-group col-lg-6">
-                    <input type="password" name="pass" id="pass" class="form-control"  placeholder="Contraseña" data-rule="minlen:4" data-msg="Por favor ingrese su contraseña" />
+                  <div class="form-group col-lg-6">
+                    <input type="password" name="pass" id="pass" class="form-control" placeholder="Contraseña" data-rule="minlen:4" data-msg="Por favor ingrese su contraseña" />
                     <div class="validation"></div>
                   </div>
                   <div class="modal-footer">
-              <input type="submit" class="btn btn-primary" id="btnRegistrarse" value="Registrarse">
+                    <input type="submit" class="btn btn-primary" id="btnRegistrarse" value="Registrarse">
+                  </div>
+              </form>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
-    </div>
-<!-- Modal -->
-<div class="modal fade" id="modalRegistro" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-success" id="exampleModalLongTitle">Te has registrado en</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       Su registro ha sido satisfactorio
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Modal no registro -->
-<div class="modal fade" id="modalNoRegistro" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header ">
-        <h5 class="modal-title text-danger" id="exampleModalLongTitle">Tu registro NO ha sido existoso</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       Asi que disculpa las molestias e intentalo de nuevo en un par minutos
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- Modal -->
+        <div class="modal fade" id="modalRegistro" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-success" id="exampleModalLongTitle">Te has registrado en</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Su registro ha sido satisfactorio
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal no registro -->
+        <div class="modal fade" id="modalNoRegistro" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header ">
+                <h5 class="modal-title text-danger" id="exampleModalLongTitle">Tu registro NO ha sido existoso</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Asi que disculpa las molestias e intentalo de nuevo en un par minutos
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
   </section>
 
   <main id="main">
 
-  <!--==========================
+    <!--==========================
       Pricing Section
     ============================-->
     <section id="pricing" class="section-bg">
@@ -237,7 +238,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="box wow fadeInLeft">
-            <img src="img/logo.png" class="d-block w-100" alt="...">
+              <img src="img/logo.png" class="d-block w-100" alt="...">
             </div>
           </div>
 
@@ -260,7 +261,7 @@
     ============================-->
 
 
-<section id="features">
+    <section id="features">
       <div class="container">
 
         <div class="row">
@@ -273,7 +274,7 @@
             </div>
           </div>
 
-<!--
+          <!--
           <div class="col-lg-4 col-md-5 features-img">
             <img src="img/product-features.png" alt="" class="wow fadeInLeft">
           </div>
@@ -306,100 +307,100 @@
 
           </div>
 
-        Aprende--> 
-      </div>
+        Aprende-->
+        </div>
 
       </div>
 
     </section>
 
 
-   <div class="row justify-content-center">
+    <div class="row justify-content-center">
       <div class="col-sm-8"></div>
-      
-  
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="img/Cartilla/0.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/1.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/2.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/3.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/4.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/5.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/6.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/7.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/8.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/9.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/10.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/11.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/13.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/14.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/15.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/16.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/17.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/18.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/19.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/20.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/21.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/22.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="img/Cartilla/23.jpg" class="d-block w-100" alt="...">
-            </div>
+
+
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/Cartilla/0.png" class="d-block w-100" alt="...">
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+          <div class="carousel-item">
+            <img src="img/Cartilla/1.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/2.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/3.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/4.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/5.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/6.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/7.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/8.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/9.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/10.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/11.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/13.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/14.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/15.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/16.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/17.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/18.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/19.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/20.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/21.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/22.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Cartilla/23.jpg" class="d-block w-100" alt="...">
+          </div>
         </div>
-  </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
 
     <!--==========================
       Product Advanced Featuress Section
@@ -475,7 +476,7 @@
 
       </div>
     </section> #call-to-action -->
-   <!-- ==========================
+    <!-- ==========================
       More Features Section
     ============================-->
     <section id="more-features" class="section-bg">
@@ -523,7 +524,8 @@
 
         </div>
       </div>
-    </section> <!--#more-features --> 
+    </section>
+    <!--#more-features -->
     <!--==========================
       Entidades relacionadas
     ============================-->
@@ -550,7 +552,8 @@
 
         </div>
       </div>
-    </section><!--Etidades relacionadas-->
+    </section>
+    <!--Etidades relacionadas-->
     <!--==========================
       Sobre nosotros
     ============================
@@ -600,7 +603,7 @@
         <div class="section-header">
           <h3 class="section-title">Preguntas frecuentes</h3>
           <span class="section-divider"></span>
-         <!--<p class="section-description">...</p>-->
+          <!--<p class="section-description">...</p>-->
         </div>
 
         <ul id="faq-list" class="wow fadeInUp">
@@ -618,14 +621,16 @@
           <li>
             <a data-toggle="collapse" href="#faq2" class="collapsed">¿Quiénes forman parte del Sistema Nacional de Gestión del Riesgo de Desastres?<i class="ion-android-remove"></i></a>
             <div id="faq2" class="collapse" data-parent="#faq-list">
-              <h5>1523. Capítulo 2 – Artículo 8.</h5>  
+              <h5>1523. Capítulo 2 – Artículo 8.</h5>
 
-<h5>Entidades públicas:</h5> 
-<p>Por su misión y responsabilidad en la gestión del desarrollo social, económico y ambiental sostenible, en los ámbitos sectoriales, territoriales, institucionales y proyectos de inversión: (Departamento Nacional de Planeación, Ejército Nacional, Armada Nacional, Fuerza Aérea Colombiana, Policía Nacional, Defensa Civil, Cruz Roja, Bomberos de Colombia).</p>
+              <h5>Entidades públicas:</h5>
+              <p>Por su misión y responsabilidad en la gestión del desarrollo social, económico y ambiental sostenible, en los ámbitos sectoriales, territoriales, institucionales y proyectos de inversión: (Departamento Nacional de Planeación, Ejército Nacional, Armada Nacional, Fuerza Aérea Colombiana, Policía Nacional, Defensa Civil, Cruz Roja, Bomberos de Colombia).</p>
 
-<h5>Entidades privadas con ánimo y sin ánimo de lucro:</h5><p> Por su intervención en el desarrollo a través de sus actividades económicas, sociales y ambientales. </p>
+              <h5>Entidades privadas con ánimo y sin ánimo de lucro:</h5>
+              <p> Por su intervención en el desarrollo a través de sus actividades económicas, sociales y ambientales. </p>
 
-<h5>Comunidad:</h5><p> Por su intervención en el desarrollo a través de sus actividades económicas, sociales, ambientales, culturales y participativas.</p>
+              <h5>Comunidad:</h5>
+              <p> Por su intervención en el desarrollo a través de sus actividades económicas, sociales, ambientales, culturales y participativas.</p>
             </div>
           </li>
 
@@ -669,9 +674,9 @@
           </li>
 
           <li>
-              <p>
-                Las preguntas anteriores fueron tomadas de "http://portal.gestiondelriesgo.gov.co/Paginas/Preguntas_Frecuentes.aspx"
-              </p>
+            <p>
+              Las preguntas anteriores fueron tomadas de "http://portal.gestiondelriesgo.gov.co/Paginas/Preguntas_Frecuentes.aspx"
+            </p>
           </li>
 
         </ul>
@@ -680,7 +685,7 @@
     </section><!-- #faq -->
 
     <!--==========================
-      Our Team Section
+      Seccion de secretarios
     ============================-->
     <section id="team" class="section-bg">
       <div class="container">
@@ -689,65 +694,20 @@
           <span class="section-divider"></span>
           <p class="section-description">Te presentamos los diferetes funcionarios de la alcaldía para que conozcas el cargo que desempeñan. </p>
         </div>
+
         <div class="row wow fadeInUp">
           <div class="col-lg-3 col-md-6">
             <div class="member">
               <div class="pic"><img src="img/team/team-1.jpg" alt=""></div>
-              <h4>Walter White</h4>
+              <h4 id="nombreSecretario">Walter White</h4>
               <span>Chief Executive Officer</span>
               <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-<!-- -->
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team/team-2.jpg" alt=""></div>
-              <h4>Sarah Jhinson</h4>
-              <span>Product Manager</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
+                <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>555</a><br>
+                <a id="dependenciaSecretario" href=""><i style="padding-rigth:10px;" class="fa fa-briefcase" aria-hidden="true"></i>Salud</a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team/team-3.jpg" alt=""></div>
-              <h4>William Anderson</h4>
-              <span>CTO</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team/team-4.jpg" alt=""></div>
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </section><!-- #team -->
 
     <!--==========================
@@ -909,7 +869,7 @@
             <a href="#intro" class="scrollto">Inicio</a>
             <a href="#pricing">Sobre nosotros</a>
             <a href="#features" class="scrollto">Aprende</a>
-            
+
             <a href="#">Terms of Use</a>
           </nav>
         </div>
@@ -931,10 +891,11 @@
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
   <!-- Archivo js para los usuarios -->
-  <script src="js/usuario.js" ></script>
-  <script src="js/login.js" ></script>
+  <script src="js/usuario.js"></script>
+  <script src="js/login.js"></script>
   <!-- Sweet alert plugin -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 </body>
+
 </html>
