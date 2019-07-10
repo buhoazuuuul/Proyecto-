@@ -700,7 +700,7 @@
             <div class="member">
               <div class="pic"><img src="img/team/team-1.jpg" alt=""></div>
               <h4 id="nombreSecretario">Walter White</h4>
-              <span>Chief Executive Officer</span>
+              <span id="apellidoSecretario">Chief Executive Officer</span>
               <div class="social">
                 <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>555</a><br>
                 <a id="dependenciaSecretario" href=""><i style="padding-rigth:10px;" class="fa fa-briefcase" aria-hidden="true"></i>Salud</a>
