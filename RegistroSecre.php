@@ -10,16 +10,16 @@
   <title>Innexu-Administrador</title>
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="libUsuarios/img/favicon.png" rel="icon">
+  <link href="libUsuarios/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="libUsuarios/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="libUsuarios/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet">
+  <link href="libUsuarios/css/style.css" rel="stylesheet">
+  <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
 </head>
 
 <body>
@@ -43,7 +43,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-tasks"></i>
               <span class="badge bg-theme">4</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended tasks-bar">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -112,7 +112,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-envelope-o"></i>
               <span class="badge bg-theme">5</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended inbox">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -122,49 +122,49 @@
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
                   <span class="subject">
-                  <span class="from">Zac Snider</span>
-                  <span class="time">Just now</span>
+                    <span class="from">Zac Snider</span>
+                    <span class="time">Just now</span>
                   </span>
                   <span class="message">
-                  Hi mate, how is everything?
+                    Hi mate, how is everything?
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
                   <span class="subject">
-                  <span class="from">Divya Manian</span>
-                  <span class="time">40 mins.</span>
+                    <span class="from">Divya Manian</span>
+                    <span class="time">40 mins.</span>
                   </span>
                   <span class="message">
-                  Hi, I need your help with this.
+                    Hi, I need your help with this.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
                   <span class="subject">
-                  <span class="from">Dan Rogers</span>
-                  <span class="time">2 hrs.</span>
+                    <span class="from">Dan Rogers</span>
+                    <span class="time">2 hrs.</span>
                   </span>
                   <span class="message">
-                  Love your new Dashboard.
+                    Love your new Dashboard.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-sherman.jpg"></span>
                   <span class="subject">
-                  <span class="from">Dj Sherman</span>
-                  <span class="time">4 hrs.</span>
+                    <span class="from">Dj Sherman</span>
+                    <span class="time">4 hrs.</span>
                   </span>
                   <span class="message">
-                  Please, answer asap.
+                    Please, answer asap.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">See all messages</a>
@@ -177,7 +177,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-bell-o"></i>
               <span class="badge bg-warning">7</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended notification">
               <div class="notify-arrow notify-arrow-yellow"></div>
               <li>
@@ -188,28 +188,28 @@
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Server Overloaded.
                   <span class="small italic">4 mins.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-warning"><i class="fa fa-bell"></i></span>
                   Memory #2 Not Responding.
                   <span class="small italic">30 mins.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Disk Space Reached 85%.
                   <span class="small italic">2 hrs.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-success"><i class="fa fa-plus"></i></span>
                   New User Registered.
                   <span class="small italic">3 hrs.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">See all notifications</a>
@@ -241,13 +241,13 @@
             <a href="index.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
-              </a>
+            </a>
           </li>
           <li class="sub-menu">
             <a class="active" href="javascript:;">
               <i class="fa fa-tasks"></i>
               <span>Formularios</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="RegistroSecre.php">Registrar un secretario</a></li>
             </ul>
@@ -256,7 +256,7 @@
             <a href="javascript:;">
               <i class="fa fa-th"></i>
               <span>Tablas</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="usuarios.html">Usuarios</a></li>
               <li><a href="secretarios.html">Secretarios</a></li>
@@ -267,7 +267,7 @@
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
-              </a>
+            </a>
           </li>
         </ul>
         <!-- sidebar menu end-->
@@ -296,7 +296,10 @@
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Tipo de documento</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="tipo_doc" name="tipo_doc" type="text" required />
+                      <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="Tipo de documento" data-rule="minlen:4">
+                        <option>Cedula de ciudadania</option>
+                        <option>Tarjeta de identidad</option>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group ">
@@ -315,6 +318,24 @@
                     <label for="cname" class="control-label col-lg-2">Dependencia</label>
                     <div class="col-lg-10">
                       <input class=" form-control" id="dependencia" name="dependencia" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Departamento de la dependencia</label>
+                    <div class="col-lg-10">
+                      <select name="tipo_doc" class="form-control" id="departamento" placeholder="departamento" data-rule="minlen:4">
+                        <option>Cedula de ciudadania</option>
+                        <option>Tarjeta de identidad</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Municipio de la dependencia</label>
+                    <div class="col-lg-10">
+                      <select name="tipo_doc" class="form-control" id="municipio" placeholder="municipio" data-rule="minlen:4">
+                        <option>Cedula de ciudadania</option>
+                        <option>Tarjeta de identidad</option>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group ">
@@ -377,28 +398,25 @@
         </div>
         <a href="form_validation.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
-          </a>
+        </a>
       </div>
     </footer>
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="lib/jquery.scrollTo.min.js"></script>
-  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <script src="libUsuarios/lib/jquery/jquery.min.js"></script>
+  <script src="libUsuarios/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="libUsuarios/lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="libUsuarios/libUsuarios/lib/jquery.scrollTo.min.js"></script>
+  <script src="libUsuarios/lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
-  <script src="lib/common-scripts.js"></script>
+  <script src="libUsuarios/lib/common-scripts.js"></script>
   <!--script for this page-->
-  <script src="lib/form-validation-script.js"></script>
-
-
-<!-- Archivo js para los usuarios -->
-<script src="../js/usuario.js" ></script>
-<script src="../js/login.js" ></script>
-<!-- Sweet alert plugin -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="libUsuarios/lib/form-validation-script.js"></script>
+  <!-- Sweet alert plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <!-- Open data -->
+  <script src="js/departamentos_municipios.js"></script>
 
 </body>
 

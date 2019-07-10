@@ -1,6 +1,7 @@
 var usuario;
 var pass;
 var url;
+var depMunicipios;
 
 $(document).ready(function () {
 
@@ -14,8 +15,16 @@ $(document).ready(function () {
 
     });
     console.log('Documento login.js cargado');
+    getData();
 
 });
+
+function getData() {
+
+    $.getJSON("js/Datos_abiertos/departamentos_municipios.json", function (data) {
+        depMunicipios = data;
+    });
+}
 
 function submitForm() {
 

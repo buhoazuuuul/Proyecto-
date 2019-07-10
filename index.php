@@ -893,6 +893,7 @@
   <!-- Archivo js para los usuarios -->
   <script src="js/usuario.js"></script>
   <script src="js/login.js"></script>
+  <!-- <script src="js/departamentos_municipios.js"></script> -->
   <!-- Sweet alert plugin -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
