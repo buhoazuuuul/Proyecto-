@@ -238,7 +238,7 @@
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="index.html">
+            <a href="Admin/index.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
             </a>
@@ -258,12 +258,12 @@
               <span>Tablas</span>
             </a>
             <ul class="sub">
-              <li><a href="usuarios.html">Usuarios</a></li>
-              <li><a href="secretarios.html">Secretarios</a></li>
+              <li><a href="Admin/usuarios.html">Usuarios</a></li>
+              <li><a href="Admin/secretarios.html">Secretarios</a></li>
             </ul>
           </li>
           <li>
-            <a href="inbox.html">
+            <a href="Admin/inbox.html">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
