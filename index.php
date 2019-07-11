@@ -143,22 +143,24 @@
                     <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" data-rule="minlen:4" data-msg="Por favor ingrese su apellido" />
                     <div class="validation"></div>
                   </div>
-
+                  <br>
                   <div class="form-group col-lg-6">
+                    <label class="control-label">Departamento de la dependencia</label>
                     <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Telefono" data-rule="minlen:4" data-msg="Por favor ingrese su telefono" />
                     <div class="validation"></div>
                   </div>
-
                   <div class="form-group col-lg-6">
-                    <input type="email" id="email" class="form-control" name="email" placeholder="Correo electronico" data-rule="email" data-msg="Por favor ingrese su correo electronico" />
+                    <label class="control-label">Departamento de la dependencia</label>
+                    <select class="form-control" id="departamento">
+                    </select>
                     <div class="validation"></div>
                   </div>
-
                   <div class="form-group col-lg-6">
-                    <input type="text" name="residencia" id="residencia" class="form-control" placeholder="Lugar donde vive" data-rule="minlen:4" data-msg="Por favor ingrese el lugar donde vive" />
+                    <label class="control-label">Municipio de la dependencia</label>
+                    <select class="form-control" id="municipio">
+                    </select>
                     <div class="validation"></div>
                   </div>
-
                   <div class="form-group col-lg-6">
                     <input type="date" name="fecha" id="fecha" class="form-control" placeholder="Fecha de nacimiento" data-rule="minlen:8" data-msg="Por favor ingrese su fecha de nacimiento" />
                     <div class="validation"></div>
@@ -896,6 +898,8 @@
   <!-- <script src="js/departamentos_municipios.js"></script> -->
   <!-- Sweet alert plugin -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <!-- Open data -->
+  <script src="js/departamentos_municipios.js"></script>
 
 </body>
 
