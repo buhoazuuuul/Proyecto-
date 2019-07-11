@@ -324,8 +324,6 @@
                     <label for="cname" class="control-label col-lg-2">Departamento de la dependencia</label>
                     <div class="col-lg-10">
                       <select name="tipo_doc" class="form-control" id="departamento" placeholder="departamento" data-rule="minlen:4">
-                        <option>Cedula de ciudadania</option>
-                        <option>Tarjeta de identidad</option>
                       </select>
                     </div>
                   </div>
@@ -333,8 +331,6 @@
                     <label for="cname" class="control-label col-lg-2">Municipio de la dependencia</label>
                     <div class="col-lg-10">
                       <select name="tipo_doc" class="form-control" id="municipio" placeholder="municipio" data-rule="minlen:4">
-                        <option>Cedula de ciudadania</option>
-                        <option>Tarjeta de identidad</option>
                       </select>
                     </div>
                   </div>

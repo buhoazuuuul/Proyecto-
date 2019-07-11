@@ -1,21 +1,35 @@
-(document).ready(function () {
+var depMunicipios;
+var returnData;
 
-    console.log('Documento Departamentos y Municipio cargado');
 
+$(document).ready(function () {
+
+    getData();
 
 });
 
 function getData() {
 
-    $.ajax({
-        url: "https://www.datos.gov.co/resource/xdk5-pm3f.json",
-        type: "GET",
-        data: {
-            "$limit": 5000,
-            "$$app_token": "1rzkh4wgmmq2pjwtwcy2x3dtznuems377sse9cnxz4xww0641y"
-        }
-    }).done(function (data) {
-        alert("Retrieved " + data.length + " records from the dataset!");
-        console.log(data);
+    $.getJSON("js/Datos_abiertos/departamentos_municipios.json?departamento=Antioquia", function (data) {
+        llenarDep(data);
     });
+
+
+}
+//Revisar departamentos
+function llenarDep(array) {
+
+    for (let index = 0; index < array.length; index++) {
+
+        $('#departamento').append($('<option>', {
+            value: index,
+            text: array[index]['departamento']
+        }));
+        $('#municipio').append($('<option>', {
+            value: index,
+            text: array[index]['municipio']
+        }));
+
+
+    }
 }
