@@ -124,54 +124,66 @@
                 <div class="form-row">
 
                   <div class="form-group col-lg-6">
+                  <label class="control-label">Documento de identidad</label>
                     <input type="number" name="num_doc" id="num_doc" class="form-control" placeholder="Documento de identidad" data-rule="minlen:4" data-msg="Por favor ingrese su numero de documento" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
+                  <label class="control-label">Tipo de documento</label>
                     <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="Tipo de documento" data-rule="minlen:4">
                       <option>Cedula de ciudadania</option>
                       <option>Tarjeta de identidad</option>
                     </select>
                   </div>
                   <div class="form-group col-lg-6">
+                  <label class="control-label">Nombres</label>
                     <input type="name" name="nombre" id="nombre" class="form-control" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese su nombre" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
+                  <label class="control-label">Apellidos</label>
                     <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" data-rule="minlen:4" data-msg="Por favor ingrese su apellido" />
                     <div class="validation"></div>
                   </div>
-                  <br>
+                
                   <div class="form-group col-lg-6">
-                    <label class="control-label">Departamento de la dependencia</label>
+                    <label class="control-label">Telefono</label>
                     <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Telefono" data-rule="minlen:4" data-msg="Por favor ingrese su telefono" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
-                    <label class="control-label">Departamento de la dependencia</label>
+                    <label class="control-label">Correo electronico</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Correo electronico" data-rule="minlen:4" data-msg="Por favor ingrese su correo electronico" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <label class="control-label">Departamento</label>
                     <select class="form-control" id="departamento">
                     </select>
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
-                    <label class="control-label">Municipio de la dependencia</label>
+                    <label class="control-label">Municipio</label>
                     <select class="form-control" id="municipio">
                     </select>
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
+                  <label class="control-label">Fecha de nacimiento</label>
                     <input type="date" name="fecha" id="fecha" class="form-control" placeholder="Fecha de nacimiento" data-rule="minlen:8" data-msg="Por favor ingrese su fecha de nacimiento" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
+                  <label class="control-label">Nombre de usuario</label>
                     <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario" data-rule="minlen:4" data-msg="Por favor ingrese su usuario" />
                     <div class="validation"></div>
                   </div>
 
                   <div class="form-group col-lg-6">
+                  <label class="control-label">Contraseña</label>
                     <input type="password" name="pass" id="pass" class="form-control" placeholder="Contraseña" data-rule="minlen:4" data-msg="Por favor ingrese su contraseña" />
                     <div class="validation"></div>
                   </div>
