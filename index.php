@@ -123,28 +123,26 @@
               <form method="post" role="form" class="contactForm" action="php/usuarios.php">
                 <div class="form-row">
                   <div class="form-group col-lg-6">
-                  <label class="control-label">Documento de identidad</label>
+                    <label class="control-label">Documento de identidad</label>
                     <input type="number" name="num_doc" id="num_doc" class="form-control" placeholder="Documento de identidad" data-rule="minlen:4" data-msg="Por favor ingrese su numero de documento" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
-                  <label class="control-label">Tipo de documento</label>
+                    <label class="control-label">Tipo de documento</label>
                     <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="Tipo de documento" data-rule="minlen:4">
-                      <option>Cedula de ciudadania</option>
-                      <option>Tarjeta de identidad</option>
                     </select>
                   </div>
                   <div class="form-group col-lg-6">
-                  <label class="control-label">Nombres</label>
+                    <label class="control-label">Nombres</label>
                     <input type="name" name="nombre" id="nombre" class="form-control" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese su nombre" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
-                  <label class="control-label">Apellidos</label>
+                    <label class="control-label">Apellidos</label>
                     <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" data-rule="minlen:4" data-msg="Por favor ingrese su apellido" />
                     <div class="validation"></div>
                   </div>
-                
+
                   <div class="form-group col-lg-6">
                     <label class="control-label">Telefono</label>
                     <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Telefono" data-rule="minlen:4" data-msg="Por favor ingrese su telefono" />
@@ -168,17 +166,17 @@
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
-                  <label class="control-label">Fecha de nacimiento</label>
+                    <label class="control-label">Fecha de nacimiento</label>
                     <input type="date" name="fecha" id="fecha" class="form-control" placeholder="Fecha de nacimiento" data-rule="minlen:8" data-msg="Por favor ingrese su fecha de nacimiento" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
-                  <label class="control-label">Nombre de usuario</label>
+                    <label class="control-label">Nombre de usuario</label>
                     <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario" data-rule="minlen:4" data-msg="Por favor ingrese su usuario" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
-                  <label class="control-label">Contraseña</label>
+                    <label class="control-label">Contraseña</label>
                     <input type="password" name="pass" id="pass" class="form-control" placeholder="Contraseña" data-rule="minlen:4" data-msg="Por favor ingrese su contraseña" />
                     <div class="validation"></div>
                   </div>
@@ -869,6 +867,9 @@
   <!-- bootbox code -->
   <script src="lib/bootbox.js"></script>
   <script src="lib/bootbox.locales.js"></script>
+  <!-- tooltip & popper js -->
+  <script src="libUsuarios\lib\tooltip.min.js"></script>
+  <script src="libUsuarios\lib\popper.min.js"></script>
   <!-- Open data -->
   <script src="js/departamentos_municipios.js"></script>
 
