@@ -1,64 +1,47 @@
-var depMunicipios;
-var departamentos = [];
-var municipios = [];
-var returnData;
-
+var dialog;
 $(document).ready(function () {
 
-    getData();
+    selectDepartamentos();
     $("#departamento").change(function () {
         var combo = document.getElementById("departamento");
         var selected = combo.options[combo.selectedIndex].text;
-        filtrarMunicipios(selected, depMunicipios);
+        selectMunicipiosPorDep(selected);
     });
 
 });
 
-function getData() {
 
-    $.getJSON("js/Datos_abiertos/departamentos_municipios.json", function (data) {
-        llenarDep(data);
-        depMunicipios = data;
+function selectMunicipiosPorDep(departamento) {
+    dialog = bootbox.dialog({
+        message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i>Cargando los municipios para este departamento</p>',
+        closeButton: false
+    });
+
+    $('#municipio').empty();
+
+    $.getJSON("https://www.datos.gov.co/resource/xdk5-pm3f.json?departamento=" + departamento, function (result) {
+        $.each(result, function (i, field) {
+            $('#municipio').append($('<option>', {
+                value: i,
+                text: field.municipio
+            }));
+        });
+        dialog.hide();
     });
 
 
+
 }
-//Revisar departamentos
-function llenarDep(array) {
 
-    for (let index = 0; index < array.length; index++) {
+function selectDepartamentos() {
 
-        if (departamentos.indexOf(array[index]['departamento']) == -1) {
-
-            departamentos.push(array[index]['departamento']);
+    $.getJSON("https://www.datos.gov.co/resource/xdk5-pm3f.json?$query=select distinct departamento", function (result) {
+        $.each(result, function (i, field) {
             $('#departamento').append($('<option>', {
-                value: index,
-                text: array[index]['departamento']
+                value: i,
+                text: field.departamento
             }));
-        }
-
-        $('#municipio').append($('<option>', {
-            value: index,
-            text: array[index]['municipio']
-        }));
-
-    }
-}
-
-function filtrarMunicipios(dep, array) {
-
-    $('option', '#municipio').remove();
-
-    for (let index = 0; index < array.length; index++) {
-
-        if (array[index]['departamento'] == dep) {
-
-            $('#municipio').append($('<option>', {
-                value: index,
-                text: array[index]['municipio']
-            }));
-
-        }
-    }
+        });
+    });
 
 }

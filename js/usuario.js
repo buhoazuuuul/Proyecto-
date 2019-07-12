@@ -48,7 +48,6 @@ function InsertarDatosBD() {
             pass: pass
         },
         success: function (data) {
-            console.log(data);
 
             if (data == "successfully") {
                 Swal.fire({
