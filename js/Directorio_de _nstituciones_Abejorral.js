@@ -22,7 +22,6 @@ function getCargos() {
     $.getJSON("https://www.datos.gov.co/resource/5hfn-b62q.json?$select=cargo",
         function (data, textStatus, jqXHR) {
 
-
             if (textStatus == 'success') {
                 $.each(data, function (indexInArray, valueOfElement) {
                     $('#cargo').append($('<option>', {
@@ -37,8 +36,6 @@ function getCargos() {
                 }));
 
             }
-
-
 
         }
     );

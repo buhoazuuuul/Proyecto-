@@ -355,6 +355,12 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
+                                            <label for="subject" class="">Emergencia:</label>
+                                            <select class="form-control" id="emergencia">
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="subject" class="">Asunto:</label>
                                             <input type="text" tabindex="1" id="asunto" class="form-control">
                                         </div>
@@ -442,10 +448,14 @@
     <!-- Datatime Pikcer js -->
     <script type="text/javascript" src="libUsuarios/lib/air-datepicker/datepicker.min.js"></script>
     <script src="js/airDateTime.js"></script>
+    <!-- sweetalert2 -->
     <script src="libUsuarios/lib/air-datepicker/i18n/datepicker.es.js"></script>
     <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
+    <!-- Propios js -->
     <script src="js/sendUserMessage.js"></script>
     <script src="js/fillUserProfile.js"></script>
+    <script src="js/emergencias_Naturales.js"></script>
+
 </body>
 
 </html>
