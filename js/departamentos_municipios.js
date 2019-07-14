@@ -1,4 +1,4 @@
-var dialog;
+
 $(document).ready(function () {
 
     selectDepartamentos();
@@ -12,10 +12,10 @@ $(document).ready(function () {
 
 
 function selectMunicipiosPorDep(departamento) {
-    dialog = bootbox.dialog({
-        message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i>Cargando los municipios para este departamento</p>',
-        closeButton: false
-    });
+    // dialog = bootbox.dialog({
+    //     message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i>Cargando los municipios para este departamento</p>',
+    //     closeButton: false
+    // });
 
     $('#municipio').empty();
 
@@ -26,7 +26,7 @@ function selectMunicipiosPorDep(departamento) {
                 text: field.municipio
             }));
         });
-        dialog.hide();
+
     });
 
 

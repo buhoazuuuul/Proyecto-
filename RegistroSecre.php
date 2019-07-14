@@ -317,7 +317,15 @@
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Dependencia</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="dependencia" name="dependencia" type="text" required />
+                      <select name="tipo_doc" class="form-control" id="dependencia" data-rule="minlen:4">
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2">Cargo</label>
+                    <div class="col-lg-10">
+                      <select name="cargos" class="form-control" id="cargo" data-rule="minlen:4">
+                      </select>
                     </div>
                   </div>
                   <div class="form-group ">
@@ -413,6 +421,11 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <!-- Open data -->
   <script src="js/departamentos_municipios.js"></script>
+  <!-- Instituciones de Abejorral - Dependencias -->
+  <script src="js/Directorio_de _nstituciones_Abejorral.js"></script>
+  <!-- bootbox code -->
+  <script src="lib/bootbox.js"></script>
+  <script src="lib/bootbox.locales.js"></script>
 
 </body>
 
