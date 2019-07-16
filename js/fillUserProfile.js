@@ -47,6 +47,7 @@ function setUserName(array) {
 
     $('#userName').text(array[0].nombre + ' ' + array[0].apellido);
     $('#profileImage').attr('src', array[0].img);
+    $('#mainImgProile').attr('src', array[0].img);
     if ($('#btnEditarPerfil').attr('class') == 'active') {
 
         filluserForm();
@@ -118,6 +119,12 @@ function logout() {
         },
     });
 
+
+}
+
+function mainPorfileImg() {
+
+    jq
 
 }
 

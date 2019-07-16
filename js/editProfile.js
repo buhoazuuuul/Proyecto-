@@ -16,6 +16,7 @@ $(document).ready(function () {
         saveDataForm();
         updateProfile();
     });
+    getTiposDeDocumentos();
 
 });
 
@@ -36,43 +37,102 @@ function saveDataForm() {
 
 function updateProfile() {
 
-    $.ajax({
-        url: "php/updateUser.php",
-        method: "POST",
-        data: {
-            last_doc: lastDoc, num_doc: num_doc, tipo_doc: tipo_doc, nombre: nombre, apellido: apellido, telefono: telefono, email: email,
-            residencia: residencia,
-            fecha: fecha,
-            usuario: usuario,
-            pass: pass,
-            img: imgPath
-        },
-        success: function (data) {
-            console.log(data);
-            if (data == "successfully") {
-                Swal.fire({
-                    position: 'center',
-                    type: 'success',
-                    title: 'Se he actualizado satisfactoriamente tu perfil',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                location.reload();
+    if (imgPath != '') {
+
+        $.ajax({
+            url: "php/updateUser.php",
+            method: "POST",
+            data: {
+                last_doc: lastDoc, num_doc: num_doc, tipo_doc: tipo_doc, nombre: nombre, apellido: apellido, telefono: telefono, email: email,
+                residencia: residencia,
+                fecha: fecha,
+                usuario: usuario,
+                pass: pass,
+                img: imgPath
+            },
+            success: function (data) {
+                console.log(data);
+                if (data == "successfully") {
+                    Swal.fire({
+                        position: 'center',
+                        type: 'success',
+                        title: 'Se he actualizado satisfactoriamente tu perfil',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    location.reload();
+
+                }
+                else {
+                    Swal.fire({
+                        position: 'center',
+                        type: 'error',
+                        title: 'Error al actualizar tu perfil',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+
+                }
+
 
             }
-            else {
-                Swal.fire({
-                    position: 'center',
-                    type: 'error',
-                    title: 'Error al actualizar tu perfil',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+
+        });
+
+    } else {
+
+        $.ajax({
+            url: "php/updateUser.php",
+            method: "POST",
+            data: {
+                last_doc: lastDoc, num_doc: num_doc, tipo_doc: tipo_doc, nombre: nombre, apellido: apellido, telefono: telefono, email: email,
+                residencia: residencia,
+                fecha: fecha,
+                usuario: usuario,
+                pass: pass
+            },
+            success: function (data) {
+                console.log(data);
+                if (data == "successfully") {
+                    Swal.fire({
+                        position: 'center',
+                        type: 'success',
+                        title: 'Se he actualizado satisfactoriamente tu perfil',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    location.reload();
+
+                }
+                else {
+                    Swal.fire({
+                        position: 'center',
+                        type: 'error',
+                        title: 'Error al actualizar tu perfil',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+
+                }
+
 
             }
 
+        });
 
-        }
+    }
+}
 
+function getTiposDeDocumentos() {
+
+    $('#tipo_doc').empty();
+    $.getJSON("https://www.datos.gov.co/resource/shc6-n6i6.json?$select=nomtipodocumento", function (result) {
+        $.each(result, function (i, field) {
+            $('#tipo_doc').append($('<option>', {
+                value: i,
+                text: field.nomtipodocumento
+            }));
+        });
     });
+
 }

@@ -1,4 +1,4 @@
-var imgPath;
+var imgPath = '';
 $(document).ready(function () {
     $(document).on('change', '#file', function () {
         var name = document.getElementById("file").files[0].name;

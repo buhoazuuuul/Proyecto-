@@ -289,12 +289,12 @@
                 <p id="pMunicipio">Eres un beneficiario para la gestion del riesgo del municipio de </p>
 
                 <br>
-                <p><button class="mt-5 btn btn-theme"><i class="fa fa-thermometer-three-quarters"></i> Reportar un riesgo</button></p>
+                <p><button class="mt-5 btn btn-theme"><i class="fa fa-thermometer-three-quarters"></i>Reportar un riesgo</button></p>
               </div>
               <!-- /col-md-4 -->
               <div class="col-md-4 centered">
                 <div class="profile-pic">
-                  <p><img src="img/ui-sam.jpg" class="img-circle"></p>
+                  <p><img id="mainImgProile" src="img/ui-sam.jpg" class="img-circle"></p>
                   <p>
                     <button class="btn btn-theme"><i class="fa fa-check"></i> Follow</button>
                     <button class="btn btn-theme02">Add</button>
@@ -518,8 +518,6 @@
                             <label class="col-lg-2 control-label">Tipo de documento</label>
                             <div class="col-lg-6">
                               <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="Tipo de documento" data-rule="minlen:4">
-                                <option>Cedula de ciudadania</option>
-                                <option>Tarjeta de identidad</option>
                               </select>
                             </div>
                           </div>
