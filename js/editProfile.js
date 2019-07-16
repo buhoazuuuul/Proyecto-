@@ -44,7 +44,8 @@ function updateProfile() {
             residencia: residencia,
             fecha: fecha,
             usuario: usuario,
-            pass: pass
+            pass: pass,
+            img: imgPath
         },
         success: function (data) {
             console.log(data);
@@ -60,7 +61,6 @@ function updateProfile() {
 
             }
             else {
-
                 Swal.fire({
                     position: 'center',
                     type: 'error',

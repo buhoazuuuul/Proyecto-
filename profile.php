@@ -243,7 +243,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href=""><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href=""><img src="" id="profileImage" class="img-circle" width="80"></a></p>
           <h5 id="userName" class="centered">Sam Soffes</h5>
           <li class="sub-menu">
             <a id="btnEditarPerfil" class="active" href="javascript:;">
@@ -503,8 +503,9 @@
                         <form role="form" class="form-horizontal">
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Foto</label>
+                            <span id="uploaded_image"></span>
                             <div class="col-lg-6">
-                              <input type="file" id="exampleInputFile" class="file-pos">
+                              <input type="file" name="file" id="file" class="file-pos">
                             </div>
                           </div>
                           <div class="form-group">
@@ -661,6 +662,7 @@
   <script src="js/logout.js"></script>
   <script src="js/fillUserProfile.js"></script>
   <script src="js/editProfile.js"></script>
+  <script src="js/upload_image.js"></script>
 
 </body>
 
