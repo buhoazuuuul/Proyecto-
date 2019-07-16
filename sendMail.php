@@ -22,6 +22,8 @@
     <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
     <!-- Pickdate js styles -->
     <link href="libUsuarios/lib/air-datepicker/datepicker.min.css" rel="stylesheet">
+    <!-- Parsley js css -->
+    <link rel="stylesheet" href="libUsuarios/lib/Parsley/parsley.css">
 
     <!-- =======================================================
     Template Name: Dashio
@@ -129,7 +131,7 @@
                             </li>
                             <li>
                                 <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
+                                    <span class="photo"><img alt="Foto de perfil" src="img/ui-zac.jpg"></span>
                                     <span class="subject">
                                         <span class="from">Zac Snider</span>
                                         <span class="time">Just now</span>
@@ -244,7 +246,7 @@
             <div id="sidebar" class="nav-collapse ">
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
-                    <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+                    <p class="centered"><a href=""><img id="profileImage" class="img-circle" width="80"></a></p>
                     <h5 id="userName" class="centered">Sam Soffes</h5>
                     <li class="mt">
                         <a href="index.html">
@@ -348,33 +350,32 @@
                             </header>
                             <div class="panel-body">
                                 <div class="compose-mail">
-                                    <form role="form-horizontal">
+                                    <form class="demo-form" id="form" role="form-horizontal">
                                         <div class="form-group">
                                             <label style="margin-bottom : 10px;" for="to" class="">Para:</label>
-                                            <select style="display:block;" class="form-control" id="secetrariosSelect">
+                                            <select style="display:block;" class="form-control" id="secetrariosSelect" required>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Emergencia:</label>
-                                            <select class="form-control" id="emergencia">
-
+                                            <select class="form-control" id="emergencia" required>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Asunto:</label>
-                                            <input type="text" tabindex="1" id="asunto" class="form-control">
+                                            <input required type="text" tabindex="1" id="asunto" class="form-control" required data-parsley-length="[4, 20]">
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Lugar:</label>
-                                            <input type="text" tabindex="1" id="lugar" class="form-control">
+                                            <input type="text" tabindex="1" id="lugar" class="form-control" required data-parsley-length="[4, 20]">
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Fecha y hora:</label>
-                                            <input class="form-control" type="text" id='timepicker-actions-exmpl' />
+                                            <input class="form-control" type="text" id='timepicker-actions-exmpl' required>
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Confidencialidad:</label>
-                                            <select class="form-control" id="confidencialidad">
+                                            <select class="form-control" id="confidencialidad" required>
                                                 <option value="1">Poco Confidencial</option>
                                                 <option value="2">Medianamente Confidencial</option>
                                                 <option value="2">Muy Confidencial</option>
@@ -382,7 +383,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Prioridad:</label>
-                                            <select class="form-control" id="prioridad">
+                                            <select class="form-control" id="prioridad" required>
                                                 <option value="1">Muy prioritario</option>
                                                 <option value="2">Medianamente prioritario</option>
                                                 <option value="2">Muy prioritario</option>
@@ -390,14 +391,18 @@
                                         </div>
                                         <div class="compose-editor">
                                             <label for="subject" class="">Mensaje:</label>
-                                            <textarea class="wysihtml5 form-control" id="mensaje" rows="9"></textarea>
-                                            <input type="file" id="adjunto" class="default">
+                                            <textarea required class="wysihtml5 form-control" id="mensaje" rows="9" data-parsley-length="[4, 20]"></textarea>
                                         </div>
-                                        <div class="compose-btn">
-                                            <button type="button" class="btn btn-theme btn-sm" id="btnEnviarMsm"><i class="fa fa-check"></i>Enviar</button>
-                                            <button type="button" class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
+                                        <div class="form-group">
+                                            <span id="uploaded_image"></span>
+                                            <input type="file" name="file" id="file" class="default">
+                                        </div>
+                                        <div class="form-group">
+                                            <button id="bntEnviar" type="submit" class="btn btn-sm validate"><i class="fa fa-plane"></i>Enviar</button>
+                                            <button type="button" class="btn btn-sm"><i class="fa fa-times"></i>Descartar</button>
                                         </div>
                                     </form>
+
                                 </div>
                             </div>
                         </section>
@@ -432,6 +437,9 @@
     </section>
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="libUsuarios/lib/jquery/jquery.min.js"></script>
+    <!-- Parsley.js -->
+    <script src="libUsuarios/lib/Parsley/parsley.min.js"></script>
+    <script src="libUsuarios/lib/Parsley/es.js"></script>
     <script src="libUsuarios/lib/bootstrap/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="libUsuarios/lib/jquery.dcjqaccordion.2.7.js"></script>
     <script src="libUsuarios/lib/jquery.scrollTo.min.js"></script>
@@ -455,7 +463,7 @@
     <script src="js/sendUserMessage.js"></script>
     <script src="js/fillUserProfile.js"></script>
     <script src="js/emergencias_Naturales.js"></script>
-
+    <script src="js/upload_image.js"></script>
 </body>
 
 </html>

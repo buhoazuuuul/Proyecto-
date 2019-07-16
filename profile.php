@@ -128,7 +128,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
+                  <span class="photo"><img alt="Foto de perfil" src="img/ui-zac.jpg"></span>
                   <span class="subject">
                     <span class="from">Zac Snider</span>
                     <span class="time">Just now</span>

@@ -6,11 +6,21 @@ var confidencialidad;
 var mensaje;
 var categoria;
 var prioridad;
-var adjunto = 'Admin/img/404.png';
+var adjunto;
 
 $(document).ready(function () {
 
     console.log('Documento sendUserMessage.js cargado');
+    $(function () {
+
+        Parsley.on('form:submit', function () {
+            sendUserMessage();
+        });
+
+        $('form').parsley({
+            inputs: Parsley.options.inputs + ',[data-parsley-check-children]'
+        });
+    });
     getSecretarios();
     setButtonsFunctions();
 
@@ -18,13 +28,14 @@ $(document).ready(function () {
 
 function getMailFields() {
 
+    categoria = $('#emergencia').val();
     asunto = $('#asunto').val();
     lugar = $('#lugar').val();
     fecha_hora = $('#timepicker-actions-exmpl').val();
+    prioridad = $('#prioridad').val();
     confidencialidad = $('#confidencialidad').val();
     mensaje = $('#mensaje').val();
-    categoria = "";
-    prioridad = $('#prioridad').val();
+
 
 }
 
@@ -52,16 +63,14 @@ function getSecretarios() {
 }
 
 function sendUserMessage() {
+    getMailFields();
 
     $.ajax({
         url: 'php/createMenssage.php',
         method: "POST",
         data: {
             categoria: categoria, asunto: asunto, lugar: lugar, fecha_hora: fecha_hora,
-            prioridad: prioridad,
-            confidencialidad: confidencialidad,
-            mensaje: mensaje,
-            adjunto: adjunto
+            prioridad: prioridad, confidencialidad: confidencialidad, mensaje: mensaje, adjunto: imgPath
         },
         success: function (data) {
 
@@ -76,7 +85,7 @@ function sendUserMessage() {
 
 
             } else {
-
+                console.log(data);
                 Swal.fire({
                     position: 'center',
                     type: 'error',
@@ -96,10 +105,10 @@ function sendUserMessage() {
 function setButtonsFunctions() {
 
     // Eventos del click
-    $('#btnEnviarMsm').on('click', function () {
-        getMailFields();
-        sendUserMessage();
-    });
+    // $('#btnEnviarMsm').on('click', function () {
+    //     getMailFields();
+    //     sendUserMessage();
+    // });
 
     // Propiedades href
 

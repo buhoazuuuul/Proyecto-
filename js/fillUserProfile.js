@@ -4,8 +4,6 @@ var lastDoc;
 var url = 'profile.php?userName=' + username;
 var urlCorreo = 'sendMail.php?userName=' + username;
 
-
-
 $(document).ready(function () {
 
     console.log('Documento filluserProfile cargado');
@@ -122,11 +120,6 @@ function logout() {
 
 }
 
-function mainPorfileImg() {
-
-    jq
-
-}
 
 
 

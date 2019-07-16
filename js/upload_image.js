@@ -27,7 +27,7 @@ $(document).ready(function () {
                     $('#uploaded_image').html("<label class='text-success'>Subiendo..</label>");
                 },
                 success: function (data) {
-                    $('#uploaded_image').html('Se subio tu foto de perfil');
+                    $('#uploaded_image').html('Se subio el archivo');
                     imgPath = data;
                     console.log(imgPath);
                 }
