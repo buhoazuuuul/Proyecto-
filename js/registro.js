@@ -9,6 +9,8 @@ var fecha;
 var usuario;
 var pass;
 
+
+
 $(document).ready(function () {
 
     console.log('Documento usuario.js cargado');
@@ -19,8 +21,6 @@ $(document).ready(function () {
     });
 
 });
-
-
 function guardarDatosRegistro() {
 
     num_doc = $('#num_doc').val();
@@ -31,8 +31,8 @@ function guardarDatosRegistro() {
     email = $('#email').val();
     residencia = $('#residencia').val();
     fecha = $('#fecha').val();
-    usuario = $('#usuario').val();
-    pass = $('#pass').val();
+    usuario = $('#login').val();
+    pass = $('#name="password"').val();
 
 }
 
@@ -87,6 +87,20 @@ function getTiposDeDocumentos() {
                 text: field.nomtipodocumento
             }));
         });
+    });
+
+}
+
+function validarRegistro(nombreUsuario, mail) {
+
+    $.ajax({
+        type: "GET",
+        url: "php/getUserLogin.php",
+        data: {},
+        dataType: "dataType",
+        success: function (response) {
+
+        }
     });
 
 }

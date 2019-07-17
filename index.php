@@ -74,37 +74,6 @@
           Iniciar Sesión
         </button>
       </a>
-      <!-- Modal Iniciar Sesión-->
-      <div class="modal fade" id="iniciarsesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLongTitle">Iniciar Sesión</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form method="post" role="form" action="php/login.php">
-                <div class="form-group col-lg-6">
-                  <input type="text" name="nomusuario" id="nomusuario" class="form-control" placeholder="Usuario" data-rule="minlen:4" data-msg="Usuario no registrado" />
-                  <div class="validation"></div>
-                </div>
-
-                <div class="form-group col-lg-6">
-                  <input type="password" name="passususario" id="passususario" class="form-control" placeholder="Contraseña" data-rule="minlen:4" data-msg="Contraseña incorrecta" />
-                  <div class="validation"></div>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" id="btnLogin" class="btn btn-primary">Entrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
       <!-- Button modal Registro usuario -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrarse">
         Registrarse
@@ -120,68 +89,75 @@
               </button>
             </div>
             <div class="modal-body">
-              <form method="post" role="form" class="contactForm" action="php/usuarios.php">
+              <!-- Formulario de registro -->
+              <form  class="js-form form contactForm" >
                 <div class="form-row">
                   <div class="form-group col-lg-6">
                     <label class="control-label">Documento de identidad</label>
-                    <input type="number" name="num_doc" id="num_doc" class="form-control" placeholder="Documento de identidad" data-rule="minlen:4" data-msg="Por favor ingrese su numero de documento" />
+                    <input type="number" autocomplete="off" data-validate-field="number" name="num_doc" id="num_doc" class="form-control" placeholder="Documento de identidad" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Tipo de documento</label>
-                    <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="Tipo de documento" data-rule="minlen:4">
+                    <select name="tipo_doc" class="form-control" id="tipo_doc"  placeholder="Tipo de documento" data-validate-field="text">
                     </select>
                   </div>
                   <div class="form-group col-lg-6">
-                    <label class="control-label">Nombres</label>
-                    <input type="name" name="nombre" id="nombre" class="form-control" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese su nombre" />
+                     <label class="control-label">Nombres</label>
+                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Apellido" data-validate-field="text"/>
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Apellidos</label>
-                    <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" data-rule="minlen:4" data-msg="Por favor ingrese su apellido" />
+                    <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" data-validate-field="text"/>
                     <div class="validation"></div>
                   </div>
-
                   <div class="form-group col-lg-6">
                     <label class="control-label">Telefono</label>
-                    <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Telefono" data-rule="minlen:4" data-msg="Por favor ingrese su telefono" />
+                    <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Telefono"  data-validate-field="number"/>
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Correo electronico</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Correo electronico" data-rule="minlen:4" data-msg="Por favor ingrese su correo electronico" />
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Correo electronico"  data-validate-field="email"  />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Departamento</label>
-                    <select class="form-control" id="departamento">
+                    <select class="form-control" id="departamento" name="departamento" data-validate-field="text">
                     </select>
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Municipio</label>
-                    <select class="form-control" id="municipio">
+                    <select class="form-control" id="municipio" name="municipio"  data-validate-field="text">
                     </select>
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Fecha de nacimiento</label>
-                    <input type="date" name="fecha" id="fecha" class="form-control" placeholder="Fecha de nacimiento" data-rule="minlen:8" data-msg="Por favor ingrese su fecha de nacimiento" />
+                    <input type="date" name="fecha" id="fecha" class="form-control" placeholder="Fecha de nacimiento" data-validate-field="text"/>
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Nombre de usuario</label>
-                    <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario" data-rule="minlen:4" data-msg="Por favor ingrese su usuario" />
+                    <input type="text" autocomplete="off" data-validate-field="login" name="login" id="login" class="form-control" placeholder="Usuario"/>
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Contraseña</label>
-                    <input type="password" name="pass" id="pass" class="form-control" placeholder="Contraseña" data-rule="minlen:4" data-msg="Por favor ingrese su contraseña" />
+                    <input type="password"  id="c" name="password" class="form-control" placeholder="Contraseña" data-validate-field="password" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <label class="control-label">Sexo</label>
+                    <label><input type="radio" name="radio" class="form__radio" data-validate-field="radio">Male</label>
+                    <br>
+                    <label><input type="radio" name="radio" class="form__radio" data-validate-field="radio">Female</label>
                     <div class="validation"></div>
                   </div>
                   <div class="modal-footer">
-                    <input type="submit" class="btn btn-primary" id="btnRegistrarse" value="Registrarse">
+                    <button id="btnRegistrarse" class="form__btn btn btn-primary">Registrarse</button>
                   </div>
               </form>
             </div>
@@ -201,15 +177,12 @@
           <span class="section-divider"></span>
           <!--<p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
         </div>
-
         <div class="row">
-
           <div class="col-lg-4 col-md-6">
             <div class="box wow fadeInLeft">
               <img src="img/logo.png" class="d-block w-100" alt="...">
             </div>
           </div>
-
           <div class="col-lg-8 col-md-6">
             <div class="box wow fadeInRight">
               <h3>...</h3>
@@ -221,13 +194,10 @@
 
         </div>
       </div>
-    </section><!-- #pricing -->
-
-
+    </section>
     <!--==========================
       Sección de aprende
     ============================-->
-
 
     <section id="features">
       <div class="container">
@@ -369,84 +339,6 @@
         </a>
       </div>
     </div>
-
-    <!--==========================
-      Product Advanced Featuress Section
-    ============================
-    <section id="advanced-features">
-      <div class="features-row section-bg">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <img class="advanced-feature-img-right wow fadeInRight" src="img/advanced-feature-1.jpg" alt="">
-              <div class="wow fadeInLeft">
-                <h2>Duis aute irure dolor in reprehenderit in voluptate velit esse</h2>
-                <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="features-row">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <img class="advanced-feature-img-left" src="img/advanced-feature-2.jpg" alt="">
-              <div class="wow fadeInRight">
-                <h2>Duis aute irure dolor in reprehenderit in voluptate velit esse</h2>
-                <i class="ion-ios-paper-outline" class="wow fadeInRight" data-wow-duration="0.5s"></i>
-                <p class="wow fadeInRight" data-wow-duration="0.5s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                <i class="ion-ios-color-filter-outline wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.5s"></i>
-                <p class="wow fadeInRight" data-wow-dely="0.2s" data-wow-duration="0.5s">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                <i class="ion-ios-barcode-outline wow fadeInRight" data-wow-delay="0.4" data-wow-duration="0.5s"></i>
-                <p class="wow fadeInRight" data-wow-delay="0.4s" data-wow-duration="0.5s">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="features-row section-bg">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <img class="advanced-feature-img-right wow fadeInRight" src="img/advanced-feature-3.jpg" alt="">
-              <div class="wow fadeInLeft">
-                <h2>Duis aute irure dolor in reprehenderit in voluptate velit esse</h2>
-                <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                <i class="ion-ios-albums-outline"></i>
-                <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> #advanced-features 
-
-    ==========================
-      Call To Action Section
-    ============================
-    <section id="call-to-action">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-left">
-            <h3 class="cta-title">Call To Action</h3>
-            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
-          </div>
-        </div>
-
-      </div>
-    </section> #call-to-action -->
-    <!-- ==========================
-      More Features Section
-    ============================-->
     <section id="more-features" class="section-bg">
       <div class="container">
 
@@ -521,50 +413,6 @@
         </div>
       </div>
     </section>
-    <!--Etidades relacionadas-->
-    <!--==========================
-      Sobre nosotros
-    ============================
-    <section id="about" class="section-bg">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h3 class="section-title">Sobre nosotros</h3>
-          <span class="section-divider"></span>
-          <p class="section-description">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque<br>
-            sunt in culpa qui officia deserunt mollit anim id est laborum
-          </p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6 about-img wow fadeInLeft">
-            <img src="img/about-img.jpg" alt="">
-          </div>
-
-          <div class="col-lg-6 content wow fadeInRight">
-            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elite storium paralate</h2>
-            <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-
-            <ul>
-              <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul>
-
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Libero justo laoreet sit amet cursus sit amet dictum sit. Commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>< #Sobre nosotros -->
-    <!--==========================
-      Frequently Asked Questions Section
-    ============================-->
     <section id="faq">
       <div class="container">
 
@@ -858,8 +706,10 @@
   <script src="js/contactform.js"></script>
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+   <!-- just validate js library -->
+  <script src="js/just-validate.min.js"></script>
   <!-- Archivo js para los usuarios -->
-  <script src="js/usuario.js"></script>
+  <script src="js/registro.js"></script>
   <script src="js/login.js"></script>
   <!-- <script src="js/departamentos_municipios.js"></script> -->
   <!-- Sweet alert plugin -->
@@ -872,7 +722,7 @@
   <script src="libUsuarios\lib\popper.min.js"></script>
   <!-- Open data -->
   <script src="js/departamentos_municipios.js"></script>
-
+  script
 </body>
 
 </html>
