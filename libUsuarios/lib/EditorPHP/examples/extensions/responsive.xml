@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" table-class="display responsive nowrap" order="6">
+
+<css lib="datatables responsive buttons select editor" />
+<js lib="jquery datatables responsive buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Responsive table extension</title>
+
+<info><![CDATA[
+
+This example show Editor being used with the [Responsive extension for DataTables](//datatables.net/extensions/responsive). Responsive will automatically adjust the visibility of columns in your tables so the the layout of information is nicely presented, regardless of screen size. When columns are hidden, Responsive can add a show / hide button to allow the end user to see the information from the hidden columns.
+
+Initialisation of Responsive on a table that also uses Editor is as simple as including the Responsive scripts and adding a `responsive` class to the `-tag table`, as shown in this example.
+
+]]></info>
+
+</dt-example>
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="3">
+
+<css lib="datatables buttons select editor" />
+<js lib="moment jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: '../php/datetime.php',
+		table: '#example',
+		fields: [ {
+				label: 'First name:',
+				name:  'first_name'
+			}, {
+				label: 'Last name:',
+				name:  'last_name'
+			}, {
+				label:     'Updated date:',
+				name:      'updated_date',
+				type:      'datetime',
+				def:       function () { return new Date(); },
+				format:    'MM-DD-YYYY h:mm A',
+				fieldInfo: 'US style m-d-y date input with 12 hour clock'
+			}, {
+				label: 'Registered date:',
+				name:  'registered_date',
+				type:  'datetime',
+				def:   function () { return new Date(); },
+				format: 'D MMM YYYY HH:mm',
+				fieldInfo: 'Euro style date with 24 hour clock'
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '../php/datetime.php',
+		columns: [
+			{ data: 'first_name' },
+			{ data: 'last_name' },
+			{ data: 'updated_date' },
+			{ data: 'registered_date' }
+		],
+		select: true,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Date and time input</title>
+
+<info><![CDATA[
+
+Editor's built in `e-field datetime` field type provides a UI widget to assist with the user input of both dates and times - the components that are displayed in the input control are automatically determined from the `format` string.
+
+In this case we have two fields which contain both date and time components, shown in different formats to illustrate how the formatting options operate. The _Updated date_ field is shown in a US style date format with a 12 hour clock while the _Reigstered date_ is shown with a more Euro style format and a 24 hour clock.
+
+The formats are defined by the [momentjs](http://momentjs.com/docs/#/parsing/string-format/) library which must be included for the `e-field datetime` field type to operate with date time formatted strings.
+
+]]></info>
+
+<custom-table>
+	<table class="display" id="example" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Updated date</th>
+				<th>Registered date</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

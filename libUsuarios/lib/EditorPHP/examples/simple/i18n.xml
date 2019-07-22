@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="7">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "Prénom:",
+				name: "first_name"
+			}, {
+				label: "Nom de famille:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Bureau:",
+				name: "office"
+			}, {
+				label: "Téléphone:",
+				name: "extn"
+			}, {
+				label: "Date de début:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salaire:",
+				name: "salary"
+			}
+		],
+		i18n: {
+			create: {
+				button: "Nouveau",
+				title:  "Créer nouvelle entrée",
+				submit: "Créer"
+			},
+			edit: {
+				button: "Modifier",
+				title:  "Modifier entrée",
+				submit: "Actualiser"
+			},
+			remove: {
+				button: "Supprimer",
+				title:  "Supprimer",
+				submit: "Supprimer",
+				confirm: {
+					_: "Etes-vous sûr de vouloir supprimer %d lignes?",
+					1: "Etes-vous sûr de vouloir supprimer 1 ligne?"
+				}
+			},
+			error: {
+				system: "Une erreur s’est produite, contacter l’administrateur système"
+			},
+			datetime: {
+				previous: 'Précédent',
+				next:     'Premier',
+				months:   [ 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre' ],
+				weekdays: [ 'Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam' ]
+			}
+		}
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( '.', ',', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		],
+		language: {
+			processing:     "Traitement en cours...",
+			search:         "Rechercher&nbsp;:",
+			lengthMenu:     "Afficher _MENU_ &eacute;l&eacute;ments",
+			info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+			infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+			infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+			infoPostFix:    "",
+			loadingRecords: "Chargement en cours...",
+			zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+			emptyTable:     "Aucune donnée disponible dans le tableau",
+			paginate: {
+				first:      "Premier",
+				previous:   "Pr&eacute;c&eacute;dent",
+				next:       "Suivant",
+				last:       "Dernier"
+			},
+			aria: {
+				sortAscending:  ": activer pour trier la colonne par ordre croissant",
+				sortDescending: ": activer pour trier la colonne par ordre décroissant"
+			}
+		}
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Internationalisation</title>
+
+<info><![CDATA[
+
+As with DataTables, the interface that is presented to the end user by Editor can have the language strings used customised as you wish. This allows Editor's interface to be presented in languages other than the default English - indeed this can be useful to modify the default English strings if you so require.
+
+This customisation is done through the `e-init i18n` initialisation options. See the [internationalisation manual](//editor.datatables.net/manual/i18n) for further information.
+
+This example shows how Editor and DataTables may have their language strings customised. In this example French is used to show this ability.
+
+]]></info>
+
+</dt-example>
+

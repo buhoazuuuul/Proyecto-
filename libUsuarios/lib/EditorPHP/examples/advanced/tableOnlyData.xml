@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="2">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		"ajax": "../php/tableOnlyData.php",
+		"table": "#example",
+		"fields": [ {
+				"label": "First name:",
+				"name": "first_name"
+			}, {
+				"label": "Last name:",
+				"name": "last_name"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/tableOnlyData.php",
+		columns: [
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "updated_date" }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Data shown in table only</title>
+
+<info><![CDATA[
+
+This example shows how Editor can handle the case where data is shown in the table, but is not available in the form to be edited. This can be useful where the server generates some of the data to be shown in the table, for example a timestamp showing the last edited time, or an auto incrementing sequence. This is the inverse of the [form only data](formOnlyData.html) example.
+
+The way this works is that Editor simply returns the details for the row on each create and edit action, in the `row` return parameter. This information is then used to populate the DataTable.
+
+]]></info>
+
+<custom-table>
+	<table class="display" id="example" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Updated date</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Updated date</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+

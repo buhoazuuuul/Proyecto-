@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="12">
+
+<css lib="jqueryui datatables buttons select editor" />
+<js lib="jquery jqueryui datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: '../php/dates.php?format=custom',
+		table: '#example',
+		fields: [ {
+				label: 'First name:',
+				name:  'first_name'
+			}, {
+				label: 'Last name:',
+				name:  'last_name'
+			}, {
+				label:      'Updated date:',
+				name:       'updated_date',
+				type:       'date',
+				def:        function () { return new Date(); },
+				dateFormat: 'm/d/yy'
+			}, {
+				label:      'Registered date:',
+				name:       'registered_date',
+				type:       'date',
+				def:        function () { return new Date(); },
+				dateFormat: 'DD d MM yy'
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '../php/dates.php?format=custom',
+		columns: [
+			{ data: 'first_name' },
+			{ data: 'last_name' },
+			{ data: 'updated_date' },
+			{ data: 'registered_date' }
+		],
+		select: true,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">jQuery UI DatePicker with custom formatting</title>
+
+<info><![CDATA[
+
+Custom formats can be used with the jQuery UI DatePicker through the `dateFormat` option which can be specified for `e-field date` field types. The formatting options are [defined by jQuery UI's `formatDate` method](http://api.jqueryui.com/datepicker/#utility-formatDate).
+
+This example shows two different date fields which are displayed using different formats - the first is in the US _m/d/y_ format while the second is a more verbose format.
+
+]]></info>
+
+<custom-table>
+	<table class="display" id="example" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Updated date</th>
+				<th>Registered date</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

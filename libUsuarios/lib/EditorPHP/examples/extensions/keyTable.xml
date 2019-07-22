@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="2">
+
+<css lib="datatables buttons select keytable editor">
+	div.DTE_Inline input {
+		border: none;
+		background-color: transparent;
+		padding: 0 !important;
+		font-size: 90%;
+	}
+
+	div.DTE_Inline input:focus {
+		outline: none;
+		background-color: transparent;
+	}
+</css>
+<js lib="jquery datatables buttons select keytable editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{
+				data: null,
+				defaultContent: '',
+				className: 'select-checkbox',
+				orderable: false
+			},
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		keys: {
+			columns: ':not(:first-child)',
+			editor:  editor
+		},
+		select: {
+			style:    'os',
+			selector: 'td:first-child',
+			blurable: true
+		},
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Excel like keyboard navigation</title>
+
+<info><![CDATA[
+
+Editor's inline editing ability (`e-api inline()`) can make for quick and easy updating of data, but if you combine it with [KeyTable](https://datatables.net/extensions/keytable) you can make your DataTable much more like an Excel spreadsheet with keyboard navigation.
+
+KeyTable's `kt-init keys.editor` option binds your Editor instance with the key interface so that typing in a cell will automatically activate its inline editing. Data is then submitted when the cell looses focus.
+
+Additional styling is used here to hide the borders of the input element, making it similar to editing a traditional spreadsheet.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th></th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th width="18%">Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

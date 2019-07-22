@@ -12,7 +12,6 @@
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
   <!-- Bootstrap core CSS -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
@@ -23,6 +22,8 @@
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.10.19/b-1.5.6/sl-1.3.0/datatables.min.css" />
+  <link rel="stylesheet" type="text/css" href="Editor-1.9.0/css/editor.dataTables.css">
 </head>
 
 <body>
@@ -46,7 +47,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-tasks"></i>
               <span class="badge bg-theme">4</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended tasks-bar">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -115,7 +116,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-envelope-o"></i>
               <span class="badge bg-theme">5</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended inbox">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -125,49 +126,49 @@
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
                   <span class="subject">
-                  <span class="from">Zac Snider</span>
-                  <span class="time">Just now</span>
+                    <span class="from">Zac Snider</span>
+                    <span class="time">Just now</span>
                   </span>
                   <span class="message">
-                  Hi mate, how is everything?
+                    Hi mate, how is everything?
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
                   <span class="subject">
-                  <span class="from">Divya Manian</span>
-                  <span class="time">40 mins.</span>
+                    <span class="from">Divya Manian</span>
+                    <span class="time">40 mins.</span>
                   </span>
                   <span class="message">
-                  Hi, I need your help with this.
+                    Hi, I need your help with this.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
                   <span class="subject">
-                  <span class="from">Dan Rogers</span>
-                  <span class="time">2 hrs.</span>
+                    <span class="from">Dan Rogers</span>
+                    <span class="time">2 hrs.</span>
                   </span>
                   <span class="message">
-                  Love your new Dashboard.
+                    Love your new Dashboard.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-sherman.jpg"></span>
                   <span class="subject">
-                  <span class="from">Dj Sherman</span>
-                  <span class="time">4 hrs.</span>
+                    <span class="from">Dj Sherman</span>
+                    <span class="time">4 hrs.</span>
                   </span>
                   <span class="message">
-                  Please, answer asap.
+                    Please, answer asap.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">See all messages</a>
@@ -180,7 +181,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-bell-o"></i>
               <span class="badge bg-warning">7</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended notification">
               <div class="notify-arrow notify-arrow-yellow"></div>
               <li>
@@ -191,28 +192,28 @@
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Server Overloaded.
                   <span class="small italic">4 mins.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-warning"><i class="fa fa-bell"></i></span>
                   Memory #2 Not Responding.
                   <span class="small italic">30 mins.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Disk Space Reached 85%.
                   <span class="small italic">2 hrs.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-success"><i class="fa fa-plus"></i></span>
                   New User Registered.
                   <span class="small italic">3 hrs.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">See all notifications</a>
@@ -244,13 +245,13 @@
             <a href="index.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
-              </a>
+            </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-tasks"></i>
               <span>Formularios</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="../RegistroSecre.php">Registrar un secretario</a></li>
             </ul>
@@ -259,7 +260,7 @@
             <a class="active" href="javascript:;">
               <i class="fa fa-th"></i>
               <span>Tablas</span>
-              </a>
+            </a>
             <ul class="sub">
               <li class="active"><a href="usuarios.html">Usuarios</a></li>
               <li><a href="secretarios.html">Secretarios</a></li>
@@ -270,7 +271,7 @@
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
-              </a>
+            </a>
           </li>
         </ul>
         <!-- sidebar menu end-->
@@ -347,7 +348,7 @@
         </div>
         <a href="advanced_table.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
-          </a>
+        </a>
       </div>
     </footer>
     <!--footer end-->

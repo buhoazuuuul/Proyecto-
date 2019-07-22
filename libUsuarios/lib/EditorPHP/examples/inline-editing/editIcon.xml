@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="6">
+
+<css lib="datatables font-awesome buttons select editor">
+	table.dataTable td > i {
+		margin-left: 0.5em;
+		opacity: 0.3;
+	}
+</css>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	var editIcon = function ( data, type, row ) {
+		if ( type === 'display' ) {
+			return data + ' <i class="fa fa-pencil"/>';
+		}
+		return data;
+	};
+
+	$('#example tbody').on( 'click', 'td i', function (e) {
+		e.stopImmediatePropagation(); // stop the row selection when clicking on an icon
+
+		editor.inline( $(this).parent() );
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: "first_name", render: editIcon },
+			{ data: "last_name",  render: editIcon },
+			{ data: "position",   render: editIcon },
+			{ data: "office",     render: editIcon },
+			{ data: "start_date", render: editIcon },
+			{ data: "salary",     render: function ( data, type, row ) {
+				if ( type === 'display' ) {
+					var numberRenderer = $.fn.dataTable.render.number( ',', '.', 0, '$' ).display;
+					return numberRenderer( data )+ ' <i class="fa fa-pencil"/>';
+				}
+				return data;
+			} }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Edit icon</title>
+
+<info><![CDATA[
+
+The other inline editing examples present an interface whereby you click on the cell that you want to edit and row selection options are presented in the first column for the primary editing mode of Editor.
+
+As this example shows, any element can be used to activate the inline edit. In this particular case, a pencil icon is added to each cell, which can be clicked upon. Clicking anywhere else in the row will select the row, but clicking the icon will simply activate the inline editing mode for that cell.
+
+This could be useful if only certain columns are to be available, thus highlighting and making clear to the users which columns are editable, or if other action controls are also to be presented for each cell.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" >
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th>Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+		<tbody/>
+	</table>
+</custom-table>
+
+</dt-example>
+

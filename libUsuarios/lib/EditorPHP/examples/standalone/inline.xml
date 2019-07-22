@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="3">
+
+<css lib="datatables editor">
+	dt { margin-top: 1em; }
+	dt:first-child { margin-top: 0; }
+	dd { width: 25% }
+
+	*[data-editor-field] {
+		border: 1px dashed #ccc;
+		padding: 0.5em;
+		margin: 0.5em;
+	}
+
+	*[data-editor-field]:hover {
+		background: #f3f3f3;
+		border: 1px dashed #333;
+	}
+</css>
+<js lib="jquery datatables editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/standalone.php",
+		fields: [ {
+				label: "Status:",
+				name:  "enable",
+				type:  'radio',
+				options: [
+					{ label: 'Enabled',  value: 'Enabled' },
+					{ label: 'Disabled', value: 'Disabled' }
+				]
+			}, {
+				label: "Server IP address:",
+				name:  "server-ip"
+			}, {
+				label:     "Polling period:",
+				name:      "poll-period"
+			}, {
+				name: "protocol", // `label` since `data-editor-label` is defined for this field
+				type: "select",
+				options: [
+					{ label: 'TCP', value: 'TCP' },
+					{ label: 'UDP', value: 'UDP' }
+				]
+			}
+		]
+	} );
+
+	$('[data-editor-field]').on( 'click', function (e) {
+		editor.inline( this, {
+			buttons: '_basic'
+		} );
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Inline editing</title>
+
+<info><![CDATA[
+
+This example is basically the same as the [simple standalone editing example](simple.html) but in this case the `e-api inline()` method is used for editing the fields, rather than the `e-api edit()` primary method for editing the whole form.
+
+Standalone forms can befit from [inline editing](../inline-editing) in exactly the same way as DataTables based editing forms and with all of the same features. As with DataTables, this can be very beneficial for speed of editing.
+
+Please note that this example doesn't actually save to a database at the server. A refresh will result in the original values being restored.
+
+]]></info>
+
+<custom-table>
+	<dl>
+		<dt>State:</dt>
+		<dd data-editor-field="enable">Enabled</dd>
+
+		<dt>Server IP:</dt>
+		<dd data-editor-field="server-ip">153.63.213.41</dd>
+
+		<dt>Poll period (seconds):</dt>
+		<dd data-editor-field="poll-period">60</dd>
+
+		<dt data-editor-label="protocol">Protocol:</dt>
+		<dd data-editor-field="protocol">TCP</dd>
+	</dl>
+</custom-table>
+
+</dt-example>
+

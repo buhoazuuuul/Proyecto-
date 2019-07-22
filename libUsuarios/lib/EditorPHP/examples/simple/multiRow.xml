@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="2">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn",
+				multiEditable: false
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Multi-row editing</title>
+
+<info><![CDATA[
+
+This example shows Editor's multi-row editing capabilities. To select multiple rows for editing, use the _ctrl/cmd_ key to toggle the selection of individual rows in the table and _shift_ to select a range of records. Then simply click the _Edit_ button above the table.
+
+Fields which have different values from the selected rows will show an information message stating this fact. To edit all fields to be the same value click that message and the standard form input will be shown. If left without modifying the value the data submitted to the server will not be modified for the individual rows. This makes it easy to enter a common value for one field without effecting the rest of the data for those rows.
+
+Please note that this initialisation is almost identical to the [basic initialisation example](simple) - multi-row editing is a core feature of Editor and is automatically supported by all examples on this site! The only difference is to include the `e-init fields.multiEditable` option for the _Extension_ field, disallowing that field from being edited when multiple rows are selected. See also the [multi-row editing manual page](//editor.datatables.net/manual/multi-row) for futher details.
+
+]]></info>
+
+</dt-example>
+

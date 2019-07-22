@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example order="6">
+
+<title lib="Editor">Editor bubble editing examples</title>
+
+<info><![CDATA[
+
+Editor has three different Editor modes:
+
+* Primary editing
+* Bubble editing
+* Inline editing
+
+The examples in this section show the bubble editing option, which displays one or more form fields in a bubble above the fields being edited.
+
+Bubble editing is designed to have all the fast editing options of inline editing (i.e. a single click to activate) without the potential layout issues that inline editing presents (for example a `textarea` or wysiwyg input control wouldn't fit into a table without causing the cell to resize).
+
+]]></info>
+
+</dt-example>

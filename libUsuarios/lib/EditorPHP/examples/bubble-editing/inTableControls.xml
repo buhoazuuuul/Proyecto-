@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="5">
+
+<css lib="datatables editor" />
+<js lib="jquery datatables editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		],
+		formOptions: {
+			bubble: {
+				title: 'Edit',
+				buttons: false
+			}
+		}
+	} );
+
+	$('button.new').on( 'click', function () {
+		editor
+			.title( 'Create new row' )
+			.buttons( { "label": "Add", "fn": function () { editor.submit() } } )
+			.create();
+	} );
+
+	$('#example').on( 'click', 'tbody td', function (e) {
+		if ( $(this).index() < 6 ) {
+			editor.bubble( this );
+		}
+	} );
+
+	$('#example').on( 'click', 'a.remove', function (e) {
+		editor
+			.title( 'Delete row' )
+			.message( 'Are you sure you wish to delete this row?' )
+			.buttons( { "label": "Delete", "fn": function () { editor.submit() } } )
+			.remove( $(this).closest('tr') );
+	} );
+
+	$('#example').DataTable( {
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) },
+			{
+				data: null,
+				defaultContent: '<a href="#" class="remove">Delete</a>',
+				orderable: false
+			},
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Bubble editing with in table row controls</title>
+
+<info><![CDATA[
+
+The other [bubble editing examples](index.html) show bubble editing with the first column being used to select the whole row. While this can be useful for allowing the user to edit all fields at the same time, or to select the rows to delete, you might wish to show the row controls inline with the table, rather than using row selection.
+
+This example shows how that might be achieved, simply by calling Editor's `e-api create()`, `e-api bubble()` and `e-api remove()` API methods as appropriate, from event handlers attached to the document.
+
+]]></info>
+
+<custom-table>
+	<button class="new">Create new row</button>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th>Start date</th>
+				<th>Salary</th>
+				<th></th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

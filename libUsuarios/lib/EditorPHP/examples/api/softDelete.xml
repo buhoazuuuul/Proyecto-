@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="8">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/softDelete.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "users.first_name"
+			}, {
+				label: "Last name:",
+				name: "users.last_name"
+			}, {
+				label: "Phone #:",
+				name: "users.phone"
+			}, {
+				label: "Site:",
+				name: "users.site",
+				type: "select"
+			}, {
+				name: "users.removed_date",
+                type: "hidden"
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: {
+			url: "../php/softDelete.php",
+			type: 'POST'
+		},
+		columns: [
+			{ data: "users.first_name" },
+			{ data: "users.last_name" },
+			{ data: "users.phone" },
+			{ data: "sites.name" }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{
+				extend: "selected",
+				text: 'Delete',
+				action: function ( e, dt, node, config ) {
+					var rows = table.rows( {selected: true} ).indexes();
+
+					editor
+						.hide( editor.fields() )
+						.one( 'close', function () {
+							setTimeout( function () { // Wait for animation
+								editor.show( editor.fields() );
+							}, 500 );
+						} )
+						.edit( rows, {
+							title: 'Delete',
+                        	message: rows.length === 1 ?
+								'Are you sure you wish to delete this row?' :
+								'Are you sure you wish to delete these '+rows.length+' rows',
+							buttons: 'Delete' 
+                        } )
+						.val( 'users.removed_date', (new Date()).toISOString().split('T')[0] );
+				}
+			}
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Soft delete</title>
+
+<info><![CDATA[
+
+This example demonstrates how a [soft delete](https://www.pcmag.com/encyclopedia/term/57355/soft-delete) database schema can be implemented with Editor. The basic idea here is that the data isn't actually removed from the database, but simply marked as deleted allowing a WHERE condition to be applied, removing that data from the user's view. This is often used where audit trails are required, or to allow data to be easily retrieved (e.g. undo).
+
+Rather than using a remove action in Editor (`-button remove` or `e-api remove()`), a soft delete is actually an edit (`e-api edit()`) with the field to flag the records as deleted set (`e-api val()`). Here a button is defined which shows a "Are you sure" message on an `edit` action and then sets the `removed_date` field (which is `e-field hidden`) to be the current date (which this specific database requires - other fields such as the deleting user name could also be set).
+
+Note also that since this is an edit action, and we don't actually want the end user to do any editing, we need to use `e-api hide()` to hide the editable fields and then `e-api show()` when the form is closed (`e-event close`) to make then visible on the edit real edit.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Phone #</th>
+				<th>Location</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Phone #</th>
+				<th>Location</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+

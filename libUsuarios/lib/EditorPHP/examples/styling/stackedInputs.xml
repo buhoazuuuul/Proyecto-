@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="9">
+
+<css lib="datatables buttons select editor">
+	div.DTED_Lightbox_Wrapper {
+		width: 600px;
+		margin-left: -300px;
+	}
+	div.DTE div.DTE_Body div.DTE_Field {
+		padding-top: 5px
+	}
+	div.DTE div.DTE_Body div.DTE_Field > label {
+		float: none;
+		clear: both;
+		width: 100%;
+	}
+	div.DTE div.DTE_Body div.DTE_Field > div.DTE_Field_Input {
+		float: none;
+		clear: both;
+		width: 100%;
+	}
+</css>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		"ajax": "../php/staff.php",
+		"table": "#example",
+		"fields": [ {
+				"label": "First name:",
+				"name": "first_name"
+			}, {
+				"label": "Last name:",
+				"name": "last_name"
+			}, {
+				"label": "Position:",
+				"name": "position"
+			}, {
+				"label": "Office:",
+				"name": "office"
+			}, {
+				"label": "Extension:",
+				"name": "extn"
+			}, {
+				"label": "Start date:",
+				"name": "start_date",
+				"type": "date"
+			}, {
+				"label": "Salary:",
+				"name": "salary"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Stacked inputs</title>
+
+<info><![CDATA[
+
+Editor's default CSS is responsive, it will optimally redraw its layout for the specific device viewing an Editor page. For example, on a desktop computer the form is shown with the inputs and labels in the form aligned on the same rows. On a phone they are shown as stacked. This is done to ensure that Editor can be used on any device.
+
+Although the default CSS is responsive, you might wish to customise it. The [Editor manual](//editor.datatables.net/manual) has detailed information about how Editor can be styled by CSS, but this example shows how you might show the form inputs stacked in a column with the field labels.
+
+]]></info>
+
+</dt-example>
+

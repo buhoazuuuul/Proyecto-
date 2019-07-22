@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax-details" order="2">
+
+<css lib="datatables editor buttons">
+td.details-control {
+	background: url('../../../../../examples/resources/details_open.png') no-repeat center center;
+	cursor: pointer;
+}
+tr.shown td.details-control {
+	background: url('../../../../../examples/resources/details_close.png') no-repeat center center;
+}
+td.DTE_EditorDetails:hover {
+	background-color: white !important;
+}
+</css>
+<js lib="jquery datatables editor buttons">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+
+(function() {
+	var Editor = $.fn.dataTable.Editor;
+	Editor.display.details = $.extend(true, {}, Editor.models.displayController, {
+		init: function(editor) {
+			// Setup the lightbox - we'll use it for new entries
+			Editor.display.lightbox.init(editor);
+
+            // No other setup needed
+			return Editor.display.details;
+		},
+
+		open: function(editor, append, callback) {
+			var table = $(editor.s.table).DataTable();
+			var row = editor.s.modifier;
+
+			// Close any rows which are already open
+			Editor.display.details.close(editor);
+
+			if (editor.mode() === 'create') {
+				// Its a new row. Use Editor's lightbox
+				Editor.display.lightbox.open(editor, append, callback);
+			} else {
+				// Open the child row on the DataTable
+				table.row(row).child(append).show();
+
+				$(table.row(row).node()).addClass('shown');
+
+				if (callback) {
+					callback();
+				}
+			}
+		},
+
+		close: function(editor, callback) {
+			Editor.display.lightbox.close(editor, callback);
+
+			var table = $(editor.s.table).DataTable();
+
+			table.rows().every(function() {
+				if (this.child.isShown()) {
+					this.child.hide();
+					$(this.node()).removeClass('shown');
+				}
+			});
+
+			if (callback) {
+				callback();
+			}
+		}
+	});
+})();
+ 
+
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		display: "details",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{
+				className:      'details-control',
+				orderable:      false,
+				data:           null,
+				defaultContent: ''
+			},
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		order: [[1, 'asc']],
+        select: true,
+        buttons: [
+            { extend: "create", editor: editor }
+        ],
+		rowCallback: function ( row, data, index ) {
+			$('td:first-child', row).attr('title', 'Click to edit');
+		}
+	} );
+ 
+    $('#example').on( 'click', 'td.details-control', function () {
+        var tr = this.parentNode;
+ 
+        if ( table.row( tr ).child.isShown() ) {
+            editor.close();
+        }
+        else {
+            editor.edit(
+                tr,
+                'Edit row',
+                [
+                    {
+                        "className": "delete",
+                        "label": "Delete row",
+                        "fn": function () {
+                            // Close the edit display and delete the row immediately
+                            editor.close();
+                            editor.remove( tr, '', null, false );
+                            editor.submit();
+                        }
+                    }, {
+                        "label": "Update row",
+                        "fn": function () {
+                            editor.submit();
+                        }
+                    }
+                ]
+            );
+        }
+    } );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Custom display controller</title>
+
+<info><![CDATA[
+
+Editor has two display controllers built in for use with the `e-init display` option (`lightbox` and `envelope`). However, you might wish to customise how Editor displays your form - this can be down through the use of a display controller plug-in.
+
+Display controllers basically place the form on screen somewhere - they are not interested in the contents of the form, they are simply given an element that needs to be shown, and how exactly they display that element is entirely up to them! This provides a huge amount of flexibility in Editor, allowing your interface to be customised to exactly what you want.
+
+This example shows how a display controller can be built using DataTables child row abilities (`dt-api row().child().show()`). When the control icon is clicked upon, we make a call to `e-api edit()` to start the edit. The display controller then creates the child row using the DataTables API and inserts the form control. Note that it uses the lightbox control for creating new rows, since attaching the new row form to an existing row doesn't make any sense!
+
+For more detailed information on how to create plug-ins for Editor, please refer to the [Editor documentation](//editor.datatables.net/manual).
+
+]]></info>
+
+</dt-example>
+

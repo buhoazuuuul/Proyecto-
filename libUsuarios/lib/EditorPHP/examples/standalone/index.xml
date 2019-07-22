@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example order="8">
+
+<title lib="Editor">Editor standalone form examples</title>
+
+<info><![CDATA[
+
+Editor's primary use is as an Editor for [DataTables](//datatables.net). However, it can also be used as a standalone form editor, which can be useful for single dimension configuration parameters (i.e. those that don't directly lend themselves to display in a table) and also as a collection editor. This ensures a consistent interface for your end users in their form editing, and for you in your development API.
+
+The examples in this section show how Editor can be used in its standalone mode.
+
+]]></info>
+
+</dt-example>

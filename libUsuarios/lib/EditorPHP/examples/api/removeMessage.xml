@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="9">
+
+<css lib="datatables buttons select editor">
+	div.DTE_Form_Info {
+		text-align: left;
+	}
+</css>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{
+				extend: "remove",
+				editor: editor,
+				formMessage: function ( e, dt ) {
+					var rows = dt.rows( e.modifier() ).data().pluck('first_name');
+					return 'Are you sure you want to delete the entries for the '+
+						'following record(s)? <ul><li>'+rows.join('</li><li>')+'</li></ul>';
+				}
+			}
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Custom delete / remove message</title>
+
+<info><![CDATA[
+
+The three button types that Editor adds to DataTables (`e-button create`, `e-button edit` and `e-button remove`) each have the option of being able to show a custom message in the Editor form when activated through their `formMessage` option (which in turn is passed to the `e-api message()` method).
+
+This ability can be particularly useful for the `e-button remove` button, where a message could be shown which includes details of the selected rows, ensuring the end user is aware of which records will be deleted.
+
+In this case the `e-api modifier()` method is used to get the rows that will be deleted and `dt-api rows().data()` to get the data for these rows. Finally `dt-api pluck()` is used to gather a single data point from each row, although this could potentially be made much more complex if you require.
+
+]]></info>
+
+</dt-example>
+

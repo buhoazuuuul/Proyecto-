@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="4">
+
+<css lib="datatables editor font-awesome">
+	button.create,
+	div.panel {
+		position: relative;
+		box-sizing: border-box;
+		float: left;
+		width: 23%;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		background-color: #eee;
+		min-height: 105px;
+		padding: 5px;
+		margin: 1em 2% 0 0;
+	}
+
+	button.create:hover {
+		background-color: #ddd;
+	}
+
+	div.panel i.edit,
+	div.panel i.remove {
+		position: absolute;
+		bottom: 5px;
+		right: 5px;
+		color: #999;
+	}
+
+	div.panel i.remove {
+		right: 25px;
+	}
+
+	div.panel i.edit:hover,
+	div.panel i.remove:hover {
+		color: black;
+	}
+
+	div.panel dl {
+		margin: 0;
+	}
+
+	div.panel dt {
+		clear: both;
+		float: left;
+		width: 33%;
+		padding-left: 2%;
+		margin: 0;
+		color: #999;
+	}
+
+	div.panel dd {
+		float: left;
+		width: 65%;
+		margin: 0;
+	}
+</css>
+<js lib="jquery datatables editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+// Template function to display the information panels. Editor will
+// automatically keep the values up-to-date with any changes due to the use of
+// the `data-editor-field` attribute. It knows which panel to update for each
+// record through the use of `data-editor-id` in the container element.
+function createPanel ( data )
+{
+	var id = data.DT_RowId;
+	
+	$(
+		'<div class="panel" data-editor-id="'+id+'">'+
+			'<i class="edit fa fa-pencil" data-id="'+id+'"/>'+
+			'<i class="remove fa fa-times" data-id="'+id+'"/>'+
+			'<dl>'+
+				'<dt>Name:</dt>'+
+				'<dd>'+
+					'<span data-editor-field="first_name">'+data.first_name+'</span> '+
+					'<span data-editor-field="last_name">'+data.last_name+'</span>'+
+				'</dd>'+
+				'<dt>Position:</dt>'+
+				'<dd data-editor-field="position">'+data.position+'</dd>'+
+				'<dt>Office:</dt>'+
+				'<dd data-editor-field="office">'+data.office+'</dd>'+
+			'</dl>'+
+		'</div>'
+	).appendTo( '#panels' );
+}
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}
+		]
+	} );
+
+	// Create record - on create we insert a new panel
+	editor.on( 'postCreate', function (e, json) {
+		createPanel( json.data[0] );
+	} );
+
+	$('button.create').on( 'click', function () {
+		editor
+			.title('Create new record')
+			.buttons('Create')
+			.create();
+	} );
+
+	// Edit
+	$('#panels').on( 'click', 'i.edit', function () {
+		editor
+			.title('Edit record')
+			.buttons('Save changes')
+			.edit( $(this).data('id') );
+	} );
+
+	// Remove
+	$('#panels').on( 'click', 'i.remove', function () {
+		editor
+			.title('Delete record')
+			.buttons('Delete')
+			.message('Are you sure you wish to delete this record?')
+			.remove( $(this).data('id') );
+	} );
+
+	// Load the initial data and display in panels
+	$.ajax( {
+		url: '../php/staff.php',
+		dataType: 'json',
+		success: function ( json ) {
+			for ( var i=0, ien=json.data.length ; i<ien ; i++ ) {
+				createPanel( json.data[i] );
+			}
+		}
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Standalone collection editor</title>
+
+<info><![CDATA[
+
+While Editor is primarily used as an Editor for DataTables when considering multiple records, its standalone mode also supports the ability to edit individual items in a collection that have been displayed on the page without using DataTables. Consider the example below where data is read from the database about staff members and each record is shown in a _panel_. While DataTables could of course be used here, this approach adds the ability to show the data in ways that is not possible in a table.
+
+The key to this approach is that each panel uses the data attribute `data-editor-id` to specify the unique identifier that each panel belongs to. The `data-editor-field` attribute is then used for the elements in the panel to specify which field each element should represent.
+
+The `e-api create()`, `e-api edit()` and `e-api remove()` API methods are all used to provide full CRUD options for this collection editor.
+
+For additional information about using Editor without DataTables, please refer to the [Editor standalone manual](https://editor.datatables.net/manual/standalone).
+
+
+]]></info>
+
+<custom-table>
+	<div id="panels">
+		<button class="create">New</button>
+	</div>
+	<div style="clear:both; padding-top: 2em;"></div>
+</custom-table>
+
+</dt-example>
+

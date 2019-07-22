@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="todo" order="3">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/todo.php",
+		table: "#example",
+		fields: [ {
+				label: "Item:",
+				name:  "item"
+			}, {
+				label: "Status:",
+				name:  "done",
+				type:  "radio",
+				options: [
+					{ label: "To do", value: 0 },
+					{ label: "Done",  value: 1 }
+				],
+				def: 0
+			}, {
+				label: "Priority:",
+				name:  "priority",
+				type:  "select",
+				options: [
+					{ label: "1 (highest)", value: "1" },
+					{ label: "2",           value: "2" },
+					{ label: "3",           value: "3" },
+					{ label: "4",           value: "4" },
+					{ label: "5 (lowest)",  value: "5" }
+				]
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/todo.php",
+		columns: [
+			{ data: "priority", className: "dt-body-center" },
+			{ data: "item" },
+			{
+				"data": "done",
+				"render": function (val, type, row) {
+					return val == 0 ? "To do" : "Done";
+				}
+			}
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Field types</title>
+
+<info><![CDATA[
+
+When working with forms you don't want to be limited to just text input fields - HTML forms provide a lot of input options such as radio buttons, checkboxes etc, and Editor makes it easy to configure and use these input types with an editable DataTable through the `e-init fields.type` option for field definitions.
+
+Each field type provides its own options for configuration and user interaction methods. The three types used in this example are `e-field text` (the default), `e-field select` and `e-field radio`. The `e-field select` and `e-field radio` options are configured through their `options` options array, which defines the options for the fields, as shown in the example below.
+
+The field types that are built into Editor are [documented on the Editor web-site](//editor.datatables.net/reference/field) and additional types can be added through the use of [field type plug-ins](//editor.datatables.net/manual/development/field-types).
+
+]]></info>
+
+</dt-example>
+

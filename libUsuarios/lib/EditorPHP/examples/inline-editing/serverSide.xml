@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="11">
+
+<css lib="datatables buttons select editor"/>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	// Activate an inline edit on click of a table cell
+	$('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
+		editor.inline( table.cell( this ).index(), {
+			onBlur: 'submit'
+		} );
+	} );
+
+	var table = $('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: {
+			url: '../php/staff.php',
+			type: 'POST'
+		},
+		serverSide: true,
+		order: [[ 1, 'asc' ]],
+		columns: [
+			{
+				data: null,
+				defaultContent: '',
+				className: 'select-checkbox',
+				orderable: false,
+				searchable: false
+			},
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: {
+			style:    'os',
+			selector: 'td:first-child'
+		},
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Server-side processing</title>
+
+<info><![CDATA[
+
+When using server-side processing, rather than passing `this` into the `e-api inline()` method (where `this` is the `-tag td` cell) we need to translate the cell node into an index using `-api cell().index()`. The reason for this is that when server-side processing is enabled, each redraw will refresh the table, resulting in the original cell no longer being in the document (it has been discarded and replaced). Using the cell index allows the reference to the correct cell to be maintained over the redraw.
+
+This example shows that in practice.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th></th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th width="18%">Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

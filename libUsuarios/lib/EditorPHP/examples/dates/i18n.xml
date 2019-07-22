@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="9">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: '../php/dates.php',
+		table: '#example',
+		fields: [ {
+				label: 'First name:',
+				name:  'first_name'
+			}, {
+				label: 'Last name:',
+				name:  'last_name'
+			}, {
+				label: 'Updated date:',
+				name:  'updated_date',
+				type:  'datetime',
+				def:   function () { return new Date(); }
+			}, {
+				label: 'Registered date:',
+				name:  'registered_date',
+				type:  'datetime',
+				def:   function () { return new Date(); }
+			}
+		],
+		i18n: {
+			datetime: {
+				previous: 'Précédent',
+				next:     'Premier',
+				months:   [ 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre' ],
+				weekdays: [ 'Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam' ]
+			}
+		}
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '../php/dates.php',
+		columns: [
+			{ data: 'first_name' },
+			{ data: 'last_name' },
+			{ data: 'updated_date' },
+			{ data: 'registered_date' }
+		],
+		select: true,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Internationalisation</title>
+
+<info><![CDATA[
+
+This example shows the `e-field datetime` option being used with translated text - in this case French. All of the text displayed by the `e-field datetime` option can be modified (and therefore translated) through the `e-init i18n.datetime` object.
+
+]]></info>
+
+<custom-table>
+	<table class="display" id="example" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Updated date</th>
+				<th>Registered date</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

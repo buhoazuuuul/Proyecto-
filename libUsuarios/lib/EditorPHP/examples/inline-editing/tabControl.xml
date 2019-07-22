@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="2">
+
+<css lib="datatables buttons select editor"/>
+<js lib="jquery datatables buttons select keytable editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		],
+		formOptions: {
+			inline: {
+				onBlur: 'submit'
+			}
+		}
+	} );
+
+	var table = $('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{
+				data: null,
+				defaultContent: '',
+				className: 'select-checkbox',
+				orderable: false
+			},
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		order: [ 1, 'asc' ],
+		keys: {
+			columns: ':not(:first-child)',
+			keys: [ 9 ],
+			editor: editor,
+			editOnFocus: true
+		},
+		select: {
+			style:    'os',
+			selector: 'td:first-child'
+		},
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Tab between columns</title>
+
+<info><![CDATA[
+
+Editor's inline editing abilities are all about rapid editing of the data in the table. This can be further enhanced by using [KeyTable](https://datatables.net/extensions/keytable) to listen for cell focus (`kt-event key-focus`) which can activate inline editing.
+
+In this example KeyTable's default behaviour of listening for arrow keys as well as tab is curtailed to just the tab key through the use of the `kt-init keys.keys` option. `kt-init keys.editor` is used to let KeyTable what Editor instance it should interface with and `-init keys.editOnFocus` to immediately show the editing interface when the cell is focused.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th></th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th width="18%">Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="3">
+
+<css lib="datatables buttons select editor"/>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	$('#example').on( 'click', 'tbody td', function (e) {
+		var index = $(this).index();
+
+		if ( index === 1 ) {
+			editor.bubble( this, ['first_name', 'last_name'], {
+				title: 'Edit name:'
+			} );
+		}
+		else if ( index === 2 ) {
+			editor.bubble( this, {
+				buttons: false
+			} );
+		}
+		else if ( index === 3 ) {
+			editor.bubble( this );
+		}
+		else if ( index === 4 ) {
+			editor.bubble( this, {
+				message: 'Date must be given in the format `yyyy-mm-dd`'
+			} );
+		}
+		else if ( index === 5 ) {
+			editor.bubble( this, {
+				title: 'Edit salary',
+				message: 'Enter an unformatted number in dollars ($)'
+			} );
+		}
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{
+				data: null,
+				defaultContent: '',
+				className: 'select-checkbox',
+				orderable: false
+			},
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		order: [ 1, 'asc' ],
+		select: {
+			style:    'os',
+			selector: 'td:first-child'
+		},
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Form control and display options</title>
+
+<info><![CDATA[
+
+Like the other editing methods in Editor, the `e-api bubble()` method accepts an optional `e-type form-options` parameter which can be used to control the display of the bubble. These options include the ability to show the form header and general information text, among others.
+
+In this example the columns have the following behaviour:
+
+* 1 - Row selection for the primary editing form
+* 2 - Name - Shows a title using the `title` option and two fields to edit
+* 3 - Position - Editing without a submit button (press return to edit)
+* 4 - Office - Default editing options
+* 5 - Start date - Shows a message using the `message` option
+* 6 - Salary - Shows a title and a message
+
+Typically you wouldn't show a mix of displays as in this example, but it is done this way here to show how the `e-type form-options` type can be used to display different options.
+
+Default options for the `e-type form-options` parameter of the `e-api bubble()` method can be set at initialisation time using the `e-init formOptions.bubble` options ([example](defaultOptions.html)).
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th>Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

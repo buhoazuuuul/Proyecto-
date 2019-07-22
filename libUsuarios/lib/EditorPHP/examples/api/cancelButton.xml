@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="6">
+
+<css lib="datatables buttons select editor">
+	a.marginLeft {
+		margin-left: 1em;
+	}
+</css>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{
+				extend: "create",
+				editor: editor,
+				formButtons: [
+					'Create',
+					{ text: 'Cancel', action: function () { this.close(); } }
+				]
+			},
+			{
+				extend: "edit",
+				editor: editor,
+				formButtons: [
+					'Edit',
+					{ text: 'Cancel', action: function () { this.close(); } }
+				]
+			},
+			{
+				extend: "remove",
+				editor: editor,
+				formButtons: [
+					'Delete',
+					{ text: 'Cancel', action: function () { this.close(); } }
+				]
+			}
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Cancel button</title>
+
+<info><![CDATA[
+
+This example shows how the `formButtons` option of the `e-button create`, `e-button edit` and `e-button remove` buttons can be used to add a cancel button to the Editor form. The value given is passed directly to the `e-api buttons()` method, so allowed values there are also accepted by `formButtons`.
+
+In this example we make use of that ability to provide a simple submit button (`e-api buttons()` will automatically assign a submit action to string values) and a button that will call the `e-api close()` method to cancel the current action.
+
+]]></info>
+
+</dt-example>
+

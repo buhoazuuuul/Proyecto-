@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="4">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: {
+			create: {
+				type: 'POST',
+				url:  '../php/rest/create.php'
+			},
+			edit: {
+				type: 'PUT',
+				url:  '../php/rest/edit.php?id=_id_'
+			},
+			remove: {
+				type: 'DELETE',
+				url:  '../php/rest/remove.php?id=_id_'
+			}
+		},
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/rest/get.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">REST interface</title>
+
+<info><![CDATA[
+
+REST interfaces are popular in CRUD applications as it provides a clean and well defined interface between the client and server. Editor can be fully integrated with a REST environment through its ability to specify different URLs for the create, edit and remove actions of Editor. This is done by giving `e-init ajax` as an object with the `create`, `edit` and `remove` properties specified with the URL to use for each action, as shown in this example.
+
+In addition to being able to specify a unique URL for each action, you can also specify full jQuery Ajax options for each action by giving the Ajax properties as an object. In this example the `type` option is used to specify the HTTP method to be used for each action, as REST interfaces typically require. Note also that the server returns a _400 Bad request_ response to invalid data, which is correctly handled by Editor.
+
+]]></info>
+
+</dt-example>
+

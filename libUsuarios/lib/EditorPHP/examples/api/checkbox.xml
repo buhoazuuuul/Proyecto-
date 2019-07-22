@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="7">
+
+<css lib="jqueryui datatables buttons select editor" />
+<js lib="jquery jqueryui datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		"ajax": "../php/checkbox.php",
+		"table": "#example",
+		"fields": [ {
+				label:     "Active:",
+				name:      "active",
+				type:      "checkbox",
+				separator: "|",
+				options:   [
+					{ label: '', value: 1 }
+				]
+			}, {
+				label: "First name:",
+				name:  "first_name"
+			}, {
+				label: "Last name:",
+				name:  "last_name"
+			}, {
+				label: "Phone:",
+				name:  "phone"
+			}, {
+				label: "City:",
+				name:  "city"
+			}, {
+				label: "Zip:",
+				name:  "zip"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/checkbox.php",
+		columns: [
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "phone" },
+			{ data: "city" },
+			{ data: "zip" },
+			{
+				data:   "active",
+				render: function ( data, type, row ) {
+					if ( type === 'display' ) {
+						return '<input type="checkbox" class="editor-active">';
+					}
+					return data;
+				},
+				className: "dt-body-center"
+			}
+		],
+		select: {
+			style: 'os',
+			selector: 'td:not(:last-child)' // no row selection on last column
+		},
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		],
+		rowCallback: function ( row, data ) {
+			// Set the checked state of the checkbox in the table
+			$('input.editor-active', row).prop( 'checked', data.active == 1 );
+		}
+	} );
+
+	$('#example').on( 'change', 'input.editor-active', function () {
+		editor
+			.edit( $(this).closest('tr'), false )
+			.set( 'active', $(this).prop( 'checked' ) ? 1 : 0 )
+			.submit();
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Always shown checkbox</title>
+
+<info><![CDATA[
+
+This example shows a column with checkboxes that are always displayed and will cause a database update when their state is toggled via a click or keyboard action. Although these checkboxes are not actually part of the Editor controlled elements, we can use the Editor API (specifically the `e-api edit()`, `e-api set()` and `e-api submit()` methods) to have Editor perform the action. This can make for very fast editing when working with items that need to be toggled frequently.
+
+A [blog post is available](//datatables.net/blog/2014-09-09) that explains in detail how this example is constructed.
+
+]]></info>
+
+<custom-table>
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Phone</th>
+				<th>City</th>
+				<th>Zip</th>
+				<th>Active</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

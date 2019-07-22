@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="8">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: '../php/dates.php',
+		table: '#example',
+		fields: [ {
+				label: 'First name:',
+				name:  'first_name'
+			}, {
+				label: 'Last name:',
+				name:  'last_name'
+			}, {
+				label: 'Registered date:',
+				name:  'registered_date',
+				type:  'datetime',
+				opts:  {
+					disableDays: [ 0, 6 ]
+				}
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '../php/dates.php',
+		columns: [
+			{ data: 'first_name' },
+			{ data: 'last_name' },
+			{ data: 'updated_date' },
+			{ data: 'registered_date' }
+		],
+		select: true,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Options - disable days</title>
+
+<info><![CDATA[
+
+It can sometimes be useful to not allow selection of particular days - the `e-field datetime` field provides that ability through the `disableDays` option. It can be provided as an array of day numbers in the week to disable (Sunday = 0, Monday = 1, etc) or as a function to provide more fine grained control.
+
+This example shows the `disableDays` option being used to disable date selection on Saturdays and Sundays. Note that validation of this information should also be performed at the server-side since it is possible for the end user to type in an invalid date, rather than using the calendar picker.
+
+]]></info>
+
+<custom-table>
+	<table class="display" id="example" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Updated date</th>
+				<th>Registered date</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

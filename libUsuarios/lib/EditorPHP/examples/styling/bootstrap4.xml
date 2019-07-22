@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="2" framework="bootstrap4">
+
+<css lib="datatables buttons select editor"/>
+<js lib="jquery bootstrap4 datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: 'datetime'
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		lengthChange: false,
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true
+	} );
+
+	// Display the buttons
+	new $.fn.dataTable.Buttons( table, [
+		{ extend: "create", editor: editor },
+		{ extend: "edit",   editor: editor },
+		{ extend: "remove", editor: editor }
+	] );
+
+	table.buttons().container()
+		.appendTo( $('.col-md-6:eq(0)', table.table().container() ) );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Bootstrap 4</title>
+
+<info><![CDATA[
+
+[Bootstrap 4](http://getbootstrap.com/) the next generation of the popular CSS framework that provides a unified look-and-feel for your web-applications. Through Editor's abilities to be extensively customised and Bootstrap integration for DataTables you can have a beautiful Bootstrap styled interface for your tables and Editor in virtually no time!
+
+This example shows Bootstrap 4 integration with DataTables and two of its components: Buttons and Editor.
+
+]]></info>
+
+</dt-example>
+

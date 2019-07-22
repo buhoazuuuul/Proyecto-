@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="1">
+
+<css lib="datatables editor">
+	dt { margin-top: 1em; }
+	dt:first-child { margin-top: 0; }
+	dd { width: 25% }
+</css>
+<js lib="jquery datatables editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/standalone.php",
+		fields: [ {
+				label: "Status:",
+				name:  "enable",
+				type:  'radio',
+				options: [
+					{ label: 'Enabled',  value: 'Enabled' },
+					{ label: 'Disabled', value: 'Disabled' }
+				]
+			}, {
+				label: "Server IP address:",
+				name:  "server-ip"
+			}, {
+				label:     "Polling period:",
+				fieldInfo: "Input value is in seconds",
+				name:      "poll-period"
+			}, {
+				name: "protocol", // `label` since `data-editor-label` is defined for this field
+				type: "select",
+				options: [
+					{ label: 'TCP', value: 'TCP' },
+					{ label: 'UDP', value: 'UDP' }
+				]
+			}
+		]
+	} );
+
+	$('#edit').on( 'click', function () {
+		editor
+			.buttons( {
+				label: "Save",
+				fn: function () { this.submit(); }
+			} )
+			.edit();
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Simple standalone editing</title>
+
+<info><![CDATA[
+
+Editor's primary use is as an Editor for [DataTables](//datatables.net), however, it can also be used as a standalone form editor, which can be very useful for single dimension configuration parameters (i.e. those that don't directly lend themselves to display in a table). This ensures a consistent interface for your end users in their form editing, and for you in your development API.
+
+Editor's standalone mode is activated by simply not using a `e-init table` parameter in the initialisation configuration object. The HTML elements that Editor operates on are controlled by two `data` attributes:
+
+* `data-editor-field` - The value of this attribute tells Editor that the content of this element is to be used for the Editor field of the same name.
+* `data-editor-label` - _Optional_. If defined, Editor will use the content of this element as the label for the field. This is useful if the label is already in the HTML, so you don't need to specify a `e-init fields.label` option for the field.
+
+The edit action is triggered by calling the `e-api edit()` API method when a click is detected on a button element.
+
+The example shown here has a `tag dl` list of items which could be configured from a server. Please note that the data is not saved on the server-side for this example and a refresh will reset the data.
+
+ For further information about using Editor in standalone mode, please refer to the [Editor manual](//editor.datatables.net/manual/standalone).
+
+]]></info>
+
+<custom-table>
+	<dl>
+		<dt>State:</dt>
+		<dd data-editor-field="enable">Enabled</dd>
+
+		<dt>Server IP:</dt>
+		<dd data-editor-field="server-ip">153.63.213.41</dd>
+
+		<dt>Poll period:</dt>
+		<dd><span data-editor-field="poll-period">60</span> seconds</dd>
+
+		<dt data-editor-label="protocol">Protocol:</dt>
+		<dd data-editor-field="protocol">TCP</dd>
+
+		<dt></dt>
+		<dd>
+			<button id="edit">Edit</button>
+		</dd>
+	</dl>
+</custom-table>
+
+</dt-example>
+

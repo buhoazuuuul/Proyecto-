@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax-thin" order="1">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		"ajax": "../php/staff.php",
+		"table": "#example",
+		"fields": [ {
+				"label": "First name:",
+				"name": "first_name"
+			}, {
+				"label": "Last name:",
+				"name": "last_name"
+			}, {
+				"label": "Position:",
+				"name": "position"
+			}, {
+				"label": "Office:",
+				"name": "office"
+			}, {
+				"label": "Extension:",
+				"name": "extn"
+			}, {
+				"label": "Start date:",
+				"name": "start_date"
+			}, {
+				"label": "Salary:",
+				"name": "salary"
+			}, {
+				"label": "Age:",
+				"name": "age"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Data shown only in the form</title>
+
+<info><![CDATA[
+
+It can often be useful to have more information available in your form than you show in your table. For  example, the table could show a summary while the form, with more screen real estate available to it, can show detailed information. This is readily done with DataTables and Editor through the fact that DataTables can use objects as a data source, and the `dt-init columns.data` option is used to specify which object properties are required for each column. The data objects provide all the information needed for both the form and table, but only a limited selection of the available properties are actually used in the table, while the form makes full use of the whole object.
+
+This example (which is of course grossly simplified) shows four fields only in the table, while the form provides editing abilities for eight different fields.
+
+]]></info>
+
+</dt-example>
+

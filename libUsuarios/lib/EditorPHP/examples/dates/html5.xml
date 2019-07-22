@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="13">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: '../php/dates.php',
+		table: '#example',
+		fields: [ {
+				label: 'First name:',
+				name:  'first_name'
+			}, {
+				label: 'Last name:',
+				name:  'last_name'
+			}, {
+				label: 'Updated date:',
+				name:  'updated_date',
+				type:  'date'
+			}, {
+				label: 'Registered date:',
+				name:  'registered_date',
+				type:  'date'
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '../php/dates.php',
+		columns: [
+			{ data: 'first_name' },
+			{ data: 'last_name' },
+			{ data: 'updated_date' },
+			{ data: 'registered_date' }
+		],
+		select: true,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">HTML5 date input</title>
+
+<info><![CDATA[
+
+The HTML5 specification [calls for an `-tag input` element](http://www.w3.org/TR/html5/forms.html#date-state-(type=date)) which supports `date` and `time` input types. While this would be an excellent solution rather than needing to rely upon a Javascript library for the calendar picker (such as Editor's built in `e-field datetime` field type), only Chrome and Edge currently support these input options. IE, Firefox and Safari do not currently enjoy support for these elements.
+
+Fortunately, if we specify an `-tag input` field has `date` type, if the browser doesn't support it, it will just fall back to being a regular text input. User's won't see the calendar when using a browser that doesn't support this input type, but they will still be able to type the date in.
+
+The `e-field date` field type will automatically use an HTML date input field - unless jQuery UI's date picker is available on the page, in which case that will be used.
+
+]]></info>
+
+<custom-table>
+	<table class="display" id="example" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Updated date</th>
+				<th>Registered date</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

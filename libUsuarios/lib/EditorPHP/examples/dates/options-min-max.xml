@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="6">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: '../php/dates.php',
+		table: '#example',
+		fields: [ {
+				label: 'First name:',
+				name:  'first_name'
+			}, {
+				label: 'Last name:',
+				name:  'last_name'
+			}, {
+				label: 'Registered date:',
+				name:  'registered_date',
+				type:  'datetime',
+				opts:  {
+					minDate: new Date('2011-01-01'),
+					maxDate: new Date('2020-12-31')
+				}
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '../php/dates.php',
+		columns: [
+			{ data: 'first_name' },
+			{ data: 'last_name' },
+			{ data: 'updated_date' },
+			{ data: 'registered_date' }
+		],
+		select: true,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Options - min and max dates</title>
+
+<info><![CDATA[
+
+You may wish to limit the range in which an end user can select a date - this can be done using the `minDate` and `maxDate` options (specified in the `opts` object for the field). The two properties, which can be set together or alone, accept a Javascript `Date` object, which you can create using `new Date()` and pass in an ISO8601 formatted date string.
+
+This example shows the date range limited to be between 2011 and 2020. It is important that server-side validation of this input be used as the end user can enter dates outside of this range by simply using the keyboard.
+
+]]></info>
+
+<custom-table>
+	<table class="display" id="example" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Updated date</th>
+				<th>Registered date</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

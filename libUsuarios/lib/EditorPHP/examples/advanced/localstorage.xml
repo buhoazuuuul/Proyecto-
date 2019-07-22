@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="6">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	// Object that will contain the local state
+	var todo = {};
+
+	// Create or update the todo localStorage entry
+	if ( localStorage.getItem('todo') ) {
+		todo = JSON.parse( localStorage.getItem('todo') );
+	}
+
+	// Set up the editor
+	editor = new $.fn.dataTable.Editor( {
+		table: "#example",
+		fields: [
+			{
+				label: "Item:",
+				name: "item"
+			}, {
+				label: "Status:",
+				name: "status",
+				type: "radio",
+				def: "To do",
+				options: [ 'To do', 'Done' ]
+			}
+		],
+		ajax: function ( method, url, d, successCallback, errorCallback ) {
+			var output = { data: [] };
+
+			if ( d.action === 'create' ) {
+				// Create new row(s), using the current time and loop index as
+				// the row id
+				var dateKey = +new Date();
+
+				$.each( d.data, function (key, value) {
+					var id = dateKey+''+key;
+
+					value.DT_RowId = id;
+					todo[ id ] = value;
+					output.data.push( value );
+				} );
+			}
+			else if ( d.action === 'edit' ) {
+				// Update each edited item with the data submitted
+				$.each( d.data, function (id, value) {
+					value.DT_RowId = id;
+					$.extend( todo[ id ], value );
+					output.data.push( todo[ id ] );
+				} );
+			}
+			else if ( d.action === 'remove' ) {
+				// Remove items from the object
+				$.each( d.data, function (id) {
+					delete todo[ id ];
+				} );
+			}
+
+			// Store the latest `todo` object for next reload
+			localStorage.setItem( 'todo', JSON.stringify(todo) );
+
+			// Show Editor what has changed
+			successCallback( output );
+		}
+	} );
+
+	// Initialise the DataTable
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		data: $.map( todo, function (value, key) {
+			return value;
+		} ),
+		columns: [
+			{ data: "item" },
+			{ data: "status" }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+
+]]>
+</js>
+
+<title lib="Editor">Ajax override - using localStorage for the data source</title>
+
+<info><![CDATA[
+
+This example shows how the `e-init ajax` initialisation option can be used to replace the default Ajax call that Editor makes and instead use the browser's `localStorage` abilities to save the state of the table locally on the browser. This means that the user effectively has persistent storage, but it is available only to them on their current browser.
+
+The code in this example shows the `e-init ajax` option as a function that [implements everything that is required by Editor](//editor.datatables.net/manual/server) for data storage and retrieval. The 'create', 'edit' and 'remove' actions are each handled by storing the submitted data in a local variable, which is then stored in local storage for data persistence.
+
+Note that this example fully supports Editor's multi-row editing capability as it fully implements the [client / server data interchange format](//editor.datatables.net/manual/server) Editor uses.
+
+Although this particular use case is fairly limited, it does show how Editor's `e-init ajax` option can be used to intercept and manage the data requests that Editor makes. Expanding on this almost any data storage system could be used from [Firebase](https://www.firebase.com/) to [WebSockets](http://www.html5rocks.com/en/tutorials/websockets/basics/).
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>Item</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>Item</th>
+				<th>Status</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+

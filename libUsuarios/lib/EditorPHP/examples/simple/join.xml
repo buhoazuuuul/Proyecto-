@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="11">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/join.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "users.first_name"
+			}, {
+				label: "Last name:",
+				name: "users.last_name"
+			}, {
+				label: "Phone #:",
+				name: "users.phone"
+			}, {
+				label: "Site:",
+				name: "users.site",
+				type: "select",
+				placeholder: "Select a location"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: {
+			url: "../php/join.php",
+			type: 'POST'
+		},
+		columns: [
+			{ data: "users.first_name" },
+			{ data: "users.last_name" },
+			{ data: "users.phone" },
+			{ data: "sites.name" }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Join tables - working with multiple SQL tables</title>
+
+<info><![CDATA[
+
+Data in relational databases is often stored over multiple tables, partitioned by the data type and then joined together using SQL JOIN queries. Editor, like DataTables, can use nested Javascript objects, making working with multiple tables super easy. Additionally the server-side libraries provide a left join method to make working with joins on the server-side just as easy as on the client-side - see the Editor server-side manual for further information ([PHP](//editor.datatables.net/manual/php/joins) | [.NET](//editor.datatables.net/manual/net/joins) | [NodeJS](//editor.datatables.net/manual/node/joins)).
+
+This example shows a simple and common use-case for joined data - a foreign reference key, pointing to another record. In this case the _users_ database table has a column called _site_ which is a reference to the _sites_ database table. Using the left join method method in Editor server-side libraries, the returned data structure for each row looks like:
+
+```js
+{
+	"DT_RowId": "row_1",
+	"users": {
+		"first_name": "Quynn",
+		"last_name": "Contreras",
+		"phone": "1-971-977-4681",
+		"site": "1"
+	},
+	"sites": {
+		"name": "Edinburgh"
+	}
+}
+```
+
+To display these fields in DataTables we use the `dt-init columns.data` option to access the nested data - for example `users.first_name` (using dotted Javascript object notation).
+
+On create, edit and remove, Editor will also update the database accordingly for these actions automatically. With Editor, editing joined tables takes seconds to configure saving you a huge amount of time.
+
+Finally, note that the _Location_ select list is populated with a list of options retrieved from the server. This is done automatically by Editor when it detects a list of `options` (input / output options) for a field in the response for a data load event in a table (PHP: `Field->options()` | .NET: `Field.Options()` | NodeJS: `Field.options()`). The list of options can also be populated using the `e-field select` field type's `update()` method.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Phone #</th>
+				<th>Location</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Phone #</th>
+				<th>Location</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="4">
+
+<css lib="datatables buttons select editor">
+	div.DTE_Footer_Content {
+		position: relative;
+	}
+
+	div.DTE_Form_Buttons {
+		float: right;
+	}
+	
+	div.DTE div.DTE_Form_Buttons button {
+		float: left;
+		margin: 0;
+		border-radius: 0;
+	}
+	
+	div.DTE div.DTE_Form_Buttons button:first-child {
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+	}
+	
+	div.DTE div.DTE_Form_Buttons button:last-child {
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+</css>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	// Buttons array definition to create previous, save and next buttons in
+	// an Editor form
+	var backNext = [
+		{
+			text: "&lt;",
+			action: function (e) {
+				// On submit, find the currently selected row and select the previous one
+				this.submit( function () {
+					var indexes = table.rows( {search: 'applied'} ).indexes();
+					var currentIndex = table.row( {selected: true} ).index();
+					var currentPosition = indexes.indexOf( currentIndex );
+
+					if ( currentPosition > 0 ) {
+						table.row( currentIndex ).deselect();
+						table.row( indexes[ currentPosition-1 ] ).select();
+					}
+
+					// Trigger editing through the button
+					table.button( 1 ).trigger();
+				}, null, null, false );
+			}
+		},
+		'Save',
+		{
+			text: "&gt;",
+			action: function (e) {
+				// On submit, find the currently selected row and select the next one
+				this.submit( function () {
+					var indexes = table.rows( {search: 'applied'} ).indexes();
+					var currentIndex = table.row( {selected: true} ).index();
+					var currentPosition = indexes.indexOf( currentIndex );
+
+					if ( currentPosition < indexes.length-1 ) {
+						table.row( currentIndex ).deselect();
+						table.row( indexes[ currentPosition+1 ] ).select();
+					}
+
+					// Trigger editing through the button
+					table.button( 1 ).trigger();
+				}, null, null, false );
+			}
+		}
+	];
+
+	var table = $('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{
+				extend: 'selected',
+				text:   'Edit',
+				action: function () {
+					var indexes = table.rows( {selected: true} ).indexes();
+
+					editor.edit( indexes, {
+						title: 'Edit',
+						buttons: indexes.length === 1 ?
+							backNext :
+							'Save'
+					} );
+				}
+			},
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Previous / next editing buttons</title>
+
+<info><![CDATA[
+
+Often when editing data in tables, you may wish to edit consecutive records. While in Editor it is perfectly feasible to save a row, then click to edit another, it can be more convenient to provide _Previous_ and _Next_ buttons as well as the regular save button to the end user. These two additional buttons also save the record that has been worked on, but rather than closing the editing display, they immediately load the next record in the table and present that for editing.
+
+This example makes use of the `b-button selected` button type, rather than the `e-button edit` button found in the majority of other examples. This is because continuous row selection doesn't make much sense with multi-row editing, so by defining our own `b-init buttons.buttons.action` method that will trigger the editing (`e-api edit()`) we can decide if the previous / next buttons should be shown or not.
+
+The previous / next buttons make use of the Select API (`s-api row().select()` and `s-api row().deselect()`) to manipulate the selected rows, and the Buttons API (`b-api button().trigger()`) to trigger the next editing action.
+
+A little bit of extra CSS styling is also used to visually group the three buttons.
+
+]]></info>
+
+</dt-example>
+

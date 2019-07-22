@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="12">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/joinLinkTable.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name:  "users.first_name"
+			}, {
+				label: "Last name:",
+				name:  "users.last_name"
+			}, {
+				label: "Site:",
+				name:  "users.site",
+				type:  "select"
+			}, {
+				label: "Department:",
+				name:  "user_dept.dept_id",
+				type:  "select"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: {
+			url: "../php/joinLinkTable.php",
+			type: 'POST'
+		},
+		columns: [
+			{ data: "users.first_name" },
+			{ data: "users.last_name" },
+			{ data: "sites.name" },
+			{ data: "dept.name" }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Join tables - link table</title>
+
+<info><![CDATA[
+
+Data in relational databases is often stored over multiple tables, partitioned by the data type and then joined together using SQL JOIN queries. In one form of joined table, a 'link' table is used linking records between two different types of data.
+
+In this example, which extends the [simple join example](../simple/join.html), the `users` and `dept` tables are linked by the `user_dept` table. When the data is read, we read from all three tables (plus the `sites` table to show multiple joins working together). The returned data structure for each row in this example is:
+
+```js
+{
+    "DT_RowId": "row_1",
+    "users": {
+        "first_name": "Quynn",
+        "last_name": "Contreras",
+        "site": "1"
+    },
+    "sites": {
+        "name": "Edinburgh"
+    },
+    "user_dept": {
+        "dept_id": "1"
+    },
+    "dept": {
+        "name": "IT"
+    }
+}
+```
+
+For editing we want to write to three `users` fields and the `user_dept` field. The Editor instance is configured with these four fields using the `e-init fields.name` option and the Editor server-side libraries perform the required SQL operations for us on create, edit and delete.
+
+See the join documentation ([PHP](http://editor.datatables.net/manual/php/joins) | [.NET](http://editor.datatables.net/manual/net/joins) | [NodeJS](http://editor.datatables.net/manual/node/joins)) for further information about joins with Editor's framework libraries.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Location</th>
+				<th>Department</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Location</th>
+				<th>Department</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+

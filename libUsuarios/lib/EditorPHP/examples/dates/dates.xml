@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="1">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: '../php/dates.php',
+		table: '#example',
+		fields: [ {
+				label: 'First name:',
+				name:  'first_name'
+			}, {
+				label: 'Last name:',
+				name:  'last_name'
+			}, {
+				label: 'Updated date:',
+				name:  'updated_date',
+				type:  'datetime',
+				def:   function () { return new Date(); }
+			}, {
+				label: 'Registered date:',
+				name:  'registered_date',
+				type:  'datetime',
+				def:   function () { return new Date(); }
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '../php/dates.php',
+		columns: [
+			{ data: 'first_name' },
+			{ data: 'last_name' },
+			{ data: 'updated_date' },
+			{ data: 'registered_date' }
+		],
+		select: true,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Date picker</title>
+
+<info><![CDATA[
+
+Editor features a built in date time picker through the `e-field datetime` field type. This control presents the end user with a graphical calendar that can be used to easily enter dates.
+
+By default only the ISO8601 format _YYYY-MM-DD_ is supported by the `e-field datetime` input control, but custom date formats can be used by including the [momentjs](http://momentjs.com/) library on your page.
+
+This example shows the simple ISO8601 case for two date fields.
+
+]]></info>
+
+<custom-table>
+	<table class="display" id="example" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Updated date</th>
+				<th>Registered date</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

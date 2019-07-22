@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example order="3">
+
+<title lib="Editor">DataTables extensions integration examples</title>
+
+<info><![CDATA[
+
+DataTables has a [wealth of extensions available](https://datatables.net/extensions) that can be used to add additional features and options to your DataTables. This set of examples shows the integration between Editor and some of the extensions that explicitly support Editor.
+
+Examples are given for extensions that specifically provide Editor integration options. For example [FixedHeader](https://datatables.net/extensions/fixedheader), which provides a sticky header / footer for the table, doesn't require specific integration for Editor.
+
+]]></info>
+
+</dt-example>

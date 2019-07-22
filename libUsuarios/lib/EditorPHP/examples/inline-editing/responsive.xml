@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="8">
+
+<css lib="datatables responsive buttons select editor"/>
+<js lib="jquery datatables responsive buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	// Activate an inline edit on click of a table cell
+	// or a DataTables Responsive data cell
+	$('#example').on( 'click', 'tbody td:not(.child), tbody span.dtr-data', function (e) {
+		// Ignore the Responsive control and checkbox columns
+		if ( $(this).hasClass( 'control' ) || $(this).hasClass('select-checkbox') ) {
+			return;
+		}
+
+		editor.inline( this );
+	} );
+
+	$('#example').DataTable( {
+		responsive: true,
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{   // Responsive control column
+				data: null,
+				defaultContent: '',
+				className: 'control',
+				orderable: false
+			},
+			{   // Checkbox select column
+				data: null,
+				defaultContent: '',
+				className: 'select-checkbox',
+				orderable: false
+			},
+			{ data: "first_name" },
+			{ data: "last_name", className: 'never' },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		order: [ 2, 'asc' ],
+		select: {
+			style:    'os',
+			selector: 'td.select-checkbox'
+		},
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Responsive integration</title>
+
+<info><![CDATA[
+
+Editor's inline editing mode supports the [Responsive extension for DataTables](//datatables.net/extensions/responsive). Responsive will automatically adjust the visibility of columns in your tables so the the layout of information is nicely presented, regardless of screen size. When columns are hidden, Responsive can add a show / hide button to allow the end user to see the information from the hidden columns.
+
+To trigger inline editing of data in a Responsive "details row", the `-tag span` element that contains the data can be passed in to `e-api inline()` just the same way a table cell can. The selector used to trigger inline editing in this example will select cells from the table and the Responsive details cells.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display nowrap" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th></th>
+				<th></th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th width="18%">Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

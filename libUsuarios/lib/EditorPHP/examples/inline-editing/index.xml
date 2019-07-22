@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example order="5">
+
+<title lib="Editor">Editor inline editing examples</title>
+
+<info><![CDATA[
+
+Editor has three different Editor modes:
+
+* Primary editing
+* Bubble editing
+* Inline editing
+
+The examples in this section show the inline editing option, which displays the field to be edited inside the table cell to be edited. This is fantastic for rapid editing of data in a table, very much like a spreadsheet application.
+
+]]></info>
+
+</dt-example>

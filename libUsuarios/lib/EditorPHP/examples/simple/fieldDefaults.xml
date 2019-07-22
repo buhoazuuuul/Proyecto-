@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="4">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position",
+				def: "Software developer"
+			}, {
+				label: "Office:",
+				name: "office",
+				def: "Edinburgh"
+			}, {
+				label: "Extension:",
+				name: "extn",
+				def: "0000"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				def: function () { return new Date(); },
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary",
+				def: "85000"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Setting defaults</title>
+
+<info><![CDATA[
+
+Default values can readily be set for the fields in the form, which are then used when the 'create' new record form is shown (when using the 'edit' form, the values for the fields are read directly from the DataTable). This is done by using the `e-init fields.def` option for the fields that are created with either the `e-init fields` initialisation option or the `e-api add()` API method.
+
+In the example below, five fields are given default values, while the other two are left empty (the default value for the field is an empty string). Note also that the date field is computed by giving the default value as a function. Editor will evaluate the function and use the returned value as the default.
+
+]]></info>
+
+</dt-example>
+

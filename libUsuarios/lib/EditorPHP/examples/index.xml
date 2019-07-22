@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example order="0">
+
+<title lib="Editor">Editor examples index</title>
+
+<info><![CDATA[
+
+As with [DataTables](//datatables.net), examples play an important part of learning how to use Editor and then progressing on to some really quite advanced implementations. The examples provided show different options available in Editor and can be combined to create an editable table that exactly meets your requirements.
+
+]]></info>
+
+</dt-example>

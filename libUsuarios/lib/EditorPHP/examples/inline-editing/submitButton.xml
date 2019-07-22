@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="5">
+
+<css lib="datatables buttons select editor"/>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	// Activate an inline edit on click of a table cell
+	$('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
+		editor.inline( this, {
+			buttons: { label: '&gt;', fn: function () { this.submit(); } }
+		} );
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{
+				data: null,
+				defaultContent: '',
+				className: 'select-checkbox',
+				orderable: false
+			},
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		order: [ 1, 'asc' ],
+		select: {
+			style:    'os',
+			selector: 'td:first-child'
+		},
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Inline editing with a submit button</title>
+
+<info><![CDATA[
+
+The `e-type form-options` option that `e-api inline()` accepts as the second parameter, can be used to control the [behaviour of the form](options.html), but it can also be used to control the display.
+
+The `title` and `message` options of `e-type form-options` have no effect in inline editing (use [bubble editing](../bubble-editing) if you require to be able to display messages with the field), but the `buttons` option does.
+
+This example shows the `buttons` option being set with a simple button that, when clicked, will submit the form. This can be used together with the `onReturn` option of `e-type form-options` (which is enabled by default, and is left enabled in this example), or each can be used individually as you require.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th></th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th>Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

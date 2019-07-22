@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax-sequence" order="7">
+
+<css lib="datatables buttons select rowreorder editor" />
+<js lib="jquery datatables buttons select rowreorder editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax:  '../php/sequence.php',
+		table: '#example',
+		fields: [ {
+				label: 'Order:',
+				name: 'readingOrder',
+				fieldInfo: 'This field can only be edited via click and drag row reordering.'
+			}, {
+				label: 'Title:',
+				name:  'title'
+			}, {
+				label: 'Author:',
+				name:  'author'
+			}, {
+				label: 'Duration (seconds):',
+				name:  'duration'
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '../php/sequence.php',
+		columns: [
+			{ data: 'readingOrder', className: 'reorder' },
+			{ data: 'title' },
+			{ data: 'author' },
+			{ data: 'duration', render: function ( data, type, row ) {
+				return parseInt(data/60, 10)+'h '+(data%60)+'m';
+			} }
+		],
+		columnDefs: [
+			{ orderable: false, targets: [ 1,2,3 ] }
+		],
+		rowReorder: {
+			dataSrc: 'readingOrder',
+			editor:  editor
+		},
+		select: true,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+
+	editor
+		.on( 'postCreate postRemove', function () {
+			// After create or edit, a number of other rows might have been effected -
+			// so we need to reload the table, keeping the paging in the current position
+			table.ajax.reload( null, false );
+		} )
+		.on( 'initCreate', function () {
+			// Enable order for create
+			editor.field( 'readingOrder' ).enable();
+		} )
+		.on( 'initEdit', function () {
+			// Disable for edit (re-ordering is performed by click and drag)
+			editor.field( 'readingOrder' ).disable();
+		} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Row reordering</title>
+
+<info><![CDATA[
+
+This example shows the [RowReorder extension for DataTables](https://datatables.net/extensions/rowreorder) being used with Editor. RowReorder provides the ability for end users to quickly and easily reorder items in the table by click and drag. The integration with Editor that it provides (`rr-init rowReorder.editor`) makes use of Editor's multi-row editing abilities to update all rows to take account of the row ordered data.
+
+This can make for a really easy to use interface for end users where they have data that they can place into a custom order.
+
+In this example a list of audio books is shown and the user has the ability to define their own reading order through RowReorder's drag and drop. To demonstrate, reorder the rows using the numbers shown in the _Order_ column.
+
+Note also that we have to take special consideration when inserting and removing rows. In this case events are used in the server-side libraries to perform the requires data update based on the inserted/deleted rows, and the table is reloaded using `dt-api ajax.reload` when the `e-event postCreate` and `e-event postRemove` events occur.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>Order</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Duration</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>Order</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Duration</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+

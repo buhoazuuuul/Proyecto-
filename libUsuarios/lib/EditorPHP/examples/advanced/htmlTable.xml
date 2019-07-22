@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="html-split-name" row-ids="yes" order="10">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: '../php/staff-html.php',
+		table: '#example',
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Salary:",
+				name: "salary",
+				data: function (row, type, val) {
+					// Strip the formatting from the salary number
+					if ( type === 'set' ) {
+						row.salary = val;
+					}
+					return row.salary.replace(/[^0-9]/g, '');
+				}
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		columns: [
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "salary" }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">DOM sourced table</title>
+
+<info><![CDATA[
+
+Although many of the Editor examples show the data for the table being loaded by Ajax (`dt-init ajax`) this is by no means mandatory. Editor will work with any data source that DataTables can use, with the only additional requirement that each row has a unique ID (allowing the server to identify which rows to update, delete, etc).
+
+This example shows Editor being applied to a plain HTML table (generated from the database, although it could come from absolutely anywhere). Ajax requests are still used for create, edit and remove actions, but not for loading the initial data.
+
+This example uses DataTables ability to read DOM source tables into a JSON object data store, with the keys specified by `dt-init columns.data`. This makes working with the data in the table very easy since it is named object parameters rather than arrays where indexes must be used. Please note that this feature requires <span class="since">DataTables 1.10.8</span> or newer.
+
+]]></info>
+
+</dt-example>
+

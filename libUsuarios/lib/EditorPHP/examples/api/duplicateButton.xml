@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="8">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/join.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "users.first_name"
+			}, {
+				label: "Last name:",
+				name: "users.last_name"
+			}, {
+				label: "Phone #:",
+				name: "users.phone"
+			}, {
+				label: "Site:",
+				name: "users.site",
+				type: "select"
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: {
+			url: "../php/join.php",
+			type: 'POST'
+		},
+		columns: [
+			{ data: "users.first_name" },
+			{ data: "users.last_name" },
+			{ data: "users.phone" },
+			{ data: "sites.name" }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{
+				extend: "selected",
+				text: 'Duplicate',
+				action: function ( e, dt, node, config ) {
+					// Start in edit mode, and then change to create
+					editor
+						.edit( table.rows( {selected: true} ).indexes(), {
+							title: 'Duplicate record',
+							buttons: 'Create from existing'
+						} )
+						.mode( 'create' );
+				}
+			},
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Duplicate button</title>
+
+<info><![CDATA[
+
+This example shows how a duplicate button can be created for Editor, allowing a row to be selected and a new entry form be populated with the values from the selected row. This can allow data entry that contains common information, such as monthly salary information, invoices, etc, to be performed extremely quickly.
+
+The duplicate button is created using the `s-button selected` button type defined by _[Select](https://datatables.net/extensions/select)_ as a basis (this handles the row selection for us).  The button's action (`b-init buttons.buttons.action`) then simply places the selected row(s) into an editing state.
+
+The next step is to use `e-api mode()` to change the editing mode from _edit_ to _create_. This retains the same values in the form, but alters the action Editor will submit to the server.
+
+The [Join table example](../simple/join.html) is used as a basis here to show the duplicate button working with complex nested data.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Phone #</th>
+				<th>Location</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Phone #</th>
+				<th>Location</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+

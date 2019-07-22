@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="5">
+
+<css lib="datatables editor select buttons">
+	a.buttons-collection {
+		margin-left: 1em;
+	}
+</css>
+<js lib="jquery datatables editor select buttons jszip pdfmake vfsfonts buttons-html5 buttons-print">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor },
+			{
+				extend: 'collection',
+				text: 'Export',
+				buttons: [
+					'copy',
+					'excel',
+					'csv',
+					'pdf',
+					'print'
+				]
+			}
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Export buttons</title>
+
+<info><![CDATA[
+
+The [Buttons extension for DataTables](//datatables.net/extensions/buttons) is used by the majority of the Editor examples to provide row selection functionality and the _New_, _Edit_ and _Delete_ buttons at the top of the table. However, Buttons' functionality is not limited to providing simple buttons for Editor - it also has support for data export buttons such as copying the table data to clipboard, saving to a file or showing the table's data for printing.
+
+This example shows how the `b-init buttons` option presented by Buttons can be used to very easily add export buttons to a table which Editor is operating on, while still retaining full editing control. In this case a drop down button with four export buttons is added, and an individual print button.
+
+]]></info>
+
+</dt-example>
+

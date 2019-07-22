@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="7">
+
+<css lib="datatables buttons select editor">
+
+div.DTE_Body div.DTE_Body_Content div.DTE_Field {
+	float: left;
+	width: 50%;
+	padding: 5px 20px;
+	clear: none;
+	box-sizing: border-box;
+}
+
+div.DTE_Body div.DTE_Form_Content:after {
+	content: ' ';
+	display: block;
+	clear: both;
+}
+
+</css>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Multi-column layout</title>
+
+<info><![CDATA[
+
+For complex forms that have a lot of visible fields, it can be useful to style the form to show in a multi-column layout, rather than in a single column. This can readily be done using a little CSS.
+
+There are a number options to perform multi-column layout in CSS:
+
+* Floating elements - shown in this example. This is compatible with all browsers and the flow is left to right.
+* [Multi-column layout](https://developer.mozilla.org/en-US/docs/Web/CSS/column-count) - A CSS specification for multi-column layout but is [somewhat buggy](http://quirksmode.org/css/columns/) and not supported in IE9-. Flow is top to bottom.
+* [Flex-box](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) - A modern standard for repeating layouts in CSS - [not supported in IE9-](http://caniuse.com/#search=flexbox). Flow can be top to bottom or left to right.
+
+This examples shows the floating options due to its wide compatibility. Click the _CSS_ tab below the table to see the CSS used.
+
+For completeness, if you wish to use Flex-box, the CSS to use is:
+
+```css
+div.DTE_Body div.DTE_Body_Content div.DTE_Field {
+	width: 50%;
+	padding: 5px 20px;
+	box-sizing: border-box;
+}
+
+div.DTE_Body div.DTE_Form_Content {
+	display:flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+}
+```
+
+]]></info>
+
+</dt-example>
+

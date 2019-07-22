@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="2">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	editor.on( 'preSubmit', function ( e, o, action ) {
+		if ( action !== 'remove' ) {
+			var firstName = this.field( 'first_name' );
+
+			// Only validate user input values - different values indicate that
+			// the end user has not entered a value
+			if ( ! firstName.isMultiValue() ) {
+				if ( ! firstName.val() ) {
+					firstName.error( 'A first name must be given' );
+				}
+				
+				if ( firstName.val().length >= 20 ) {
+					firstName.error( 'The first name length must be less that 20 characters' );
+				}
+			}
+
+			// ... additional validation rules
+
+			// If any error was reported, cancel the submission so it can be corrected
+			if ( this.inError() ) {
+				return false;
+			}
+		}
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Client-side validation</title>
+
+<info><![CDATA[
+
+Editor, in general, assumes that server-side validation of the data will be performed and any errors will be reported back to the client (the validation must be done at the server anyway for security, so this saves duplicating logic). However, there are cases where performing client-side checks can be very valuable, particularly if you want to avoid the overhead of making an Ajax request that contains known error information.
+
+There are a number of methods for doing this with Editor, including simply not calling the `e-api submit()` method when you don't want to submit the data, but this example shows how client-side validation can be achieved using the `e-event preSubmit` event which can be used to cancel the submit by returning `false`.
+
+The `e-event preSubmit` event is used to run a custom function just before the data is submitted to the server. The `e-api error()` method is used to show the error message to the end user, if required, and `e-api inError()` to determine if the form shows an error state and thus not submit the form.
+
+The validation performed here uses `e-api field().isMultiValue()` to first determine if a field has multiple values or not - if it does, then no additional validation is performed since the end user can't have entered a value (when using the UI a multi-value edit effects all items being edited). If the user has entered a value (`e-api field().val()`) it is checked to be not empty and <20 characters in length.
+
+Note that the event handlers functions are executed in the Editor instance's scope, so API methods can be accessed using the `this` keyword.
+
+]]></info>
+
+</dt-example>
+

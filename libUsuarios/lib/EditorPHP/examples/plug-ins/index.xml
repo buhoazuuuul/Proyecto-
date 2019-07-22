@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example order="10">
+
+<title lib="Editor">Plug-in examples</title>
+
+<info><![CDATA[
+
+Plug-ins provide the ultimate way to customise Editor to your exact needs. There are two primary types of plug-in Editor provides for:
+
+* Field type plug-ins - create custom field types for your data
+* Display controller plug-ins - define how you want the form to be displayed
+
+The examples in this section show how these two types of plug-ins can be defined and used in Editor.
+
+]]></info>
+
+</dt-example>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example order="9">
+
+<title lib="Editor">Styling examples</title>
+
+<info><![CDATA[
+
+As with all other parts of Editor, styling is highly configurable. Editor can be integrated directly with your styling library of choice, such as Bootstrap, or you can customise it yourself. It also has two built in display controls, which can dramatically change how your users interact with the editing form.
+
+]]></info>
+
+</dt-example>

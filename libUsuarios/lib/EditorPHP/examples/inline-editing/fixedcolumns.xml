@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="9">
+
+<css lib="datatables fixedcolumns buttons select editor"/>
+<js lib="jquery datatables fixedcolumns buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "E-mail:",
+				name: "email"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Age:",
+				name: "age"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		fixedColumns: {
+			leftColumns: 2
+		},
+		scrollX: true,
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{   // Checkbox select column
+				data: null,
+				defaultContent: '',
+				className: 'select-checkbox',
+				orderable: false
+			},
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "position" },
+			{ data: "email" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "age" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		order: [ 1, 'asc' ],
+		select: {
+			style:    'os',
+			selector: 'td.select-checkbox'
+		},
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+
+	// Activate an inline edit on click of a table cell
+	$( table.table().container() ).on( 'click', 'tbody td:not(:first-child)', function (e) {
+		editor.inline( this );
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">FixedColumns integration</title>
+
+<info><![CDATA[
+
+
+Editor's inline editing mode also supports the [FixedColumns extension for DataTables](//datatables.net/extensions/fixedcolumns). FixedColumns allows one or more columns to be frozen in place at the edges of a scrolling table, while still remaining inline editable, as shown in this example. Simply click on the cell to edit it.
+
+This example also demonstrates the ability of the [Select extension](//datatables.net/extensions/select) to operate with the fixed columns, allowing the row to be selectable from the checkbox regardless of horizontal scrolling position.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display nowrap" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th></th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>E-mail</th>
+				<th>Office</th>
+				<th>Extn.</th>
+				<th>Age</th>
+				<th width="18%">Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

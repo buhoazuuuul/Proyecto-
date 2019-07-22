@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="4">
+
+<css lib="datatables buttons select editor"/>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	$('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
+		editor.inline( this, {
+			submit: 'allIfChanged'
+		} );
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{
+				data: null,
+				defaultContent: '',
+				className: 'select-checkbox',
+				orderable: false
+			},
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		order: [ 1, 'asc' ],
+		select: {
+			style:    'os',
+			selector: 'td:first-child'
+		},
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Editing options - submit full row data</title>
+
+<info><![CDATA[
+
+By default, when using inline editing, Editor will submit only the value of the field that has been edited (with no Ajax submission happening if the value has not changed). This behaviour is controlled by the `e-type form-options` object that is passed into the `e-api inline()` method, or the `e-init formOptions.inline` initialisation option and has three modes of operation:
+
+* `-string changed` - Submit only the changed field (the default for inline editing), and only if the value has changed
+* `-string allIfChanged` - Submit the values of all fields if one or more have changed. If none have changed, nothing will be submitted
+* `-string all` - Submit all field values, even if there are no changes.
+
+This example demonstrates the `-string allIfChanged` option, which can be useful if you need to perform calculations on the server-side based on information in the row, regardless of which field value was altered. The effect of this parameter can be observed in the _Submitted data_ section of the _Ajax data_ tab below the table where you will see the full data for a row after editing a field.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th></th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th width="18%">Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example order="7">
+
+<title lib="Editor">Editor API examples</title>
+
+<info><![CDATA[
+
+The API that Editor presents and the events it emits can be used to customise the interface you want to present to your end user to exactly match your requirements. The examples in this section show how the comprehensive [API](//editor.datatables.net/reference/api) and the [events](//editor.datatables.net/reference/event) can be used to perform common actions in Editor.
+
+]]></info>
+
+</dt-example>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="1">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Show options:",
+				name: "options",
+				type: "select",
+				options: [ "Simple", "All" ],
+				def: "Simple"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	editor.dependent( 'options', function ( val ) {
+		return val === 'Simple' ?
+			{ hide: ['position', 'office', 'extn', 'start_date', 'salary'] } :
+			{ show: ['position', 'office', 'extn', 'start_date', 'salary'] };
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Dependent fields</title>
+
+<info><![CDATA[
+
+When working with complex forms, you often have fields whose state is dependent upon the input values of other fields in the form. For example you might have a `e-field select` list of options, the options for which depend upon the value selected for another `e-field select` list.
+
+The `e-api dependent()` method is available in Editor to make this type of complex interaction trivial. You simply attach the `dependent()` method to a field that you want to trigger an update the form when its value changes. You then have the option of defining a local callback or an Ajax call that will return an object that will reconfigure the form. You have the options of showing, hiding, enabling and disabling fields. You can also update labels, options, values, information messages and error messages! See the `e-api dependent()` documentation for full details.
+
+This example shows `e-api dependent()` attached to a simple `e-field select` field that is used to show and hide additional fields in the table (a simple and complex view). This is just a very simple example to show how easy it is to get started with `e-api dependent()`.
+
+]]></info>
+
+</dt-example>
+

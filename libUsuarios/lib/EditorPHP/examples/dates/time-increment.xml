@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="5">
+
+<css lib="datatables buttons select editor" />
+<js lib="moment jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: '../php/time.php',
+		table: '#example',
+		fields: [ {
+				label: 'First name:',
+				name:  'first_name'
+			}, {
+				label: 'Last name:',
+				name:  'last_name'
+			}, {
+				label: 'City:',
+				name:  'city'
+			}, {
+				label: 'Shift start:',
+				name:  'shift_start',
+				type:  'datetime',
+				format: 'h:mm A',
+				fieldInfo: '12 hour clock format',
+				opts: {
+					minutesIncrement: 10
+				}
+			}, {
+				label: 'Shift end:',
+				name:  'shift_end',
+				type:  'datetime',
+				format: 'HH:mm:ss',
+				fieldInfo: '24 hour clock format with seconds',
+				opts: {
+					minutesIncrement: 15,
+					secondsIncrement: 15
+				}
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '../php/time.php',
+		columns: [
+			{ data: 'first_name' },
+			{ data: 'last_name' },
+			{ data: 'city' },
+			{ data: 'shift_start' },
+			{ data: 'shift_end' }
+		],
+		select: true,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Time increment options</title>
+
+<info><![CDATA[
+
+When using `e-field datetime`'s time picker options, you may wish to limit the end user's ability to select particular times to certain intervals. This can be done using the `minutesIncrement` and `secondsIncrement` options, as shown in this example.
+
+In this case, the first field uses a ten minute increment, while the second uses a 15 minute and 15 second increment.
+
+]]></info>
+
+<custom-table>
+	<table class="display" id="example" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>City</th>
+				<th>Shift start</th>
+				<th>Shift end</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

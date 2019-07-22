@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="10">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	// Configure the envelope display to attach to the header
+	$.extend( $.fn.dataTable.Editor.display.envelope.conf, {
+		attach: 'head'
+	} );
+
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		display: 'envelope',
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Envelope display controller</title>
+
+<info><![CDATA[
+
+This example highlights how Editor can effortlessly present the form by utilising _display containers_. Editor makes very few assumptions about how its form will actually be displayed to the end user (where in the DOM, interaction etc) leaving the actual positioning and final display of the form to the display controller.
+
+Editor has two built-in display controllers ('lightbox' and 'envelope') which can be specified by using the `e-init display` initialisation option - 'lightbox' is the default. Additional display controllers can be added as plug-ins to Editor if you wish to use a different display method.
+
+This example builds on the [simple example](../simple/simple.html) utilising [Buttons](//datatables.net/extensions/buttons) to control the form. The envelope display method has a number of configuration options available to it, including the ability to toggle automatic scrolling of the window and attaching the form to the table header, both of which are shown here. The [Envelope with inline controls](envelopeInTable.html) example shows the default effect for these settings, while we alter the defaults here.
+
+]]></info>
+
+</dt-example>
+

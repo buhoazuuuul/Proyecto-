@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example order="2">
+
+<title lib="Editor">Editor advanced initialisation examples</title>
+
+<info><![CDATA[
+
+The examples in this section show more advanced initialisation and configuration techniques than the [simple examples](../simple). Examples include  more complex join operations, using REST interfaces and how to show data in the table or form only.
+
+These examples, along with the [API examples](../api) will help you get the most out of Editor.
+
+]]></info>
+
+</dt-example>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="4" framework="semanticui">
+
+<css lib="datatables buttons select editor"/>
+<js lib="jquery semanticui datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: 'datetime'
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		lengthChange: false,
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true
+	} );
+
+	// Display the buttons
+	new $.fn.dataTable.Buttons( table, [
+		{ extend: "create", editor: editor },
+		{ extend: "edit",   editor: editor },
+		{ extend: "remove", editor: editor }
+	] );
+
+	table.buttons().container()
+		.appendTo( $('div.eight.column:eq(0)', table.table().container()) );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Semantic UI</title>
+
+<info><![CDATA[
+
+This example shows DataTables and Editor integrated with [Semantic UI](http://semantic-ui.com/). Semantic UI is a comprehensive framework that uses CSS class names like words to create natural language styling library.
+
+With the Semantic UI integration stylesheets and Javascript files loaded for DataTables, Editor and any other extensions, the table and editing form will feel like a natural part of your application.
+
+]]></info>
+
+</dt-example>
+

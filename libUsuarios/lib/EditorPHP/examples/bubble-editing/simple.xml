@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="1">
+
+<css lib="datatables buttons select editor"/>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	// Activate the bubble editor on click of a table cell
+	$('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
+		editor.bubble( this );
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		scrollY: 300,
+		paging: false,
+		ajax: "../php/staff.php",
+		columns: [
+			{
+				data: null,
+				defaultContent: '',
+				className: 'select-checkbox',
+				orderable: false
+			},
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		order: [ 1, 'asc' ],
+		select: {
+			style:    'os',
+			selector: 'td:first-child'
+		},
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Simple bubble editing</title>
+
+<info><![CDATA[
+
+Editor has three different Editor modes:
+
+* Primary editing
+* Bubble editing
+* Inline editing
+
+Bubble editing is designed to have all the fast editing options of inline editing (i.e. a single click to activate) without the potential layout issues that inline editing presents.
+
+This example shows bubble editing, with the primary editing options still available with row selection provided by the first column (the checkbox shown is provided by [Select's `-string select-checkbox` column class](//datatables.net/extensions/select)), since a click in the other cells will activate the bubble editing interface.
+
+The bubble editing interface of Editor is activated by the `e-api bubble()` API method. Simply pass in the cell you want to edit as the first parameter. Editor will attempt to automatically determine which parameter is to be edited. Alternatively, or if Editor is unable to determine the field automatically, use the second parameter to tell it which field(s) to edit.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th></th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th>Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

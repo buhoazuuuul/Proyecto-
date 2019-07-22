@@ -8,11 +8,14 @@
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
   <title>Innexu-Administrador</title>
-
+  <!-- DataTable buttons -->
+  <link rel="stylesheet" type="text/css" href="css/buttons.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css" />
+  <!-- Editor dataTables -->
+  <link rel="stylesheet" href="libUsuarios/lib/EditorPHP/css/editor.dataTables.min.css" class="stylesheet">
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
   <!-- Bootstrap core CSS -->
   <link href="libUsuarios/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
@@ -297,7 +300,7 @@
           <button class="btn logout" id="button">Eliminar fila seleccionada</button>
           <div class="content-panel">
             <div class="adv-table">
-              <table cellpadding="0" cellspacing="0" class="display table table-bordered display" style="width:100%" id="user-table">
+              <table cellpadding="0" cellspacing="0" class="display table table-bordered display" style="width:100%" id="userTable">
                 <thead>
                   <tr>
                     <th>Numero de documento</th>
@@ -346,27 +349,25 @@
     </footer>
     <!--footer end-->
   </section>
-  <!-- js placed at the end of the document so the pages load faster -->
-  <script src="libUsuarios/lib/jquery/jquery.min.js"></script>
-  <script src="libUsuarios/lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="libUsuarios/lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="libUsuarios/lib/jquery.scrollTo.min.js"></script>
-  <script src="libUsuarios/lib/jquery.nicescroll.js" type="text/javascript"></script>
-  <!--common script for all pages-->
-  <script src="libUsuarios/lib/common-scripts.js"></script>
-  <!--script for this page-->
-  <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
-  <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script> -->
-  <!-- bootbox code -->
-  <script src="lib/bootbox.js"></script>
-  <script src="lib/bootbox.locales.js"></script>
-  <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
-  <!-- dataTables -->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <!-- dataTables buttons -->
+  <script type="text/javascript" src="js/buttons.dataTables.js"></script>
   <!-- DataTable spanish -->
-  <script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <!-- dataTables required files -->
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript" src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+  <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+  <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+  <script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
+  <!-- Editor dataTables -->
+  <script type="text/javascript" src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
   <!--script for this page-->
   <script src="js/fill-secretario-dataTable.js" type="text/javascript"></script>
+  <script>
+
+  </script>
 </body>
 
 </html>

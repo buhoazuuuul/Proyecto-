@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="15">
+
+<css lib="datatables select buttons editor"/>
+<js lib="jquery datatables select buttons editor">
+<![CDATA[
+
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/upload-many.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "users.first_name"
+			}, {
+				label: "Last name:",
+				name: "users.last_name"
+			}, {
+				label: "Phone #:",
+				name: "users.phone"
+			}, {
+				label: "Site:",
+				name: "users.site",
+				type: "select"
+			}, {
+				label: "Images:",
+				name: "files[].id",
+				type: "uploadMany",
+				display: function ( fileId, counter ) {
+					return '<img src="'+editor.file( 'files', fileId ).web_path+'"/>';
+				},
+				noFileText: 'No images'
+			}
+		]
+	} );
+
+	var table = $('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/upload-many.php",
+		columns: [
+			{ data: "users.first_name" },
+			{ data: "users.last_name" },
+			{ data: "users.phone" },
+			{ data: "sites.name" },
+			{
+				data: "files",
+				render: function ( d ) {
+					return d.length ?
+						d.length+' image(s)' :
+						'No image';
+				},
+				title: "Image"
+			}
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+<title lib="Editor">File upload (many)</title>
+
+<info><![CDATA[
+
+This example shows how the `e-field uploadMany` field type can be used to allow multiple images to be uploaded and associated with a single field in the form. Images can be added or removed from the collection and this is designed to work with a one-to-many join in the backend database.
+
+The upload options of Editor are extensively documented in the manual ([Javascript](//editor.datatables.net/manual/upload), [PHP](//editor.datatables.net/manual/php/upload), [.NET](//editor.datatables.net/manual/net/upload) and [NodeJS](//editor.datatables.net/manual/node/upload)) and details the various options available.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Phone #</th>
+				<th>Location</th>
+				<th>Image</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Phone #</th>
+				<th>Location</th>
+				<th>Image</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+

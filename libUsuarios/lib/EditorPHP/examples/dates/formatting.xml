@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="" order="2">
+
+<css lib="datatables buttons select editor" />
+<js lib="moment jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: '../php/dates.php?format=custom',
+		table: '#example',
+		fields: [ {
+				label: 'First name:',
+				name:  'first_name'
+			}, {
+				label: 'Last name:',
+				name:  'last_name'
+			}, {
+				label:  'Updated date:',
+				name:   'updated_date',
+				type:   'datetime',
+				def:    function () { return new Date(); },
+				format: 'M/D/YYYY',
+				fieldInfo: 'US style m/d/y format'
+			}, {
+				label:  'Registered date:',
+				name:   'registered_date',
+				type:   'datetime',
+				def:    function () { return new Date(); },
+				format: 'dddd D MMMM YYYY',
+				fieldInfo: 'Verbose date format',
+				keyInput: false
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '../php/dates.php?format=custom',
+		columns: [
+			{ data: 'first_name' },
+			{ data: 'last_name' },
+			{ data: 'updated_date' },
+			{ data: 'registered_date' }
+		],
+		select: true,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Formatted dates</title>
+
+<info><![CDATA[
+
+Editor's `e-field datetime` field type makes entering date and time information simple, but to increase user friendliness you may wish to use a custom date format (rather than the default ISO8601 format) - this can be done with the [momentjs](http://momentjs.com/) library and specifying a `format` option for the field.
+
+This example shows two different date fields which are displayed using different formats - the first is in the US _m/d/y_ format while the second is a more verbose format (it also uses `keyInput: false` to disallow users from typing the input). Using momentjs allows you to select whatever format you require.
+
+]]></info>
+
+<custom-table>
+	<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Updated date</th>
+				<th>Registered date</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="11">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/joinSelf.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "users.first_name"
+			}, {
+				label: "Last name:",
+				name: "users.last_name"
+			}, {
+				label: "Manager:",
+				name: "users.manager",
+				type: "select"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/joinSelf.php",
+		columns: [
+			{ data: "users.first_name" },
+			{ data: "users.last_name" },
+			{
+				data: "manager",
+				render: function ( val, type, row ) {
+					return val.first_name ?
+						val.first_name +' '+ val.last_name :
+						'';
+				},
+				defaultContent: ""
+			}
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Join tables - self referencing join</title>
+
+<info><![CDATA[
+
+Extending the [simple join example](../simple/join.html), here we show how a self referencing SQL table can be used with Editor. Self referencing tables can be very useful when there is a hierarchy of like objects in the database.
+
+In this particular example each staff member has a manager, who is also a member of staff. Using a self referencing join we can display each staff member and their manager in the table, while Editor allows these fields to be easily editable.
+
+In SQL terms, the `users` table has a column `manager` which references the `id` column in its own table. In an SQL statement we use the `as` keyword to alias the joined table, which is exactly how the Editor server-side libraries also operate.
+
+The data structure returned by the server for each row in this table is:
+
+```js
+{
+	"DT_RowId": "row_1",
+	"users": {
+		"first_name": "Quynn",
+		"last_name": "Contreras",
+		"manager": "1"
+	},
+	"manager": {
+		"first_name": "Quynn",
+		"last_name": "Contreras"
+	}
+}
+```
+
+The three fields we want to edit are in the `users` object, but we also use the `manager` properties for display in the table (through the use of `dt-init columns.data` and `dt-init columns.render`).
+
+See the join documentation ([PHP](http://editor.datatables.net/manual/php/joins) | [.NET](http://editor.datatables.net/manual/net/joins) | [NodeJS](http://editor.datatables.net/manual/node/joins)) for further information about joins with Editor's framework libraries.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Manager</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Manager</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+

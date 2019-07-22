@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ssp" order="9">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		"ajax": "../php/staff.php",
+		"table": "#example",
+		"fields": [ {
+				"label": "First name:",
+				"name": "first_name"
+			}, {
+				"label": "Last name:",
+				"name": "last_name"
+			}, {
+				"label": "Position:",
+				"name": "position"
+			}, {
+				"label": "Office:",
+				"name": "office"
+			}, {
+				"label": "Extension:",
+				"name": "extn"
+			}, {
+				"label": "Start date:",
+				"name": "start_date",
+				"type": "datetime"
+			}, {
+				"label": "Salary:",
+				"name": "salary"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: {
+			url: "../php/staff.php",
+			type: "POST"
+		},
+		serverSide: true,
+		columns: [
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Server-side processing</title>
+
+<info><![CDATA[
+
+When working with large data sets (50'000 rows+), you might find that you want to harness the power of the SQL database on your server, having it perform ordering, searching and paging for you - tasks which database engines are highly tuned for. With a large amount of data on the client-side, the browser can start to slow down, so DataTables has a [server-side processing mode](http://datatables.net/manual/server-side) which hands off all of the "hard work" to the server. This allows DataTables to display data from results sets which may be many millions of records in size.
+
+The Editor server-side libraries (both PHP, .NET and NodeJS) have automatic detection of a server-side processing request from DataTables and will automatically process them as required. Thus, to switch your table to server-side processing mode, all you need to do is use the DataTables `dt-init serverSide` option, setting it to `true`. You will likely also want to use `POST` data, which can be done using the `dt-init ajax` option, as shown in this example. The Editor libraries will then perform all additional logic for you automatically!
+
+]]></info>
+
+</dt-example>
+

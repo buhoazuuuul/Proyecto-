@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="13">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/joinArray.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name:  "users.first_name"
+			}, {
+				label: "Last name:",
+				name:  "users.last_name"
+			}, {
+				label: "Site:",
+				name:  "users.site",
+				type:  "select"
+			}, {
+				"label": "Permissions:",
+				"name": "permission[].id",
+				"type": "checkbox"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: {
+			url: "../php/joinArray.php",
+			type: 'POST'
+		},
+		columns: [
+			{ data: "users.first_name" },
+			{ data: "users.last_name" },
+			{ data: "sites.name" },
+			{ data: "permission", render: "[, ].name" }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Join tables - one-to-many join</title>
+
+<info><![CDATA[
+
+When using joined database tables, there are times when you might wish to use a one-to-many relationship for your data, and display that as an editable interface for your system's users.
+
+On the client-side, Editor achieved this quite simply by making use of DataTables' powerful `dt-init columns.data`  and `dt-init columns.render` options to display the data and the `e-init fields.name` option in Editor. These options all provide the ability to use array based data through Javascript square bracket notation (`[]`) - see the DataTables `dt-init columns.data` documentation for detailed information on the syntax that can be used for these options.
+
+In this case each record in our `users` database table can have different access permissions granted. The one-to-many link is provided by a join table on the database side.
+
+For the editing interface Editor presents this as a checkbox list of options which the editor can use to select the options they want to assign to a particular user.
+
+On the server-side the Editor PHP, .NET and NodeJS libraries all provide a `Join` class that can be used to construct complex CRUD queries for one-to-many data manipulation. For further information about using the libraries to build an editable DataTable with JOINed tables, please see the join documentation ([PHP](http://editor.datatables.net/manual/php/joins) | [.NET](http://editor.datatables.net/manual/net/joins) | [NodeJS](http://editor.datatables.net/manual/node/joins)).
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Location</th>
+				<th>Permissions</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Location</th>
+				<th>Permissions</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+

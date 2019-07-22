@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="4">
+
+<css lib="datatables buttons select keytable autofill editor">
+	div.DTE_Inline input {
+		border: none;
+		background-color: transparent;
+		padding: 0 !important;
+		font-size: 90%;
+	}
+
+	div.DTE_Inline input:focus {
+		outline: none;
+		background-color: transparent;
+	}
+</css>
+<js lib="jquery datatables buttons select keytable autofill editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+	var table = $('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		order: [[ 1, 'asc' ]],
+		columns: [
+			{
+				data: null,
+				defaultContent: '',
+				className: 'select-checkbox',
+				orderable: false
+			},
+			{ data: "first_name" },
+			{ data: "last_name" },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		autoFill: {
+			columns: ':not(:first-child)',
+			editor:  editor
+		},
+		keys: {
+			columns: ':not(:first-child)',
+			editor:  editor
+		},
+		select: {
+			style:    'os',
+			selector: 'td:first-child',
+			blurable: true
+		},
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">AutoFill and KeyTable together</title>
+
+<info><![CDATA[
+
+To emulate the Excel interface as closely as possible, [KeyTable](https://datatables.net/extensions/keytable) and [AutoFill](https://datatables.net/extensions/autofill) can be used on the same table as shown here. This can be particularly beneficial, for example, when transitioning staff from Excel spreadsheets to your own online application - providing an interface they are familiar with.
+
+As of KeyTable 2.4 the Excel like interface is even more "Excel like" through its support for copy and paste of data - simply focus on the cell you want to copy or paste data from or to, and use the standard copy / paste commands (via the _Edit_ menu, context menu or keyboard).
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th></th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th width="18%">Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

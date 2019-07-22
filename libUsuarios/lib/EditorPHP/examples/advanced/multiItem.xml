@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="3">
+
+<css lib="datatables buttons select editor">
+	a.buttons-select-rows,
+	a.buttons-select-none {
+		margin-left: 1em;
+	}
+</css>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		],
+		formOptions: {
+			main: {
+				scope: 'cell' // Allow multi-row editing with cell selection
+			}
+		}
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{
+				data: null,
+				render: function ( data, type, row ) {
+					// Combine the first and last names into a single table field
+					return data.first_name+' '+data.last_name;
+				},
+				editField: [ 'first_name', 'last_name' ]
+			},
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor },
+			"selectRows",
+			"selectColumns",
+			"selectCells",
+			"selectNone"
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Multi-item editing (rows, columns, cells)</title>
+
+<info><![CDATA[
+
+This example demonstrates Editor's multi-item editing capabilities, showing specifically that multi-item editing is not limited to rows, but columns and cells can also be selected and edited with a single click. Furthermore, it is possible to combine the selection of rows, columns and cells to provide complex data updates with ease.
+
+The item selection here (and all other examples) is provided by the [Select extension](//datatables.net/extensions/select) for DataTables. It has the ability to select the individual components of the table - which item type is selected can be controlled through the `s-api select.items()` method, or the `s-button selectRows`, `s-button selectColumns` and `s-button selectCells` buttons that Select provides.
+
+These buttons are utilised in this example to allow the end user to easily change what items will be selected.
+
+]]></info>
+
+</dt-example>
+

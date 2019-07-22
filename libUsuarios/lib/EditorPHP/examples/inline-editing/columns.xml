@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="8">
+
+<css lib="datatables buttons select editor">
+	td.editable {
+		font-weight: bold;
+	}
+</css>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	// Activate an inline edit on click of a table cell
+	$('#example').on( 'click', 'tbody td.editable', function (e) {
+		editor.inline( this );
+	} );
+
+	$('#example').DataTable( {
+		dom: 'Bfrtip',
+		ajax: '../php/staff.php',
+		columns: [
+			{
+				data: null,
+				defaultContent: '',
+				className: 'select-checkbox',
+				orderable: false
+			},
+			{ data: 'first_name', className: 'editable' },
+			{ data: 'last_name', className: 'editable' },
+			{ data: 'position' },
+			{ data: 'office' },
+			{ data: 'start_date' },
+			{ data: 'salary', render: $.fn.dataTable.render.number( ',', '.', 0, '$' ), className: 'editable' }
+		],
+		select: {
+			style:    'os',
+			selector: 'td:first-child'
+		},
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Selected columns only</title>
+
+<info><![CDATA[
+
+It can sometimes be useful to allow editing on specific columns only. This is done by only calling the `e-api inline()` method for the cells that you wish to be editable when activated (typically a click). There are a number of methods for doing this, primarily involving the jQuery selector for which cells the event should activate on.
+
+This example uses the method of applying a class name (`-string editable` in this case, but it could be anything) to the columns that should be editable (using `dt-init columns.className`). Then the selector for the event handler for `e-api inline()` simply becomes `-string tbody td.editable`.
+
+In this example only the first name, last name and salary columns are inline editable. They are styled using the class name to indicate this.
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th></th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th>Start date</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+	</table>
+</custom-table>
+
+</dt-example>
+

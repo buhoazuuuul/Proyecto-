@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example order="1">
+
+<title lib="Editor">Editor simple initialisation examples</title>
+
+<info><![CDATA[
+
+Editor is a very flexible and powerful piece of software, but it is also quite simple to get started with, as the examples in this section show. These examples focus on creating an editable table using the main editing form in Editor, showing how fields can be defined, different field types and defaults used, as well as a simple join example.
+
+]]></info>
+
+</dt-example>

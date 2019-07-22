@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="8">
+
+<css lib="datatables buttons select editor">
+
+div.DTED_Lightbox_Wrapper {
+	left: 1em;
+	right: 1em;
+	margin-left: 0;
+	width: auto;
+}
+
+</css>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date",
+				type: "datetime"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Large window layout</title>
+
+<info><![CDATA[
+
+If you are targeting desktop users for your application you may wish to have the Editor display make more use of the space available on large monitors. This can be particularly useful for cases where you use complex input controls such as the [Quill WYSIWYG plug-in for Editor](https://editor.datatables.net/plug-ins/field-type/editor.quill).
+
+By default the Editor display is relatively compact, but this can be easily modified using CSS. This example simply shows the lightbox container being set to take almost 100% window width - click the _CSS_ tab below the table to see the CSS used.
+
+You may wish to use the [multi-column](columns.html) layout option with this type of styling.
+
+]]></info>
+
+</dt-example>
+

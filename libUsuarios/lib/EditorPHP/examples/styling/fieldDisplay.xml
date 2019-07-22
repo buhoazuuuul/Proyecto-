@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="6">
+
+<css lib="datatables buttons select editor"/>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: '../php/staff.php',
+		table: '#example',
+		fields: [ {
+				label: 'First name:',
+				name: 'first_name'
+			}, {
+				label: 'Last name:',
+				name: 'last_name'
+			}, {
+				label: 'Position (<code>full</code>):',
+				name: 'position',
+				'className': 'full'
+			}, {
+				label: 'Office (<code>block</code>):',
+				name: 'office',
+				'className': 'block'
+			}, {
+				label: 'Extension (<code>full block</code>):',
+				name: 'extn',
+				'className': 'full block'
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Field display styling options</title>
+
+<info><![CDATA[
+
+This example shows Editor's built in options to alter the display of field input elements. By default, Editor makes extensive use of white-space to present a simple and clean looking form to an end user, particularly on larger monitors, but for more complex field types this can actually distract from the elegance of the form as input controls can be squashed together (a toolbar on a WYSIWYG input for example). It can also be useful to provide additional space for elements where a large amount of data is expected to be entered, such as with a `e-field textarea` input.
+
+The styling options can be added by using the `e-init fields.className` option and two options are available:
+
+* `-string full` - Use all of the space available to the right of the label for the input element (on larger screens, by default Editor uses white-space to present a simple looking form).
+* `-string block` - Show the input element below the label, making use of that additional space to show a larger input control.
+
+The `-string full` and `-string block` options can both be used on the field to combine their effects.
+
+This example shows two fields without the additional classes, two fields with each individually and one with both.
+
+]]></info>
+
+</dt-example>
+

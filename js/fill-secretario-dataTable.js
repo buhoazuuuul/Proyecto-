@@ -7,10 +7,16 @@ $(document).ready(function() {
 
 function fillsecretarios() {
 
-    var table = $('#user-table').DataTable({
-        "processing": true,
-        "serverSide": true,
-        "ajax": "php/getSecretarios.php",
+    var table = $('#userTable').DataTable({
+        dom: "Bfrtip",
+        ajax: "php/getSecretarios.php",
+        select: true,
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'pdfHtml5',
+        ],
+
         language: {
             "sProcessing": "Procesando...",
             "sLengthMenu": "Mostrar _MENU_ registros",
@@ -47,7 +53,6 @@ function fillsecretarios() {
         }
     });
 
-    $('#button').click(function() {
-        table.row('.selected').remove().draw(false);
-    });
+
+
 }

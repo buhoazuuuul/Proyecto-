@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="todo" order="1">
+
+<css lib="datatables buttons select editor">
+	button.inputButton {
+		float: left;
+		text-align: center;
+		display: block;
+		cursor: pointer;
+		margin: 0 20px 10px 0;
+		padding: 6px 0;
+		background: #F8F8F8;
+		background: -webkit-gradient(linear, center bottom, center top, from(#CCC), to(white));
+		background: -moz-linear-gradient(top, white, #CCC);
+		background: linear-gradient(to bottom, white, #CCC);
+		text-shadow: 0 1px 0 white;
+		border: 1px solid #999;
+		border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		box-shadow: 0px 0px 2px #999;
+		-moz-box-shadow: 0px 0px 2px #999;
+		-webkit-box-shadow: 0px 0px 2px #999;
+		width: 80px;
+	}
+
+	button.inputButton.selected {
+		font-weight: normal;
+		background: #02475A;
+		background: -webkit-gradient(linear, center bottom, center top, from(#777), to(#333));
+		background: -moz-linear-gradient(top, #333, #777);
+		background: linear-gradient(to bottom, #333, #777);
+		box-shadow: inset 0px 0px 2px #222;
+		-moz-box-shadow: inset 0px 0px 2px #222;
+		-webkit-box-shadow: inset 0px 0px 2px #222;
+		color: white;
+		text-shadow: none;
+	}
+</css>
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+// Todo field type plug-in code
+(function ($, DataTable) {
+
+if ( ! DataTable.ext.editorFields ) {
+    DataTable.ext.editorFields = {};
+}
+
+var Editor = DataTable.Editor;
+var _fieldTypes = DataTable.ext.editorFields;
+
+_fieldTypes.todo = {
+	create: function ( conf ) {
+		var that = this;
+
+		conf._enabled = true;
+
+		// Create the elements to use for the input
+		conf._input = $(
+			'<div id="'+Editor.safeId( conf.id )+'">'+
+				'<button type="button" class="inputButton" value="0">To do</button>'+
+				'<button type="button" class="inputButton" value="1">Done</button>'+
+			'</div>');
+
+		// Use the fact that we are called in the Editor instance's scope to call
+		// the API method for setting the value when needed
+		$('button.inputButton', conf._input).click( function () {
+			if ( conf._enabled ) {
+				that.set( conf.name, $(this).attr('value') );
+			}
+
+			return false;
+		} );
+
+		return conf._input;
+	},
+
+	get: function ( conf ) {
+		return $('button.selected', conf._input).attr('value');
+	},
+
+	set: function ( conf, val ) {
+		$('button.selected', conf._input).removeClass( 'selected' );
+		$('button.inputButton[value='+val+']', conf._input).addClass('selected');
+	},
+
+	enable: function ( conf ) {
+		conf._enabled = true;
+		$(conf._input).removeClass( 'disabled' );
+	},
+
+	disable: function ( conf ) {
+		conf._enabled = false;
+		$(conf._input).addClass( 'disabled' );
+	}
+};
+
+})(jQuery, jQuery.fn.dataTable);
+
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/todo.php",
+		table: "#example",
+		fields: [ {
+				label: "Item:",
+				name: "item"
+			}, {
+				label: "Status:",
+				name: "done",
+				type: "todo", // Using the custom field type
+				def: 0
+			}, {
+				label: "Priority:",
+				name: "priority",
+				type: "select",
+				options: [
+					{ label: "1 (highest)", value: "1" },
+					{ label: "2",           value: "2" },
+					{ label: "3",           value: "3" },
+					{ label: "4",           value: "4" },
+					{ label: "5 (lowest)",  value: "5" }
+				]
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: "../php/todo.php",
+		columns: [
+			{ data: "priority", className: "center" },
+			{ data: "item" },
+			{ 
+				className: "center",
+				data: "done",
+				render: function (data, type, row) {
+					if ( type === 'display' || type === 'filter' ) {
+						// Filtering and display get the rendered string
+						return data == 0 ? "To do" : "Done";
+					}
+					// Otherwise just give the original data
+					return data;
+				}
+			}
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Custom field type plug-ins</title>
+
+<info><![CDATA[
+
+Although Editor comes with a number of field types [built in](//editor.datatables.net/reference/field), you might find that the built in controls don't do exactly what you would like, or you want to present a completely custom control. For these eventualities Editor's field types are designed to be completely extensible and you can create plug-ins to provide your custom controls, or use some of the ones already available.
+
+This example shows how you might create a binary switch using `tag button` elements, effectively implementing a custom radio control. This might be useful for styling, as shown in this example.
+
+For more detailed information on how to create plug-ins for Editor, please refer to the [Editor documentation](//editor.datatables.net/manual/development).
+
+]]></info>
+
+</dt-example>
+

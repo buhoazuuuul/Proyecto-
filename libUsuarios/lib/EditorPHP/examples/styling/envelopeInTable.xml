@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="11">
+
+<css lib="datatables editor" />
+<js lib="jquery datatables editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/staff.php",
+		table: "#example",
+		display: 'envelope',
+		fields: [ {
+				label: "First name:",
+				name: "first_name"
+			}, {
+				label: "Last name:",
+				name: "last_name"
+			}, {
+				label: "Position:",
+				name: "position"
+			}, {
+				label: "Office:",
+				name: "office"
+			}, {
+				label: "Extension:",
+				name: "extn"
+			}, {
+				label: "Start date:",
+				name: "start_date"
+			}, {
+				label: "Salary:",
+				name: "salary"
+			}
+		]
+	} );
+
+	// New record
+	$('a.editor_create').on( 'click', function (e) {
+		e.preventDefault();
+
+		editor
+			.title( 'Create new record' )
+			.buttons( { "label": "Add", "fn": function () { editor.submit() } } )
+			.create();
+	} );
+
+	// Edit record
+	$('#example').on( 'click', 'a.editor_edit', function (e) {
+		e.preventDefault();
+
+		editor
+			.title( 'Edit record' )
+			.buttons( { "label": "Update", "fn": function () { editor.submit() } } )
+			.edit( $(this).closest('tr') );
+	} );
+
+	// Delete a record
+	$('#example').on( 'click', 'a.editor_remove', function (e) {
+		e.preventDefault();
+
+		editor
+			.title( 'Edit record' )
+			.message( "Are you sure you wish to delete this row?" )
+			.buttons( { "label": "Delete", "fn": function () { editor.submit() } } )
+			.remove( $(this).closest('tr') );
+	} );
+
+	$('#example').DataTable( {
+		ajax: "../php/staff.php",
+		columns: [
+			{ data: null, render: function ( data, type, row ) {
+				// Combine the first and last names into a single table field
+				return data.first_name+' '+data.last_name;
+			} },
+			{ data: "position" },
+			{ data: "office" },
+			{ data: "extn" },
+			{ data: "start_date" },
+			{ data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) },
+			{
+				data: null, 
+				className: "center",
+				defaultContent: '<a href="" class="editor_edit">Edit</a> / <a href="" class="editor_remove">Delete</a>'
+			}
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Envelope display with in table controls</title>
+
+<info><![CDATA[
+
+This example combines the [envelope display controller example](envelope.html) with the [in table controls example](../simple/inTableControls.html) to show a form which is presented in an 'envelope' display, based on controls which are generated links in the table.
+
+]]></info>
+
+<demo-html>
+	<a class="editor_create">Create new record</a>
+</demo-html>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th>Extn.</th>
+				<th>Start date</th>
+				<th>Salary</th>
+				<th>Edit / Delete</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>Name</th>
+				<th>Position</th>
+				<th>Office</th>
+				<th>Extn.</th>
+				<th>Start date</th>
+				<th>Salary</th>
+				<th>Edit / Delete</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+

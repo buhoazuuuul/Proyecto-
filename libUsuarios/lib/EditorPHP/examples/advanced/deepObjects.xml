@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dt-example table-type="ajax" order="5">
+
+<css lib="datatables buttons select editor" />
+<js lib="jquery datatables buttons select editor">
+<![CDATA[
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+	editor = new $.fn.dataTable.Editor( {
+		ajax: "../php/join.php",
+		table: "#example",
+		fields: [ {
+				label: "First name:",
+				name: "users.first_name"
+			}, {
+				label: "Last name:",
+				name: "users.last_name"
+			}, {
+				label: "Phone #:",
+				name: "users.phone"
+			}, {
+				label: "Site:",
+				name: "users.site",
+				type: "select"
+			}
+		]
+	} );
+
+	$('#example').DataTable( {
+		dom: "Bfrtip",
+		ajax: {
+			url: "../php/join.php",
+			type: 'POST'
+		},
+		columns: [
+			{ data: "users.first_name" },
+			{ data: "users.last_name" },
+			{ data: "users.phone" },
+			{ data: "sites.name" }
+		],
+		select: true,
+		buttons: [
+			{ extend: "create", editor: editor },
+			{ extend: "edit",   editor: editor },
+			{ extend: "remove", editor: editor }
+		]
+	} );
+} );
+
+]]>
+</js>
+
+<title lib="Editor">Complex (nested) JSON data source</title>
+
+<info><![CDATA[
+
+Like DataTables, Editor has the ability to work with virtually any JSON data source. In DataTables the `dt-init columns.data` option is used to specify the property name for the row's data source object that should be used for a columns' data. In Editor the `e-init fields.name` and `e-init fields.data` options can be used to tell Editor where to read a field's value from and where to send it on the server.
+
+To clarify the difference between `e-init fields.data` and `e-init fields.name`, the former is used to read the value from the DataTables row's data, while the latter is the name of the field that is submitted to the server. Typically they will be the same, with the data property taking the value of the name automatically unless otherwise specified.
+
+This example uses data from the server in the structure:
+
+```js
+{
+	"DT_RowId": "row_1",
+	"users": {
+		"first_name": "Quynn",
+		"last_name": "Contreras",
+		"phone": "1-971-977-4681",
+		"site": "1"
+	},
+	"sites": {
+		"name": "Edinburgh"
+	}
+}
+```
+
+The `dt-init columns.data`, `e-init fields.data` and `e-init fields.name` options can be given as Javascript dotted object notation strings, to be able to read the data required. For example, to get the first name parameter from the above data source object, use `users.first_name` as is done in the Editor initialisation in this example.
+
+This can be exceptionally useful when working with [joined tables](../simple/join.html).
+
+]]></info>
+
+<custom-table>
+	<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Phone #</th>
+				<th>Location</th>
+			</tr>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Phone #</th>
+				<th>Location</th>
+			</tr>
+		</tfoot>
+	</table>
+</custom-table>
+
+</dt-example>
+
