@@ -6,6 +6,10 @@ $(document).ready(function() {
 });
 
 function fillsecretarios() {
+    // var editor = new $.fn.dataTable.Editor({
+    //     ajax: "php/getSecretarios.php",
+    //     table: "#userTable"
+    // });
 
     var table = $('#userTable').DataTable({
         dom: "Bfrtip",
@@ -14,9 +18,9 @@ function fillsecretarios() {
         buttons: [
             'copyHtml5',
             'excelHtml5',
-            'pdfHtml5',
+            'csvHtml5',
+            'pdfHtml5'
         ],
-
         language: {
             "sProcessing": "Procesando...",
             "sLengthMenu": "Mostrar _MENU_ registros",
