@@ -54,7 +54,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-tasks"></i>
               <span class="badge bg-theme">4</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended tasks-bar">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -123,7 +123,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-envelope-o"></i>
               <span class="badge bg-theme">5</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended inbox">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -133,49 +133,49 @@
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
                   <span class="subject">
-                  <span class="from">Zac Snider</span>
-                  <span class="time">Just now</span>
+                    <span class="from">Zac Snider</span>
+                    <span class="time">Just now</span>
                   </span>
                   <span class="message">
-                  Hi mate, how is everything?
+                    Hi mate, how is everything?
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
                   <span class="subject">
-                  <span class="from">Divya Manian</span>
-                  <span class="time">40 mins.</span>
+                    <span class="from">Divya Manian</span>
+                    <span class="time">40 mins.</span>
                   </span>
                   <span class="message">
-                  Hi, I need your help with this.
+                    Hi, I need your help with this.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
                   <span class="subject">
-                  <span class="from">Dan Rogers</span>
-                  <span class="time">2 hrs.</span>
+                    <span class="from">Dan Rogers</span>
+                    <span class="time">2 hrs.</span>
                   </span>
                   <span class="message">
-                  Love your new Dashboard.
+                    Love your new Dashboard.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-sherman.jpg"></span>
                   <span class="subject">
-                  <span class="from">Dj Sherman</span>
-                  <span class="time">4 hrs.</span>
+                    <span class="from">Dj Sherman</span>
+                    <span class="time">4 hrs.</span>
                   </span>
                   <span class="message">
-                  Please, answer asap.
+                    Please, answer asap.
                   </span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">See all messages</a>
@@ -188,7 +188,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-bell-o"></i>
               <span class="badge bg-warning">7</span>
-              </a>
+            </a>
             <ul class="dropdown-menu extended notification">
               <div class="notify-arrow notify-arrow-yellow"></div>
               <li>
@@ -199,28 +199,28 @@
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Server Overloaded.
                   <span class="small italic">4 mins.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-warning"><i class="fa fa-bell"></i></span>
                   Memory #2 Not Responding.
                   <span class="small italic">30 mins.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Disk Space Reached 85%.
                   <span class="small italic">2 hrs.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-success"><i class="fa fa-plus"></i></span>
                   New User Registered.
                   <span class="small italic">3 hrs.</span>
-                  </a>
+                </a>
               </li>
               <li>
                 <a href="index.html#">See all notifications</a>
@@ -252,13 +252,13 @@
             <a href="index.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
-              </a>
+            </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-tasks"></i>
               <span>Formularios</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="../RegistroSecre.php">Registrar un secretario</a></li>
             </ul>
@@ -267,7 +267,7 @@
             <a class="active" href="javascript:;">
               <i class="fa fa-th"></i>
               <span>Tablas</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="usuarios.html">Usuarios</a></li>
               <li class="active"><a href="secretarios.html">Secretarios</a></li>
@@ -278,7 +278,7 @@
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
-              </a>
+            </a>
           </li>
         </ul>
         <!-- sidebar menu end-->
@@ -294,9 +294,10 @@
         <h3><i class="fa fa-angle-right"></i>Secretarios</h3>
         <div class="row mb">
           <!-- page start-->
+          <button class="btn logout" id="button">Eliminar fila seleccionada</button>
           <div class="content-panel">
             <div class="adv-table">
-              <table cellpadding="0" cellspacing="0" class="display table table-bordered display"  style="width:100%" id="user-table">
+              <table cellpadding="0" cellspacing="0" class="display table table-bordered display" style="width:100%" id="user-table">
                 <thead>
                   <tr>
                     <th>Numero de documento</th>
@@ -336,11 +337,11 @@
             Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
             Licensing information: https://templatemag.com/license/
           -->
-        <a href="https://templatemag.com/"></a>
+          <a href="https://templatemag.com/"></a>
         </div>
         <a href="advanced_table.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
-          </a>
+        </a>
       </div>
     </footer>
     <!--footer end-->
@@ -361,19 +362,11 @@
   <script src="lib/bootbox.locales.js"></script>
   <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
   <!-- dataTables -->
+  <!-- DataTable spanish -->
+  <script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <!--script for this page-->
-  <script type="text/javascript">
-    /* Formating function for row details */
-    $(document).ready(function() {
-    $('#user-table').DataTable({
-        "processing": true,
-        "serverSide": true,
-        "ajax": "php/getSecretarios.php",
-    } );
-} );  
-
-  </script>
+  <script src="js/fill-secretario-dataTable.js" type="text/javascript"></script>
 </body>
 
 </html>
