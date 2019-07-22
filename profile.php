@@ -619,7 +619,6 @@
     </footer>
     <!--footer end-->
   </section>
-
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="libUsuarios/lib/jquery/jquery.min.js"></script>
   <script src="libUsuarios/lib/bootstrap/js/bootstrap.min.js"></script>
