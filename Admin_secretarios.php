@@ -349,19 +349,17 @@
     </footer>
     <!--footer end-->
   </section>
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <!-- dataTables buttons -->
-  <script type="text/javascript" src="js/buttons.dataTables.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <!-- DataTable spanish -->
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-  <!-- dataTables required files -->
-  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
   <script type="text/javascript" language="javascript" src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
   <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
   <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
   <script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
   <!--script for this page-->
+  <script src="js/dataTables.editor.js" type="text/javascript"></script>
   <script src="js/fill-secretario-dataTable.js" type="text/javascript"></script>
   <script>
 

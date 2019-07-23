@@ -6,16 +6,34 @@ $(document).ready(function() {
 });
 
 function fillsecretarios() {
-    // var editor = new $.fn.dataTable.Editor({
-    //     ajax: "php/getSecretarios.php",
-    //     table: "#userTable"
-    // });
+
+    var editor = new $.fn.dataTable.Editor({
+        ajax: "php/getSecretariosEditor.php",
+        table: "#userTable"
+    });
 
     var table = $('#userTable').DataTable({
         dom: "Bfrtip",
-        ajax: "php/getSecretarios.php",
+        ajax: "php/getSecretariosEditor.php",
+        columns: [
+            { data: "apellido" },
+            { data: "dependencia" },
+            { data: "email" },
+            { data: "nombre" }
+        ],
         select: true,
         buttons: [
+            { extend: "create", editor: editor },
+            { extend: "edit", editor: editor },
+            {
+                extend: "remove",
+                editor: editor,
+                formMessage: function(e, dt) {
+                    var rows = dt.rows(e.modifier()).data().pluck('first_name');
+                    return 'Are you sure you want to delete the entries for the ' +
+                        'following record(s)? <ul><li>' + rows.join('</li><li>') + '</li></ul>';
+                }
+            },
             'copyHtml5',
             'excelHtml5',
             'csvHtml5',
