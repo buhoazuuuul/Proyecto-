@@ -9,19 +9,82 @@ function fillsecretarios() {
 
     var editor = new $.fn.dataTable.Editor({
         ajax: "php/getSecretariosEditor.php",
-        table: "#userTable"
+        table: "#userTable",
+        fields: [{
+                "label": "num_doc:",
+                "name": "num_doc"
+            },
+            {
+                "label": "tipo_doc:",
+                "name": "tipo_doc"
+            },
+            {
+                "label": "nombre:",
+                "name": "nombre"
+            },
+            {
+                "label": "apellido:",
+                "name": "apellido"
+            },
+            {
+                "label": "dependencia:",
+                "name": "dependencia"
+            },
+            {
+                "label": "telefono:",
+                "name": "telefono"
+            },
+            {
+                "label": "email:",
+                "name": "email"
+            },
+            {
+                "label": "usuario:",
+                "name": "usuario"
+            },
+            {
+                "label": "pass:",
+                "name": "pass"
+            }
+        ]
     });
 
-    var table = $('#userTable').DataTable({
+    var table = $('#userTable').dataTable({
         dom: "Bfrtip",
         ajax: "php/getSecretariosEditor.php",
-        columns: [
-            { data: "apellido" },
-            { data: "dependencia" },
-            { data: "email" },
-            { data: "nombre" }
+        columns: [{
+                "data": "num_doc"
+            },
+            {
+                "data": "tipo_doc"
+            },
+            {
+                "data": "nombre"
+            },
+            {
+                "data": "apellido"
+            },
+            {
+                "data": "dependencia"
+            },
+            {
+                "data": "telefono"
+            },
+            {
+                "data": "email"
+            },
+            {
+                "data": "usuario"
+            },
+            {
+                "data": "pass"
+            }
         ],
         select: true,
+        select: {
+            style: 'os',
+            selector: 'td:first-child'
+        },
         buttons: [
             { extend: "create", editor: editor },
             { extend: "edit", editor: editor },
@@ -39,6 +102,10 @@ function fillsecretarios() {
             'csvHtml5',
             'pdfHtml5'
         ],
+        keys: {
+            editor: editor,
+            editOnFocus: true
+        },
         language: {
             "sProcessing": "Procesando...",
             "sLengthMenu": "Mostrar _MENU_ registros",
@@ -65,8 +132,15 @@ function fillsecretarios() {
         }
     });
 
+    $('#remove').on('click', 'tbody tr', function() {
+        table.row(this).delete();
+    });
+    // Activate an inline edit on click of a table cell
+    $('#userTable').on('click', 'tbody td:not(:first-child)', function(e) {
+        editor.inline(this);
+    });
     // Seleccion de filas
-    $('#user-table tbody').on('click', 'tr', function() {
+    $('#userTable').on('click', 'tr', function() {
         if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
         } else {

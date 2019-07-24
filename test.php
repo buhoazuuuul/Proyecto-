@@ -62,7 +62,7 @@
     <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
     <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
     <script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
-
+    <script type="text/javascript" language="javascript" src="js/dataTables.editor.js"></script>
     <script src="js/fill-secretario-dataTable.js" type="text/javascript"></script>
 
 </body>
