@@ -3,11 +3,9 @@ var pass;
 var url;
 var depMunicipios;
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-    getSecretarios();
-    $('#btnLogin').on('click', function () {
-
+    $('#btnLogin').on('click', function() {
         usuario = $('#nomUsuario').val();
         pass = $('#passUsuario').val();
         url = 'profile.php?userName=' + usuario;
@@ -15,16 +13,10 @@ $(document).ready(function () {
 
     });
     console.log('Documento login.js cargado');
-    getData();
+
 
 });
 
-function getData() {
-
-    $.getJSON("js/Datos_abiertos/departamentos_municipios.json", function (data) {
-        depMunicipios = data;
-    });
-}
 
 function submitForm() {
 
@@ -34,10 +26,10 @@ function submitForm() {
         url: 'php/login.php',
         type: 'POST',
         data: data,
-        beforeSend: function () {
+        beforeSend: function() {
             console.log('Enviando...');
         },
-        success: function (response) {
+        success: function(response) {
             if (response == "Password Matches") {
 
                 const Toast = Swal.mixin({
@@ -53,11 +45,10 @@ function submitForm() {
                 })
 
                 //Redireccionamos
-                setTimeout(function () { window.location = url; }, 3000);
+                setTimeout(function() { window.location = url; }, 3000);
 
 
             } else {
-
 
                 Swal.fire({
                     position: 'center',
@@ -78,14 +69,11 @@ function getSecretarios() {
         url: 'php/getSecretarios.php',
         type: 'GET',
         data: "",
-        beforeSend: function () {
+        beforeSend: function() {
             console.log('Enviando...');
         },
-        success: function (response) {
+        success: function(response) {
             console.log(response);
         },
     });
-
-
-
 }

@@ -1,29 +1,34 @@
 <?php
-require('ssp.class.php');
+// DataTables PHP library
+include("lib/DataTables.php");
 
-$table = 'secretario';
+// Alias Editor classes so they are easy to use
+use
+    DataTables\Editor,
+    DataTables\Editor\Field,
+    DataTables\Editor\Format,
+    DataTables\Editor\Mjoin,
+    DataTables\Editor\Options,
+    DataTables\Editor\Upload,
+    DataTables\Editor\Validate;
 
-$primaryKey = 'num_doc';
-
-$columns = array(
-    array('db' => 'num_doc', 'dt' => 0),
-    array('db' => 'tipo_doc',  'dt' => 1),
-    array('db' => 'nombre',   'dt' => 2),
-    array('db' => 'apellido',     'dt' => 3),
-    array('db' => 'dependencia',     'dt' => 4),
-    array('db' => 'telefono',     'dt' => 5),
-    array('db' => 'email',     'dt' => 6),
-    array('db' => 'usuario',     'dt' =>  7),
-    array('db' => 'pass',     'dt' =>  8)
-);
-
-// SQL server connection information
-$sql_details = array(
-    'user' => 'root',
-    'pass' => '',
-    'db'   => 'innexu',
-    'host' => '127.0.0.1'
-);
-
-
-echo json_encode(SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns));
+// Build our Editor instance and process the data coming from _POST
+Editor::inst($db, 'secretario', 'id')
+    ->fields(
+        Field::inst('id'),
+        Field::inst('num_doc'),
+        Field::inst('tipo_doc'),
+        Field::inst('nombre'),
+        Field::inst('apellido'),
+        Field::inst('cargo'),
+        Field::inst('dependencia'),
+        Field::inst('departamento'),
+        Field::inst('municipio'),
+        Field::inst('telefono'),
+        Field::inst('email'),
+        Field::inst('usuario'),
+        Field::inst('pass'),
+        Field::inst('img')
+    )
+    ->process($_POST)
+    ->json();

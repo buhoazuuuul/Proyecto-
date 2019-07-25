@@ -11,16 +11,17 @@ var pass;
 
 
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     console.log('Documento usuario.js cargado');
     getTiposDeDocumentos();
-    $('#btnRegistrarse').on('click', function () {
+    $('#btnRegistrarse').on('click', function() {
         guardarDatosRegistro();
         InsertarDatosBD();
     });
 
 });
+
 function guardarDatosRegistro() {
 
     num_doc = $('#num_doc').val();
@@ -32,7 +33,7 @@ function guardarDatosRegistro() {
     residencia = $('#residencia').val();
     fecha = $('#fecha').val();
     usuario = $('#login').val();
-    pass = $('#name="password"').val();
+    pass = $('#password').val();
 
 }
 
@@ -42,13 +43,18 @@ function InsertarDatosBD() {
         url: "php/createUser.php",
         method: "POST",
         data: {
-            num_doc: num_doc, tipo_doc: tipo_doc, nombre: nombre, apellido: apellido, telefono: telefono, email: email,
+            num_doc: num_doc,
+            tipo_doc: tipo_doc,
+            nombre: nombre,
+            apellido: apellido,
+            telefono: telefono,
+            email: email,
             residencia: residencia,
             fecha: fecha,
             usuario: usuario,
             pass: pass
         },
-        success: function (data) {
+        success: function(data) {
 
             if (data == "successfully") {
                 Swal.fire({
@@ -80,8 +86,8 @@ function InsertarDatosBD() {
 function getTiposDeDocumentos() {
 
     $('#tipo_doc').empty();
-    $.getJSON("https://www.datos.gov.co/resource/shc6-n6i6.json?$select=nomtipodocumento", function (result) {
-        $.each(result, function (i, field) {
+    $.getJSON("https://www.datos.gov.co/resource/shc6-n6i6.json?$select=nomtipodocumento", function(result) {
+        $.each(result, function(i, field) {
             $('#tipo_doc').append($('<option>', {
                 value: i,
                 text: field.nomtipodocumento
@@ -98,7 +104,7 @@ function validarRegistro(nombreUsuario, mail) {
         url: "php/getUserLogin.php",
         data: {},
         dataType: "dataType",
-        success: function (response) {
+        success: function(response) {
 
         }
     });

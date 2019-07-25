@@ -90,7 +90,7 @@
             </div>
             <div class="modal-body">
               <!-- Formulario de registro -->
-              <form  class="js-form form contactForm" >
+              <form class="js-form form contactForm">
                 <div class="form-row">
                   <div class="form-group col-lg-6">
                     <label class="control-label">Documento de identidad</label>
@@ -99,27 +99,27 @@
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Tipo de documento</label>
-                    <select name="tipo_doc" class="form-control" id="tipo_doc"  placeholder="Tipo de documento" data-validate-field="text">
+                    <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="Tipo de documento" data-validate-field="text">
                     </select>
                   </div>
                   <div class="form-group col-lg-6">
-                     <label class="control-label">Nombres</label>
-                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Apellido" data-validate-field="text"/>
+                    <label class="control-label">Nombres</label>
+                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Apellido" data-validate-field="text" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Apellidos</label>
-                    <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" data-validate-field="text"/>
+                    <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" data-validate-field="text" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Telefono</label>
-                    <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Telefono"  data-validate-field="number"/>
+                    <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Telefono" data-validate-field="number" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Correo electronico</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Correo electronico"  data-validate-field="email"  />
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Correo electronico" data-validate-field="email" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
@@ -130,23 +130,23 @@
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Municipio</label>
-                    <select class="form-control" id="municipio" name="municipio"  data-validate-field="text">
+                    <select class="form-control" id="municipio" name="municipio" data-validate-field="text">
                     </select>
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Fecha de nacimiento</label>
-                    <input type="date" name="fecha" id="fecha" class="form-control" placeholder="Fecha de nacimiento" data-validate-field="text"/>
+                    <input type="date" name="fecha" id="fecha" class="form-control" placeholder="Fecha de nacimiento" data-validate-field="text" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Nombre de usuario</label>
-                    <input type="text" autocomplete="off" data-validate-field="login" name="login" id="login" class="form-control" placeholder="Usuario"/>
+                    <input type="text" autocomplete="off" data-validate-field="login" name="login" id="login" class="form-control" placeholder="Usuario" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Contraseña</label>
-                    <input type="password"  id="c" name="password" class="form-control" placeholder="Contraseña" data-validate-field="password" />
+                    <input type="password" id="password" class="form-control" placeholder="Contraseña" data-validate-field="password" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
@@ -706,7 +706,7 @@
   <script src="js/contactform.js"></script>
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-   <!-- just validate js library -->
+  <!-- just validate js library -->
   <script src="js/just-validate.min.js"></script>
   <!-- Archivo js para los usuarios -->
   <script src="js/registro.js"></script>
