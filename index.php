@@ -104,7 +104,7 @@
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Nombres</label>
-                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Apellido" data-validate-field="text" />
+                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombres" data-validate-field="text" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
@@ -135,6 +135,15 @@
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
+                    <label class="control-label">Vereda</label>
+                    <h6 style="font-size:8px;margin:0px;padding:0%;">Si no reside en una vereda, deje esta opcion en blanco</h6>
+                    <select name="vereda_id" class="form-control" id="vereda_id" placeholder="Vereda" data-validate-field="text">
+                      <option value="0">La esperanza</option>
+                      <option value="1">La loma</option>
+                      <option value="2">La perdida</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-6">
                     <label class="control-label">Fecha de nacimiento</label>
                     <input type="date" name="fecha" id="fecha" class="form-control" placeholder="Fecha de nacimiento" data-validate-field="text" />
                     <div class="validation"></div>
@@ -151,9 +160,8 @@
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Sexo</label>
-                    <label><input type="radio" name="radio" class="form__radio" data-validate-field="radio">Male</label>
-                    <br>
-                    <label><input type="radio" name="radio" class="form__radio" data-validate-field="radio">Female</label>
+                    <label><input type="radio" name="sexo" value="Hombre" class="form__radio">Hombre</label>
+                    <label><input type="radio" name="sexo" value="Mujer" class="form__radio">Mujer</label>
                     <div class="validation"></div>
                   </div>
                   <div class="modal-footer">
@@ -163,7 +171,6 @@
             </div>
           </div>
         </div>
-
   </section>
   <main id="main">
     <!--==========================
