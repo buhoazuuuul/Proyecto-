@@ -25,6 +25,48 @@ $(document).ready(function() {
 
 });
 
+//Siempre que salgamos de un campo de texto, se chequeará esta función
+$("#form input").keyup(function() {
+    var form = $(this).parents("#form");
+    var check = checkCampos(form);
+    if (check) {
+        console.log('campos completos');
+        let user = $('#login').val();
+        let mail = $('#email').val();
+        validarRegistro(mail, user);
+    }
+});
+
+//Función para comprobar los campos de texto
+function checkCampos(obj) {
+    var camposRellenados = true;
+    obj.find("input").each(function() {
+        var $this = $(this);
+        if ($this.val().length <= 0) {
+            camposRellenados = false;
+            return false;
+        }
+    });
+    if (camposRellenados == false) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function validarRegistro(mail, user) {
+
+    $.ajax({
+        type: "GET",
+        url: "php/checkRegistrer.php",
+        data: { mail: mail, user: user },
+        success: function(response) {
+            console.log(response);
+        }
+    });
+
+}
+
 function guardarDatosRegistro() {
 
     // kvereda_id = $('#vereda_id').val();
@@ -112,20 +154,6 @@ function getTiposDeDocumentos() {
                 text: field.nomtipodocumento
             }));
         });
-    });
-
-}
-
-function validarRegistro(nombreUsuario, mail) {
-
-    $.ajax({
-        type: "GET",
-        url: "php/getUserLogin.php",
-        data: {},
-        dataType: "dataType",
-        success: function(response) {
-
-        }
     });
 
 }

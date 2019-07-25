@@ -90,7 +90,7 @@
             </div>
             <div class="modal-body">
               <!-- Formulario de registro -->
-              <form class="js-form form contactForm">
+              <form id="form" class="js-form form contactForm">
                 <div class="form-row">
                   <div class="form-group col-lg-6">
                     <label class="control-label">Documento de identidad</label>
