@@ -48,7 +48,6 @@
           <li class="menu-active"><a href="#intro">Inicio</a></li>
           <li><a href="#pricing">Sobre nosotros</a></li>
           <li><a href="#features">Aprende</a></li>
-
           <li><a href="#team">Secretarios</a></li>
           <li><a href="#gallery">Galeria</a></li>
 
@@ -94,32 +93,32 @@
                 <div class="form-row">
                   <div class="form-group col-lg-6">
                     <label class="control-label">Documento de identidad</label>
-                    <input type="number" autocomplete="off" data-validate-field="number" name="num_doc" id="num_doc" class="form-control" placeholder="Documento de identidad" />
+                    <input type="number" autocomplete="off" data-validate-field="number" name="num_doc" id="num_doc" class="form-control" placeholder="" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Tipo de documento</label>
-                    <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="Tipo de documento" data-validate-field="text">
+                    <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="" data-validate-field="text">
                     </select>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Nombres</label>
-                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombres" data-validate-field="text" />
+                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="" data-validate-field="text" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Apellidos</label>
-                    <input type="text" name="apellido" class="form-control" id="apellido" placeholder="Apellido" data-validate-field="text" />
+                    <input type="text" name="apellido" class="form-control" id="apellido" placeholder="" data-validate-field="text" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Telefono</label>
-                    <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Telefono" data-validate-field="number" />
+                    <input type="number" name="telefono" id="telefono" class="form-control" placeholder="" data-validate-field="number" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Correo electronico</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Correo electronico" data-validate-field="email" />
+                    <input type="email" name="email" id="email" class="form-control" placeholder="" data-validate-field="email" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
@@ -137,25 +136,23 @@
                   <div class="form-group col-lg-6">
                     <label class="control-label">Vereda</label>
                     <h6 style="font-size:8px;margin:0px;padding:0%;">Si no reside en una vereda, deje esta opcion en blanco</h6>
-                    <select name="vereda_id" class="form-control" id="vereda_id" placeholder="Vereda" data-validate-field="text">
-                      <option value="0">La esperanza</option>
-                      <option value="1">La loma</option>
-                      <option value="2">La perdida</option>
+                    <select name="vereda_id" class="form-control" id="vereda_id" placeholder="" data-validate-field="text">
+                
                     </select>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Fecha de nacimiento</label>
-                    <input type="date" name="fecha" id="fecha" class="form-control" placeholder="Fecha de nacimiento" data-validate-field="text" />
+                    <input type="date" name="fecha" id="fecha" class="form-control" placeholder="" data-validate-field="text" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Nombre de usuario</label>
-                    <input type="text" autocomplete="off" data-validate-field="login" name="login" id="login" class="form-control" placeholder="Usuario" />
+                    <input type="text" autocomplete="off" data-validate-field="login" name="login" id="login" class="form-control" placeholder="" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Contraseña</label>
-                    <input type="password" id="password" class="form-control" placeholder="Contraseña" data-validate-field="password" />
+                    <input type="password" id="password" class="form-control" placeholder="" data-validate-field="password" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">
@@ -401,19 +398,19 @@
 
         <div class="row wow fadeInUp">
 
-          <div class="col-md-2">
+          <div class="col-md-3">
             <img src="img/Entidades/siata.png" alt="">
           </div>
 
-          <div class="col-md-2">
+          <div class="col-md-3">
             <img src="img/Entidades/dapard.png" alt="">
           </div>
 
-          <div class="col-md-2">
+          <div class="col-md-3">
             <img src="img/Entidades/ungrd.png" alt="">
           </div>
 
-          <div class="col-md-2">
+          <div class="col-md-3">
             <img src="img/Entidades/cmgrd.png" alt="">
           </div>
 
