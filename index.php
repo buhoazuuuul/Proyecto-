@@ -137,7 +137,7 @@
                     <label class="control-label">Vereda</label>
                     <h6 style="font-size:8px;margin:0px;padding:0%;">Si no reside en una vereda, deje esta opcion en blanco</h6>
                     <select name="vereda_id" class="form-control" id="vereda_id" placeholder="" data-validate-field="text">
-                
+                <option>Alto Bonito</option>
                     </select>
                   </div>
                   <div class="form-group col-lg-6">
