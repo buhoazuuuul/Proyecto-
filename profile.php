@@ -20,14 +20,6 @@
   <!-- Custom styles for this template -->
   <link href="libUsuarios/css/style.css" rel="stylesheet">
   <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
-
-
-  <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
 </head>
 
 <body>

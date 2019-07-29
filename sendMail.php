@@ -24,13 +24,6 @@
     <link href="libUsuarios/lib/air-datepicker/datepicker.min.css" rel="stylesheet">
     <!-- Parsley js css -->
     <link rel="stylesheet" href="libUsuarios/lib/Parsley/parsley.css">
-
-    <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
 </head>
 
 <body>
@@ -51,7 +44,7 @@
                 <ul class="nav top-menu">
                     <!-- settings start -->
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="profile.html#">
                             <i class="fa fa-tasks"></i>
                             <span class="badge bg-theme">4</span>
                         </a>
@@ -249,7 +242,7 @@
                     <p class="centered"><a href=""><img id="profileImage" class="img-circle" width="80"></a></p>
                     <h5 id="userName" class="centered">Sam Soffes</h5>
                     <li class="mt">
-                        <a href="index.html">
+                        <a href="profile.php">
                             <i class="fa fa-dashboard"></i>
                             <span>Inicio</span>
                         </a>
