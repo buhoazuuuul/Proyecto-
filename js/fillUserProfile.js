@@ -4,7 +4,7 @@ var lastDoc;
 var url = 'profile.php?userName=' + username;
 var urlCorreo = 'sendMail.php?userName=' + username;
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     console.log('Documento filluserProfile cargado');
     getUser();
@@ -17,12 +17,13 @@ function setHrefs() {
     document.getElementById("btnLogout").style.cursor = "pointer";
     $("#btnEditarPerfil").attr("href", url);
     $("#btnCorreo").attr("href", urlCorreo);
-    $("#btnLogout").hover(function () {
+    $("#btnLogout").hover(function() {
         $(this).fadeOut(100);
         $(this).fadeIn(500);
     });
 
 }
+
 function getUser() {
 
     var dataString = 'userName=' + username;
@@ -31,16 +32,18 @@ function getUser() {
         url: 'php/getUser.php',
         type: 'POST',
         data: dataString,
-        beforeSend: function () {
+        beforeSend: function() {
             console.log('Enviando..');
         },
-        success: function (response) {
+        success: function(response) {
             datos = JSON.parse(response);
+            console.log(datos);
             setUserName(datos);
         },
     });
 
 }
+
 function setUserName(array) {
 
     $('#userName').text(array[0].nombre + ' ' + array[0].apellido);
@@ -54,12 +57,14 @@ function setUserName(array) {
 
 
 }
+
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
 function filluserForm() {
 
     var dialog = bootbox.dialog({
@@ -90,8 +95,8 @@ function filluserForm() {
         $('#usuario').val(datos[0].usuario);
         $('#pass').val("Encriptada");
 
-        dialog.init(function () {
-            setTimeout(function () {
+        dialog.init(function() {
+            setTimeout(function() {
                 dialog.find('.bootbox-body').html('Estas listo para reportar un riesgo!');
             }, 3000);
         });
@@ -101,16 +106,17 @@ function filluserForm() {
 
 
 }
+
 function logout() {
 
     $.ajax({
         url: 'php/logout.php',
         type: 'POST',
         data: "",
-        beforeSend: function () {
+        beforeSend: function() {
             console.log('Saliendo..');
         },
-        success: function (response) {
+        success: function(response) {
 
             window.location = response;
 
@@ -119,8 +125,3 @@ function logout() {
 
 
 }
-
-
-
-
-
