@@ -25,8 +25,8 @@ try {
     $sth->bindParam(':municipio', $_POST['municipio']);
     $sth->bindParam(':vereda', $_POST['vereda']);
     $sth->bindParam(':fecha_hora', $_POST['fecha_hora']);
-    $sth->bindParam(':prioridad', $prioridad);
-    $sth->bindParam(':confidencialidad', $confidencialidad);
+    $sth->bindParam(':prioridad', $_POST['prioridad']);
+    $sth->bindParam(':confidencialidad', $_POST['confidencialidad']);
     $sth->bindParam(':texto', $_POST['texto']);
     if ($sth->execute()) {
         echo "successfully";
