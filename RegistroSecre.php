@@ -366,6 +366,12 @@
                       <input class=" form-control" id="pass" name="pass" type="password" required />
                     </div>
                   </div>
+                  <div class="form-group col-lg-2">
+                    <label class="control-label">Sexo</label>
+                    <label><input type="radio" name="sexo" value="Hombre" class="form__radio">Hombre</label>
+                    <label><input type="radio" name="sexo" value="Mujer" class="form__radio">Mujer</label>
+                    <div class="validation"></div>
+                  </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                       <input type="submit" class="btn btn-theme" id="btnRegistrar" value="Guardar">
