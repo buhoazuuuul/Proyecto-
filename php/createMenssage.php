@@ -12,17 +12,22 @@ try {
     $confidencialidad = intval($_POST['confidencialidad']);
     $asunto =  (string) $_POST['asunto'];
     //Ejecucion de la query
-    $sql = "INSERT INTO mensaje (categoria, asunto, lugar, fecha_hora, prioridad, confidencialidad, texto, adjunto) VALUES (:categoria,:asunto,:lugar,:fecha_hora,:prioridad,:confidencialidad,:texto,:adjunto)";
+    $sql = "INSERT INTO reporte ( id, categoria_id, vereda_id, adjunto, veredas_id, asunto, departamento, municipio, vereda, fecha_hora, prioridad, confidencialidad, texto) 
+    VALUES (:id,:categoria_id,:vereda_id,:adjunto,:veredas_id,:asunto,:departamento,:municipio,:vereda,:fecha_hora,:prioridad,:confidencialidad,:texto)";
     $sth = $db->prepare($sql);
-    $sth->bindParam(':categoria', $_POST['categoria']);
-    $sth->bindParam(':asunto', $asunto);
-    $sth->bindParam(':lugar', $_POST['lugar']);
-    $sth->bindParam(':fecha_hora', $fecha);
+    $sth->bindParam(':id', $_POST['id']);
+    $sth->bindParam(':categoria_id', $_POST['categoria_id']);
+    $sth->bindParam(':vereda_id', $_POST['vereda_id']);
+    $sth->bindParam(':adjunto', $_POST['adjunto']);
+    $sth->bindParam(':veredas_id', $_POST['veredas_id']);
+    $sth->bindParam(':asunto', $_POST['asunto']);
+    $sth->bindParam(':departamento', $_POST['departamento']);
+    $sth->bindParam(':municipio', $_POST['municipio']);
+    $sth->bindParam(':vereda', $_POST['vereda']);
+    $sth->bindParam(':fecha_hora', $_POST['fecha_hora']);
     $sth->bindParam(':prioridad', $prioridad);
     $sth->bindParam(':confidencialidad', $confidencialidad);
-    $sth->bindParam(':texto', $_POST['mensaje']);
-    $sth->bindParam(':adjunto', $_POST['adjunto']);
-
+    $sth->bindParam(':texto', $_POST['texto']);
     if ($sth->execute()) {
         echo "successfully";
     }
