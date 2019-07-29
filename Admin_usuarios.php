@@ -8,22 +8,25 @@
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
   <title>Innexu-Administrador</title>
-
+  <!-- DataTable buttons -->
+  <link rel="stylesheet" type="text/css" href="css/buttons.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css" />
+  <!-- Editor dataTables -->
+  <link rel="stylesheet" href="libUsuarios/lib/EditorPHP/css/editor.dataTables.min.css" class="stylesheet">
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Bootstrap core CSS -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="libUsuarios/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link href="lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
-  <link href="lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+  <link href="libUsuarios/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="libUsuarios/lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+  <link href="libUsuarios/lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
   <link rel="stylesheet" href="lib/advanced-datatable/css/DT_bootstrap.css" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.10.19/b-1.5.6/sl-1.3.0/datatables.min.css" />
-  <link rel="stylesheet" type="text/css" href="Editor-1.9.0/css/editor.dataTables.css">
+  <link href="libUsuarios/css/style.css" rel="stylesheet">
+  <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -242,7 +245,7 @@
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="index.html">
+            <a href="Admin/index.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
             </a>
@@ -253,7 +256,7 @@
               <span>Formularios</span>
             </a>
             <ul class="sub">
-              <li><a href="../RegistroSecre.php">Registrar un secretario</a></li>
+              <li><a href="RegistroSecre.php">Registrar un secretario</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -262,12 +265,12 @@
               <span>Tablas</span>
             </a>
             <ul class="sub">
-              <li class="active"><a href="usuarios.html">Usuarios</a></li>
-              <li><a href="secretarios.html">Secretarios</a></li>
+              <li class="active"><a href="Admin_usuarios.php">Usuarios</a></li>
+              <li><a href="Admin_secretarios.php">Secretarios</a></li>
             </ul>
           </li>
           <li>
-            <a href="inbox.html">
+            <a href="Admin/inbox.html">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>

@@ -222,7 +222,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.html">Cerrar sesión</a></li>
+          <li><a class="logout" href="login.php">Cerrar sesión</a></li>
         </ul>
       </div>
     </header>
@@ -258,8 +258,8 @@
               <span>Tablas</span>
             </a>
             <ul class="sub">
-              <li><a href="Admin/usuarios.html">Usuarios</a></li>
-              <li><a href="Admin/secretarios.html">Secretarios</a></li>
+            <li><a href="Admin_usuarios.php">Usuarios</a></li>
+            <li><a href="Admin_secretarios.php">Secretarios</a></li>
             </ul>
           </li>
           <li>

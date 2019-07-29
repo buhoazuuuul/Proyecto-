@@ -229,7 +229,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.html">Cerrar sesión</a></li>
+          <li><a class="logout" href="login.php">Cerrar sesión</a></li>
         </ul>
       </div>
     </header>
@@ -245,7 +245,7 @@
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="index.html">
+            <a href="Admin/index.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
             </a>
@@ -256,7 +256,7 @@
               <span>Formularios</span>
             </a>
             <ul class="sub">
-              <li><a href="../RegistroSecre.php">Registrar un secretario</a></li>
+              <li><a href="RegistroSecre.php">Registrar un secretario</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -265,12 +265,12 @@
               <span>Tablas</span>
             </a>
             <ul class="sub">
-              <li><a href="usuarios.html">Usuarios</a></li>
-              <li class="active"><a href="secretarios.html">Secretarios</a></li>
+              <li><a href="Admin_usuarios.php">Usuarios</a></li>
+              <li class="active"><a href="Admin_secretarios.php">Secretarios</a></li>
             </ul>
           </li>
           <li>
-            <a href="inbox.html">
+            <a href="Admin/inbox.html">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
