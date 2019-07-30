@@ -1,9 +1,18 @@
-$(document).ready(function() {
+var selected;
+var combo;
 
+$(document).ready(function() {
     selectDepartamentos();
+    setInterval(function() {
+        console.log('esperando..');
+        combo = document.getElementById("departamento");
+        selected = combo.options[combo.selectedIndex].text;
+        selectMunicipiosPorDep(selected);
+    }, 1000, "JavaScript");
+
     $("#departamento").change(function() {
-        var combo = document.getElementById("departamento");
-        var selected = combo.options[combo.selectedIndex].text;
+        combo = document.getElementById("departamento");
+        selected = combo.options[combo.selectedIndex].text;
         selectMunicipiosPorDep(selected);
     });
 
@@ -13,7 +22,6 @@ $(document).ready(function() {
 function selectMunicipiosPorDep(departamento) {
 
     $('#municipio').empty();
-
     $.getJSON("https://www.datos.gov.co/resource/xdk5-pm3f.json?departamento=" + departamento, function(result) {
         $.each(result, function(i, field) {
             $('#municipio').append($('<option>', {
@@ -36,5 +44,5 @@ function selectDepartamentos() {
             }));
         });
     });
-
+    $("#departamento")[0].selectedIndex = 0;
 }

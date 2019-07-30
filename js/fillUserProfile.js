@@ -65,6 +65,41 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function buscarDepartamento(dep) {
+    // creamos un variable que hace referencia al select
+    var select = document.getElementById("departamento");
+
+    // obtenemos el valor a buscar
+    var buscar = dep;
+
+    // recorremos todos los valores del select
+    for (var i = 1; i < select.length; i++) {
+        if (select.options[i].text == buscar) {
+            // seleccionamos el valor que coincide
+            select.selectedIndex = i;
+            console.log(select.options[i].text);
+        }
+    }
+}
+
+function buscarMunicipio(municipio) {
+    // creamos un variable que hace referencia al select
+    var select = document.getElementById("municipio");
+
+    // obtenemos el valor a buscar
+    var buscar = municipio;
+
+    // recorremos todos los valores del select
+    for (var i = 1; i < select.length; i++) {
+        if (select.options[i].text == buscar) {
+            // seleccionamos el valor que coincide
+            select.selectedIndex = i;
+            console.log(select.options[i].text);
+        }
+    }
+}
+
+
 function filluserForm() {
 
     var dialog = bootbox.dialog({
@@ -76,12 +111,14 @@ function filluserForm() {
 
     if (btnEditarPerfil == "active") {
         lastDoc = datos[0].num_doc;
+        //Departamento y municipio
+        buscarDepartamento(datos[0].departamento);
         //Datos al principio del form
         $('#secondUserName').text(datos[0].nombre + ' ' + datos[0].apellido);
         $('#Nacimiento').text(datos[0].fecha);
         $('#nomUser').text(datos[0].usuario);
         $('#documento').text(datos[0].num_doc);
-        $("#pMunicipio").append("<strong>" + datos[0].residencia + "</strong>");
+        $("#pMunicipio").append("<strong>" + datos[0].municipio + "</strong>");
 
         //Datos del form
         $('#num_doc').val(datos[0].num_doc);
@@ -90,10 +127,11 @@ function filluserForm() {
         $('#apellido').val(datos[0].apellido);
         $('#telefono').val(datos[0].telefono);
         $('#email').val(datos[0].email);
-        $('#residencia').val(datos[0].residencia);
+        $('#residencia').val(datos[0].municipio);
         $('#fecha').val(datos[0].fecha);
         $('#usuario').val(datos[0].usuario);
         $('#pass').val("Encriptada");
+
 
         dialog.init(function() {
             setTimeout(function() {

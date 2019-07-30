@@ -537,11 +537,24 @@
                               <input type="text" placeholder=" " id="email" class="form-control">
                             </div>
                           </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Lugar donde vive</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="residencia" class="form-control">
-                            </div>
+                          <div class="form-group col-lg-6">
+                            <label class="control-label">Departamento</label>
+                            <select class="form-control" id="departamento" name="departamento" data-validate-field="text">
+                            </select>
+                            <div class="validation"></div>
+                          </div>
+                          <div class="form-group col-lg-6">
+                            <label class="control-label">Municipio</label>
+                            <select class="form-control" id="municipio" name="municipio" data-validate-field="text">
+                            </select>
+                            <div class="validation"></div>
+                          </div>
+                          <div class="form-group col-lg-6">
+                            <label class="control-label">Vereda</label>
+                            <h6 style="font-size:8px;margin:0px;padding:0%;">Si no reside en una vereda, deje esta opcion en blanco</h6>
+                            <select name="vereda_id" class="form-control" id="vereda_id" placeholder="" data-validate-field="text">
+                              <option>Alto Bonito</option>
+                            </select>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Fecha de nacimiento</label>
@@ -554,6 +567,12 @@
                             <div class="col-lg-6">
                               <input type="text" placeholder=" " id="usuario" class="form-control">
                             </div>
+                          </div>
+                          <div class="form-group col-lg-6">
+                            <label class="control-label">Sexo</label>
+                            <label><input type="radio" name="sexo" value="Hombre" class="form__radio">Hombre</label>
+                            <label><input type="radio" name="sexo" value="Mujer" class="form__radio">Mujer</label>
+                            <div class="validation"></div>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Contraseña</label>
@@ -652,6 +671,7 @@
   <script src="js/fillUserProfile.js"></script>
   <script src="js/editProfile.js"></script>
   <script src="js/upload_image.js"></script>
+  <script src="js/departamentos_municipios.js"></script>
 
 </body>
 
