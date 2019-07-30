@@ -8,11 +8,15 @@ var residencia;
 var fecha;
 var usuario;
 var pass;
+var departamento;
+var municipio;
+var id_vereda;
+var sexo;
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     console.log('Documento editProfile.js loaded');
-    $('#btnUpdateUser').on('click', function () {
+    $('#btnUpdateUser').on('click', function() {
         saveDataForm();
         updateProfile();
     });
@@ -21,7 +25,7 @@ $(document).ready(function () {
 });
 
 function saveDataForm() {
-
+    departamento = $('#departamento').val();
     num_doc = $('#num_doc').val();
     tipo_doc = $('#tipo_doc').val();
     nombre = $('#nombre').val();
@@ -43,14 +47,20 @@ function updateProfile() {
             url: "php/updateUser.php",
             method: "POST",
             data: {
-                last_doc: lastDoc, num_doc: num_doc, tipo_doc: tipo_doc, nombre: nombre, apellido: apellido, telefono: telefono, email: email,
+                last_doc: lastDoc,
+                num_doc: num_doc,
+                tipo_doc: tipo_doc,
+                nombre: nombre,
+                apellido: apellido,
+                telefono: telefono,
+                email: email,
                 residencia: residencia,
                 fecha: fecha,
                 usuario: usuario,
                 pass: pass,
-                img: imgPath
+                img: imgPath,
             },
-            success: function (data) {
+            success: function(data) {
                 console.log(data);
                 if (data == "successfully") {
                     Swal.fire({
@@ -62,8 +72,7 @@ function updateProfile() {
                     });
                     location.reload();
 
-                }
-                else {
+                } else {
                     Swal.fire({
                         position: 'center',
                         type: 'error',
@@ -85,13 +94,19 @@ function updateProfile() {
             url: "php/updateUser.php",
             method: "POST",
             data: {
-                last_doc: lastDoc, num_doc: num_doc, tipo_doc: tipo_doc, nombre: nombre, apellido: apellido, telefono: telefono, email: email,
+                last_doc: lastDoc,
+                num_doc: num_doc,
+                tipo_doc: tipo_doc,
+                nombre: nombre,
+                apellido: apellido,
+                telefono: telefono,
+                email: email,
                 residencia: residencia,
                 fecha: fecha,
                 usuario: usuario,
                 pass: pass
             },
-            success: function (data) {
+            success: function(data) {
                 console.log(data);
                 if (data == "successfully") {
                     Swal.fire({
@@ -103,8 +118,7 @@ function updateProfile() {
                     });
                     location.reload();
 
-                }
-                else {
+                } else {
                     Swal.fire({
                         position: 'center',
                         type: 'error',
@@ -126,8 +140,8 @@ function updateProfile() {
 function getTiposDeDocumentos() {
 
     $('#tipo_doc').empty();
-    $.getJSON("https://www.datos.gov.co/resource/shc6-n6i6.json?$select=nomtipodocumento", function (result) {
-        $.each(result, function (i, field) {
+    $.getJSON("https://www.datos.gov.co/resource/shc6-n6i6.json?$select=nomtipodocumento", function(result) {
+        $.each(result, function(i, field) {
             $('#tipo_doc').append($('<option>', {
                 value: i,
                 text: field.nomtipodocumento

@@ -3,7 +3,7 @@ var combo;
 
 $(document).ready(function() {
     selectDepartamentos();
-    setInterval(function() {
+    setTimeout(function() {
         console.log('esperando..');
         combo = document.getElementById("departamento");
         selected = combo.options[combo.selectedIndex].text;

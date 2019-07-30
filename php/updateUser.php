@@ -12,6 +12,7 @@ try {
         $sth = $db->prepare($sql);
         $sth->bindParam(':num_doc', $doc);
         $sth->bindParam(':tipo_doc', $_POST['tipo_doc']);
+        $sth->bindParam(':departamento', $_POST['departamento']);
         $sth->bindParam(':nombre', $_POST['nombre']);
         $sth->bindParam(':apellido', $_POST['apellido']);
         $sth->bindParam(':telefono', $tel);

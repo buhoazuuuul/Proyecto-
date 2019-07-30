@@ -72,7 +72,7 @@ function guardarDatosRegistro() {
     // kvereda_id = $('#vereda_id').val();
     vereda_id = 1;
     num_doc = $('#num_doc').val();
-    tipo_doc = $('#tipo_doc').val();
+    tipo_doc = ("#tipo_doc option:selected").text();
     nombre = $('#nombre').val();
     apellido = $('#apellido').val();
     telefono = $('#telefono').val();

@@ -111,8 +111,7 @@ function filluserForm() {
 
     if (btnEditarPerfil == "active") {
         lastDoc = datos[0].num_doc;
-        //Departamento y municipio
-        buscarDepartamento(datos[0].departamento);
+
         //Datos al principio del form
         $('#secondUserName').text(datos[0].nombre + ' ' + datos[0].apellido);
         $('#Nacimiento').text(datos[0].fecha);
@@ -127,7 +126,8 @@ function filluserForm() {
         $('#apellido').val(datos[0].apellido);
         $('#telefono').val(datos[0].telefono);
         $('#email').val(datos[0].email);
-        $('#residencia').val(datos[0].municipio);
+        //Departamento y municipio
+        buscarDepartamento(datos[0].departamento);
         $('#fecha').val(datos[0].fecha);
         $('#usuario').val(datos[0].usuario);
         $('#pass').val("Encriptada");
