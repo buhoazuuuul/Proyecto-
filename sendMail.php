@@ -272,7 +272,7 @@
                                     <i class="fa fa-pencil"></i> Reportar un problema
                                 </a>
                                 <ul class="nav nav-pills nav-stacked mail-nav">
-                                    <li class="active"><a href="inbox.html"> <i class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                                    <li class="active"><a href="Usuario/inbox.html"> <i class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
                                     <li><a href="#"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
                             </div>
                         </section>
