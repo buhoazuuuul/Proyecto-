@@ -226,7 +226,7 @@
             </div>
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><i style="font-size: 18px;" id="btnLogout" class="logout fa fa-sign-out"></i></li>
+                <li><a class="logout" href="login.php">Cerrar sesión</a></li>
                 </ul>
             </div>
         </header>
@@ -276,7 +276,7 @@
                                     <li><a href="#"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
                             </div>
                         </section>
-                        <section class="panel">
+                        <!--<section class="panel">
                             <div class="panel-body">
                                 <ul class="nav nav-pills nav-stacked labels-info ">
                                     <li>
@@ -327,7 +327,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </section>-->
                     </div>
                     <div class="col-sm-9">
                         <section class="panel">
