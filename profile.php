@@ -302,18 +302,18 @@
             <div class="row content-panel">
               <div class="panel-heading">
                 <ul class="nav nav-tabs nav-justified">
-                  <li class="active">
-                    <a data-toggle="tab" href="#overview">Overview</a>
+                 <!-- <li class="active">
+                    <a data-toggle="tab" href="#overview">...</a>
                   </li>
                   <li>
-                    <a data-toggle="tab" href="#contact" class="contact-map">Contact</a>
-                  </li>
+                    <a data-toggle="tab" href="#contact" class="contact-map">...</a>
+                  </li>-->
                   <li>
                     <a id="btnEditarPerfil" data-toggle="tab" href="#edit">Editar mi perfil</a>
                   </li>
                 </ul>
               </div>
-              <!-- /panel-heading -->
+              <!-- /panel-heading 
               <div class="panel-body">
                 <div class="tab-content">
                   <div id="overview" class="tab-pane active">
@@ -352,7 +352,7 @@
                         </div>
                         <!-- /detailed -->
                       </div>
-                      <!-- /col-md-6 -->
+                      <!-- /col-md-6 
                       <div class="col-md-6 detailed">
                         <h4>User Stats</h4>
                         <div class="row centered mt mb">
@@ -372,7 +372,7 @@
                             <h6>ITEMS SOLD</h6>
                           </div>
                         </div>
-                        <!-- /row -->
+                        <!-- /row 
                         <h4>My Friends</h4>
                         <div class="row centered mb">
                           <ul class="my-friends">
@@ -416,7 +416,7 @@
                             </div>
                           </div>
                         </div>
-                        <!-- /row -->
+                        <!-- /row 
                         <h4>Pending Tasks</h4>
                         <div class="row centered">
                           <div class="col-md-8 col-md-offset-2">
@@ -453,13 +453,13 @@
                     </div>
                     <!-- /OVERVIEW -->
                   </div>
-                  <!-- /tab-pane -->
+                  <!-- /tab-pane 
                   <div id="contact" class="tab-pane">
                     <div class="row">
                       <div class="col-md-6">
                         <div id="map"></div>
                       </div>
-                      <!-- /col-md-6 -->
+                      <!-- /col-md-6 
                       <div class="col-md-6 detailed">
                         <h4>Location</h4>
                         <div class="col-md-8 col-md-offset-2 mt">
@@ -482,7 +482,7 @@
                           </p>
                         </div>
                       </div>
-                      <!-- /col-md-6 -->
+                      <!-- /col-md-6 
                     </div>
                     <!-- /row -->
                   </div>
