@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-07-2019 a las 18:28:34
+-- Tiempo de generación: 01-08-2019 a las 01:50:55
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.1.30
 
@@ -44,11 +44,9 @@ CREATE TABLE `reporte` (
   `categoria_id` bigint(10) NOT NULL,
   `vereda_id` int(11) NOT NULL,
   `adjunto` varchar(20) COLLATE utf8_spanish2_ci DEFAULT NULL,
-  `veredas_id` int(11) NOT NULL,
   `asunto` varchar(60) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `departamento` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `municipio` varchar(45) COLLATE utf8_spanish2_ci NOT NULL,
-  `vereda` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `fecha_hora` datetime DEFAULT NULL,
   `prioridad` smallint(6) DEFAULT NULL,
   `confidencialidad` smallint(6) DEFAULT NULL,
@@ -131,6 +129,16 @@ CREATE TABLE `usuario` (
   `img` varchar(45) COLLATE utf8_spanish2_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `vereda_id`, `num_doc`, `tipo_doc`, `nombre`, `apellido`, `telefono`, `email`, `departamento`, `municipio`, `fecha`, `usuario`, `pass`, `tipo_usuario`, `sexo`, `img`) VALUES
+(3, 1, 2555555, 'fffff', 'fffff', 'fffff', 54566, 'gfd', 'asf', 'adf', '2019-07-16', 'jmep', '1234t54', 0, 'Hombre', 'nnn'),
+(5, 1, 12345678, '2', 'jm', 'ep', 123456789, 'jhgfds', '18', '0', '2019-07-15', 'palacio.90@hotmail.com', '$2y$10$FSR6M4aZylXCWV.Rl0IJb.TDJsOTiVN0iV4A5HxpXJoybsSn2pdA.', 0, 'Hombre', 'php/img/male.png'),
+(7, 2, 1022036395, 'Cedula', 'Jose Manuel', 'Echeverri Palacio', 32544412, 'palacio.90@hotmail.com', 'Antioquia', 'Abejorral', '2019-07-09', 'josemanuelep', '123456', 0, 'Hombre', NULL),
+(8, 1, 102333654, '1', 'Juan Jose', 'Echeverri', 55555, 'juanpalal', 'Antioquia', 'Abejorral', '2019-07-09', 'juanjo', '$2y$10$mYrtgYH6e38LnHOgk00K/.oR23EOtJcdG6qfcVrKNmnLJUl0SktpS', 0, 'Hombre', 'img/male.png');
+
 -- --------------------------------------------------------
 
 --
@@ -139,8 +147,17 @@ CREATE TABLE `usuario` (
 
 CREATE TABLE `vereda` (
   `id` int(11) NOT NULL,
-  `vereda` varchar(45) DEFAULT NULL
+  `vereda` varchar(45) DEFAULT NULL,
+  `Municipio` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `vereda`
+--
+
+INSERT INTO `vereda` (`id`, `vereda`, `Municipio`) VALUES
+(1, 'La loma', ''),
+(2, 'La esperanza', '');
 
 --
 -- Índices para tablas volcadas
@@ -235,13 +252,13 @@ ALTER TABLE `secretario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `vereda`
 --
 ALTER TABLE `vereda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
