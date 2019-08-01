@@ -47,7 +47,8 @@
               <a data-toggle="modal" href="login.php#myModal">Olvidaste la contraseña?</a>
             </span>
           </label>
-          <button id="btnLogin" name="btnLogin" class="btn btn-theme btn-block" type="button"><i class="fa fa-lock"></i> Entrar</button>
+          <button id="btnLogin" name="btnLogin" class="btn btn-theme btn-block" type="button"><i class="fa fa-lock"></i> Entrar</button><br>
+          <a href="index.php"><button  class="btn btn-theme btn-block" type="button"><i class="fa fa-reply" aria-hidden="true"></i> Regresar a la pagina principal</button></a>
           <hr>
           <div class="registration">
             No tiene una cuenta aun?<br />
@@ -88,7 +89,7 @@
   <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
   <script>
-    $.backstretch("img/abejorral3.jpg", {
+  $.backstretch("img/gallery/abejorral1.jpg", {
       speed: 500
     });
   </script>

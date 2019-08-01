@@ -177,8 +177,8 @@
       <div class="container">
 
         <div class="section-header">
-          <h3 class="section-title">Sobre nosotros</h3>
-          <span class="section-divider"></span>
+         <!-- <h3 class="section-title">Sobre nosotros</h3>
+          <span class="section-divider"></span>-->
           <!--<p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
         </div>
         <div class="row">
@@ -189,9 +189,9 @@
           </div>
           <div class="col-lg-8 col-md-6">
             <div class="box wow fadeInRight">
-              <h3>...</h3>
+              <h3>Sobre nosotros</h3>
               <ul>
-                <li><i class="ion-android-checkmark-circle"></i>Innexu es un aplicativo web enfocado a la gestión de riesgo que está siendo desarrollado por un grupo de estudiantes de la Institución Educativa Fundación Celia Duque de Duque, con el principal objetivo de facilitar la comunicación entre las diferentes dependencias/secretarias de la alcaldía y las comunidades con el fin de prevenir y dar soluciones rápidas a situaciones que pongan en peligro a los habitantes de determinado territorio. Además, se quiere subir información para que la comunidad tenga fácil acceso a ella y pueda estar bien informada. </li>
+                <li><i class="ion-android-checkmark-circle"></i id="Sobre">Innexu es un aplicativo web enfocado a la gestión de riesgo que está siendo desarrollado por un grupo de estudiantes de la Institución Educativa Fundación Celia Duque de Duque, con el principal objetivo de facilitar la comunicación entre las diferentes dependencias/secretarias de la alcaldía y las comunidades con el fin de prevenir y dar soluciones rápidas a situaciones que pongan en peligro a los habitantes de determinado territorio. <p>Además, se quiere subir información para que la comunidad tenga fácil acceso a ella y pueda estar bien informada.</p></li>
               </ul>
             </div>
           </div>
@@ -519,11 +519,11 @@
           <div class="col-lg-3 col-md-6">
             <div class="member">
               <div class="pic"><img src="img/team/team-1.jpg" alt=""></div>
-              <h4 id="nombreSecretario">Walter White</h4>
-              <span id="apellidoSecretario">Chief Executive Officer</span>
+              <h4 id="nombreSecretario">Nombre del secretario</h4>
+              <span id="apellidoSecretario">Cargo</span>
               <div class="social">
-                <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>555</a><br>
-                <a id="dependenciaSecretario" href=""><i style="padding-rigth:10px;" class="fa fa-briefcase" aria-hidden="true"></i>Salud</a>
+                <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>Telefono</a><br>
+                <a id="dependenciaSecretario" href=""><i style="padding-rigth:10px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>
               </div>
             </div>
           </div>
@@ -538,58 +538,59 @@
         <div class="section-header">
           <h3 class="section-title">Galeria</h3>
           <span class="section-divider"></span>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p class="section-description"></p>
         </div>
 
         <div class="row no-gutters">
 
-          <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-1.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-1.jpg" alt="">
+              <a href="img/gallery/gale1.jpg" class="gallery-popup">
+                <img src="img/gallery/gale1.jpg" alt="">
               </a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-2.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-2.jpg" alt="">
+              <a href="img/gallery/dan.jpg" class="gallery-popup">
+                <img src="img/gallery/dan.jpg" alt="">
               </a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-3.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-3.jpg" alt="">
+              <a href="img/gallery/abejorral.jpg" class="gallery-popup">
+                <img src="img/gallery/abejorral.jpg" alt="">
               </a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-4.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-4.jpg" alt="">
+              <a href="img/gallery/abejorral1.jpg" class="gallery-popup">
+                <img src="img/gallery/abejorral1.jpg" alt="">
+              </a>
+            </div>
+          </div>
+
+        <div class="col-lg-4 col-md-6">
+            <div class="gallery-item wow fadeInUp">
+              <a href="img/gallery/bandera.jpg" class="gallery-popup">
+                <img src="img/gallery/bandera.jpg" alt="">
               </a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-5.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-5.jpg" alt="">
+              <a href="img/gallery/gale2.jpg" class="gallery-popup">
+                <img src="img/gallery/gale2.jpg" alt="">
               </a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-6.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-6.jpg" alt="">
-              </a>
-            </div>
-          </div>
 
         </div>
 
@@ -684,7 +685,7 @@
             Designed by <a href="https://bootstrapmade.com/">Innexu</a>
           </div>
         </div>
-        <div class="col-lg-6">
+       <!-- <div class="col-lg-6">
           <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
             <a href="#intro" class="scrollto">Inicio</a>
             <a href="#pricing">Sobre nosotros</a>
@@ -692,7 +693,7 @@
 
             <a href="#">Terms of Use</a>
           </nav>
-        </div>
+        </div>-->
       </div>
     </div>
   </footer><!-- #footer -->

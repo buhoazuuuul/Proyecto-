@@ -818,6 +818,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #pricing ul li {
   padding-bottom: 12px;
+  text-align: justify;
 }
 
 #pricing ul i {
