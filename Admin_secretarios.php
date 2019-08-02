@@ -290,26 +290,45 @@
         <h3><i class="fa fa-angle-right"></i>Secretarios</h3>
         <div class="row mb">
           <!-- page start-->
-          <button class="btn logout" id="button">Eliminar fila seleccionada</button>
           <div class="content-panel">
             <div class="adv-table">
-              <table cellpadding="0" cellspacing="0" class="display table table-bordered display" style="width:100%" id="userTable">
+              <table cellpadding="0" cellspacing="0" class="display" style="width:100%" id="userTable">
                 <thead>
-                  <button id="remove">Eliminar</button>
                   <tr>
                     <th>Numero de documento</th>
                     <th>Tipo de documento</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
+                    <th>Cargo</th>
                     <th>Dependencia</th>
+                    <th>Departamento</th>
+                    <th>Municipio</th>
                     <th>Telefono</th>
                     <th>Correo electronico</th>
                     <th>Usuario</th>
                     <th>Contraseña</th>
+                    <th>Sexo</th>
+                    <th>Imagen</th>
                   </tr>
                 </thead>
-                <tbody>
-                </tbody>
+                <tfoot>
+                  <tr>s
+                    <th>Numero de documento</th>
+                    <th>Tipo de documento</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Cargo</th>
+                    <th>Dependencia</th>
+                    <th>Departamento</th>
+                    <th>Municipio</th>
+                    <th>Telefono</th>
+                    <th>Correo electronico</th>
+                    <th>Usuario</th>
+                    <th>Contraseña</th>
+                    <th>Sexo</th>
+                    <th>Imagen</th>
+                  </tr>
+                </tfoot>
               </table>
             </div>
           </div>
@@ -343,21 +362,64 @@
     </footer>
     <!--footer end-->
   </section>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <!-- DataTable spanish -->
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <!-- DataTable scripts -->
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <!--script for this page-->
-  <script src="js/editor.bootstrap.js" type="text/javascript"></script>
-  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>
-  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-  <script type="text/javascript" language="javascript" src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-  <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-  <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-  <script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
   <script src="js/fill-secretario-dataTable.js" type="text/javascript"></script>
   <script>
+    $(document).ready(function() {
+      $('#userTable').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "php/getSecretarios.php",
+        "columns": [{
+            "data": "id"
+          },
+          {
+            "data": "num_doc"
+          },
+          {
+            "data": "tipo_doc"
+          },
+          {
+            "data": "nombre"
+          },
+          {
+            "data": "apellido"
+          },
+          {
+            "data": "cargo"
+          },
+          {
+            "data": "dependencia"
+          },
+          {
+            "data": "municipio"
+          },
+          {
+            "data": "telefono"
+          },
+          {
+            "data": "email"
+          },
+          {
+            "data": "usuario"
+          },
+          {
+            "data": "pass"
+          },
+          {
+            "data": "sexo"
+          },
+          {
+            "data": "img"
+          }
+        ]
+      });
 
+    });
   </script>
 </body>
 
