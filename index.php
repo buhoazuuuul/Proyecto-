@@ -578,7 +578,7 @@
         <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
               <a href="img/gallery/bandera.jpg" class="gallery-popup">
-                <img src="img/gallery/bandera.jpg" alt="">
+                <img src="img/gallery/bandera.jpg" alt="https://www.facebook.com/alcaldia.abejorral/photos/a.1609151109301371/2369200393296435/?type=3&theater">
               </a>
             </div>
           </div>
