@@ -1,18 +1,11 @@
-
-$(document).ready(function () {
-
-    getEmergencias('emergencia');
-
-});
-
-
+getEmergencias('emergencia');
 
 function getEmergencias(selector) {
     selector = '#' + selector;
     $.getJSON("https://www.datos.gov.co/resource/a3er-k5e4.json?$select= distinct evento",
-        function (data, textStatus, jqXHR) {
+        function(data, textStatus, jqXHR) {
             if (textStatus == 'success') {
-                $.each(data, function (indexInArray, valueOfElement) {
+                $.each(data, function(indexInArray, valueOfElement) {
                     $(selector).append($('<option>', {
                         value: indexInArray,
                         text: valueOfElement.evento

@@ -226,7 +226,7 @@
             </div>
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                <li><a class="logout" href="login.php">Cerrar sesión</a></li>
+                    <li><a class="logout" href="login.php">Cerrar sesión</a></li>
                 </ul>
             </div>
         </header>

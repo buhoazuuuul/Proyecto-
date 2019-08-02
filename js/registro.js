@@ -85,9 +85,9 @@ function guardarDatosRegistro() {
     sexo = $("input[name='sexo']:checked").val();
 
     if (sexo == "Hombre") {
-        img = 'php/img/male.png';
+        img = 'img/male.png';
     } else {
-        img = 'php/img/female.png';
+        img = 'img/female.png';
     }
 
 }

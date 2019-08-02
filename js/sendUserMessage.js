@@ -8,12 +8,12 @@ var categoria;
 var prioridad;
 var adjunto;
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     console.log('Documento sendUserMessage.js cargado');
-    $(function () {
+    $(function() {
 
-        Parsley.on('form:submit', function () {
+        Parsley.on('form:submit', function() {
             sendUserMessage();
         });
 
@@ -42,15 +42,15 @@ function getMailFields() {
 function getSecretarios() {
 
     $.ajax({
-        url: 'php/getSecretarios.php',
+        url: 'php/getSecretariosReporte.php',
         type: 'GET',
         data: "",
-        beforeSend: function () {
+        beforeSend: function() {
             console.log('Enviando..');
         },
-        success: function (response) {
+        success: function(response) {
             arraySecretarios = JSON.parse(response);
-            $.each(arraySecretarios, function (i, item) {
+            $.each(arraySecretarios, function(i, item) {
                 $('#secetrariosSelect').append($('<option>', {
                     value: item.num_doc,
                     text: item.nombre + ' ' + item.apellido + '' + ' De la dependencia de ' + item.dependencia
@@ -64,15 +64,20 @@ function getSecretarios() {
 
 function sendUserMessage() {
     getMailFields();
-
     $.ajax({
         url: 'php/createMenssage.php',
         method: "POST",
         data: {
-            categoria: categoria, asunto: asunto, lugar: lugar, fecha_hora: fecha_hora,
-            prioridad: prioridad, confidencialidad: confidencialidad, mensaje: mensaje, adjunto: imgPath
+            categoria: categoria,
+            asunto: asunto,
+            lugar: lugar,
+            fecha_hora: fecha_hora,
+            prioridad: prioridad,
+            confidencialidad: confidencialidad,
+            mensaje: mensaje,
+            adjunto: imgPath
         },
-        success: function (data) {
+        success: function(data) {
 
             if (data == 'successfully') {
                 Swal.fire({
