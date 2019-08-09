@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Innexu</title>
+  <title>Innexu-Administrador</title>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -230,49 +231,30 @@
     <!-- **********************************************************************************************************************************************************
         MAIN SIDEBAR MENU
         *********************************************************************************************************************************************************** -->
-      <!--sidebar start-->
-      <aside>
-        <div id="sidebar" class="nav-collapse ">
-          <!-- sidebar menu start-->
-          <ul class="sidebar-menu" id="nav-accordion">
-            <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-            <h5 class="centered">Sam Soffes</h5>
-            <li class="mt">
-              <a href="index.html">
-                <i class="fa fa-dashboard"></i>
-                <span>Inicio</span>
-                </a>
-            </li>
-            <li class="sub-menu">
-              <a href="javascript:;">
-                <i class="fa fa-tasks"></i>
-                <span>Formularios</span>
-                </a>
-              <ul class="sub">
-                <li><a href="../RegistroSecre.php">Registrar un secretario</a></li>
-              </ul>
-            </li>
-            <li class="sub-menu">
-              <a href="javascript:;">
-                <i class="fa fa-th"></i>
-                <span>Tablas</span>
-                </a>
-              <ul class="sub">
-                <li><a href="usuarios.html">Usuarios</a></li>
-                <li><a href="secretarios.html">Secretarios</a></li>
-              </ul>
-            </li>
-            <li>
-              <a class="active" href="inbox.html">
-                <i class="fa fa-envelope"></i>
-                <span>Correo</span>
-                <span class="label label-theme pull-right mail-info">3</span>
-                </a>
-            </li>
-          </ul>
-          <!-- sidebar menu end-->
-        </div>
-      </aside>
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <h5 class="centered">Sam Soffes</h5>
+          <li class="mt">
+            <a href="../profile.php">
+              <i class="fa fa-dashboard"></i>
+              <span>Inicio</span>
+              </a>
+          </li>
+          <li>
+            <a class="active" href="../sendMail.php">
+              <i class="fa fa-envelope"></i>
+              <span>Correo</span>
+              <span class="label label-theme pull-right mail-info">3</span>
+              </a>
+          </li>
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
     <!--sidebar end-->
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
@@ -285,16 +267,16 @@
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-                <a href="mail_compose.html" class="btn btn-compose">
-                  <i class="fa fa-pencil"></i> Reportar un problema
+                <a href="answer_compose.html" class="btn btn-compose">
+                  <i class="fa fa-pencil"></i>Redactar una respuesta
                   </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li class="active"><a href="inbox.html"> <i class="fa fa-inbox"></i> Inbox  <span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li><a href="#"> <i class="fa fa-envelope-o"></i> Send Mail</a></li>
+                  <li class="active"><a href="inbox.html"> <i class="fa fa-inbox"></i>Reportes <span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li><a href="#"> <i class="fa fa-envelope-o"></i> Respuestas</a></li>
                 </ul>
               </div>
             </section>
-            <section class="panel">
+           <!--<section class="panel">
               <div class="panel-body">
                 <ul class="nav nav-pills nav-stacked labels-info ">
                   <li>
@@ -345,13 +327,13 @@
                   </div>
                 </div>
               </div>
-            </section>
+            </section>-->
           </div>
           <div class="col-sm-9">
             <section class="panel">
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
-                    Asunto
+                    Reporte #
                     <form action="#" class="pull-right mail-src-position">
                       <div class="input-append">
                         <input type="text" class="form-control " placeholder="Search Mail">
@@ -362,11 +344,11 @@
               <div class="panel-body ">
                 <div class="mail-header row">
                   <div class="col-md-8">
-                    <h4 class="pull-left">Lugar</h4>
+                    <h4 class="pull-left"> Dashio, New Admin Dashboard & Front-end </h4>
                   </div>
                   <div class="col-md-4">
                     <div class="compose-btn pull-right">
-                      <a href="mail_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
+                      <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
                       <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
                       <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
                     </div>
@@ -376,14 +358,14 @@
                   <div class="row">
                     <div class="col-md-8">
                       <img src="img/ui-zac.jpg" alt="">
-                      <strong>Nombre del usuario</strong>
-                      <span>Correo electronico</span> to
+                      <strong>Zac Doe</strong>
+                      <span>[zac@youremail.com]</span> to
                       <strong>me</strong>
                     </div>
                     <div class="col-md-4">
                       <p class="date"> 10:15AM 02 FEB 2014</p>
                     </div>
-                  </div>    
+                  </div>
                 </div>
                 <div class="view-mail">
                   <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
@@ -429,8 +411,7 @@
                   </ul>
                 </div>
                 <div class="compose-btn pull-left">
-                  <a href="mail_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder
-                  </a>
+                  <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
                   <button class="btn btn-sm "><i class="fa fa-arrow-right"></i> Forward</button>
                   <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
                   <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
@@ -439,7 +420,7 @@
             </section>
           </div>
         </div>
-      </section>
+      </section> 
       <!-- /wrapper -->
     </section>
     <!-- /MAIN CONTENT -->
@@ -448,7 +429,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>Innexu</strong>. Todos los derechos reservados
         </p>
         <div class="credits">
           <!--
@@ -457,7 +438,7 @@
             Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
             Licensing information: https://templatemag.com/license/
           -->
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+          <a href="https://templatemag.com/"></a>
         </div>
         <a href="mail_view.html#" class="go-top">
           <i class="fa fa-angle-up"></i>

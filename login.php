@@ -51,7 +51,7 @@
           <a href="index.php"><button  class="btn btn-theme btn-block" type="button"><i class="fa fa-reply" aria-hidden="true"></i> Regresar a la pagina principal</button></a>
           <hr>
           <div class="registration">
-            No tiene una cuenta aun?<br />
+            ¿No tiene una cuenta aún?<br />
             <a class="" href="index.php">
               Cree una!
             </a>

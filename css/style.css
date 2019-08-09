@@ -285,6 +285,11 @@ h6 {
 }
 
 /* Nav Meu Container */
+.logo{
+  width:180px;
+  height:40px;
+}
+
 
 #nav-menu-container {
   float: right;
@@ -300,7 +305,7 @@ h6 {
   color: #fff;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   outline: none;
 }
 

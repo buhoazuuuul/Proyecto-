@@ -38,9 +38,9 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">Innexu<br></a></h1>
+      <!--  <h1><a href="#intro" class="scrollto">Innexu<br></a></h1>-->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="#intro"><img src="img/logo.png" alt="" title=""></a> -->
+         <a href="#intro"><img class="logo" src="img/INNEXU2.png" alt="" title=""></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -49,9 +49,9 @@
           <li><a href="#pricing">Sobre nosotros</a></li>
           <li><a href="#features">Aprende</a></li>
           <li><a href="#team">Secretarios</a></li>
-          <li><a href="#gallery">Galeria</a></li>
+          <li><a href="#gallery">Galería</a></li>
 
-          <li><a href="#contact">Contactenos</a></li>
+          <li><a href="#contact">Contáctenos</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -184,7 +184,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <div class="box wow fadeInLeft">
-              <img src="img/logo.png" class="d-block w-100" alt="...">
+              <img src="img/INNEXU1.png" class="d-block w-100" alt="...">
             </div>
           </div>
           <div class="col-lg-8 col-md-6">
@@ -212,7 +212,7 @@
             <div class="section-header wow fadeIn" data-wow-duration="1s">
               <h3 class="section-title">Aprende</h3>
               <span class="section-divider"></span>
-              <p class="section-description">La siguiente cartilla fue realizada por la gobernación de Antioquia. Mirala para aprender un poco. </p>
+              <p class="section-description">La siguiente cartilla fue realizada por la gobernación de Antioquia. Mírala para aprender un poco. </p>
             </div>
           </div>
 
@@ -255,12 +255,8 @@
       </div>
 
     </section>
-
-
     <div class="row justify-content-center">
       <div class="col-sm-8"></div>
-
-
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -349,7 +345,7 @@
         <div class="section-header">
           <h3 class="section-title">Aprende un poco más...</h3>
           <span class="section-divider"></span>
-          <p class="section-description">Si deseas obtener información mas detallada sobre cada uno de los fenomenos puedes visitar los siguientes enlaces</p>
+          <p class="section-description">Si deseas obtener información mas detallada sobre cada uno de los fenómenos puedes visitar los siguientes enlaces</p>
         </div>
 
         <div class="row">
@@ -464,7 +460,7 @@
           </li>
 
           <li>
-            <a data-toggle="collapse" href="#faq4" class="collapsed">Si estoy presenciando una emergencia a quien debo dirigirme?<i class="ion-android-remove"></i></a>
+            <a data-toggle="collapse" href="#faq4" class="collapsed">Si estoy presenciando una emergencia, ¿A quíen debo dirigirme?<i class="ion-android-remove"></i></a>
             <div id="faq4" class="collapse" data-parent="#faq-list">
               <p>
                 Puede dirigirse ante las entidades competentes para atención de emergencias en el territorio nacional: Cruz Roja Colombiana, Cuerpo de Bomberos, Defensa Civil, Ejército Nacional, Armada Nacional, Policía Nacional, los cuales actúan de acuerdo con los parámetros establecidos por las Alcaldías, Gobernaciones, Presidencia de la República o sus delegados, según la magnitud del evento y la afectación ocasionada.
@@ -536,7 +532,7 @@
     <section id="gallery">
       <div class="container-fluid">
         <div class="section-header">
-          <h3 class="section-title">Galeria</h3>
+          <h3 class="section-title">Galería</h3>
           <span class="section-divider"></span>
           <p class="section-description"></p>
         </div>
