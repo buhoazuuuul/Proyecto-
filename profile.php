@@ -223,7 +223,7 @@
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
           <!--<li><i style="font-size: 18px;" id="btnLogout" class="logout fa fa-sign-out"></i></li>-->
-          <li><a class="logout" href="login.html">Cerrar sesión</a></li>
+          <li><a class="logout" href="login.php">Cerrar sesión</a></li>
         </ul>
       </div>
     </header>
