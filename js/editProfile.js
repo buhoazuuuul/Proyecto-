@@ -16,61 +16,18 @@ var img;
 
 $(document).ready(function() {
 
-    console.log('Documento usuario.js cargado');
+    console.log('Documento editProfile.js cargado');
     getTiposDeDocumentos();
     $('#btnRegistrarse').on('click', function() {
-        guardarDatosRegistro();
-        InsertarDatosBD();
+        
     });
 
 });
 
-//Siempre que salgamos de un campo de texto, se chequeará esta función
-$("#form input").keyup(function() {
-    var form = $(this).parents("#form");
-    var check = checkCampos(form);
-    if (check) {
-        console.log('campos completos');
-        let user = $('#login').val();
-        let mail = $('#email').val();
-        validarRegistro(mail, user);
-    }
-});
-
-//Función para comprobar los campos de texto
-function checkCampos(obj) {
-    var camposRellenados = true;
-    obj.find("input").each(function() {
-        var $this = $(this);
-        if ($this.val().length <= 0) {
-            camposRellenados = false;
-            return false;
-        }
-    });
-    if (camposRellenados == false) {
-        return false;
-    } else {
-        return true;
-    }
-}
-
-function validarRegistro(mail, user) {
-
-    $.ajax({
-        type: "GET",
-        url: "php/checkRegistrer.php",
-        data: { mail: mail, user: user },
-        success: function(response) {
-            console.log(response);
-        }
-    });
-
-}
 
 function guardarDatosRegistro() {
 
-    // kvereda_id = $('#vereda_id').val();
-    vereda_id = 1;
+    vereda_id = $("#vereda :selected").val();
     num_doc = $('#num_doc').val();
     tipo_doc = $("#tipo_doc option:selected").text();
     nombre = $('#nombre').val();
@@ -80,16 +37,18 @@ function guardarDatosRegistro() {
     departamento = $('#departamento').val();
     municipio = $('#municipio').val();
     fecha = $('#fecha').val();
-    usuario = $('#login').val();
-    pass = $('#password').val();
+    usuario = $('#usuario').val();
     sexo = $("input[name='sexo']:checked").val();
-
-    if (sexo == "Hombre") {
-        img = 'php/img/male.png';
+    if (imgPath != '') {
+        img = imgPath;
     } else {
-        img = 'php/img/female.png';
+        if (sexo == "Hombre") {
+            img = 'img/male.png';
+        } else {
+            img = 'img/female.png';
+        }
     }
-
+    
 }
 
 function InsertarDatosBD() {

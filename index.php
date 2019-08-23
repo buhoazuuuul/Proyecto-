@@ -8,9 +8,11 @@
   <meta content="" name="keywords">
   <meta content="" name="description">
 
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="img/INNEXU1.png" rel="icon">
+  <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -147,7 +149,7 @@
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Nombre de usuario</label>
-                    <input type="text" autocomplete="off" data-validate-field="login" name="login" id="login" class="form-control" placeholder="" />
+                    <input type="text" autocomplete="off" data-validate-field="login" name="usuario" id="usuario" class="form-control" placeholder="" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group col-lg-6">

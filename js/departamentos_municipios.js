@@ -2,7 +2,9 @@ var selected;
 var combo;
 
 $(document).ready(function() {
+
     selectDepartamentos();
+    getVeredas();
     setTimeout(function() {
         console.log('esperando..');
         combo = document.getElementById("departamento");
@@ -45,4 +47,17 @@ function selectDepartamentos() {
         });
     });
     $("#departamento")[0].selectedIndex = 0;
+}
+
+function getVeredas() {
+
+    $.getJSON("php/getVeredas.php", function(result) {
+        $.each(result, function(i, field) {
+            $('#vereda').append($('<option>', {
+                value: field.id,
+                text: field.vereda
+            }));
+        });
+    });
+    $("#vereda")[0].selectedIndex = 0;
 }

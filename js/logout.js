@@ -10,7 +10,6 @@ $(document).ready(function () {
 
 function logout() {
 
-
     $.ajax({
         url: 'php/logout.php',
         type: 'POST',

@@ -14,7 +14,6 @@ $(document).ready(function() {
 
 function setHrefs() {
 
-    document.getElementById("btnLogout").style.cursor = "pointer";
     $("#btnEditarPerfil").attr("href", url);
     $("#btnCorreo").attr("href", urlCorreo);
     $("#btnLogout").hover(function() {
@@ -49,13 +48,7 @@ function setUserName(array) {
     $('#userName').text(array[0].nombre + ' ' + array[0].apellido);
     $('#profileImage').attr('src', array[0].img);
     $('#mainImgProile').attr('src', array[0].img);
-    if ($('#btnEditarPerfil').attr('class') == 'active') {
-
-        filluserForm();
-
-    }
-
-
+    filluserForm();
 }
 
 function getParameterByName(name) {
@@ -63,6 +56,18 @@ function getParameterByName(name) {
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function buscarTipoDocumento(tipo_doc) {
+    
+    var select = document.getElementById("tipo_doc");
+    
+    for (var i = 1; i < select.length; i++) {
+        if (select.options[i].text == tipo_doc) {
+            select.selectedIndex = i;
+            console.log(select.options[i].text);
+        }
+    }
 }
 
 function buscarDepartamento(dep) {
@@ -107,11 +112,7 @@ function filluserForm() {
         message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando tu perfil...</p>'
     });
 
-    var btnEditarPerfil = $("#btnEditarPerfil").attr("class");
-
-    if (btnEditarPerfil == "active") {
         lastDoc = datos[0].num_doc;
-
         //Datos al principio del form
         $('#secondUserName').text(datos[0].nombre + ' ' + datos[0].apellido);
         $('#Nacimiento').text(datos[0].fecha);
@@ -126,12 +127,14 @@ function filluserForm() {
         $('#apellido').val(datos[0].apellido);
         $('#telefono').val(datos[0].telefono);
         $('#email').val(datos[0].email);
+
         //Departamento y municipio
         buscarDepartamento(datos[0].departamento);
         $('#fecha').val(datos[0].fecha);
         $('#usuario').val(datos[0].usuario);
         $('#pass').val("Encriptada");
 
+        //Vereda
 
         dialog.init(function() {
             setTimeout(function() {
@@ -139,27 +142,6 @@ function filluserForm() {
             }, 3000);
         });
 
-    }
-
-
-
-}
-
-function logout() {
-
-    $.ajax({
-        url: 'php/logout.php',
-        type: 'POST',
-        data: "",
-        beforeSend: function() {
-            console.log('Saliendo..');
-        },
-        success: function(response) {
-
-            window.location = response;
-
-        },
-    });
 
 
 }
