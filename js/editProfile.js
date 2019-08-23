@@ -17,15 +17,15 @@ var img;
 $(document).ready(function() {
 
     console.log('Documento editProfile.js cargado');
-    getTiposDeDocumentos();
-    $('#btnRegistrarse').on('click', function() {
-        
+    $('#btnUpdateUser').on('click', function() {
+        obtenerDatos();
+        updateUser();
     });
 
 });
 
 
-function guardarDatosRegistro() {
+function obtenerDatos() {
 
     vereda_id = $("#vereda :selected").val();
     num_doc = $('#num_doc').val();
@@ -51,10 +51,10 @@ function guardarDatosRegistro() {
     
 }
 
-function InsertarDatosBD() {
+function updateUser() {
 
     $.ajax({
-        url: "php/createUser.php",
+        url: "php/updateUser.php",
         method: "POST",
         data: {
             vereda_id: vereda_id,
@@ -80,7 +80,7 @@ function InsertarDatosBD() {
                 Swal.fire({
                     position: 'center',
                     type: 'success',
-                    title: 'Se he registrado satisfactoriamente, vaya al inicio de sesion',
+                    title: 'Se he actualizado satisfactoriamente su perfil',
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -90,7 +90,7 @@ function InsertarDatosBD() {
                 Swal.fire({
                     position: 'center',
                     type: 'error',
-                    title: 'Error al registrarse, revise su documento de identidad',
+                    title: 'Ocurrio un error, intenta de nuevo. Vamos a gestionar el riesgo mejor la siguiente vez...',
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -103,16 +103,3 @@ function InsertarDatosBD() {
     });
 }
 
-function getTiposDeDocumentos() {
-
-    $('#tipo_doc').empty();
-    $.getJSON("https://www.datos.gov.co/resource/shc6-n6i6.json?$select=nomtipodocumento", function(result) {
-        $.each(result, function(i, field) {
-            $('#tipo_doc').append($('<option>', {
-                value: i,
-                text: field.nomtipodocumento
-            }));
-        });
-    });
-
-}

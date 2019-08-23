@@ -9,6 +9,7 @@ $(document).ready(function() {
     console.log('Documento filluserProfile cargado');
     getUser();
     setHrefs();
+    getTiposDeDocumentos();
 
 });
 
@@ -104,7 +105,6 @@ function buscarMunicipio(municipio) {
     }
 }
 
-
 function filluserForm() {
 
     var dialog = bootbox.dialog({
@@ -143,5 +143,19 @@ function filluserForm() {
         });
 
 
+
+}
+
+function getTiposDeDocumentos() {
+
+    $('#tipo_doc').empty();
+    $.getJSON("https://www.datos.gov.co/resource/shc6-n6i6.json?$select=nomtipodocumento", function(result) {
+        $.each(result, function(i, field) {
+            $('#tipo_doc').append($('<option>', {
+                value: i,
+                text: field.nomtipodocumento
+            }));
+        });
+    });
 
 }
