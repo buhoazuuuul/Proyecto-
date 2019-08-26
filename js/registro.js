@@ -69,8 +69,7 @@ function validarRegistro(mail, user) {
 
 function guardarDatosRegistro() {
 
-    // kvereda_id = $('#vereda_id').val();
-    vereda_id = 1;
+    vereda_id = $('#vereda').val();
     num_doc = $('#num_doc').val();
     tipo_doc = $("#tipo_doc option:selected").text();
     nombre = $('#nombre').val();
@@ -80,7 +79,7 @@ function guardarDatosRegistro() {
     departamento = $('#departamento').val();
     municipio = $('#municipio').val();
     fecha = $('#fecha').val();
-    usuario = $('#login').val();
+    usuario = $('#usuario').val();
     pass = $('#password').val();
     sexo = $("input[name='sexo']:checked").val();
 
