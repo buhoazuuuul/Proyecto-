@@ -11,16 +11,17 @@
   <title>Innexu-Administrador</title>
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="img/INNEXU1.png" rel="icon">
+  <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="libUsuarios/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
   <!--external css-->
-  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="libUsuarios/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet">
+  <link href="libUsuarios/css/style.css" rel="stylesheet">
+  <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -336,7 +337,7 @@
                     Reporte #
                     <form action="#" class="pull-right mail-src-position">
                       <div class="input-append">
-                        <input type="text" class="form-control " placeholder="Search Mail">
+                        <input type="text" class="form-control " placeholder="Buscar Correo">
                       </div>
                     </form>
                   </h4>
@@ -344,7 +345,7 @@
               <div class="panel-body ">
                 <div class="mail-header row">
                   <div class="col-md-8">
-                    <h4 class="pull-left"> Dashio, New Admin Dashboard & Front-end </h4>
+                    <h4 class="pull-left">Asunto</h4>
                   </div>
                   <div class="col-md-4">
                     <div class="compose-btn pull-right">
@@ -358,14 +359,41 @@
                   <div class="row">
                     <div class="col-md-8">
                       <img src="img/ui-zac.jpg" alt="">
-                      <strong>Zac Doe</strong>
+                      <strong>Nombre del Usuario</strong>
                       <span>[zac@youremail.com]</span> to
                       <strong>me</strong>
+                      
                     </div>
+                      <div class="col-md-8">
+                        <strong>Departamento</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Municipio</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Tipo de emergencia</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Prioridad</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Confidencialidad</strong>
+                      </div>
+                      
+                      
+
                     <div class="col-md-4">
                       <p class="date"> 10:15AM 02 FEB 2014</p>
                     </div>
                   </div>
+                  <div class="showback">
+                        <h4><i class="fa fa-angle-right"></i></h4>
+                        <div class="alert alert-success"><b>Departamento</b></div>
+                        <div class="alert alert-success"><b>Municipio</b></div> 
+                        <div class="alert alert-danger"><b>Tipo de emergencia</b></div>
+                        <div class="alert alert-info"><b>Prioridad</b></div>
+                        <div class="alert alert-warning"><b>Confidencialidad</b></div>
+                      </div>
                 </div>
                 <div class="view-mail">
                   <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
@@ -432,12 +460,6 @@
           &copy; Copyrights <strong>Innexu</strong>. Todos los derechos reservados
         </p>
         <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
           <a href="https://templatemag.com/"></a>
         </div>
         <a href="mail_view.html#" class="go-top">
@@ -448,14 +470,21 @@
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="lib/jquery.scrollTo.min.js"></script>
-  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <script src="libUsuarios/lib/jquery/jquery.min.js"></script>
+  <script src="libUsuarios/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="libUsuarios/lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="libUsuarios/lib/jquery.scrollTo.min.js"></script>
+  <script src="libUsuarios/lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
-  <script src="lib/common-scripts.js"></script>
+  <script src="libUsuarios/lib/common-scripts.js"></script>
   <!--script for this page-->
+  <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+  <!-- bootbox code -->
+  <script src="lib/bootbox.js"></script>
+  <script src="lib/bootbox.locales.js"></script>
+  <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
+
 
 </body>
 
