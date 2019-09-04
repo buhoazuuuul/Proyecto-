@@ -4,7 +4,7 @@ var lastDoc;
 var url = 'profile.php?userName=' + username;
 var urlCorreo = 'sendMail.php?userName=' + username;
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     console.log('Documento filluserProfile cargado');
     getUser();
@@ -17,7 +17,7 @@ function setHrefs() {
 
     $("#btnEditarPerfil").attr("href", url);
     $("#btnCorreo").attr("href", urlCorreo);
-    $("#btnLogout").hover(function() {
+    $("#btnLogout").hover(function () {
         $(this).fadeOut(100);
         $(this).fadeIn(500);
     });
@@ -32,10 +32,10 @@ function getUser() {
         url: 'php/getUser.php',
         type: 'POST',
         data: dataString,
-        beforeSend: function() {
+        beforeSend: function () {
             console.log('Enviando..');
         },
-        success: function(response) {
+        success: function (response) {
             datos = JSON.parse(response);
             console.log(datos);
             setUserName(datos);
@@ -60,9 +60,9 @@ function getParameterByName(name) {
 }
 
 function buscarTipoDocumento(tipo_doc) {
-    
+
     var select = document.getElementById("tipo_doc");
-    
+
     for (var i = 1; i < select.length; i++) {
         if (select.options[i].text == tipo_doc) {
             select.selectedIndex = i;
@@ -112,35 +112,33 @@ function filluserForm() {
         message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando tu perfil...</p>'
     });
 
-        lastDoc = datos[0].num_doc;
-        //Datos al principio del form
-        $('#secondUserName').text(datos[0].nombre + ' ' + datos[0].apellido);
-        $('#Nacimiento').text(datos[0].fecha);
-        $('#nomUser').text(datos[0].usuario);
-        $('#documento').text(datos[0].num_doc);
-        $("#pMunicipio").append("<strong>" + datos[0].municipio + "</strong>");
+    lastDoc = datos[0].num_doc;
+    //Datos al principio del form
+    $('#secondUserName').text(datos[0].nombre + ' ' + datos[0].apellido);
+    $('#Nacimiento').text(datos[0].fecha);
+    $('#nomUser').text(datos[0].usuario);
+    $('#documento').text(datos[0].num_doc);
+    $("#pMunicipio").append("<strong>" + datos[0].municipio + "</strong>");
 
-        //Datos del form
-        $('#num_doc').val(datos[0].num_doc);
-        $('#tipo_doc').val(datos[0].tipo_doc);
-        $('#nombre').val(datos[0].nombre);
-        $('#apellido').val(datos[0].apellido);
-        $('#telefono').val(datos[0].telefono);
-        $('#email').val(datos[0].email);
+    //Datos del form
+    $('#num_doc').val(datos[0].num_doc);
+    $('#tipo_doc').val(datos[0].tipo_doc);
+    $('#nombre').val(datos[0].nombre);
+    $('#apellido').val(datos[0].apellido);
+    $('#telefono').val(datos[0].telefono);
+    $('#email').val(datos[0].email);
 
-        //Departamento y municipio
-        buscarDepartamento(datos[0].departamento);
-        $('#fecha').val(datos[0].fecha);
-        $('#usuario').val(datos[0].usuario);
-        $('#pass').val("Encriptada");
+    //Departamento y municipio
+    buscarDepartamento(datos[0].departamento);
+    $('#fecha').val(datos[0].fecha);
+    $('#usuario').val(datos[0].usuario);
 
-        //Vereda
-
-        dialog.init(function() {
-            setTimeout(function() {
-                dialog.find('.bootbox-body').html('Estas listo para reportar un riesgo!');
-            }, 3000);
-        });
+    //Vereda
+    dialog.init(function () {
+        setTimeout(function () {
+            dialog.find('.bootbox-body').html('Estas listo para reportar un riesgo!');
+        }, 3000);
+    });
 
 
 
@@ -149,8 +147,8 @@ function filluserForm() {
 function getTiposDeDocumentos() {
 
     $('#tipo_doc').empty();
-    $.getJSON("https://www.datos.gov.co/resource/shc6-n6i6.json?$select=nomtipodocumento", function(result) {
-        $.each(result, function(i, field) {
+    $.getJSON("https://www.datos.gov.co/resource/shc6-n6i6.json?$select=nomtipodocumento", function (result) {
+        $.each(result, function (i, field) {
             $('#tipo_doc').append($('<option>', {
                 value: i,
                 text: field.nomtipodocumento

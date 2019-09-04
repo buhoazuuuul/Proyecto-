@@ -395,6 +395,27 @@
                             <label><input type="radio" name="sexo" value="Mujer" class="form__radio">Mujer</label>
                             </div>
                           </div>
+                          <div class="custom-control custom-switch">
+                             <p>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Cambiar contraseña
+                            </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                              <div class="form-group">
+                            <label class="col-lg-2 control-label">Nueva</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="new_pass" class="form-control">
+                            </div>
+                          </div>
+                            </div>
+                          <br>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Contraseña Actual</label>
+                            <div class="col-lg-6">
+                              <input type="text" placeholder=" " id="pass" class="form-control">
+                            </div>
+                          </div>
                           <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
                               <button id="btnUpdateUser" class="btn btn-theme" type="button">Guardar</button>
@@ -487,6 +508,7 @@
   <script src="js/upload_image.js"></script>
   <script src="js/editProfile.js"></script>
   <script src="js/departamentos_municipios.js"></script>
-
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 </body>
 </html>

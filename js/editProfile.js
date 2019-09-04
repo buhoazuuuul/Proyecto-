@@ -10,14 +10,15 @@ var municipio;
 var fecha;
 var usuario;
 var pass;
+var new_pass;
 var tipo_usuario = 0;
 var sexo;
 var img;
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     console.log('Documento editProfile.js cargado');
-    $('#btnUpdateUser').on('click', function() {
+    $('#btnUpdateUser').on('click', function () {
         obtenerDatos();
         updateUser();
     });
@@ -39,7 +40,8 @@ function obtenerDatos() {
     fecha = $('#fecha').val();
     usuario = $('#usuario').val();
     sexo = $("input[name='sexo']:checked").val();
-
+    pass = $('#pass').val();
+    new_pass = $("#new_pass").val();
     if (imgPath == " ") {
         if (sexo == "Hombre") {
             img = 'img/male.png';
@@ -47,19 +49,21 @@ function obtenerDatos() {
             img = 'img/female.png';
         }
         img = 'img/INNEXU1.png';
-       
+
     } else {
         img = imgPath;
     }
-    
+
 }
 
 function updateUser() {
+    console.log(datos[0].id);
 
     $.ajax({
         url: "php/updateUser.php",
         method: "POST",
         data: {
+            id: datos[0].id,
             vereda_id: vereda_id,
             num_doc: num_doc,
             tipo_doc: tipo_doc,
@@ -72,13 +76,14 @@ function updateUser() {
             fecha: fecha,
             usuario: usuario,
             pass: pass,
+            new_pass: new_pass,
             sexo: sexo,
             img: img
 
         },
-        success: function(data) {
+        success: function (data) {
             console.log(data);
-            if (data>0) {
+            if (data > 0) {
                 Swal.fire({
                     position: 'center',
                     type: 'success',
@@ -92,7 +97,7 @@ function updateUser() {
                 Swal.fire({
                     position: 'center',
                     type: 'error',
-                    title: 'Ocurrio un error, intenta de nuevo. Vamos a gestionar el riesgo mejor la siguiente vez...',
+                    title: 'Ocurrio un error, intenta de nuevo. Vamos a gestionar el riesgo mejor la siguiente vez',
                     showConfirmButton: false,
                     timer: 1500
                 });
