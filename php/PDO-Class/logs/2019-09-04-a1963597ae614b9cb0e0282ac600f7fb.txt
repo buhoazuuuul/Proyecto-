@@ -1,0 +1,31 @@
+Time : 02:14:03
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc = :num_doc, tipo_doc = :tipo_doc, nombre = :nombre, apellido=:apellido, telefono=:telefono,email =:email, departamento=:departamento, municipio = :municipio, fecha=:fecha, usuario=:usuario, sexo=:sexo, img=:img WHERE num_doc = :num_doc
+
+Time : 02:12:09
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc = :num_doc, tipo_doc = :tipo_doc, nombre = :nombre, apellido=:apellido, telefono=:telefono,email =:email, departamento=:departamento, municipio = :municipio, fecha=:fecha, usuario=:usuario, sexo=:sexo, img=:img WHERE num_doc = :num_doc
+
+Time : 02:08:59
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc = :num_doc, tipo_doc = :tipo_doc, departamento = :departamento, nombre=:nombre, apellido=:apellido,telefono =:telefono, email=:email, municipio = :municipio, fecha=:fecha, usuario=:usuario, sexo=:sexo, img=:img WHERE num_doc = :num_doc
+
+Time : 02:07:03
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc = :num_doc,tipo_doc = :tipo_doc,departamento = :departamento,nombre=:nombre, apellido=:apellido,telefono =:telefono,email=:email, municipio = :municipio, fecha=:fecha,usuario=:usuario, sexo=:sexo,img=:img WHERE num_doc = :num_doc
+
+Time : 02:06:40
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc = :num_doc,tipo_doc = :tipo_doc,departamento = :departamento,nombre=:nombre, apellido=:apellido,telefono =:telefono,email=:email, municipio = :municipio, fecha=:fecha,usuario=:usuario, sexo=:sexo,img=:img WHERE num_doc = :num_doc
+
+Time : 02:03:58
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc = :num_doc,tipo_doc = :tipo_doc,departamento = :departamento,nombre=:nombre, apellido=:apellido,telefono =:telefono,email=:email, municipio = :municipio, fecha=:fecha,usuario=:usuario, pass=:pass, sexo=:sexo,img=:img WHERE num_doc = :num_doc
+
+Time : 02:03:36
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc = :num_doc,tipo_doc = :tipo_doc,departamento = :departamento,nombre=:nombre, apellido=:apellido,telefono =:telefono,email=:email, municipio = :municipio, fecha=:fecha,usuario=:usuario, pass=:pass, sexo=:sexo,img=:img WHERE num_doc = :num_doc
+
+Time : 02:03:32
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc = :num_doc,tipo_doc = :tipo_doc,departamento = :departamento,nombre=:nombre, apellido=:apellido,telefono =:telefono,email=:email, municipio = :municipio, fecha=:fecha,usuario=:usuario, pass=:pass, sexo=:sexo,img=:img WHERE num_doc = :num_doc

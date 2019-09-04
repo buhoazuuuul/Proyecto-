@@ -39,14 +39,17 @@ function obtenerDatos() {
     fecha = $('#fecha').val();
     usuario = $('#usuario').val();
     sexo = $("input[name='sexo']:checked").val();
-    if (imgPath != '') {
-        img = imgPath;
-    } else {
+
+    if (imgPath == " ") {
         if (sexo == "Hombre") {
             img = 'img/male.png';
         } else {
             img = 'img/female.png';
         }
+        img = 'img/INNEXU1.png';
+       
+    } else {
+        img = imgPath;
     }
     
 }
@@ -69,14 +72,13 @@ function updateUser() {
             fecha: fecha,
             usuario: usuario,
             pass: pass,
-            tipo_usuario: tipo_usuario,
             sexo: sexo,
             img: img
 
         },
         success: function(data) {
             console.log(data);
-            if (data == "successfully") {
+            if (data>0) {
                 Swal.fire({
                     position: 'center',
                     type: 'success',
