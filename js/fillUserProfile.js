@@ -7,11 +7,19 @@ var urlCorreo = 'sendMail.php?userName=' + username;
 $(document).ready(function () {
 
     console.log('Documento filluserProfile cargado');
-    getUser();
     setHrefs();
     getTiposDeDocumentos();
+    window.setTimeout("getUser()", 1000);
 
 });
+
+function getLocation(datos) {
+
+    buscarDepartamento(datos[0].departamento);
+    buscarMunicipio(datos[0].municipio);
+    window.setTimeout("getUser()", 1000);
+    buscarTipoDocumento(datos[0].tipo_doc);
+}
 
 function setHrefs() {
 
@@ -37,8 +45,9 @@ function getUser() {
         },
         success: function (response) {
             datos = JSON.parse(response);
-            console.log(datos);
             setUserName(datos);
+            getLocation(datos);
+
         },
     });
 
@@ -61,22 +70,24 @@ function getParameterByName(name) {
 
 function buscarTipoDocumento(tipo_doc) {
 
-    var select = document.getElementById("tipo_doc");
+    let select = document.getElementById("tipo_doc");
 
     for (var i = 1; i < select.length; i++) {
+
         if (select.options[i].text == tipo_doc) {
             select.selectedIndex = i;
-            console.log(select.options[i].text);
+            console.log(select.options[i]);
         }
     }
 }
 
 function buscarDepartamento(dep) {
+    console.log('buscando departamento');
     // creamos un variable que hace referencia al select
-    var select = document.getElementById("departamento");
+    let select = document.getElementById("departamento");
 
     // obtenemos el valor a buscar
-    var buscar = dep;
+    let buscar = dep;
 
     // recorremos todos los valores del select
     for (var i = 1; i < select.length; i++) {
@@ -90,11 +101,10 @@ function buscarDepartamento(dep) {
 
 function buscarMunicipio(municipio) {
     // creamos un variable que hace referencia al select
-    var select = document.getElementById("municipio");
-
+    console.log('buscando municipio');
+    let select = document.getElementById("municipio");
     // obtenemos el valor a buscar
-    var buscar = municipio;
-
+    let buscar = municipio;
     // recorremos todos los valores del select
     for (var i = 1; i < select.length; i++) {
         if (select.options[i].text == buscar) {
@@ -111,6 +121,7 @@ function filluserForm() {
         title: 'Este es tu perfil de Innexu',
         message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando tu perfil...</p>'
     });
+    buscarTipoDocumento(datos[0].tipo_doc);
 
     lastDoc = datos[0].num_doc;
     //Datos al principio del form
@@ -127,9 +138,6 @@ function filluserForm() {
     $('#apellido').val(datos[0].apellido);
     $('#telefono').val(datos[0].telefono);
     $('#email').val(datos[0].email);
-
-    //Departamento y municipio
-    buscarDepartamento(datos[0].departamento);
     $('#fecha').val(datos[0].fecha);
     $('#usuario').val(datos[0].usuario);
 
@@ -137,7 +145,7 @@ function filluserForm() {
     dialog.init(function () {
         setTimeout(function () {
             dialog.find('.bootbox-body').html('Estas listo para reportar un riesgo!');
-        }, 3000);
+        }, 1000);
     });
 
 
