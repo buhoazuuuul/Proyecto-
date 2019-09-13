@@ -9,9 +9,9 @@
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
   <title>Innexu-Administrador</title>
 
-  <!-- Favicons -->
-  <link href="libUsuarios/img/favicon.png" rel="icon">
-  <link href="libUsuarios/img/apple-touch-icon.png" rel="apple-touch-icon">
+   <!-- Favicons -->
+   <link href="img/INNEXU1.png" rel="icon">
+   <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="libUsuarios/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -238,7 +238,7 @@
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="Admin/index.html">
+            <a href="Plantillas temporales/Admin/index_admin.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
             </a>
@@ -258,12 +258,12 @@
               <span>Tablas</span>
             </a>
             <ul class="sub">
-            <li><a href="Admin_usuarios.php">Usuarios</a></li>
-            <li><a href="Admin_secretarios.php">Secretarios</a></li>
+            <li><a href="usuarios_admin.php">Usuarios</a></li>
+            <li><a href="secretarios_admin.php">Secretarios</a></li>
             </ul>
           </li>
           <li>
-            <a href="Admin/inbox.html">
+            <a href="Plantillas temporales/Admin/inbox_admin.html">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
@@ -286,7 +286,7 @@
           <div class="col-lg-12">
             <div class="form-panel">
               <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="../php/createSecretario.php">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="php/createSecretario.php">
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Numero de documento</label>
                     <div class="col-lg-10">
@@ -297,8 +297,11 @@
                     <label for="cname" class="control-label col-lg-2">Tipo de documento</label>
                     <div class="col-lg-10">
                       <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="Tipo de documento" data-rule="minlen:4">
-                        <option>Cedula de ciudadania</option>
-                        <option>Tarjeta de identidad</option>
+                        <option>Cédula de Ciudadania</option>
+                        <option>Cédula de Extranjería</option>
+                        <option>Pasaporte</option>
+                        <option>Registro Civil</option>
+                        <option>Tarjeta de Identidad</option>
                       </select>
                     </div>
                   </div>
@@ -313,18 +316,18 @@
                     <div class="col-lg-10">
                       <input class=" form-control" id="apellido" name="apellido" type="text" required />
                     </div>
-                  </div>
+                  </div> 
                   <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Dependencia</label>
+                    <label for="cname" class="control-label col-lg-2">Cargo</label>
                     <div class="col-lg-10">
-                      <select name="tipo_doc" class="form-control" id="dependencia" data-rule="minlen:4">
+                      <select name="cargo" class="form-control" id="cargo" data-rule="minlen:4">
                       </select>
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Cargo</label>
+                    <label for="cname" class="control-label col-lg-2">Dependencia</label>
                     <div class="col-lg-10">
-                      <select name="cargos" class="form-control" id="cargo" data-rule="minlen:4">
+                      <select name="dependencia" class="form-control" id="dependencia" data-rule="minlen:4">
                       </select>
                     </div>
                   </div>

@@ -50,6 +50,7 @@
           <li class="menu-active"><a href="#intro">Inicio</a></li>
           <li><a href="#pricing">Sobre nosotros</a></li>
           <li><a href="#features">Aprende</a></li>
+          <li><a href="#documentos">Documentos</a></li>
           <li><a href="#team">Secretarios</a></li>
           <li><a href="#gallery">Galería</a></li>
 
@@ -173,11 +174,10 @@
   </section>
   <main id="main">
     <!--==========================
-      Pricing Section
+      Sobre nosotros 
     ============================-->
     <section id="pricing" class="section-bg">
       <div class="container">
-
         <div class="section-header">
          <!-- <h3 class="section-title">Sobre nosotros</h3>
           <span class="section-divider"></span>-->
@@ -197,7 +197,6 @@
               </ul>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -207,7 +206,7 @@
 
     <section id="features">
       <div class="container">
-
+   
         <div class="row">
 
           <div class="col-lg-12 offset-lg-12">
@@ -217,41 +216,6 @@
               <p class="section-description">La siguiente cartilla fue realizada por la gobernación de Antioquia. Mírala para aprender un poco. </p>
             </div>
           </div>
-
-          <!--
-          <div class="col-lg-4 col-md-5 features-img">
-            <img src="img/product-features.png" alt="" class="wow fadeInLeft">
-          </div>
-
-          <div class="col-lg-8 col-md-7 ">
-
-            <div class="row">
-
-              <div class="col-lg-6 col-md-6 box wow fadeInRight">
-                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-                <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident clarida perendo.</p>
-              </div>
-              <div class="col-lg-6 col-md-6 box wow fadeInRight" data-wow-delay="0.1s">
-                <div class="icon"><i class="ion-ios-flask-outline"></i></div>
-                <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata noble dynala mark.</p>
-              </div>
-              <div class="col-lg-6 col-md-6 box wow fadeInRight" data-wow-delay="0.2s">
-                <div class="icon"><i class="ion-social-buffer-outline"></i></div>
-                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur teleca starter sinode park ledo.</p>
-              </div>
-              <div class="col-lg-6 col-md-6 box wow fadeInRight" data-wow-delay="0.3s">
-                <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-                <h4 class="title"><a href="">Magni Dolores</a></h4>
-                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum dinoun trade capsule.</p>
-              </div>
-            </div>
-
-          </div>
-
-        Aprende-->
         </div>
 
       </div>
@@ -387,8 +351,8 @@
         </div>
       </div>
     </section>
-    <!--#more-features -->
-    <!--==========================
+
+<!--==========================
       Entidades relacionadas
     ============================-->
     <section id="clients">
@@ -415,6 +379,113 @@
         </div>
       </div>
     </section>
+    <!--Entidades relacionadas-->
+   <!--==========================
+      Documentos
+    ============================-->
+    <section id="documentos" class="section-bg">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Documentos</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">Acá podrás encontrar documentos relacionados con la gestión de riesgo para que estes bien informado</p>
+        </div>
+     <!--PDF-->
+<!--CARTILLA 1-->
+<div class="row">
+            	 <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+         <a href="#" data-toggle="modal" data-target="#cartilla_gestión_de_riesgos">
+                <h4>Cartilla Gestión de riesgos</h4></a>
+            </div>
+          </div>
+          <div class="modal fade" id="cartilla_gestión_de_riesgos" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center" id="mediumModalLabel">Glosario Infantil</h5>
+            </div>
+            <div class="embed-responsive embed-responsive-4by3">
+              <iframe class="embed-responsive-item" src="docs/cartilla_gestión_de_riesgos.pdf" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--CARTILLA 2-->
+            	 <div class="col-lg-6">
+            <div class="box wow fadeInRight">
+         <a href="#" data-toggle="modal" data-target="#glosario_infantil_gestion_de_riesgos">
+                <h4>Glosario Infantil Gestion de Riesgos</h4></a>
+            </div>
+          </div>
+          <div class="modal fade" id="glosario_infantil_gestion_de_riesgos" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center" id="mediumModalLabel">Glosario Infantil Gestion de Riesgos</h5>
+            </div>
+            <div class="embed-responsive embed-responsive-4by3">
+              <iframe class="embed-responsive-item" src="docs/glosario_infantil_gestion_de_riesgos.pdf" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+          <!--CARTILLA 3-->
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+                <a href="#" data-toggle="modal" data-target="#guía_plan_gestión_de_riesgos">
+                <h4>Guía Plan Gestión de Riesgos</h4></a>
+           </div>
+          </div>
+          <div class="modal fade" id="guía_plan_gestión_de_riesgos" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                   <h5 class="modal-title text-center" id="mediumModalLabel">Guía Plan Gestión de Riesgos</h5>
+                </div>
+                  <div class="embed-responsive embed-responsive-4by3">
+                    <iframe class="embed-responsive-item" src="docs/guía_plan_gestión_de_riesgos.pdf" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">Cerrar</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+<!--CARTILLA 4-->
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+               <a href="#" data-toggle="modal" data-target="#libro_gestión_de_riesgos">
+              <h4>Libro Gestión de Riesgos</h4></a>
+            </div>
+          </div>
+          <div class="modal fade" id="libro_gestión_de_riesgos" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                   <h5 class="modal-title text-center" id="mediumModalLabel">Libro Gestión de Riesgos</h5>
+                </div>
+              <div class="embed-responsive embed-responsive-4by3">
+              <iframe class="embed-responsive-item" src="docs/libro_gestión_de_riesgos.pdf" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        </div>
+      </div>
+    </section>
+    <!--#Documentos -->
+     <!--#Preguntas -->
     <section id="faq">
       <div class="container">
 
