@@ -18,7 +18,7 @@
   <!--external css-->
   <link href="libUsuarios/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="libUsuarios/css/style.css" rel="stylesheet">
+  <link href="Admin/css/style.css" rel="stylesheet">
   <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
 </head>
 
@@ -238,7 +238,7 @@
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="Plantillas temporales/Admin/index_admin.html">
+            <a href="Admin/index_admin.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
             </a>
@@ -263,7 +263,7 @@
             </ul>
           </li>
           <li>
-            <a href="Plantillas temporales/Admin/inbox_admin.html">
+            <a href="Admin/inbox_admin.html">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>

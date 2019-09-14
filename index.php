@@ -599,7 +599,7 @@
 
     </section><!-- #team -->
 
-    <!--==========================
+   <!--==========================
       Gallery Section
     ============================-->
     <section id="gallery">
@@ -614,48 +614,48 @@
 
         <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gale1.jpg" class="gallery-popup">
-                <img src="img/gallery/gale1.jpg" alt="">
+              <a href="img/gallery/fotos/anciano.jpg" class="gallery-popup">
+                <img src="img/gallery/fotos/anciano.jpg" alt="">
               </a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/dan.jpg" class="gallery-popup">
-                <img src="img/gallery/dan.jpg" alt="">
+              <a href="img/gallery/fotos/iglesia2.jpg" class="gallery-popup">
+                <img src="img/gallery/fotos/iglesia2.jpg" alt="">
               </a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/abejorral.jpg" class="gallery-popup">
-                <img src="img/gallery/abejorral.jpg" alt="">
+              <a href="img/gallery/fotos/fuente.jpg" class="gallery-popup">
+                <img src="img/gallery/fotos/fuente.jpg" alt="">
               </a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/abejorral1.jpg" class="gallery-popup">
-                <img src="img/gallery/abejorral1.jpg" alt="">
+              <a href="img/gallery/fotos/iglesia.jpg" class="gallery-popup">
+                <img src="img/gallery/fotos/iglesia.jpg" alt="">
               </a>
             </div>
           </div>
 
         <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/bandera.jpg" class="gallery-popup">
-                <img src="img/gallery/bandera.jpg" alt="https://www.facebook.com/alcaldia.abejorral/photos/a.1609151109301371/2369200393296435/?type=3&theater">
+              <a href="img/gallery/fotos/fuente2.jpg" class="gallery-popup">
+                <img src="img/gallery/fotos/fuente2.jpg" alt="">
               </a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gale2.jpg" class="gallery-popup">
-                <img src="img/gallery/gale2.jpg" alt="">
+              <a href="img/gallery/fotos/iglesia3.jpg" class="gallery-popup">
+                <img src="img/gallery/fotos/iglesia3.jpg" alt="">
               </a>
             </div>
           </div>

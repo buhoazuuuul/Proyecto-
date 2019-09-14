@@ -24,7 +24,7 @@
   <link href="libUsuarios/lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
   <link rel="stylesheet" href="lib/advanced-datatable/css/DT_bootstrap.css" />
   <!-- Custom styles for this template -->
-  <link href="libUsuarios/css/style.css" rel="stylesheet">
+  <link href="Admin/css/style.css" rel="stylesheet">
   <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 </head>
@@ -245,7 +245,7 @@
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="Plantillas temporales/Admin/index_admin.html">
+            <a href="Admin/index_admin.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
             </a>
@@ -270,7 +270,7 @@
             </ul>
           </li>
           <li>
-            <a href="Plantillas temporales/Admin/inbox_admin.html">
+            <a href="Admin/inbox_admin.html">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>

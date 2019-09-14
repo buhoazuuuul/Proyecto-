@@ -89,7 +89,7 @@
   <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
   <script>
-  $.backstretch("img/gallery/abejorral1.jpg", {
+  $.backstretch("img/gallery/fotos/iglesia3.jpg", {
       speed: 500
     });
   </script>
