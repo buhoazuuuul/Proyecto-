@@ -17,13 +17,19 @@ var img;
 
 $(document).ready(function () {
 
-    console.log('Documento editProfile.js cargado');
+    $('#btnUpdateUser').on('click', function () {
+        obtenerDatos();
+        updateUser();
+    });
+
     $('#btnUpdateUser').on('click', function () {
         obtenerDatos();
         updateUser();
     });
 
 });
+
+
 
 function obtenerDatos() {
 

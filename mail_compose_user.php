@@ -276,7 +276,7 @@
                                     <li><a href="#"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
                             </div>
                         </section>
-                        <!--<section class="panel">
+                        <section class="panel">
                             <div class="panel-body">
                                 <ul class="nav nav-pills nav-stacked labels-info ">
                                     <li>
@@ -327,7 +327,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>-->
+                        </section>
                     </div>
                     <div class="col-sm-9">
                         <section class="panel">
@@ -343,7 +343,7 @@
                             </header>
                             <div class="panel-body">
                                 <div class="compose-mail">
-                                    <form class="demo-form" id="form" role="form-horizontal">
+                                    <form id="demo-form" data-parsley-validate="">
                                         <div class="form-group">
                                             <label style="margin-bottom : 10px;" for="to" class="">Para:</label>
                                             <select style="display:block;" class="form-control" id="secetrariosSelect" required>
@@ -391,8 +391,7 @@
                                             <input type="file" name="file" id="file" class="default">
                                         </div>
                                         <div class="form-group">
-                                            <button id="bntEnviar" type="submit" class="btn btn-sm validate"><i class="fa fa-plane"></i>Enviar</button>
-                                            <button type="button" class="btn btn-sm"><i class="fa fa-times"></i>Descartar</button>
+                                            <input type="submit" class="btn btn-default" value="validate">
                                         </div>
                                     </form>
 
@@ -448,9 +447,14 @@
     <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
     <!-- Propios js -->
     <script src="js/sendUserMessage.js"></script>
-    <script src="js/fillUserProfile.js"></script>
-    <script src="js/emergencias_Naturales.js"></script>
+    <script src="js/components/emergencias_Naturales.js"></script>
+    <script src="js/components/getUrlParams.js"></script>
+    <script src="js/components/getUser.js"></script>
     <script src="js/upload_image.js"></script>
+    <script src="js/mail_compose_user.js"></script>
+     <!-- bootbox code -->
+  <script src="lib/bootbox.js"></script>
+  <script src="lib/bootbox.locales.js"></script>
 </body>
 
 </html>
