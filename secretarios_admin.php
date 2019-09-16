@@ -13,9 +13,9 @@
   <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css" />
   <!-- Editor dataTables -->
   <link rel="stylesheet" href="libUsuarios/lib/EditorPHP/css/editor.dataTables.min.css" class="stylesheet">
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+   <!-- Favicons -->
+   <link href="img/INNEXU1.png" rel="icon">
+   <link href="img/INNEXU1.png" rel="apple-touch-icon">
   <!-- Bootstrap core CSS -->
   <link href="libUsuarios/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
@@ -24,7 +24,7 @@
   <link href="libUsuarios/lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
   <link rel="stylesheet" href="lib/advanced-datatable/css/DT_bootstrap.css" />
   <!-- Custom styles for this template -->
-  <link href="libUsuarios/css/style.css" rel="stylesheet">
+  <link href="Admin/css/style.css" rel="stylesheet">
   <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 </head>
@@ -245,7 +245,7 @@
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="Admin/index.html">
+            <a href="Admin/index_admin.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
             </a>
@@ -265,12 +265,12 @@
               <span>Tablas</span>
             </a>
             <ul class="sub">
-              <li><a href="Admin_usuarios.php">Usuarios</a></li>
-              <li class="active"><a href="Admin_secretarios.php">Secretarios</a></li>
+              <li><a href="usuarios_admin.php">Usuarios</a></li>
+              <li class="active"><a href="secretarios_admin.php">Secretarios</a></li>
             </ul>
           </li>
           <li>
-            <a href="Admin/inbox.html">
+            <a href="Admin/inbox_admin.html">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>

@@ -10,8 +10,8 @@
   <title>Iniciar sesión</title>
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="img/INNEXU1.png" rel="icon">
+  <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -89,7 +89,7 @@
   <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
   <script>
-  $.backstretch("img/gallery/abejorral1.jpg", {
+  $.backstretch("img/gallery/fotos/iglesia3.jpg", {
       speed: 500
     });
   </script>
