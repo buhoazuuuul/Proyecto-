@@ -6,7 +6,7 @@ try {
     $database = new Connection();
     $db = $database->openConnection();
     //Datos a insertar
-    $mipdosword = password_hash($_POST['pass'], PASSWORD_BCRYPT);
+    $mipdosword = password_hash($_POST['pass'], PASSWORD_DEFAULT);
     //Ejecucion de la query
     $sql = "INSERT INTO usuario (id, vereda_id, num_doc, tipo_doc, nombre, apellido, telefono, email, departamento, municipio, fecha, usuario, pass, tipo_usuario, sexo, img) VALUES (NULL,:vereda_id,:num_doc,:tipo_doc,:nombre,:apellido,:telefono,:email,:departamento,:municipio,:fecha,:usuario,:pass,:tipo_usuario,:sexo,:img)";
     $sth = $db->prepare($sql);

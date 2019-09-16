@@ -25,7 +25,6 @@ $(document).ready(function () {
 
 });
 
-
 function obtenerDatos() {
 
     vereda_id = $("#vereda :selected").val();
@@ -55,9 +54,7 @@ function obtenerDatos() {
     }
 
 }
-
 function updateUser() {
-    console.log(datos[0].id);
 
     $.ajax({
         url: "php/updateUser.php",
@@ -83,26 +80,26 @@ function updateUser() {
         },
         success: function (data) {
             console.log(data);
-            if (data > 0) {
-                Swal.fire({
-                    position: 'center',
-                    type: 'success',
-                    title: 'Se he actualizado satisfactoriamente su perfil',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+            // if (data > 0) {
+            //     Swal.fire({
+            //         position: 'center',
+            //         type: 'success',
+            //         title: 'Se he actualizado satisfactoriamente su perfil',
+            //         showConfirmButton: false,
+            //         timer: 1500
+            //     });
 
-            } else {
+            // } else {
 
-                Swal.fire({
-                    position: 'center',
-                    type: 'error',
-                    title: 'Ocurrio un error, intenta de nuevo. Vamos a gestionar el riesgo mejor la siguiente vez',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+            //     Swal.fire({
+            //         position: 'center',
+            //         type: 'error',
+            //         title: 'Ocurrio un error, intenta de nuevo. Vamos a gestionar el riesgo mejor la siguiente vez',
+            //         showConfirmButton: false,
+            //         timer: 1500
+            //     });
 
-            }
+            // }
 
 
         }

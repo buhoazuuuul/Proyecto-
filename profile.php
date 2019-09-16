@@ -504,10 +504,10 @@
     });
   </script>
   <script src="js/logout.js"></script>
-  <script src="js/fillUserProfile.js"></script>
+  <script src="js/departamentos_municipios.js"></script>
   <script src="js/upload_image.js"></script>
   <script src="js/editProfile.js"></script>
-  <script src="js/departamentos_municipios.js"></script>
+    <script src="js/fillUserProfile.js"></script>
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 </body>
