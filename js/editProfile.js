@@ -10,7 +10,7 @@ var municipio;
 var fecha;
 var usuario;
 var pass;
-var new_pass;
+var new_pass = ' ';
 var tipo_usuario = 0;
 var sexo;
 var img;
@@ -79,27 +79,26 @@ function updateUser() {
 
         },
         success: function (data) {
-            console.log(data);
-            // if (data > 0) {
-            //     Swal.fire({
-            //         position: 'center',
-            //         type: 'success',
-            //         title: 'Se he actualizado satisfactoriamente su perfil',
-            //         showConfirmButton: false,
-            //         timer: 1500
-            //     });
 
-            // } else {
+            if (data === '1') {
+                Swal.fire({
+                    position: 'center',
+                    type: 'success',
+                    title: 'Se he actualizado satisfactoriamente su perfil',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
 
-            //     Swal.fire({
-            //         position: 'center',
-            //         type: 'error',
-            //         title: 'Ocurrio un error, intenta de nuevo. Vamos a gestionar el riesgo mejor la siguiente vez',
-            //         showConfirmButton: false,
-            //         timer: 1500
-            //     });
+            } else {
+                Swal.fire({
+                    position: 'center',
+                    type: 'error',
+                    title: 'Ocurrio un error, intenta de nuevo. Vamos a gestionar el riesgo mejor la siguiente vez',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
 
-            // }
+            }
 
 
         }
