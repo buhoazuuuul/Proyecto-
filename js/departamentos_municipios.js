@@ -1,18 +1,18 @@
 var selected;
 var combo;
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     selectDepartamentos();
     getVeredas();
-    setTimeout(function() {
+    setTimeout(function () {
         console.log('esperando..');
         combo = document.getElementById("departamento");
         selected = combo.options[combo.selectedIndex].text;
         selectMunicipiosPorDep(selected);
     }, 1000, "JavaScript");
 
-    $("#departamento").change(function() {
+    $("#departamento").change(function () {
         combo = document.getElementById("departamento");
         selected = combo.options[combo.selectedIndex].text;
         selectMunicipiosPorDep(selected);
@@ -24,8 +24,8 @@ $(document).ready(function() {
 function selectMunicipiosPorDep(departamento) {
 
     $('#municipio').empty();
-    $.getJSON("https://www.datos.gov.co/resource/xdk5-pm3f.json?departamento=" + departamento, function(result) {
-        $.each(result, function(i, field) {
+    $.getJSON("https://www.datos.gov.co/resource/xdk5-pm3f.json?departamento=" + departamento, function (result) {
+        $.each(result, function (i, field) {
             $('#municipio').append($('<option>', {
                 value: field.municipio,
                 text: field.municipio
@@ -38,8 +38,8 @@ function selectMunicipiosPorDep(departamento) {
 
 function selectDepartamentos() {
 
-    $.getJSON("https://www.datos.gov.co/resource/xdk5-pm3f.json?$query=select distinct departamento", function(result) {
-        $.each(result, function(i, field) {
+    $.getJSON("https://www.datos.gov.co/resource/xdk5-pm3f.json?$query=select distinct departamento", function (result) {
+        $.each(result, function (i, field) {
             $('#departamento').append($('<option>', {
                 value: field.departamento,
                 text: field.departamento
@@ -51,8 +51,8 @@ function selectDepartamentos() {
 
 function getVeredas() {
 
-    $.getJSON("php/getVeredas.php", function(result) {
-        $.each(result, function(i, field) {
+    $.getJSON("php/getVeredas.php", function (result) {
+        $.each(result, function (i, field) {
             $('#vereda').append($('<option>', {
                 value: field.id,
                 text: field.vereda

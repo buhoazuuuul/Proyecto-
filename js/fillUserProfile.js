@@ -9,15 +9,13 @@ $(document).ready(function () {
     console.log('Documento filluserProfile cargado');
     setHrefs();
     getTiposDeDocumentos();
-    window.setTimeout("getUser()", 1000);
-
+    getUser();
 });
 
-function getLocation(datos) {
+function getLocation() {
 
     buscarDepartamento(datos[0].departamento);
     buscarMunicipio(datos[0].municipio);
-    window.setTimeout("getUser()", 1000);
     buscarTipoDocumento(datos[0].tipo_doc);
 }
 
@@ -73,7 +71,7 @@ function buscarTipoDocumento(tipo_doc) {
     let select = document.getElementById("tipo_doc");
 
     for (var i = 1; i < select.length; i++) {
-
+        console.log('Documento buscando');
         if (select.options[i].text == tipo_doc) {
             select.selectedIndex = i;
             console.log(select.options[i]);
@@ -115,14 +113,13 @@ function buscarMunicipio(municipio) {
     }
 }
 
+
 function filluserForm() {
 
     var dialog = bootbox.dialog({
         title: 'Este es tu perfil de Innexu',
         message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando tu perfil...</p>'
     });
-    buscarTipoDocumento(datos[0].tipo_doc);
-
     lastDoc = datos[0].num_doc;
     //Datos al principio del form
     $('#secondUserName').text(datos[0].nombre + ' ' + datos[0].apellido);
