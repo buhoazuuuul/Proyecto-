@@ -17,6 +17,7 @@
     <link href="libUsuarios/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="libUsuarios/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    
     <!-- Custom styles for this template -->
     <link href="libUsuarios/css/style.css" rel="stylesheet">
     <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
@@ -334,11 +335,6 @@
                             <header class="panel-heading wht-bg">
                                 <h4 class="gen-case">
                                     Envia tu reporte
-                                    <form class="pull-right mail-src-position">
-                                        <div class="input-append">
-                                            <input type="text" class="form-control " placeholder="Buscar correo">
-                                        </div>
-                                    </form>
                                 </h4>
                             </header>
                             <div class="panel-body">
@@ -354,13 +350,15 @@
                                             <select class="form-control" id="emergencia" required>
                                             </select>
                                         </div>
+                                         <div class="form-group">
+                                            <label style="margin-bottom : 10px;" for="to" class="">Vereda:</label>
+                                            <h6>Elija Zona urbana al final si es dentro del municipio</h6>
+                                            <select style="display:block;" class="form-control" id="vereda" required>
+                                            </select>
+                                        </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Asunto:</label>
                                             <input required type="text" tabindex="1" id="asunto" class="form-control" required data-parsley-length="[4, 20]">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="subject" class="">Lugar:</label>
-                                            <input type="text" tabindex="1" id="lugar" class="form-control" required data-parsley-length="[4, 20]">
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Fecha y hora:</label>
@@ -384,17 +382,15 @@
                                         </div>
                                         <div class="compose-editor">
                                             <label for="subject" class="">Mensaje:</label>
-                                            <textarea required class="wysihtml5 form-control" id="mensaje" rows="9" data-parsley-length="[4, 20]"></textarea>
+                                            <textarea placeholder="Sea descriptivo y preciso con el mensaje, incluya una direccion mas exacta si lo desea" required class="wysihtml5 form-control" id="mensaje" rows="9" data-parsley-length="[4, 20]"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <span id="uploaded_image"></span>
                                             <input type="file" name="file" id="file" class="default">
                                         </div>
-                                        <div class="form-group">
-                                            <input type="submit" class="btn btn-default" value="validate">
-                                        </div>
+                                            <button id="btn-validar" type="submit" class="btn btn-primary" value="validate">Validar Reporte</button>
+                                            <button id="btn-enviar" type="button" class="btn btn-warning">Enviar Reporte</button>
                                     </form>
-
                                 </div>
                             </div>
                         </section>
