@@ -8,20 +8,19 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Innexu</title>
+  <title>Innexu-Usuario</title>
 
   <!-- Favicons -->
   <link href="img/INNEXU1.png" rel="icon">
-  <link href="img/INNEXU1.png" rel="apple-touch-icon">
+   <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="libUsuarios/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="Usuario/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="libUsuarios/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="Usuario/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="libUsuarios/css/style.css" rel="stylesheet">
-  <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
-
+  <link href="Usuario/css/style.css" rel="stylesheet">
+  <link href="Usuario/css/style-responsive.css" rel="stylesheet">
 </head>
 
 <body>
@@ -224,7 +223,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.php">Cerrar sesión</a></li>
+          <li><a class="logout" href="../login.php">Cerrar sesión</a></li>
         </ul>
       </div>
     </header>
@@ -237,16 +236,16 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="Secretario/profile_secretary.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="Secretario/profile_secretary.php">
+            <a href="../profile.php">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
               </a>
           </li>
           <li>
-            <a class="active" href="Secretario/inbox_secretary.php">
+            <a class="active" href="../sendMail.php">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">3</span>
@@ -268,7 +267,7 @@
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-                <a href="answer_compose.html" class="btn btn-compose">
+                <a href="" class="btn btn-compose">
                   <i class="fa fa-pencil"></i>Redactar una respuesta
                   </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
@@ -334,10 +333,10 @@
             <section class="panel">
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
-                    Reporte #
+                    Respuesta #
                     <form action="#" class="pull-right mail-src-position">
                       <div class="input-append">
-                        <input type="text" class="form-control " placeholder="Buscar Correo">
+                        <input type="text" class="form-control " placeholder="Search Mail">
                       </div>
                     </form>
                   </h4>
@@ -359,41 +358,14 @@
                   <div class="row">
                     <div class="col-md-8">
                       <img src="img/ui-zac.jpg" alt="">
-                      <strong>Nombre del Usuario</strong>
+                      <strong>Zac Doe</strong>
                       <span>[zac@youremail.com]</span> to
                       <strong>me</strong>
-                      
                     </div>
-                      <div class="col-md-8">
-                        <strong>Departamento</strong>
-                      </div>
-                      <div class="col-md-8">
-                        <strong>Municipio</strong>
-                      </div>
-                      <div class="col-md-8">
-                        <strong>Tipo de emergencia</strong>
-                      </div>
-                      <div class="col-md-8">
-                        <strong>Prioridad</strong>
-                      </div>
-                      <div class="col-md-8">
-                        <strong>Confidencialidad</strong>
-                      </div>
-                      
-                      
-
                     <div class="col-md-4">
                       <p class="date"> 10:15AM 02 FEB 2014</p>
                     </div>
                   </div>
-                  <div class="showback">
-                        <h4><i class="fa fa-angle-right"></i></h4>
-                        <div class="alert alert-success"><b>Departamento</b></div>
-                        <div class="alert alert-success"><b>Municipio</b></div> 
-                        <div class="alert alert-danger"><b>Tipo de emergencia</b></div>
-                        <div class="alert alert-info"><b>Prioridad</b></div>
-                        <div class="alert alert-warning"><b>Confidencialidad</b></div>
-                      </div>
                 </div>
                 <div class="view-mail">
                   <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
@@ -470,21 +442,14 @@
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="libUsuarios/lib/jquery/jquery.min.js"></script>
-  <script src="libUsuarios/lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="libUsuarios/lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="libUsuarios/lib/jquery.scrollTo.min.js"></script>
-  <script src="libUsuarios/lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <script src="Usuario/lib/jquery/jquery.min.js"></script>
+  <script src="Usuario/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="Usuario/lib/jquery.scrollTo.min.js"></script>
+  <script src="Usuario/lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
-  <script src="libUsuarios/lib/common-scripts.js"></script>
+  <script src="Usuario/lib/common-scripts.js"></script>
   <!--script for this page-->
-  <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
-  <!-- bootbox code -->
-  <script src="lib/bootbox.js"></script>
-  <script src="lib/bootbox.locales.js"></script>
-  <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
-
 
 </body>
 

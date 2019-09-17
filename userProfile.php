@@ -24,12 +24,7 @@
   <link href="css/style-responsive.css" rel="stylesheet">
   <script src="lib/chart-master/Chart.js"></script>
 
-  <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
+ 
 </head>
 
 <body>
