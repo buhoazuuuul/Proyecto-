@@ -243,7 +243,7 @@
                     <p class="centered"><a href=""><img id="profileImage" class="img-circle" width="80"></a></p>
                     <h5 id="userName" class="centered">Sam Soffes</h5>
                     <li class="mt">
-                        <a href="profile.php">
+                        <a id='btnEditarPerfil'>
                             <i class="fa fa-dashboard"></i>
                             <span>Inicio</span>
                         </a>

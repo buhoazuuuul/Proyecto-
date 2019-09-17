@@ -2,7 +2,7 @@ var username = getParameterByName('userName');
 var datos;
 var lastDoc;
 var url = 'profile.php?userName=' + username;
-var urlCorreo = 'sendMail.php?userName=' + username;
+var urlCorreo = 'mail_compose_user.php?userName=' + username;
 
 $(document).ready(function () {
 
@@ -144,6 +144,7 @@ function filluserForm() {
             dialog.find('.bootbox-body').html('Estas listo para reportar un riesgo!');
         }, 1000);
     });
+    setTimeout(function () { dialog.modal('hide') }, 1000);
 
 
 

@@ -1,6 +1,7 @@
 
 const userName = getParameterByName('userName');
-
+const urlPerfil = 'profile.php?userName=' + userName;
+const urlCorreo = 'mail_compose_user.php?userName=' + userName;
 $(document).ready(function () {
     console.log('Get small user loaded!');
     var dialog = bootbox.dialog({
@@ -10,10 +11,11 @@ $(document).ready(function () {
 
     getVeredas();
     getUser(userName);
+    setHrefs();
 
     dialog.init(function () {
         setTimeout(function () {
-            dialog.find('.bootbox-body').html('I was loaded after the dialog was shown!');
+            dialog.find('.bootbox-body').html('Listo!');
         }, 3000);
     });
 
@@ -22,6 +24,13 @@ $(document).ready(function () {
 
 });
 
+
+function setHrefs() {
+
+    $("#btnEditarPerfil").attr("href", urlPerfil);
+    $("#btnCorreo").attr("href", urlCorreo);
+
+}
 function setUserName() {
 
     $('#userName').text(datos[0].nombre + ' ' + datos[0].apellido);
