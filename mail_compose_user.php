@@ -9,9 +9,9 @@
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <title>Innexu-Usuario</title>
 
-    <!-- Favicons -->
-    <link href="libUsuarios/img/favicon.png" rel="icon">
-    <link href="libUsuarios/img/apple-touch-icon.png" rel="apple-touch-icon">
+   <!-- Favicons -->
+  <link href="img/INNEXU1.png" rel="icon">
+  <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
     <!-- Bootstrap core CSS -->
     <link href="libUsuarios/lib/bootstrap/css/bootstrap.css" rel="stylesheet">

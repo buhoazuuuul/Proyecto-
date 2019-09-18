@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,20 +8,21 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Innexu-Administrador</title>
+  <title>Innexu-Secretario</title>
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="img/INNEXU1.png" rel="icon">
+  <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
-  <!-- Bootstrap core CSS -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="Secretario/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link href="lib/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" />
+  <link href="Secretario/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="Secretario/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet">
+  <link href="Secretario/css/style.css" rel="stylesheet">
+  <link href="Secretario/css/style-responsive.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -223,7 +225,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="../login.php">cerrar sesión</a></li>
+          <li><a class="logout" href="login.php">Cerrar sesión</a></li>
         </ul>
       </div>
     </header>
@@ -236,16 +238,16 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="Secretario/profile_secretary.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="profile.php">
+            <a href="profile_secretary.php">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
               </a>
           </li>
           <li>
-            <a class="active" href="inbox.html">
+            <a class="active" href="inbox_secretary.php">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">3</span>
@@ -267,16 +269,16 @@
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-                  <a href="answer_compose.html" class="btn btn-compose">
-                  <i class="fa fa-pencil"></i> Redactar una respuesta
+                <a href="answer_compose_secretary.php" class="btn btn-compose">
+                  <i class="fa fa-pencil"></i>Redactar una respuesta
                   </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li class="active"><a href="inbox.html"> <i class="fa fa-inbox"></i>Reportes<span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li><a href="#"> <i class="fa fa-envelope-o"></i>Respuestas</a></li>
+                  <li class="active"><a href="inbox_secretary.php"> <i class="fa fa-inbox"></i> Reportes recibidos<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li><a href="outbox_secretary.php"> <i class="fa fa-envelope-o"></i> Respuestas enviadas</a></li>
                 </ul>
               </div>
             </section>
-           <!-- <section class="panel">
+           <!--<section class="panel">
               <div class="panel-body">
                 <ul class="nav nav-pills nav-stacked labels-info ">
                   <li>
@@ -333,46 +335,121 @@
             <section class="panel">
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
-                    Redactar una respuesta
+                    Reporte #
                     <form action="#" class="pull-right mail-src-position">
                       <div class="input-append">
-                        <input type="text" class="form-control " placeholder="Buscar correo">
+                        <input type="text" class="form-control " placeholder="Buscar Correo">
                       </div>
                     </form>
                   </h4>
               </header>
-              <div class="panel-body">
-                <div class="compose-btn pull-right">
-                  <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
-                  <button class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
-                  <button class="btn btn-sm">Eliminar</button>
+              <div class="panel-body ">
+                <div class="mail-header row">
+                  <div class="col-md-8">
+                    <h4 class="pull-left">Asunto</h4>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="compose-btn pull-right">
+                      <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
+                      <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
+                      <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
+                    </div>
+                  </div>
                 </div>
-                <div class="compose-mail">
-                  <form role="form-horizontal" method="post">
-                    <div class="form-group">
-                      <label for="to" class="">Para:</label>
-                      <input type="text" tabindex="1" id="para" class="form-control">
+                <div class="mail-sender">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <img src="img/ui-zac.jpg" alt="">
+                      <strong>Nombre del Usuario</strong>
+                      <span>[zac@youremail.com]</span> to
+                      <strong>me</strong>
+                      <!--
                     </div>
-                    <div class="form-group">
-                      <label for="subject" id="asunto" class="">Asunto:</label>
-                      <input type="text" tabindex="1" id="asunto" class="form-control">
+                      <div class="col-md-8">
+                        <strong>Departamento</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Municipio</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Tipo de emergencia</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Prioridad</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Confidencialidad</strong>
+                      </div>-->
+                      
+                      
+
+                    <div class="col-md-4">
+                      <p class="date"> 10:15AM 02 FEB 2014</p>
                     </div>
-                    <div class="compose-editor">
-                      <textarea id="mensaje" class="wysihtml5 form-control" rows="9"></textarea>
-                      <input type="file" class="default">
-                    </div>
-                    <div class="compose-btn">
-                      <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
-                      <button class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
-                      <button class="btn btn-sm">Eliminar</button>
-                    </div>
-                  </form>
+                  </div>
+                  <div class="showback">
+                        <h4><i class="fa fa-angle-right"></i></h4>
+                        <div class="alert alert-success"><b>Departamento</b></div>
+                        <div class="alert alert-success"><b>Municipio</b></div> 
+                        <div class="alert alert-danger"><b>Tipo de emergencia</b></div>
+                        <div class="alert alert-info"><b>Prioridad</b></div>
+                        <div class="alert alert-warning"><b>Confidencialidad</b></div>
+                      </div>
+                </div>
+                <div class="view-mail">
+                  <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
+                    of the setting of the eyes, and the thin straight lips, and the markings in the nose, curved with a sarcasm that looked handsomely diabolic. </p>
+                  <p>"Yes," repeated the Marquis. "A Doctor with a daughter. Yes. So commences the new philosophy! You are fatigued. Good night!"</p>
+                  <p>It would have been of as much avail to interrogate any stone face outside the chateau as to interrogate that face of his. The nephew looked at him, in vain, in passing on to the door. </p>
+                  <p>"Good night!" said the uncle. "I look to the pleasure of seeing you again in the morning. Good repose! Light Monsieur my nephew to his chamber there!--And burn Monsieur my nephew in his bed, if you will," he added to himself, before
+                    he rang his little bell again, and summoned his valet to his own bedroom.</p>
+                </div>
+                <div class="attachment-mail">
+                  <p>
+                    <span><i class="fa fa-paperclip"></i> 2 attachments — </span>
+                    <a href="#">Download all attachments</a> |
+                    <a href="#">View all images</a>
+                  </p>
+                  <ul>
+                    <li>
+                      <a class="atch-thumb" href="#">
+                        <img src="img/instagram.jpg">
+                        </a>
+                      <a class="name" href="#">
+                        IMG_001.jpg
+                        <span>20KB</span>
+                        </a>
+                      <div class="links">
+                        <a href="#">View</a> -
+                        <a href="#">Download</a>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="atch-thumb" href="#">
+                        <img src="img/weather.jpg">
+                        </a>
+                      <a class="name" href="#">
+                        IMG_001.jpg
+                        <span>20KB</span>
+                        </a>
+                      <div class="links">
+                        <a href="#">View</a> -
+                        <a href="#">Download</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="compose-btn pull-left">
+                  <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
+                  <button class="btn btn-sm "><i class="fa fa-arrow-right"></i> Forward</button>
+                  <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
+                  <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
                 </div>
               </div>
             </section>
           </div>
         </div>
-      </section>
+      </section> 
       <!-- /wrapper -->
     </section>
     <!-- /MAIN CONTENT -->
@@ -384,15 +461,9 @@
           &copy; Copyrights <strong>Innexu</strong>. Todos los derechos reservados
         </p>
         <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
           <a href="https://templatemag.com/"></a>
         </div>
-        <a href="mail_compose.html#" class="go-top">
+        <a href="mail_view.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
@@ -400,24 +471,22 @@
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="lib/jquery.scrollTo.min.js"></script>
-  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <script src="libUsuarios/lib/jquery/jquery.min.js"></script>
+  <script src="libUsuarios/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="libUsuarios/lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="libUsuarios/lib/jquery.scrollTo.min.js"></script>
+  <script src="libUsuarios/lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
-  <script src="lib/common-scripts.js"></script>
+  <script src="libUsuarios/lib/common-scripts.js"></script>
   <!--script for this page-->
-  <script type="text/javascript" src="lib/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
-  <script type="text/javascript" src="lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+  <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+  <!-- bootbox code -->
+  <script src="lib/bootbox.js"></script>
+  <script src="lib/bootbox.locales.js"></script>
+  <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
 
-  <script type="text/javascript">
-    //wysihtml5 start
 
-    $('.wysihtml5').wysihtml5();
-
-    //wysihtml5 end
-  </script>
 </body>
 
 </html>

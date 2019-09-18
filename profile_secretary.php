@@ -10,16 +10,16 @@
   <title>Innexu-Secretario</title>
 
   <!-- Favicons -->
-  <link href="../img/INNEXU1.png" rel="icon">
-  <link href="../img/INNEXU1.png" rel="apple-touch-icon">
+  <link href="img/INNEXU1.png" rel="icon">
+  <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="Secretario/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="Secretario/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet">
+  <link href="Secretario/css/style.css" rel="stylesheet">
+  <link href="Secretario/css/style-responsive.css" rel="stylesheet">
 </head>
 
 <body>
@@ -245,7 +245,7 @@
             </a>
           </li>
           <li>
-            <a href="inbox_secretary.html">
+            <a href="inbox_secretary.php">
               <i class=" fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
@@ -282,7 +282,7 @@
                 <p id="pMunicipio">Eres uno de los funcionarios que trabaja para mejorar la gestion del riesgo del municipio de </p>
 
                 <br>
-                <p><button class="mt-5 btn btn-theme"><i class="fa fa-thermometer-three-quarters"></i>Reportar un riesgo</button></p>
+                <p><button class="mt-5 btn btn-theme"><i class="fa fa-thermometer-three-quarters"></i>Responder</button></p>
               </div>
               <!-- /col-md-4 -->
               <div class="col-md-4 centered">

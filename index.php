@@ -589,7 +589,7 @@
               <span>Secretario de educación</span>
               <div class="social">
                 <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>Telefono</a><br>
-                <a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>
+                <!--<a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>-->
               </div>
             </div>
           </div>
@@ -598,10 +598,10 @@
             <div class="member">
               <div class="pic"><img src="img/team/julian.jpg" alt=""></div>
               <h4>Victor Julian Rivera Ocampo</h4>
-              <span>Secretaio de gobierno</span>
+              <span>Secretario de gobierno</span>
               <div class="social">
                 <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>Telefono</a><br>
-                <a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>
+                <!--<a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>-->
               </div>
             </div>
           </div>
@@ -610,10 +610,10 @@
             <div class="member">
               <div class="pic"><img src="img/team/juan2.jpg" alt=""></div>
               <h4>Juan Carlos Cardenas Sarmiento</h4>
-              <span>Secretario de planeacion e infraestructura</span>
+              <span>Secretario de planeación e infraestructura</span>
               <div class="social">
                 <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>Telefono</a><br>
-                <a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>
+                <!--<a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>-->
               </div>
             </div>
           </div>
@@ -625,7 +625,7 @@
               <span>Secretaria de salud</span>
               <div class="social">
                 <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>Telefono</a><br>
-                <a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>
+                <!--<a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>-->
               </div>
             </div>
           </div>
