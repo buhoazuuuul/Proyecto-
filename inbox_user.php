@@ -271,8 +271,8 @@
                   <i class="fa fa-pencil"></i> Reportar un problema
                   </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li class="active"><a href="inbox.html"> <i class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li><a href="#"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
+                  <li class="active"><a href="inbox_user.php"> <i class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li><a href="outbox_user.php"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
                 </ul>
               </div>
             </section>
@@ -406,8 +406,8 @@
                           <input type="checkbox" class="mail-checkbox">
                         </td>
                         <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                        <td id="nombreSecretario" class="view-message  dont-show"><a href="mail_view.html">Google Inc.</a></td>
-                        <td id="asunto" class="view-message "><a href="mail_view.html">Your new account is ready.</a></td>
+                        <td id="nombreSecretario" class="view-message  dont-show"><a href="answer_view_user.php">Google Inc.</a></td>
+                        <td id="asunto" class="view-message "><a href="answer_view_user.php">Your new account is ready.</a></td>
                         <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
                         <td id="fecha_hora" class="view-message  text-right">08:10 AM</td>
                       </tr>

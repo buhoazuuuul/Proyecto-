@@ -9,9 +9,9 @@
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <title>Innexu-Usuario</title>
 
-    <!-- Favicons -->
-    <link href="libUsuarios/img/favicon.png" rel="icon">
-    <link href="libUsuarios/img/apple-touch-icon.png" rel="apple-touch-icon">
+   <!-- Favicons -->
+  <link href="img/INNEXU1.png" rel="icon">
+  <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
     <!-- Bootstrap core CSS -->
     <link href="libUsuarios/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -270,11 +270,11 @@
                         <section class="panel">
                             <div class="panel-body">
                                 <a href="sendMail.php" class="btn btn-compose">
-                                    <i class="fa fa-pencil"></i> Reportar un problema
+                                    <i class="fa fa-pencil" id="urlCorreo"></i> Reportar un problema
                                 </a>
                                 <ul class="nav nav-pills nav-stacked mail-nav">
-                                    <li class="active"><a href="Usuario/inbox.html"> <i class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                                    <li><a href="#"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
+                                    <li class="active"><a href="inbox_user.php"> <i class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                                    <li><a href="outbox_user.php"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
                             </div>
                         </section>
                         <section class="panel">

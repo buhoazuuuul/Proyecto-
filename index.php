@@ -574,10 +574,68 @@
 
       </div>
     </section><!-- #faq -->
+    <section id="team" class="section-bg">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Secretarios</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">Te presentamos los diferetes funcionarios de la alcaldía para que conozcas el cargo que desempeñan.</p>
+        </div>
+        <div class="row wow fadeInUp">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/team/carlos.jpg" alt=""></div>
+              <h4>Carlos Diego Cortes</h4>
+              <span>Secretario de educación</span>
+              <div class="social">
+                <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>Telefono</a><br>
+                <!--<a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/team/julian.jpg" alt=""></div>
+              <h4>Victor Julian Rivera Ocampo</h4>
+              <span>Secretario de gobierno</span>
+              <div class="social">
+                <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>Telefono</a><br>
+                <!--<a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/team/juan2.jpg" alt=""></div>
+              <h4>Juan Carlos Cardenas Sarmiento</h4>
+              <span>Secretario de planeación e infraestructura</span>
+              <div class="social">
+                <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>Telefono</a><br>
+                <!--<a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/team/lina.jpg" alt=""></div>
+              <h4>Lina Marcela Gonzalez Casa</h4>
+              <span>Secretaria de salud</span>
+              <div class="social">
+                <a id="telSecretario" href=""><i class="fa fa-phone" aria-hidden="true"></i>Telefono</a><br>
+                <!--<a id="dependenciaSecretario" href=""><i style="padding-rigth:30px;" class="fa fa-briefcase" aria-hidden="true"></i>Dependencia a la que pertenece</a>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- #team -->
 
     <!--==========================
       Seccion de secretarios
-    ============================-->
+    ============================
     <section id="team" class="section-bg">
       <div class="container">
         <div class="section-header">
@@ -599,7 +657,7 @@
             </div>
           </div>
 
-    </section><!-- #team -->
+    </section> #team -->
 
    <!--==========================
       Gallery Section
