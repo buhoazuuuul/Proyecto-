@@ -22,10 +22,6 @@ $(document).ready(function () {
         updateUser();
     });
 
-    $('#btnUpdateUser').on('click', function () {
-        obtenerDatos();
-        updateUser();
-    });
 
 });
 
@@ -46,7 +42,12 @@ function obtenerDatos() {
     usuario = $('#usuario').val();
     sexo = $("input[name='sexo']:checked").val();
     pass = $('#pass').val();
-    new_pass = $("#new_pass").val();
+    if (isNewPass()) {
+        new_pass = $("#new_pass").val();
+    } else {
+
+        new_pass = '';
+    }
     if (imgPath == " ") {
         if (sexo == "Hombre") {
             img = 'img/male.png';
@@ -61,11 +62,9 @@ function obtenerDatos() {
 
 }
 function updateUser() {
-
-    $.ajax({
-        url: "php/updateUser.php",
-        method: "POST",
-        data: {
+    let data;
+    if (isNewPass()) {
+        data = {
             id: datos[0].id,
             vereda_id: vereda_id,
             num_doc: num_doc,
@@ -82,8 +81,34 @@ function updateUser() {
             new_pass: new_pass,
             sexo: sexo,
             img: img
+        };
+    } else {
 
-        },
+        data = {
+            id: datos[0].id,
+            vereda_id: vereda_id,
+            num_doc: num_doc,
+            tipo_doc: tipo_doc,
+            nombre: nombre,
+            apellido: apellido,
+            telefono: telefono,
+            email: email,
+            departamento: departamento,
+            municipio: municipio,
+            fecha: fecha,
+            usuario: usuario,
+            pass: pass,
+            sexo: sexo,
+            img: img
+        };
+
+    }
+
+
+    $.ajax({
+        url: "php/updateUser.php",
+        method: "POST",
+        data: data,
         success: function (data) {
 
             if (data === '1') {
@@ -99,16 +124,23 @@ function updateUser() {
                 Swal.fire({
                     position: 'center',
                     type: 'error',
-                    title: 'Ocurrio un error, intenta de nuevo. Vamos a gestionar el riesgo mejor la siguiente vez',
+                    title: 'Ocurrio un error, intenta de nuevo. ' + data,
                     showConfirmButton: false,
                     timer: 1500
                 });
 
             }
 
-
         }
 
     });
+}
+
+function isNewPass() {
+    if ($('#new_pass').val().length == 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
 

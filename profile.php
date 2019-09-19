@@ -405,7 +405,7 @@
                               <div class="form-group">
                             <label class="col-lg-2 control-label">Nueva</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="new_pass" class="form-control">
+                              <input type="password" placeholder=" " id="new_pass" class="form-control">
                             </div>
                           </div>
                             </div>
@@ -413,7 +413,7 @@
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Contraseña Actual</label>
                             <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="pass" class="form-control">
+                              <input type="password" placeholder=" " id="pass" class="form-control">
                             </div>
                           </div>
                           <div class="form-group">
