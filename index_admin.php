@@ -10,19 +10,19 @@
   <title>Innexu-Administrador</title>
 
  <!-- Favicons -->
- <link href="../img/INNEXU1.png" rel="icon">
- <link href="../img/INNEXU1.png" rel="apple-touch-icon">
+ <link href="img/INNEXU1.png" rel="icon">
+ <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="Admin/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css">
-  <link rel="stylesheet" type="text/css" href="lib/gritter/css/jquery.gritter.css" />
+  <link href="Admin/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link rel="Admin/stylesheet" type="text/css" href="css/zabuto_calendar.css">
+  <link rel="Admin/stylesheet" type="text/css" href="lib/gritter/css/jquery.gritter.css" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet">
-  <script src="lib/chart-master/Chart.js"></script>
+  <link href="Admin/css/style.css" rel="stylesheet">
+  <link href="Admin/css/style-responsive.css" rel="stylesheet">
+  <script src="Admin/lib/chart-master/Chart.js"></script>
 </head>
 
 <body>
@@ -238,10 +238,10 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="index_admin.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a class="active" href="index.html">
+            <a class="active" href="index_admin.php">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
               </a>
@@ -252,7 +252,7 @@
               <span>Formularios</span>
               </a>
             <ul class="sub">
-              <li><a href="../RegistroSecre.php ">Registrar un secretario</a></li>
+              <li><a href="RegistroSecre.php ">Registrar un secretario</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -261,12 +261,12 @@
               <span>Tablas</span>
               </a>
             <ul class="sub">
-              <li><a href="../usuarios_admin.php">Usuarios</a></li>
-              <li><a href="../secretarios_admin.php">Secretarios</a></li>
+              <li><a href="usuarios_admin.php">Usuarios</a></li>
+              <li><a href="secretarios_admin.php">Secretarios</a></li>
             </ul>
           </li>
           <li>
-            <a href="inbox_admin.html">
+            <a href="inbox_admin.php">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>

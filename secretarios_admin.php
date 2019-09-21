@@ -242,39 +242,39 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="index_admin.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="Admin/index_admin.html">
+            <a href="index_admin.php">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
-            </a>
+              </a>
+          </li>
+          <li class="sub-menu">
+            <a  class="active" href="javascript:;">
+              <i class="fa fa-tasks"></i>
+              <span>Formularios</span>
+              </a>
+            <ul class="sub">
+              <li><a href="RegistroSecre.php ">Registrar un secretario</a></li>
+            </ul>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
-              <i class="fa fa-tasks"></i>
-              <span>Formularios</span>
-            </a>
-            <ul class="sub">
-              <li><a href="RegistroSecre.php">Registrar un secretario</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a class="active" href="javascript:;">
               <i class="fa fa-th"></i>
               <span>Tablas</span>
-            </a>
+              </a>
             <ul class="sub">
               <li><a href="usuarios_admin.php">Usuarios</a></li>
-              <li class="active"><a href="secretarios_admin.php">Secretarios</a></li>
+              <li><a href="secretarios_admin.php">Secretarios</a></li>
             </ul>
           </li>
           <li>
-            <a href="Admin/inbox_admin.html">
+            <a href="inbox_admin.php">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
-            </a>
+              </a>
           </li>
         </ul>
         <!-- sidebar menu end-->
