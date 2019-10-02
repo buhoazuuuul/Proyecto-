@@ -358,11 +358,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Asunto:</label>
-                                            <input required type="text" tabindex="1" id="asunto" class="form-control" required data-parsley-length="[4, 20]">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="subject" class="">Fecha y hora:</label>
-                                            <input class="form-control" type="text" id='timepicker-actions-exmpl' required>
+                                            <input required type="text" tabindex="1" id="asunto" class="form-control" required data-parsley-length="[5, 30]">
                                         </div>
                                         <div class="form-group">
                                             <label for="subject" class="">Confidencialidad:</label>
@@ -382,7 +378,7 @@
                                         </div>
                                         <div class="compose-editor">
                                             <label for="subject" class="">Mensaje:</label>
-                                            <textarea placeholder="Sea descriptivo y preciso con el mensaje, incluya una direccion mas exacta si lo desea" required class="wysihtml5 form-control" id="mensaje" rows="9" data-parsley-length="[4, 20]"></textarea>
+                                            <textarea placeholder="Sea descriptivo y preciso con el mensaje, incluya una direccion mas exacta si lo desea" required class="wysihtml5 form-control" id="mensaje" rows="9" data-parsley-length="[4, 100]"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <span id="uploaded_image"></span>
@@ -448,9 +444,6 @@
     <script src="js/components/getUser.js"></script>
     <script src="js/upload_image.js"></script>
     <script src="js/mail_compose_user.js"></script>
-     <!-- bootbox code -->
-  <script src="lib/bootbox.js"></script>
-  <script src="lib/bootbox.locales.js"></script>
 </body>
 
 </html>

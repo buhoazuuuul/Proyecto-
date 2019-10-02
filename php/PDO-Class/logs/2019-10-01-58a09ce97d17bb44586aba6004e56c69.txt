@@ -1,0 +1,59 @@
+Time : 21:53:29
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:53:02
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:51:29
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'vereda_id' cannot be null
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:51:18
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:50:43
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'vereda_id' cannot be null
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:50:42
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:49:34
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'categoria' cannot be null
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:49:32
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:49:31
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:37:14
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:37:12
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:34:36
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:34:12
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:34:11
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)
+
+Time : 21:34:09
+SQLSTATE[HY000]: General error: 1442 Can't update table 'reportes_x_respuestas' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+Raw SQL : INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?,?,?,?,?,?,?,?)

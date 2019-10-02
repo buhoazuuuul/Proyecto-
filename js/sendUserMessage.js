@@ -1,6 +1,8 @@
 var arraySecretarios;
 var categoria;
 var id_vereda;
+var id_usuario;
+var id_secretario;
 var adjunto;
 var asunto;
 var departamento;
@@ -15,9 +17,6 @@ $(document).ready(function () {
     console.log('Documento sendUserMessage.js cargado');
     getSecretarios();
 
-    $("#btn-validar").click(function () {
-        isValidated = true;
-    });
     $("#btn-enviar").click(function () {
         if (isValidated) {
             sendUserMessage();
@@ -26,7 +25,7 @@ $(document).ready(function () {
                 type: 'error',
                 title: 'Oops...',
                 text: 'Debes validar la informacion primero!',
-                footer: '<a href>Oprime el boton validar antes</a>'
+                footer: '<a href>Oprime el boton validar antes y revisa que la información este correcta</a>'
             })
         }
     });
@@ -39,6 +38,7 @@ $(document).ready(function () {
             $('.bs-callout-warning').toggleClass('hidden', ok);
         })
             .on('form:submit', function () {
+                isValidated = true;
                 return false; // Don't submit form for this demo
             });
     });
@@ -47,13 +47,14 @@ $(document).ready(function () {
 });
 
 function getMailFields() {
-
-    categoria = $('#emergencia').val();
+    id_secretario = $("#secetrariosSelect option:selected").val();
     id_vereda = $('#vereda').val();
+    categoria = $('#emergencia').val();
     adjunto = imgPath;
     asunto = $('#asunto').val();
     departamento = datos[0].departamento;
     municipio = datos[0].municipio;
+    id_usuario = datos[0].id;
     fecha_hora = $('#timepicker-actions-exmpl').val();
     prioridad = $("#prioridad option:selected").text();
     confidencialidad = $("#confidencialidad option:selected").text();
@@ -90,6 +91,8 @@ function sendUserMessage() {
         url: 'php/createMenssage.php',
         method: "POST",
         data: {
+            id_secretario: id_secretario,
+            id_usuario: id_usuario,
             categoria: categoria,
             id_vereda: id_vereda,
             adjunto: adjunto,
