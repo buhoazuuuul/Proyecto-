@@ -9,18 +9,22 @@
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
   <title>Innexu-Administrador</title>
 
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
   <!-- Favicons -->
-  <link href="../img/INNEXU1.png" rel="icon">
-  <link href="../img/INNEXU1.png" rel="apple-touch-icon">
+  <link href="img/INNEXU1.png" rel="icon">
+  <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="Admin/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link href="lib/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" />
+  <link href="Admin/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="Admin/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet">
+  <link href="Admin/css/style.css" rel="stylesheet">
+  <link href="Admin/css/style-responsive.css" rel="stylesheet">
+</head>
+
 </head>
 
 <body>
@@ -223,7 +227,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="../login.php">cerrar sesión</a></li>
+          <li><a class="logout" href="../login.php">Cerrar sesíon</a></li>
         </ul>
       </div>
     </header>
@@ -236,10 +240,10 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="index_admin.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="index_admin.html">
+            <a href="index_admin.php">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
               </a>
@@ -250,7 +254,7 @@
               <span>Formularios</span>
               </a>
             <ul class="sub">
-              <li><a href="../RegistroSecre.php">Registrar un secretario</a></li>
+              <li><a href="RegistroSecre.php ">Registrar un secretario</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -259,15 +263,15 @@
               <span>Tablas</span>
               </a>
             <ul class="sub">
-              <li><a href="../usuarios_admin.php">Usuarios</a></li>
-              <li><a href="../secretarios_admin.php">Secretarios</a></li>
+              <li><a href="usuarios_admin.php">Usuarios</a></li>
+              <li><a href="secretarios_admin.php">Secretarios</a></li>
             </ul>
           </li>
           <li>
-            <a class="active" href="inbox_admin.html">
+            <a class="active" href="inbox_admin.php">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
-              <span class="label label-theme pull-right mail-info">3</span>
+              <span class="label label-theme pull-right mail-info">2</span>
               </a>
           </li>
         </ul>
@@ -286,16 +290,16 @@
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-                  <a href="answer_compose.html" class="btn btn-compose">
+               <a href="answer_compose_admin.php" class="btn btn-compose">
                   <i class="fa fa-pencil"></i> Redactar una respuesta
                   </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li class="active"><a href="inbox.html"> <i class="fa fa-inbox"></i>Reportes<span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li><a href="#"> <i class="fa fa-envelope-o"></i>Respuestas</a></li>
+                <li><a href="inbox_admin.php"> <i class="fa fa-inbox"></i>Reportes<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li class="active"><a href="outbox_admin.php"> <i class="fa fa-envelope-o"></i>Respuestas</a></li>
                 </ul>
               </div>
             </section>
-           <!-- <section class="panel">
+           <!--<section class="panel">
               <div class="panel-body">
                 <ul class="nav nav-pills nav-stacked labels-info ">
                   <li>
@@ -346,46 +350,92 @@
                   </div>
                 </div>
               </div>
-            </section>-->
+            </section>--> 
           </div>
           <div class="col-sm-9">
             <section class="panel">
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
-                    Redactar una respuesta
+                    Reportes enviados
                     <form action="#" class="pull-right mail-src-position">
                       <div class="input-append">
-                        <input type="text" class="form-control " placeholder="Search Mail">
+                        <input type="text" class="form-control " placeholder="Buscar correo">
                       </div>
                     </form>
                   </h4>
               </header>
-              <div class="panel-body">
-                <div class="compose-btn pull-right">
-                  <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
-                  <button class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
-                  <button class="btn btn-sm">Eliminar</button>
+              <div class="panel-body minimal">
+                <div class="mail-option">
+                  <div class="chk-all">
+                    <div class="pull-left mail-checkbox">
+                      <input type="checkbox" class="">
+                    </div>
+                    <div class="btn-group">
+                      <a data-toggle="dropdown" href="#" class="btn mini all">
+                        All
+                        <i class="fa fa-angle-down "></i>
+                        </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#"> None</a></li>
+                        <li><a href="#"> Read</a></li>
+                        <li><a href="#"> Unread</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="btn-group">
+                    <a data-original-title="Refresh" data-placement="top" data-toggle="dropdown" href="#" class="btn mini tooltips">
+                      <i class=" fa fa-refresh"></i>
+                      </a>
+                  </div>
+                  <div class="btn-group hidden-phone">
+                    <a data-toggle="dropdown" href="#" class="btn mini blue">
+                      More
+                      <i class="fa fa-angle-down "></i>
+                      </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                      <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                    </ul>
+                  </div>
+                  <div class="btn-group">
+                    <a data-toggle="dropdown" href="#" class="btn mini blue">
+                      Move to
+                      <i class="fa fa-angle-down "></i>
+                      </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
+                      <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                    </ul>
+                  </div>
+                  <ul class="unstyled inbox-pagination">
+                    <li><span>1-50 of 99</span></li>
+                    <li>
+                      <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
+                    </li>
+                    <li>
+                      <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
+                    </li>
+                  </ul>
                 </div>
-                <div class="compose-mail">
-                  <form role="form-horizontal" method="post">
-                    <div class="form-group">
-                      <label for="to" class="">Para:</label>
-                      <input type="text" tabindex="1" id="para" class="form-control">
-                    </div>
-                    <div class="form-group">
-                      <label for="subject" id="asunto" class="">Asunto:</label>
-                      <input type="text" tabindex="1" id="asunto" class="form-control">
-                    </div>
-                    <div class="compose-editor">
-                      <textarea id="mensaje" class="wysihtml5 form-control" rows="9"></textarea>
-                      <input type="file" class="default">
-                    </div>
-                    <div class="compose-btn">
-                      <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
-                      <button class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
-                      <button class="btn btn-sm">Eliminar</button>
-                    </div>
-                  </form>
+                <div class="table-inbox-wrap ">
+                  <table class="table table-inbox table-hover">
+                    <tbody>
+                      <tr class="unread">
+                        <td class="inbox-small-cells">
+                          <input type="checkbox" class="mail-checkbox">
+                        </td>
+                        <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                        <td id="nombreUsuario" class="view-message  dont-show"><a href="answer_view_admin.php">Google Inc.</a></td>
+                        <td id="asunto" class="view-message "><a href="answer_view_admin.php">Your new account is ready.</a></td>
+                        <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
+                        <td id="fecha_hora" class="view-message  text-right">08:10 AM</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </section>
@@ -403,40 +453,31 @@
           &copy; Copyrights <strong>Innexu</strong>. Todos los derechos reservados
         </p>
         <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
-          <a href="https://templatemag.com/"></a>
+        <a href="https://templatemag.com/"></a>
         </div>
-        <a href="mail_compose.html#" class="go-top">
+        <a href="inbox.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
     </footer>
     <!--footer end-->
   </section>
-  <!-- js placed at the end of the document so the pages load faster -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="lib/jquery.scrollTo.min.js"></script>
-  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
-  <!--common script for all pages-->
-  <script src="lib/common-scripts.js"></script>
-  <!--script for this page-->
-  <script type="text/javascript" src="lib/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
-  <script type="text/javascript" src="lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+   <!-- js placed at the end of the document so the pages load faster -->
+   <script src="libUsuarios/lib/jquery/jquery.min.js"></script>
+   <script src="libUsuarios/lib/bootstrap/js/bootstrap.min.js"></script>
+   <script class="include" type="text/javascript" src="libUsuarios/lib/jquery.dcjqaccordion.2.7.js"></script>
+   <script src="libUsuarios/lib/jquery.scrollTo.min.js"></script>
+   <script src="libUsuarios/lib/jquery.nicescroll.js" type="text/javascript"></script>
+   <!--common script for all pages-->
+   <script src="libUsuarios/lib/common-scripts.js"></script>
+   <!--script for this page-->
+   <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+   <!-- bootbox code -->
+   <script src="lib/bootbox.js"></script>
+   <script src="lib/bootbox.locales.js"></script>
+   <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
 
-  <script type="text/javascript">
-    //wysihtml5 start
-
-    $('.wysihtml5').wysihtml5();
-
-    //wysihtml5 end
-  </script>
 </body>
 
 </html>

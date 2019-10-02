@@ -8,27 +8,19 @@
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
   <title>Innexu-Administrador</title>
-  <!-- DataTable buttons -->
-  <link rel="stylesheet" type="text/css" href="css/buttons.dataTables.css">
-  <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css" />
-  <!-- Editor dataTables -->
-  <link rel="stylesheet" href="libUsuarios/lib/EditorPHP/css/editor.dataTables.min.css" class="stylesheet">
-   <!-- Favicons -->
-   <link href="img/INNEXU1.png" rel="icon">
-   <link href="img/INNEXU1.png" rel="apple-touch-icon">
+
+  <!-- Favicons -->
+  <link href="img/INNEXU1.png" rel="icon">
+  <link href="img/INNEXU1.png" rel="apple-touch-icon">
+
   <!-- Bootstrap core CSS -->
-  <link href="libUsuarios/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="Admin/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="libUsuarios/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="Admin/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="Admin/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
   <link href="Admin/css/style.css" rel="stylesheet">
-  <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
-  <!-- Datatables responsive css -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+  <link href="Admin/css/style-responsive.css" rel="stylesheet">
 </head>
 
 <body>
@@ -52,7 +44,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-tasks"></i>
               <span class="badge bg-theme">4</span>
-            </a>
+              </a>
             <ul class="dropdown-menu extended tasks-bar">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -121,7 +113,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-envelope-o"></i>
               <span class="badge bg-theme">5</span>
-            </a>
+              </a>
             <ul class="dropdown-menu extended inbox">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -131,49 +123,49 @@
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
                   <span class="subject">
-                    <span class="from">Zac Snider</span>
-                    <span class="time">Just now</span>
+                  <span class="from">Zac Snider</span>
+                  <span class="time">Just now</span>
                   </span>
                   <span class="message">
-                    Hi mate, how is everything?
+                  Hi mate, how is everything?
                   </span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
                   <span class="subject">
-                    <span class="from">Divya Manian</span>
-                    <span class="time">40 mins.</span>
+                  <span class="from">Divya Manian</span>
+                  <span class="time">40 mins.</span>
                   </span>
                   <span class="message">
-                    Hi, I need your help with this.
+                  Hi, I need your help with this.
                   </span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
                   <span class="subject">
-                    <span class="from">Dan Rogers</span>
-                    <span class="time">2 hrs.</span>
+                  <span class="from">Dan Rogers</span>
+                  <span class="time">2 hrs.</span>
                   </span>
                   <span class="message">
-                    Love your new Dashboard.
+                  Love your new Dashboard.
                   </span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-sherman.jpg"></span>
                   <span class="subject">
-                    <span class="from">Dj Sherman</span>
-                    <span class="time">4 hrs.</span>
+                  <span class="from">Dj Sherman</span>
+                  <span class="time">4 hrs.</span>
                   </span>
                   <span class="message">
-                    Please, answer asap.
+                  Please, answer asap.
                   </span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">See all messages</a>
@@ -186,7 +178,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-bell-o"></i>
               <span class="badge bg-warning">7</span>
-            </a>
+              </a>
             <ul class="dropdown-menu extended notification">
               <div class="notify-arrow notify-arrow-yellow"></div>
               <li>
@@ -197,28 +189,28 @@
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Server Overloaded.
                   <span class="small italic">4 mins.</span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-warning"><i class="fa fa-bell"></i></span>
                   Memory #2 Not Responding.
                   <span class="small italic">30 mins.</span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Disk Space Reached 85%.
                   <span class="small italic">2 hrs.</span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-success"><i class="fa fa-plus"></i></span>
                   New User Registered.
                   <span class="small italic">3 hrs.</span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">See all notifications</a>
@@ -231,7 +223,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="login.php">Cerrar sesión</a></li>
+          <li><a class="logout" href="../login.php">cerrar sesión</a></li>
         </ul>
       </div>
     </header>
@@ -244,21 +236,21 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="index_admin.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="index_admin.php">
+            <a href="index_admin.html">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
               </a>
           </li>
           <li class="sub-menu">
-            <a  class="active" href="javascript:;">
+            <a href="javascript:;">
               <i class="fa fa-tasks"></i>
               <span>Formularios</span>
               </a>
             <ul class="sub">
-              <li><a href="RegistroSecre.php ">Registrar un secretario</a></li>
+              <li><a href="../RegistroSecre.php">Registrar un secretario</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -267,15 +259,15 @@
               <span>Tablas</span>
               </a>
             <ul class="sub">
-              <li><a href="usuarios_admin.php">Usuarios</a></li>
-              <li><a href="secretarios_admin.php">Secretarios</a></li>
+              <li><a href="../usuarios_admin.php">Usuarios</a></li>
+              <li><a href="../secretarios_admin.php">Secretarios</a></li>
             </ul>
           </li>
           <li>
-            <a href="inbox_admin.php">
+            <a class="active" href="inbox_admin.html">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
-              <span class="label label-theme pull-right mail-info">2</span>
+              <span class="label label-theme pull-right mail-info">3</span>
               </a>
           </li>
         </ul>
@@ -289,37 +281,116 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i>Usuarios</h3>
-        <div class="row mb">
-          <!-- page start-->
-          <div class="content-panel">
-            <table id="hidden-table-info" class="display table table-bordered" style="width:100%">
-              <thead>
-                <tr>
-                  <th>id</th>
-                  <th>Id Vereda</th>
-                  <th>Documento</th>
-                  <th>Tipo de Documento</th>
-                  <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>Telefono</th>
-                  <th>Email</th>
-                  <th>Departamento</th>
-                  <th>Municipio</th>
-                  <th>Nacimiento</th>
-                  <th>Usuario</th>
-                  <th>Contraseña</th>
-                  <th>Sexo</th>
-                  <th>Ruta Imagen</th>
-                </tr>
-              </thead>
-              <tfoot>
-              </tfoot>
-            </table>
+        <!-- page start-->
+        <div class="row mt">
+          <div class="col-sm-3">
+            <section class="panel">
+              <div class="panel-body">
+               <a href="answer_compose_admin.php" class="btn btn-compose">
+                  <i class="fa fa-pencil"></i> Redactar una respuesta
+                  </a>
+                <ul class="nav nav-pills nav-stacked mail-nav">
+                <li><a href="inbox_admin.php"> <i class="fa fa-inbox"></i>Reportes<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li class="active"><a href="outbox_admin.php"> <i class="fa fa-envelope-o"></i>Respuestas</a></li>
+                </ul>
+              </div>
+            </section>
+           <!-- <section class="panel">
+              <div class="panel-body">
+                <ul class="nav nav-pills nav-stacked labels-info ">
+                  <li>
+                    <h4>Friends Online</h4>
+                  </li>
+                  <li>
+                    <a href="#">
+                        <img src="img/friends/fr-10.jpg" class="img-circle" width="20">Laura
+                        <p><span class="label label-success">Available</span></p>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                        <img src="img/friends/fr-05.jpg" class="img-circle" width="20">David
+                        <p><span class="label label-danger"> Busy</span></p>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                        <img src="img/friends/fr-01.jpg" class="img-circle" width="20">Mark
+                        <p>Offline</p>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                        <img src="img/friends/fr-03.jpg" class="img-circle" width="20">Phillip
+                        <p>Offline</p>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                        <img src="img/friends/fr-02.jpg" class="img-circle" width="20">Joshua
+                        <p>Offline</p>
+                      </a>
+                  </li>
+                </ul>
+                <a href="#"> + Add More</a>
+                <div class="inbox-body text-center inbox-action">
+                  <div class="btn-group">
+                    <a class="btn mini btn-default" href="javascript:;">
+                      <i class="fa fa-power-off"></i>
+                      </a>
+                  </div>
+                  <div class="btn-group">
+                    <a class="btn mini btn-default" href="javascript:;">
+                      <i class="fa fa-cog"></i>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </section>-->
           </div>
-          <!-- page end-->
+          <div class="col-sm-9">
+            <section class="panel">
+              <header class="panel-heading wht-bg">
+                <h4 class="gen-case">
+                    Redactar una respuesta
+                    <form action="#" class="pull-right mail-src-position">
+                      <div class="input-append">
+                        <input type="text" class="form-control " placeholder="Search Mail">
+                      </div>
+                    </form>
+                  </h4>
+              </header>
+              <div class="panel-body">
+                <div class="compose-btn pull-right">
+                  <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
+                  <button class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
+                  <button class="btn btn-sm">Eliminar</button>
+                </div>
+                <div class="compose-mail">
+                  <form role="form-horizontal" method="post">
+                    <div class="form-group">
+                      <label for="to" class="">Para:</label>
+                      <input type="text" tabindex="1" id="para" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="subject" id="asunto" class="">Asunto:</label>
+                      <input type="text" tabindex="1" id="asunto" class="form-control">
+                    </div>
+                    <div class="compose-editor">
+                      <textarea id="mensaje" class="wysihtml5 form-control" rows="9"></textarea>
+                      <input type="file" class="default">
+                    </div>
+                    <div class="compose-btn">
+                      <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
+                      <button class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
+                      <button class="btn btn-sm">Eliminar</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
-        <!-- /row -->
       </section>
       <!-- /wrapper -->
     </section>
@@ -340,75 +411,31 @@
           -->
           <a href="https://templatemag.com/"></a>
         </div>
-        <a href="advanced_table.html#" class="go-top">
+        <a href="mail_compose.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
-        </a>
+          </a>
       </div>
     </footer>
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="lib/jquery.scrollTo.min.js"></script>
   <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
-  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" type="text/javascript"></script>
-  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js" type="text/javascript"></script>
-  <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js" type="text/javascript"></script>
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
+  <script type="text/javascript" src="lib/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+
   <script type="text/javascript">
-    $(document).ready(function() {
+    //wysihtml5 start
 
-      var oTable = $('#hidden-table-info').dataTable({
-        responsive: true,
-        "processing": true,
-        "serverSide": true,
-        "ajax": {
-          url: "php/getUsers.php"
-        },
-        language: {
-          "sProcessing": "Procesando...",
-          "sLengthMenu": "Mostrar _MENU_ registros",
-          "sZeroRecords": "No se encontraron resultados",
-          "sEmptyTable": "Ningún dato disponible en esta tabla",
-          "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-          "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-          "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-          "sInfoPostFix": "",
-          "sSearch": "Buscar:",
-          "sUrl": "",
-          "sInfoThousands": ",",
-          "sLoadingRecords": "Cargando...",
-          "oPaginate": {
-            "sFirst": "Primero",
-            "sLast": "Último",
-            "sNext": "Siguiente",
-            "sPrevious": "Anterior"
-          },
-          "oAria": {
-            "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-          }
-        }
+    $('.wysihtml5').wysihtml5();
 
-      });
-
-    });
-
-    // Seleccion de filas
-    $('#hidden-table-info tbody').on('click', 'tr', function() {
-      if ($(this).hasClass('selected')) {
-        $(this).removeClass('selected');
-      } else {
-        table.$('tr.selected').removeClass('selected');
-        $(this).addClass('selected');
-      }
-    });
+    //wysihtml5 end
   </script>
 </body>
 

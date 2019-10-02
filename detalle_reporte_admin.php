@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,17 +10,19 @@
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
   <title>Innexu-Administrador</title>
 
-   <!-- Favicons -->
-   <link href="img/INNEXU1.png" rel="icon">
-   <link href="img/INNEXU1.png" rel="apple-touch-icon">
+ <!-- Favicons -->
+ <link href="img/INNEXU1.png" rel="icon">
+ <link href="img/INNEXU1.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
-  <link href="libUsuarios/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="Admin/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="libUsuarios/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="Admin/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="Admin/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
   <link href="Admin/css/style.css" rel="stylesheet">
-  <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
+  <link href="Admin/css/style-responsive.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -43,7 +46,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-tasks"></i>
               <span class="badge bg-theme">4</span>
-            </a>
+              </a>
             <ul class="dropdown-menu extended tasks-bar">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -112,7 +115,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-envelope-o"></i>
               <span class="badge bg-theme">5</span>
-            </a>
+              </a>
             <ul class="dropdown-menu extended inbox">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
@@ -122,49 +125,49 @@
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
                   <span class="subject">
-                    <span class="from">Zac Snider</span>
-                    <span class="time">Just now</span>
+                  <span class="from">Zac Snider</span>
+                  <span class="time">Just now</span>
                   </span>
                   <span class="message">
-                    Hi mate, how is everything?
+                  Hi mate, how is everything?
                   </span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
                   <span class="subject">
-                    <span class="from">Divya Manian</span>
-                    <span class="time">40 mins.</span>
+                  <span class="from">Divya Manian</span>
+                  <span class="time">40 mins.</span>
                   </span>
                   <span class="message">
-                    Hi, I need your help with this.
+                  Hi, I need your help with this.
                   </span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
                   <span class="subject">
-                    <span class="from">Dan Rogers</span>
-                    <span class="time">2 hrs.</span>
+                  <span class="from">Dan Rogers</span>
+                  <span class="time">2 hrs.</span>
                   </span>
                   <span class="message">
-                    Love your new Dashboard.
+                  Love your new Dashboard.
                   </span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="img/ui-sherman.jpg"></span>
                   <span class="subject">
-                    <span class="from">Dj Sherman</span>
-                    <span class="time">4 hrs.</span>
+                  <span class="from">Dj Sherman</span>
+                  <span class="time">4 hrs.</span>
                   </span>
                   <span class="message">
-                    Please, answer asap.
+                  Please, answer asap.
                   </span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">See all messages</a>
@@ -177,7 +180,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-bell-o"></i>
               <span class="badge bg-warning">7</span>
-            </a>
+              </a>
             <ul class="dropdown-menu extended notification">
               <div class="notify-arrow notify-arrow-yellow"></div>
               <li>
@@ -188,28 +191,28 @@
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Server Overloaded.
                   <span class="small italic">4 mins.</span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-warning"><i class="fa fa-bell"></i></span>
                   Memory #2 Not Responding.
                   <span class="small italic">30 mins.</span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
                   Disk Space Reached 85%.
                   <span class="small italic">2 hrs.</span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">
                   <span class="label label-success"><i class="fa fa-plus"></i></span>
                   New User Registered.
                   <span class="small italic">3 hrs.</span>
-                </a>
+                  </a>
               </li>
               <li>
                 <a href="index.html#">See all notifications</a>
@@ -244,7 +247,7 @@
               </a>
           </li>
           <li class="sub-menu">
-            <a  class="active" href="javascript:;">
+            <a href="javascript:;">
               <i class="fa fa-tasks"></i>
               <span>Formularios</span>
               </a>
@@ -263,7 +266,7 @@
             </ul>
           </li>
           <li>
-            <a href="inbox_admin.php">
+            <a class="active" href="inbox_admin.php">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>
@@ -280,116 +283,192 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i>Registrar un secretario</h3>
-        <!-- FORM VALIDATION -->
+        <!-- page start-->
         <div class="row mt">
-          <div class="col-lg-12">
-            <div class="form-panel">
-              <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="php/createSecretario.php">
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Numero de documento</label>
-                    <div class="col-lg-10">
-                      <input class=" form-control" id="num_doc" name="num_doc" type="number" required />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Tipo de documento</label>
-                    <div class="col-lg-10">
-                      <select name="tipo_doc" class="form-control" id="tipo_doc" placeholder="Tipo de documento" data-rule="minlen:4">
-                        <option>Cédula de Ciudadania</option>
-                        <option>Cédula de Extranjería</option>
-                        <option>Pasaporte</option>
-                        <option>Registro Civil</option>
-                        <option>Tarjeta de Identidad</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Nombre</label>
-                    <div class="col-lg-10">
-                      <input class=" form-control" id="nombre" name="nombre" type="text" required />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Apellido</label>
-                    <div class="col-lg-10">
-                      <input class=" form-control" id="apellido" name="apellido" type="text" required />
-                    </div>
-                  </div> 
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Cargo</label>
-                    <div class="col-lg-10">
-                      <select name="cargo" class="form-control" id="cargo" data-rule="minlen:4">
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Dependencia</label>
-                    <div class="col-lg-10">
-                      <select name="dependencia" class="form-control" id="dependencia" data-rule="minlen:4">
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Departamento de la dependencia</label>
-                    <div class="col-lg-10">
-                      <select name="tipo_doc" class="form-control" id="departamento" placeholder="departamento" data-rule="minlen:4">
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Municipio de la dependencia</label>
-                    <div class="col-lg-10">
-                      <select name="tipo_doc" class="form-control" id="municipio" placeholder="municipio" data-rule="minlen:4">
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Telefono</label>
-                    <div class="col-lg-10">
-                      <input class=" form-control" id="telefono" name="telefono" type="number" required />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Correo electronico</label>
-                    <div class="col-lg-10">
-                      <input class=" form-control" id="email" name="email" type="email" required />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Usuario</label>
-                    <div class="col-lg-10">
-                      <input class=" form-control" id="usuario" name="usuario" type="text" required />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Contraseña</label>
-                    <div class="col-lg-10">
-                      <input class=" form-control" id="pass" name="pass" type="password" required />
-                    </div>
-                  </div>
-                  <div class="form-group col-lg-2">
-                    <label class="control-label">Sexo</label>
-                    <label><input type="radio" name="sexo" value="Hombre" class="form__radio">Hombre</label>
-                    <label><input type="radio" name="sexo" value="Mujer" class="form__radio">Mujer</label>
-                    <div class="validation"></div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <input type="submit" class="btn btn-theme" id="btnRegistrar" value="Guardar">
-                      <button class="btn btn-theme04" type="button">Cancelar</button>
-                    </div>
-                  </div>
-                </form>
+          <div class="col-sm-3">
+            <section class="panel">
+              <div class="panel-body">
+               <a href="answer_compose_admin.php" class="btn btn-compose">
+                  <i class="fa fa-pencil"></i> Redactar una respuesta
+                  </a>
+                <ul class="nav nav-pills nav-stacked mail-nav">
+                <li class="active"><a href="inbox_admin.php"> <i class="fa fa-inbox"></i>Reportes<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                <li><a href="outbox_admin.php"> <i class="fa fa-envelope-o"></i>Respuestas</a></li>
+                </ul>
               </div>
-            </div>
-            <!-- /form-panel -->
+            </section>
+           <!--<section class="panel">
+              <div class="panel-body">
+                <ul class="nav nav-pills nav-stacked labels-info ">
+                  <li>
+                    <h4>Friends Online</h4>
+                  </li>
+                  <li>
+                    <a href="#">
+                        <img src="img/friends/fr-10.jpg" class="img-circle" width="20">Laura
+                        <p><span class="label label-success">Available</span></p>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                        <img src="img/friends/fr-05.jpg" class="img-circle" width="20">David
+                        <p><span class="label label-danger"> Busy</span></p>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                        <img src="img/friends/fr-01.jpg" class="img-circle" width="20">Mark
+                        <p>Offline</p>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                        <img src="img/friends/fr-03.jpg" class="img-circle" width="20">Phillip
+                        <p>Offline</p>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                        <img src="img/friends/fr-02.jpg" class="img-circle" width="20">Joshua
+                        <p>Offline</p>
+                      </a>
+                  </li>
+                </ul>
+                <a href="#"> + Add More</a>
+                <div class="inbox-body text-center inbox-action">
+                  <div class="btn-group">
+                    <a class="btn mini btn-default" href="javascript:;">
+                      <i class="fa fa-power-off"></i>
+                      </a>
+                  </div>
+                  <div class="btn-group">
+                    <a class="btn mini btn-default" href="javascript:;">
+                      <i class="fa fa-cog"></i>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </section>-->
           </div>
-          <!-- /col-lg-12 -->
+          <div class="col-sm-9">
+            <section class="panel">
+              <header class="panel-heading wht-bg">
+                <h4 class="gen-case">
+                    Reporte #
+                    <form action="#" class="pull-right mail-src-position">
+                      <div class="input-append">
+                        <input type="text" class="form-control " placeholder="Buscar Correo">
+                      </div>
+                    </form>
+                  </h4>
+              </header>
+              <div class="panel-body ">
+                <div class="mail-header row">
+                  <div class="col-md-8">
+                    <h4 class="pull-left">Asunto</h4>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="compose-btn pull-right">
+                      <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
+                      <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
+                      <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mail-sender">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <img src="img/ui-zac.jpg" alt="">
+                      <strong>Nombre del Usuario</strong>
+                      <span>[zac@youremail.com]</span> to
+                      <strong>me</strong>
+                      <!--
+                    </div>
+                      <div class="col-md-8">
+                        <strong>Departamento</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Municipio</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Tipo de emergencia</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Prioridad</strong>
+                      </div>
+                      <div class="col-md-8">
+                        <strong>Confidencialidad</strong>
+                      </div>-->
+                      
+                      
+
+                    <div class="col-md-4">
+                      <p class="date"> 10:15AM 02 FEB 2014</p>
+                    </div>
+                  </div>
+                  <div class="showback">
+                        <h4><i class="fa fa-angle-right"></i></h4>
+                        <div class="alert alert-success"><b>Departamento</b></div>
+                        <div class="alert alert-success"><b>Municipio</b></div> 
+                        <div class="alert alert-danger"><b>Tipo de emergencia</b></div>
+                        <div class="alert alert-info"><b>Prioridad</b></div>
+                        <div class="alert alert-warning"><b>Confidencialidad</b></div>
+                      </div>
+                </div>
+                <div class="view-mail">
+                  <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
+                    of the setting of the eyes, and the thin straight lips, and the markings in the nose, curved with a sarcasm that looked handsomely diabolic. </p>
+                  <p>"Yes," repeated the Marquis. "A Doctor with a daughter. Yes. So commences the new philosophy! You are fatigued. Good night!"</p>
+                  <p>It would have been of as much avail to interrogate any stone face outside the chateau as to interrogate that face of his. The nephew looked at him, in vain, in passing on to the door. </p>
+                  <p>"Good night!" said the uncle. "I look to the pleasure of seeing you again in the morning. Good repose! Light Monsieur my nephew to his chamber there!--And burn Monsieur my nephew in his bed, if you will," he added to himself, before
+                    he rang his little bell again, and summoned his valet to his own bedroom.</p>
+                </div>
+                <div class="attachment-mail">
+                  <p>
+                    <span><i class="fa fa-paperclip"></i> 2 attachments — </span>
+                    <a href="#">Download all attachments</a> |
+                    <a href="#">View all images</a>
+                  </p>
+                  <ul>
+                    <li>
+                      <a class="atch-thumb" href="#">
+                        <img src="img/instagram.jpg">
+                        </a>
+                      <a class="name" href="#">
+                        IMG_001.jpg
+                        <span>20KB</span>
+                        </a>
+                      <div class="links">
+                        <a href="#">View</a> -
+                        <a href="#">Download</a>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="atch-thumb" href="#">
+                        <img src="img/weather.jpg">
+                        </a>
+                      <a class="name" href="#">
+                        IMG_001.jpg
+                        <span>20KB</span>
+                        </a>
+                      <div class="links">
+                        <a href="#">View</a> -
+                        <a href="#">Download</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="compose-btn pull-left">
+                  <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
+                  <button class="btn btn-sm "><i class="fa fa-arrow-right"></i> Forward</button>
+                  <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
+                  <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
-        <!-- /row -->
-      </section>
+      </section> 
       <!-- /wrapper -->
     </section>
     <!-- /MAIN CONTENT -->
@@ -401,17 +480,11 @@
           &copy; Copyrights <strong>Innexu</strong>. Todos los derechos reservados
         </p>
         <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
           <a href="https://templatemag.com/"></a>
         </div>
-        <a href="form_validation.html#" class="go-top">
+        <a href="mail_view.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
-        </a>
+          </a>
       </div>
     </footer>
     <!--footer end-->
@@ -420,21 +493,18 @@
   <script src="libUsuarios/lib/jquery/jquery.min.js"></script>
   <script src="libUsuarios/lib/bootstrap/js/bootstrap.min.js"></script>
   <script class="include" type="text/javascript" src="libUsuarios/lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="libUsuarios/libUsuarios/lib/jquery.scrollTo.min.js"></script>
+  <script src="libUsuarios/lib/jquery.scrollTo.min.js"></script>
   <script src="libUsuarios/lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
   <script src="libUsuarios/lib/common-scripts.js"></script>
   <!--script for this page-->
-  <script src="libUsuarios/lib/form-validation-script.js"></script>
-  <!-- Sweet alert plugin -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-  <!-- Open data -->
-  <script src="js/departamentos_municipios.js"></script>
-  <!-- Instituciones de Abejorral - Dependencias -->
-  <script src="js/Directorio_de _nstituciones_Abejorral.js"></script>
+  <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
   <!-- bootbox code -->
   <script src="lib/bootbox.js"></script>
   <script src="lib/bootbox.locales.js"></script>
+  <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
+
 
 </body>
 
