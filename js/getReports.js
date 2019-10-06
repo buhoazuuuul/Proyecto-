@@ -1,11 +1,56 @@
 var username = getParameterByName('userName');
 var datos;
+var reportes = [];
 
 $(document).ready(function () {
     console.warn('Get reports loaded!')
     getUser();
     setTimeout(() => { getReports() }, 1000);
 });
+
+function simpleTemplating(data) {
+    var html;
+    $.each(data, function (index, item) {
+        if (item.prioridad == 'Muy prioritario') {
+
+            html += '<tr><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
+                    <td class="inbox-small-cells"><i style="color:red;" style class="fa fa-star"></i></td>\
+                    <td id = "nombreUsuario" class= "view-message  dont-show" > <a href="detalle_reporte_usuario.php">'+ item.nombre + '</a></td>\
+                    <td id="asunto" class="view-message "><a href="detalle_reporte_usuario.php">'+ item.asunto + '</a></td>\
+                    <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
+                    <td id="fecha_hora" class="view-message  text-right">'+ item.fecha_hora + '</td>c';
+        } else {
+            html += '<tr><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
+                    <td class="inbox-small-cells"><i style="color:green;" style class="fa fa-star"></i></td>\
+                    <td id = "nombreUsuario" class= "view-message  dont-show" > <a href="detalle_reporte_usuario.php">'+ item.nombre + '</a></td>\
+                    <td id="asunto" class="view-message "><a href="detalle_reporte_usuario.php">'+ item.asunto + '</a></td>\
+                    <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
+                    <td id="fecha_hora" class="view-message  text-right">'+ item.fecha_hora + '</td>v';
+        }
+    });
+
+    return html;
+}
+
+function pagination(reportes) {
+
+    $('#pagination-container').pagination({
+        dataSource: reportes,
+        pageSize: 8,
+        pageNumber: 1,
+        autoHidePrevious: true,
+        autoHideNext: true,
+        className: 'paginationjs-theme-blue',
+        callback: function (data, pagination) {
+            var html = simpleTemplating(data);
+            $('#data-container').html(html);
+            // $("li").css("display", "inline");
+            // $("paginationjs-page").css("class", "page-item");
+        }
+    })
+
+
+}
 
 function getReports() {
 
@@ -19,35 +64,11 @@ function getReports() {
         },
         success: function (response) {
             let reports = JSON.parse(response);
-            console.log(reports);
+            simpleTemplating(reports);
             reports.forEach(element => {
-
-                if (element.prioridad == 'Muy prioritario') {
-
-                    $('#send_reports').append('<tr>\
-                    <td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
-                    <td class="inbox-small-cells"><i style="color:red;" style class="fa fa-star"></i></td>\
-                    <td id = "nombreUsuario" class= "view-message  dont-show" > <a href="detalle_reporte_usuario.php">'+ element.nombre + '</a></td>\
-                    <td id="asunto" class="view-message "><a href="detalle_reporte_usuario.php">'+ element.asunto + '</a></td>\
-                    <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
-                    <td id="fecha_hora" class="view-message  text-right">'+ element.fecha_hora + '</td>\
-                    </tr > ');
-
-                } else {
-                    $('#send_reports').append('<tr>\
-                    <td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
-                    <td class="inbox-small-cells"><i style="color:green;" class="fa fa-star"></i></td>\
-                    <td id = "nombreUsuario" class= "view-message  dont-show" > <a href="detalle_reporte_usuario.php">'+ element.nombre + '</a></td>\
-                    <td id="asunto" class="view-message "><a href="detalle_reporte_usuario.php">'+ element.asunto + '</a></td>\
-                    <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
-                    <td id="fecha_hora" class="view-message  text-right">'+ element.fecha_hora + '</td>\
-                    </tr > ');
-                }
-
-
+                reportes.push(element);
             });
-
-
+            pagination(reports);
 
 
         },

@@ -390,21 +390,19 @@
                       <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
                     </ul>
                   </div>
-                  <ul class="unstyled inbox-pagination">
-                    <li><span>1-50 of 99</span></li>
-                    <li>
-                      <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
-                    </li>
-                    <li>
-                      <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
-                    </li>
-                  </ul>
+           
                 </div>
                 <div class="table-inbox-wrap ">
-                  <table id="send_reports" class="table table-inbox table-hover">
+                  <table id="data-container" class="table table-inbox table-hover">
                     <tbody>
                     </tbody>
+                     <!-- <div class="card-footer text-muted text-center">
+                      <div id="pagination-container"></div>
+                     </div> -->
                   </table>
+                  <nav id="pagination-container" aria-label="Page navigation example">
+
+                  </nav>
                 </div>
               </div>
             </section>
@@ -447,7 +445,9 @@
    <script src="lib/bootbox.locales.js"></script>
    <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
    <!-- Our js -->
+   <script type="text/javascript" src="js/components/pagination-with-styles.js"></script>
    <script type="text/javascript" src="js/getReports.js"></script>
+   
 
 </body>
 
