@@ -321,12 +321,12 @@
                                             <select class="form-control" id="prioridad" required>
                                                 <option value="1">Muy prioritario</option>
                                                 <option value="2">Medianamente prioritario</option>
-                                                <option value="2">Muy prioritario</option>
+                                                <option value="2">Poco prioritario</option>
                                             </select>
                                         </div>
                                         <div class="compose-editor">
                                             <label for="subject" class="">Mensaje:</label>
-                                            <textarea placeholder="Sea descriptivo y preciso con el mensaje, incluya una direccion mas exacta si lo desea" required class="wysihtml5 form-control" id="mensaje" rows="9" data-parsley-length="[4, 100]"></textarea>
+                                            <textarea placeholder="Sea descriptivo y preciso con el mensaje, incluya una direccion mas exacta si lo desea" required class="wysihtml5 form-control" id="mensaje" rows="9" data-parsley-length="[4, 800]"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <span id="uploaded_image"></span>
