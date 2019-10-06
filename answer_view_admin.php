@@ -238,7 +238,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="index_admin.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <h5 id="nombre" class="centered">Sam Soffes</h5>
           <li class="mt">
             <a href="index_admin.php">
               <i class="fa fa-dashboard"></i>
@@ -315,11 +315,6 @@
                     
                   </div>
                   <div class="col-md-4">
-                    <div class="compose-btn pull-right">
-                      <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
-                      <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
-                      <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
-                    </div>
                   </div>
                 </div>
                 <div class="mail-sender">
