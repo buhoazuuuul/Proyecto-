@@ -236,18 +236,18 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
-          <li class="sub-menu">
-            <a href="../profile.php">
+                    <p class="centered"><a href=""><img id="profileImage" class="img-circle" width="80"></a></p>
+                    <h5 id="userName" class="centered">Sam Soffes</h5>
+                    <li class="mt">
+                        <a id='btnEditarPerfil'>
               <i class="fa fa-cogs"></i>
               <span>Inicio</span>
             </a>
           </li>
           <li>
-            <a class="active" href="inbox.html">
+            <a class="active" href="inbox_user.html">
               <i class="fa fa-envelope"></i>
-              <span>Correo</span>
+              <span>Reportar</span>
               <span class="label label-theme pull-right mail-info">3</span>
               </a>
           </li>
@@ -267,7 +267,7 @@
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-                <a href="../sendMail.php" class="btn btn-compose">
+                <a href="mail_compose_user.php" class="btn btn-compose">
                   <i class="fa fa-pencil"></i> Reportar un problema
                   </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
@@ -276,58 +276,6 @@
                 </ul>
               </div>
             </section>
-           <!--<section class="panel">
-              <div class="panel-body">
-                <ul class="nav nav-pills nav-stacked labels-info ">
-                  <li>
-                    <h4>Friends Online</h4>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-10.jpg" class="img-circle" width="20">Laura
-                        <p><span class="label label-success">Available</span></p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-05.jpg" class="img-circle" width="20">David
-                        <p><span class="label label-danger"> Busy</span></p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-01.jpg" class="img-circle" width="20">Mark
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-03.jpg" class="img-circle" width="20">Phillip
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-02.jpg" class="img-circle" width="20">Joshua
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                </ul>
-                <a href="#"> + Add More</a>
-                <div class="inbox-body text-center inbox-action">
-                  <div class="btn-group">
-                    <a class="btn mini btn-default" href="javascript:;">
-                      <i class="fa fa-power-off"></i>
-                      </a>
-                  </div>
-                  <div class="btn-group">
-                    <a class="btn mini btn-default" href="javascript:;">
-                      <i class="fa fa-cog"></i>
-                      </a>
-                  </div>
-                </div>
-              </div>
-            </section>--> 
           </div>
           <div class="col-sm-9">
             <section class="panel">
@@ -405,10 +353,10 @@
                         <td class="inbox-small-cells">
                           <input type="checkbox" class="mail-checkbox">
                         </td>
-                        <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                        <td id="nombreSecretario" class="view-message  dont-show"><a href="answer_view_user.php">Google Inc.</a></td>
-                        <td id="asunto" class="view-message "><a href="answer_view_user.php">Your new account is ready.</a></td>
-                        <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
+                        <!--<td class="inbox-small-cells"><i class="fa fa-star"></i></td>-->
+                        <td id="nombreSecretario" class="view-message  dont-show"><a href="answer_view_user.php">Secretario.</a></td>
+                        <td id="asunto" class="view-message "><a href="answer_view_user.php">Asunto.</a></td>
+                        <td id="adjunto" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
                         <td id="fecha_hora" class="view-message  text-right">08:10 AM</td>
                       </tr>
                     </tbody>

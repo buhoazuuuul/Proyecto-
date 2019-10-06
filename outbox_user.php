@@ -238,10 +238,10 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
-          <li class="sub-menu">
-            <a href="../profile.php">
+                    <p class="centered"><a href=""><img id="profileImage" class="img-circle" width="80"></a></p>
+                    <h5 id="userName" class="centered">Sam Soffes</h5>
+                    <li class="mt">
+                        <a id='btnEditarPerfil'>
               <i class="fa fa-cogs"></i>
               <span>Inicio</span>
             </a>
@@ -249,7 +249,7 @@
           <li>
             <a class="active" href="inbox.html">
               <i class="fa fa-envelope"></i>
-              <span>Correo</span>
+              <span>Reportar</span>
               <span class="label label-theme pull-right mail-info">3</span>
               </a>
           </li>

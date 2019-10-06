@@ -337,7 +337,7 @@
             <section class="panel">
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
-                    Reportes enviados
+                    Respuestas enviadas
                     <form action="#" class="pull-right mail-src-position">
                       <div class="input-append">
                         <input type="text" class="form-control " placeholder="Buscar correo">
@@ -404,15 +404,15 @@
                 </div>
                 <div class="table-inbox-wrap ">
                   <table class="table table-inbox table-hover">
-                    <tbody>
+                  <tbody>
                       <tr class="unread">
                         <td class="inbox-small-cells">
                           <input type="checkbox" class="mail-checkbox">
                         </td>
-                        <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                        <td id="nombreUsuario" class="view-message  dont-show"><a href="answer_view_secretary.php">Google Inc.</a></td>
-                        <td id="asunto" class="view-message "><a href="answer_view_secretary.php">Your new account is ready.</a></td>
-                        <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
+                        <!--<td class="inbox-small-cells"><i class="fa fa-star"></i></td>-->
+                        <td id="nombreSecretario" class="view-message  dont-show"><a href="answer_view_secretary.php">Secretario.</a></td>
+                        <td id="asunto" class="view-message "><a href="answer_view_user.php">Asunto.</a></td>
+                        <td id="adjunto" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
                         <td id="fecha_hora" class="view-message  text-right">08:10 AM</td>
                       </tr>
                     </tbody>

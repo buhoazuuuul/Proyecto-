@@ -237,18 +237,18 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="Secretario/profile_secretary.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="Secretario/profile_secretary.php">
+            <a id='btnEditarPerfil'>
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
               </a>
           </li>
           <li>
-            <a class="active" href="Secretario/inbox_secretary.php">
+            <a class="active" href="inbox_user.php">
               <i class="fa fa-envelope"></i>
-              <span>Correo</span>
+              <span>Reportar</span>
               <span class="label label-theme pull-right mail-info">3</span>
               </a>
           </li>
@@ -277,64 +277,12 @@
                 </ul>
               </div>
             </section>
-           <!--<section class="panel">
-              <div class="panel-body">
-                <ul class="nav nav-pills nav-stacked labels-info ">
-                  <li>
-                    <h4>Friends Online</h4>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-10.jpg" class="img-circle" width="20">Laura
-                        <p><span class="label label-success">Available</span></p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-05.jpg" class="img-circle" width="20">David
-                        <p><span class="label label-danger"> Busy</span></p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-01.jpg" class="img-circle" width="20">Mark
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-03.jpg" class="img-circle" width="20">Phillip
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-02.jpg" class="img-circle" width="20">Joshua
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                </ul>
-                <a href="#"> + Add More</a>
-                <div class="inbox-body text-center inbox-action">
-                  <div class="btn-group">
-                    <a class="btn mini btn-default" href="javascript:;">
-                      <i class="fa fa-power-off"></i>
-                      </a>
-                  </div>
-                  <div class="btn-group">
-                    <a class="btn mini btn-default" href="javascript:;">
-                      <i class="fa fa-cog"></i>
-                      </a>
-                  </div>
-                </div>
-              </div>
-            </section>-->
           </div>
           <div class="col-sm-9">
             <section class="panel">
               <header class="panel-heading wht-bg">
-                <h4 class="gen-case">
-                    Reporte #
+                <h4 id="asunto" class="gen-case">
+                    Asunto
                     <form action="#" class="pull-right mail-src-position">
                       <div class="input-append">
                         <input type="text" class="form-control " placeholder="Buscar Correo">
@@ -344,58 +292,26 @@
               </header>
               <div class="panel-body ">
                 <div class="mail-header row">
-                  <div class="col-md-8">
-                    <h4 class="pull-left">Asunto</h4>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="compose-btn pull-right">
-                      <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
-                      <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
-                      <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
-                    </div>
-                  </div>
                 </div>
                 <div class="mail-sender">
                   <div class="row">
                     <div class="col-md-8">
-                      <img src="img/ui-zac.jpg" alt="">
-                      <strong>Nombre del Usuario</strong>
-                      <span>[zac@youremail.com]</span> to
-                      <strong>me</strong>
-                      <!--
-                    </div>
-                      <div class="col-md-8">
-                        <strong>Departamento</strong>
-                      </div>
-                      <div class="col-md-8">
-                        <strong>Municipio</strong>
-                      </div>
-                      <div class="col-md-8">
-                        <strong>Tipo de emergencia</strong>
-                      </div>
-                      <div class="col-md-8">
-                        <strong>Prioridad</strong>
-                      </div>
-                      <div class="col-md-8">
-                        <strong>Confidencialidad</strong>
-                      </div>-->
-                      
-                      
-
+                      <img src="img/ui-zac.jpg" id="fotoUsuario" alt="">
+                      <strong id="nombreUsuario">Nombre del Usuario</strong>
                     <div class="col-md-4">
-                      <p class="date"> 10:15AM 02 FEB 2014</p>
+                      <p id="fecha_hora" class="date"> 10:15AM 02 FEB 2014</p>
                     </div>
                   </div>
                   <div class="showback">
                         <h4><i class="fa fa-angle-right"></i></h4>
-                        <div class="alert alert-success"><b>Departamento</b></div>
-                        <div class="alert alert-success"><b>Municipio</b></div> 
-                        <div class="alert alert-danger"><b>Tipo de emergencia</b></div>
-                        <div class="alert alert-info"><b>Prioridad</b></div>
-                        <div class="alert alert-warning"><b>Confidencialidad</b></div>
+                        <div class="alert alert-success"><b id="departamento">Departamento</b></div>
+                        <div class="alert alert-success"><b id="municipio">Municipio</b></div> 
+                        <div class="alert alert-danger"><b id="categoria">Tipo de emergencia</b></div>
+                        <div class="alert alert-info"><b id="prioridad">Prioridad</b></div>
+                        <div class="alert alert-warning"><b id="confidencialidad">Confidencialidad</b></div>
                       </div>
                 </div>
-                <div class="view-mail">
+                <div id="texto" class="view-mail">
                   <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
                     of the setting of the eyes, and the thin straight lips, and the markings in the nose, curved with a sarcasm that looked handsomely diabolic. </p>
                   <p>"Yes," repeated the Marquis. "A Doctor with a daughter. Yes. So commences the new philosophy! You are fatigued. Good night!"</p>
@@ -404,37 +320,11 @@
                     he rang his little bell again, and summoned his valet to his own bedroom.</p>
                 </div>
                 <div class="attachment-mail">
-                  <p>
-                    <span><i class="fa fa-paperclip"></i> 2 attachments — </span>
-                    <a href="#">Download all attachments</a> |
-                    <a href="#">View all images</a>
-                  </p>
                   <ul>
                     <li>
                       <a class="atch-thumb" href="#">
-                        <img src="img/instagram.jpg">
+                        <img id="adjunto" src="img/instagram.jpg">
                         </a>
-                      <a class="name" href="#">
-                        IMG_001.jpg
-                        <span>20KB</span>
-                        </a>
-                      <div class="links">
-                        <a href="#">View</a> -
-                        <a href="#">Download</a>
-                      </div>
-                    </li>
-                    <li>
-                      <a class="atch-thumb" href="#">
-                        <img src="img/weather.jpg">
-                        </a>
-                      <a class="name" href="#">
-                        IMG_001.jpg
-                        <span>20KB</span>
-                        </a>
-                      <div class="links">
-                        <a href="#">View</a> -
-                        <a href="#">Download</a>
-                      </div>
                     </li>
                   </ul>
                 </div>

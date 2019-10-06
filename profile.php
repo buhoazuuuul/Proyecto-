@@ -249,7 +249,7 @@
           <li>
             <a id="btnCorreo">
               <i class=" fa fa-envelope"></i>
-              <span>Correo</span>
+              <span>Reportar</span>
               <span class="label label-theme pull-right mail-info">2</span>
             </a>
           </li>
