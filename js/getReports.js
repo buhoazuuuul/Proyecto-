@@ -12,20 +12,21 @@ function simpleTemplating(data) {
     var html;
     $.each(data, function (index, item) {
         if (item.prioridad == 'Muy prioritario') {
-
+            let url = 'detalle_reporte_usuario.php?id_report=' + item.id;
             html += '<tr><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
                     <td class="inbox-small-cells"><i style="color:red;" style class="fa fa-star"></i></td>\
-                    <td id = "nombreUsuario" class= "view-message  dont-show" > <a href="detalle_reporte_usuario.php">'+ item.nombre + '</a></td>\
-                    <td id="asunto" class="view-message "><a href="detalle_reporte_usuario.php">'+ item.asunto + '</a></td>\
+                    <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
+                    <td id="asunto" class="view-message "><a href='+ url + '>' + item.asunto + '</a></td>\
                     <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
                     <td id="fecha_hora" class="view-message  text-right">'+ item.fecha_hora + '</td>c';
         } else {
-            html += '<tr><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
+            let url = 'detalle_reporte_usuario.php?id_report=' + item.id;
+            html += '<tr href=' + url + '><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
                     <td class="inbox-small-cells"><i style="color:green;" style class="fa fa-star"></i></td>\
-                    <td id = "nombreUsuario" class= "view-message  dont-show" > <a href="detalle_reporte_usuario.php">'+ item.nombre + '</a></td>\
-                    <td id="asunto" class="view-message "><a href="detalle_reporte_usuario.php">'+ item.asunto + '</a></td>\
-                    <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
-                    <td id="fecha_hora" class="view-message  text-right">'+ item.fecha_hora + '</td>v';
+                    <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
+                    <td id="asunto" class="view-message "><a href='+ url + '> ' + item.asunto + '</a ></td >\
+            <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
+            <td id="fecha_hora" class="view-message text-right">'+ item.fecha_hora + '</td>v';
         }
     });
 
@@ -42,10 +43,10 @@ function pagination(reportes) {
         autoHideNext: true,
         className: 'paginationjs-theme-blue',
         callback: function (data, pagination) {
+            console.log(data);
             var html = simpleTemplating(data);
             $('#data-container').html(html);
-            // $("li").css("display", "inline");
-            // $("paginationjs-page").css("class", "page-item");
+
         }
     })
 
