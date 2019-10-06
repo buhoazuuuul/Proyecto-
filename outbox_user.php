@@ -403,16 +403,6 @@
                 <div class="table-inbox-wrap ">
                   <table id="send_reports" class="table table-inbox table-hover">
                     <tbody>
-                      <tr class="unread">
-                        <td class="inbox-small-cells">
-                          <input type="checkbox" class="mail-checkbox">
-                        </td>
-                        <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                        <td id="nombreUsuario" class="view-message  dont-show"><a href="detalle_reporte_usuario.php">Google Inc...</a></td>
-                        <td id="asunto" class="view-message "><a href="detalle_reporte_usuario.php">Your new account is ready.</a></td>
-                        <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                        <td id="fecha_hora" class="view-message  text-right">08:10 AM</td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>
