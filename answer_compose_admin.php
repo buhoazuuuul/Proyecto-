@@ -295,58 +295,6 @@
                 </ul>
               </div>
             </section>
-           <!-- <section class="panel">
-              <div class="panel-body">
-                <ul class="nav nav-pills nav-stacked labels-info ">
-                  <li>
-                    <h4>Friends Online</h4>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-10.jpg" class="img-circle" width="20">Laura
-                        <p><span class="label label-success">Available</span></p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-05.jpg" class="img-circle" width="20">David
-                        <p><span class="label label-danger"> Busy</span></p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-01.jpg" class="img-circle" width="20">Mark
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-03.jpg" class="img-circle" width="20">Phillip
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-02.jpg" class="img-circle" width="20">Joshua
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                </ul>
-                <a href="#"> + Add More</a>
-                <div class="inbox-body text-center inbox-action">
-                  <div class="btn-group">
-                    <a class="btn mini btn-default" href="javascript:;">
-                      <i class="fa fa-power-off"></i>
-                      </a>
-                  </div>
-                  <div class="btn-group">
-                    <a class="btn mini btn-default" href="javascript:;">
-                      <i class="fa fa-cog"></i>
-                      </a>
-                  </div>
-                </div>
-              </div>
-            </section>-->
           </div>
           <div class="col-sm-9">
             <section class="panel">
@@ -355,30 +303,21 @@
                     Redactar una respuesta
                     <form action="#" class="pull-right mail-src-position">
                       <div class="input-append">
-                        <input type="text" class="form-control " placeholder="Search Mail">
+                        <input type="text" class="form-control " placeholder="Buscar correo">
                       </div>
                     </form>
                   </h4>
               </header>
               <div class="panel-body">
-                <div class="compose-btn pull-right">
-                  <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
-                  <button class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
-                  <button class="btn btn-sm">Eliminar</button>
-                </div>
                 <div class="compose-mail">
                   <form role="form-horizontal" method="post">
-                    <div class="form-group">
-                      <label for="to" class="">Para:</label>
-                      <input type="text" tabindex="1" id="para" class="form-control">
-                    </div>
                     <div class="form-group">
                       <label for="subject" id="asunto" class="">Asunto:</label>
                       <input type="text" tabindex="1" id="asunto" class="form-control">
                     </div>
                     <div class="compose-editor">
                       <textarea id="mensaje" class="wysihtml5 form-control" rows="9"></textarea>
-                      <input type="file" class="default">
+                      <input id="adjunto" type="file" class="default">
                     </div>
                     <div class="compose-btn">
                       <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>

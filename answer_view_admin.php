@@ -238,7 +238,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="index_admin.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <h5 id="nombre" class="centered">Sam Soffes</h5>
           <li class="mt">
             <a href="index_admin.php">
               <i class="fa fa-dashboard"></i>
@@ -282,81 +282,29 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <!-- page start-->
-        <div class="row mt">
+         <!-- page start-->
+         <div class="row mt">
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-               <a href="answer_compose_admin.php" class="btn btn-compose">
+              <a href="answer_compose_admin.php" class="btn btn-compose">
                   <i class="fa fa-pencil"></i> Redactar una respuesta
                   </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                <li><a href="inbox_admin.php"> <i class="fa fa-inbox"></i>Reportes<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li><a href="inbox_admin.php"> <i class="fa fa-inbox"></i> Reportes<span class="label label-theme pull-right inbox-notification">3</span></a></li>
                   <li class="active"><a href="outbox_admin.php"> <i class="fa fa-envelope-o"></i>Respuestas</a></li>
                 </ul>
               </div>
             </section>
-           <!--<section class="panel">
-              <div class="panel-body">
-                <ul class="nav nav-pills nav-stacked labels-info ">
-                  <li>
-                    <h4>Friends Online</h4>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-10.jpg" class="img-circle" width="20">Laura
-                        <p><span class="label label-success">Available</span></p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-05.jpg" class="img-circle" width="20">David
-                        <p><span class="label label-danger"> Busy</span></p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-01.jpg" class="img-circle" width="20">Mark
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-03.jpg" class="img-circle" width="20">Phillip
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-02.jpg" class="img-circle" width="20">Joshua
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                </ul>
-                <a href="#"> + Add More</a>
-                <div class="inbox-body text-center inbox-action">
-                  <div class="btn-group">
-                    <a class="btn mini btn-default" href="javascript:;">
-                      <i class="fa fa-power-off"></i>
-                      </a>
-                  </div>
-                  <div class="btn-group">
-                    <a class="btn mini btn-default" href="javascript:;">
-                      <i class="fa fa-cog"></i>
-                      </a>
-                  </div>
-                </div>
-              </div>
-            </section>-->
           </div>
           <div class="col-sm-9">
             <section class="panel">
               <header class="panel-heading wht-bg">
-                <h4 class="gen-case">
-                    Respuesta #
+                <h4 id="asunto" class="gen-case">
+                    Asunto
                     <form action="#" class="pull-right mail-src-position">
                       <div class="input-append">
-                        <input type="text" class="form-control " placeholder="Search Mail">
+                        <input type="text" class="form-control " placeholder="Buscar">
                       </div>
                     </form>
                   </h4>
@@ -364,30 +312,23 @@
               <div class="panel-body ">
                 <div class="mail-header row">
                   <div class="col-md-8">
-                    <h4 class="pull-left">Asunto</h4>
+                    
                   </div>
                   <div class="col-md-4">
-                    <div class="compose-btn pull-right">
-                      <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
-                      <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
-                      <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
-                    </div>
                   </div>
                 </div>
                 <div class="mail-sender">
                   <div class="row">
                     <div class="col-md-8">
-                      <img src="img/ui-zac.jpg" alt="">
-                      <strong>Zac Doe</strong>
-                      <span>[zac@youremail.com]</span> to
-                      <strong>me</strong>
+                      <img id="img" src="img/ui-zac.jpg" id="fotoSecretario" alt="">
+                      <strong id="nombreSecretario">Nombre secretario</strong>
                     </div>
                     <div class="col-md-4">
-                      <p class="date"> 10:15AM 02 FEB 2014</p>
+                      <p id="fecha_hora" class="date"> 10:15AM 02 FEB 2014</p>
                     </div>
                   </div>
                 </div>
-                <div class="view-mail">
+                <div id="mensaje" class="view-mail">
                   <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
                     of the setting of the eyes, and the thin straight lips, and the markings in the nose, curved with a sarcasm that looked handsomely diabolic. </p>
                   <p>"Yes," repeated the Marquis. "A Doctor with a daughter. Yes. So commences the new philosophy! You are fatigued. Good night!"</p>
@@ -396,37 +337,11 @@
                     he rang his little bell again, and summoned his valet to his own bedroom.</p>
                 </div>
                 <div class="attachment-mail">
-                  <p>
-                    <span><i class="fa fa-paperclip"></i> 2 attachments — </span>
-                    <a href="#">Download all attachments</a> |
-                    <a href="#">View all images</a>
-                  </p>
                   <ul>
                     <li>
                       <a class="atch-thumb" href="#">
-                        <img src="img/instagram.jpg">
-                        </a>
-                      <a class="name" href="#">
-                        IMG_001.jpg
-                        <span>20KB</span>
-                        </a>
-                      <div class="links">
-                        <a href="#">View</a> -
-                        <a href="#">Download</a>
-                      </div>
-                    </li>
-                    <li>
-                      <a class="atch-thumb" href="#">
-                        <img src="img/weather.jpg">
-                        </a>
-                      <a class="name" href="#">
-                        IMG_001.jpg
-                        <span>20KB</span>
-                        </a>
-                      <div class="links">
-                        <a href="#">View</a> -
-                        <a href="#">Download</a>
-                      </div>
+                        <img id="adjunto" src="img/instagram.jpg">
+                      </a>
                     </li>
                   </ul>
                 </div>
