@@ -295,58 +295,6 @@
                 </ul>
               </div>
             </section>
-            <!--<section class="panel">
-              <div class="panel-body">
-                <ul class="nav nav-pills nav-stacked labels-info ">
-                  <li>
-                    <h4>Friends Online</h4>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-10.jpg" class="img-circle" width="20">Laura
-                        <p><span class="label label-success">Available</span></p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-05.jpg" class="img-circle" width="20">David
-                        <p><span class="label label-danger"> Busy</span></p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-01.jpg" class="img-circle" width="20">Mark
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-03.jpg" class="img-circle" width="20">Phillip
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                        <img src="img/friends/fr-02.jpg" class="img-circle" width="20">Joshua
-                        <p>Offline</p>
-                      </a>
-                  </li>
-                </ul>
-                <a href="#"> + Add More</a>
-                <div class="inbox-body text-center inbox-action">
-                  <div class="btn-group">
-                    <a class="btn mini btn-default" href="javascript:;">
-                      <i class="fa fa-power-off"></i>
-                      </a>
-                  </div>
-                  <div class="btn-group">
-                    <a class="btn mini btn-default" href="javascript:;">
-                      <i class="fa fa-cog"></i>
-                      </a>
-                  </div>
-                </div>
-              </div>
-            </section>-->
           </div>
           <div class="col-sm-9">
             <section class="panel">
@@ -419,18 +367,17 @@
                 </div>
                 <div class="table-inbox-wrap ">
                   <table class="table table-inbox table-hover">
-                    <tbody>
+                  <tbody>
                       <tr class="unread">
                         <td class="inbox-small-cells">
                           <input type="checkbox" class="mail-checkbox">
                         </td>
-                        <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                        <td class="view-message  dont-show"><a href="detalle_reporte_admin.php">Google Inc.</a></td>
-                        <td class="view-message "><a href="detalle_reporte_admin.php">Your new account is ready.</a></td>
-                        <td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                        <td class="view-message  text-right">08:10 AM</td>
-                      </tr>
-                    </tbody>
+                        <td class="inbox-small-cells"><i id="prioridad" class="fa fa-star"></i></td>
+                        <td id="nombreUsuario" class="view-message  dont-show"><a href="detalle_reporte_admin.php">Usuario.</a></td>
+                        <td id="asunto" class="view-message "><a href="detalle_reporte_admin.php">Asunto.</a></td>
+                        <td  id="adjunto" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
+                        <td id="fecha_hora" class="view-message  text-right">08:10 AM</td>
+                        </tbody>
                   </table>
                 </div>
               </div>
