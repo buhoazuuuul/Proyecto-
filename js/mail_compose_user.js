@@ -3,7 +3,6 @@ const userName = getParameterByName('userName');
 const urlPerfil = 'profile.php?userName=' + userName;
 const urlCorreo = 'mail_compose_user.php?userName=' + userName;
 $(document).ready(function () {
-    console.log('Get small user loaded!');
     var dialog = bootbox.dialog({
         title: 'Cargando tu perfil',
         message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando...</p>'
