@@ -13,7 +13,7 @@
   //Inner join tables
   $data = $DB->query("SELECT reporte.prioridad, reporte.asunto,reporte.fecha_hora, secretario.nombre , reporte.adjunto FROM reporte INNER JOIN reportes_x_respuestas ON reporte.id = reportes_x_respuestas.reporte_id 
                                     INNER JOIN secretario ON reportes_x_respuestas.secretario_id = secretario.id
-                                    WHERE reportes_x_respuestas.usuario_id = ?", array( $_POST['id_usuario']));
+                                    WHERE reportes_x_respuestas.usuario_id = ? ORDER BY reporte.fecha_hora DESC", array( $_POST['id_usuario']));
   
   $DB->closeConnection();
 

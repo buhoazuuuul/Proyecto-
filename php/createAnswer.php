@@ -1,0 +1,22 @@
+<?php
+
+  //Conexiona  la BD
+  define('DBHost', '127.0.0.1');
+  define('DBPort', 3306);
+  define('DBName', 'innexu');
+  define('DBUser', 'root');
+  define('DBPassword','');
+  require(__DIR__ . "/PDO-Class/PDO.class.php");
+  $DB = new Db(DBHost, DBPort, DBName, DBUser, DBPassword);
+  date_default_timezone_set('America/Bogota');
+  
+  $columns_reporte = $DB->query("INSERT INTO `reporte`(`categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES(?,?,?)", array( $_POST['categoria'],$_POST['id_vereda'],$_POST['adjunto']));
+  $last_id = $DB->lastInsertId();
+  $columns_reporte_x_respuesta = $DB->query("UPDATE `reportes_x_respuestas` SET `respuesta_mens_id`=? WHERE `reporte_id` = ?", array($last_id,$_POST['reporte_id']));
+  $DB->closeConnection();
+  if ($columns_reporte&&$columns_reporte_x_respuesta) {
+      echo "successfully";
+  }
+  else{
+  echo "error";
+  }
