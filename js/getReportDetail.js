@@ -26,6 +26,7 @@ function getReportDetail() {
             $('#categoria').text(report[0].categoria);
             $('#confidencialidad').text(report[0].confidencialidad);
             $('#texto').text(report[0].texto);
+            $('#adjunto').attr("src", report[0].adjunto);
         },
     });
 }

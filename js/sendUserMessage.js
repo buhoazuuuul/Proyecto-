@@ -49,7 +49,7 @@ $(document).ready(function () {
 function getMailFields() {
     id_secretario = $("#secetrariosSelect option:selected").val();
     id_vereda = $('#vereda').val();
-    categoria = $('#emergencia').val();
+    categoria = $('#emergencia  option:selected').text();
     adjunto = imgPath;
     asunto = $('#asunto').val();
     departamento = datos[0].departamento;
