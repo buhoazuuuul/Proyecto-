@@ -303,7 +303,7 @@
                       <p id="fecha_hora" class="date"> 10:15AM 02 FEB 2014</p>
                     </div>
                   <div class="showback">
-                        
+                        <h4><i class="fa fa-angle-right"></i></h4>
                         <div class="alert alert-success">
                         <h6>Departamento</h6>
                         <b id="departamento">Departamento</b></div>
