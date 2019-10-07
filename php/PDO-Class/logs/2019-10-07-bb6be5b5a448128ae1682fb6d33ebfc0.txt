@@ -1,0 +1,7 @@
+Time : 02:27:44
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.fecha_hora,reporte.departamento,reporte.municipio,reporte.prioridad,reporte.con' at line 1
+Raw SQL : SELECT reporte.categoria,vereda.vereda reporte.fecha_hora,reporte.departamento,reporte.municipio,reporte.prioridad,reporte.confidencialidad,reporte.texto, reporte.adjunto, reporte.asunto, secretario.nombre , secretario.apellido,secretario.img 
+                      FROM reporte INNER JOIN reportes_x_respuestas ON reporte.id = reportes_x_respuestas.reporte_id 
+                      INNER JOIN secretario ON reportes_x_respuestas.secretario_id = secretario.id 
+                      INNER JOIN vereda ON vereda.id = reporte.vereda_id 
+                      WHERE reporte.id = ?

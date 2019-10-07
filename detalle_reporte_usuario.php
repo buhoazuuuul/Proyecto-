@@ -304,7 +304,9 @@
                   </div>
                   <div class="showback">
                         <h4><i class="fa fa-angle-right"></i></h4>
-                        <div class="alert alert-success"><b id="departamento">Departamento</b></div>
+                        <div class="alert alert-success">
+                        <h6>Departamento</h6>
+                        <b id="departamento">Departamento</b></div>
                         <div class="alert alert-success"><b id="municipio">Municipio</b></div> 
                         <div class="alert alert-danger"><b id="categoria">Tipo de emergencia</b></div>
                         <div class="alert alert-info"><b id="prioridad">Prioridad</b></div>

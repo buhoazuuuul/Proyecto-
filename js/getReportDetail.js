@@ -2,6 +2,7 @@ var reporte_id = getParameterByName('id_report');
 
 $(document).ready(function () {
     console.warn('Get report detail loaded!');
+    getReportDetail();
 });
 
 function getReportDetail() {
@@ -15,8 +16,16 @@ function getReportDetail() {
         },
         success: function (response) {
             let report = JSON.parse(response);
+            console.log(report[0]);
             //Show info
-            jq
+            $('#asunto').text(report[0].asunto);
+            $('#nombreUsuario').text(report[0].nombre + '  ' + report[0].apellido);
+            $('#fecha_hora').text(report[0].fecha_hora);
+            $('#departamento').text(report[0].departamento);
+            $('#municipio').text(report[0].municipio);
+            $('#categoria').text(report[0].categoria);
+            $('#confidencialidad').text(report[0].confidencialidad);
+            $('#texto').text(report[0].texto);
         },
     });
 }
