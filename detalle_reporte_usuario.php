@@ -374,6 +374,8 @@
   <script src="lib/bootbox.js"></script>
   <script src="lib/bootbox.locales.js"></script>
   <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
+  <!-- Our js -->
+  <script type="text/javascript" src="js/getReportDetail.js"></script>
 
 
 </body>

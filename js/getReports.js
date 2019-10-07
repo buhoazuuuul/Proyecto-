@@ -65,13 +65,12 @@ function getReports() {
         },
         success: function (response) {
             let reports = JSON.parse(response);
+
             simpleTemplating(reports);
             reports.forEach(element => {
                 reportes.push(element);
             });
             pagination(reports);
-
-
         },
     });
 
