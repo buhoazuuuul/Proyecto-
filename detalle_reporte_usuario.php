@@ -296,12 +296,12 @@
                 <div class="mail-sender">
                   <div class="row">
                     <div class="col-md-8">
-                      <img src="img/ui-zac.jpg" id="fotoUsuario" alt="">
+                      <img style="heigh:60px;width:60px" src="img/ui-zac.jpg" id="fotoSecretario" alt="">
                       <strong id="nombreUsuario">Nombre del Usuario</strong>
-                    <div class="col-md-4">
+                  </div>
+                  <div class="col-md-4">
                       <p id="fecha_hora" class="date"> 10:15AM 02 FEB 2014</p>
                     </div>
-                  </div>
                   <div class="showback">
                         <h4><i class="fa fa-angle-right"></i></h4>
                         <div class="alert alert-success">
