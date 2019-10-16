@@ -12,13 +12,18 @@ $type_user = $_POST['isSecretary'];
 
 
 if ($type_user == "true") {
-
   $query = $mipdo->query("SELECT * FROM secretario WHERE usuario = :usuario", array("usuario" => $username));
-  if($query[0]["pass"] == $pass){
-    echo 'Password Matches sec';
+
+  if (count($query) > 0) {
+   if($query[0]["pass"] == $pass){
+    echo 'Contraseña correcta';
   }else{
-    echo "Fail password sec";
+    echo "Contraseña incorrecta";
   }
+  } else {
+   echo "No esta registrado como secretario";
+  }
+  
 } else {
 
   $query = $mipdo->query("SELECT * FROM usuario WHERE usuario = :usuario", array("usuario" => $username));
@@ -32,14 +37,14 @@ if (count($data) > 0) {
   if (password_verify($password, $data[0]["pass"])) {
     //Success!
     $_SESSION['login_user'] = $data[0]["usuario"];
-    echo 'Password Matches';
+    echo 'Contraseña correcta';
   } else {
     //Invalid credentials
-    echo "Fail password";
+    echo "Contraseña incorrecta";
   }
 } else {
 
-  echo "No esta registrado ese usuario";
+  echo "No esta registrado este usuario";
 }
 
 }
