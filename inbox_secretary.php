@@ -236,8 +236,8 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile_secretary.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <p class="centered"><a href=""><img id="profileImage" src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <h5 id="userName" class="centered">Sam Soffes</h5>
           <li class="sub-menu">
             <a href="profile_secretary.php">
               <i class="fa fa-cogs"></i>
@@ -398,21 +398,13 @@
                     </li>
                   </ul>
                 </div>
-                <div class="table-inbox-wrap ">
-                  <table class="table table-inbox table-hover">
-                  <tbody>
-                      <tr class="unread">
-                        <td class="inbox-small-cells">
-                          <input type="checkbox" class="mail-checkbox">
-                        </td>
-                        <td class="inbox-small-cells"><i id="prioridad" class="fa fa-star"></i></td>
-                        <td id="nombreUsuario" class="view-message  dont-show"><a href="detalle_reporte_secretary.php">Usuario.</a></td>
-                        <td id="asunto" class="view-message "><a href="detalle_reporte_secretary.php">Asunto.</a></td>
-                        <td  id="adjunto" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                        <td id="fecha_hora" class="view-message  text-right">08:10 AM</td>
-                      </tr>
+                   <div class="table-inbox-wrap">
+                  <table id="data-container" class="table table-inbox table-hover">
+                    <tbody>
                     </tbody>
                   </table>
+                  <nav id="pagination-container" aria-label="Page navigation example">
+                  </nav>
                 </div>
               </div>
             </section>
@@ -446,14 +438,25 @@
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="lib/jquery.scrollTo.min.js"></script>
-  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
-  <!--common script for all pages-->
-  <script src="lib/common-scripts.js"></script>
+  <!-- js placed at the end of the document so the pages load faster -->
+   <script src="libUsuarios/lib/jquery/jquery.min.js"></script>
+   <script src="libUsuarios/lib/bootstrap/js/bootstrap.min.js"></script>
+   <script class="include" type="text/javascript" src="libUsuarios/lib/jquery.dcjqaccordion.2.7.js"></script>
+   <script src="libUsuarios/lib/jquery.scrollTo.min.js"></script>
+   <script src="libUsuarios/lib/jquery.nicescroll.js" type="text/javascript"></script>
+   <!--common script for all pages-->
+   <script src="libUsuarios/lib/common-scripts.js"></script>
+   <!--script for this page-->
+   <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+   <!-- bootbox code -->
+   <script src="lib/bootbox.js"></script>
+   <script src="lib/bootbox.locales.js"></script>
+   <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
   <!--script for this page-->
+  <script type="text/javascript" src="js/components/pagination-with-styles.js"></script>
+  <script type="text/javascript" src="js/getReportsSecretary.js"></script>
+ 
 
 </body>
 

@@ -32,7 +32,7 @@ function simpleTemplating(data) {
     var html;
     $.each(data, function (index, item) {
         if (item.prioridad == 'Muy prioritario') {
-            let url = 'detalle_reporte_usuario.php?id_report=' + item.id;
+            let url = 'detalle_reporte_usuario.php?id_report=' + item.reporte_id;
             html += '<tr><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
                     <td class="inbox-small-cells"><i style="color:red;" style class="fa fa-star"></i></td>\
                     <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
@@ -40,7 +40,7 @@ function simpleTemplating(data) {
                     <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
                     <td id="fecha_hora" class="view-message  text-right">'+ item.fecha_hora + '</td>c';
         } else {
-            let url = 'detalle_reporte_usuario.php?id_report=' + item.id;
+            let url = 'detalle_reporte_usuario.php?id_report=' + item.reporte_id;
             html += '<tr href=' + url + '><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
                     <td class="inbox-small-cells"><i style="color:green;" style class="fa fa-star"></i></td>\
                     <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
@@ -85,7 +85,6 @@ function getReports() {
         },
         success: function (response) {
             let reports = JSON.parse(response);
-
             simpleTemplating(reports);
             reports.forEach(element => {
                 reportes.push(element);

@@ -389,18 +389,13 @@
                       <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
                     </ul>
                   </div>
-           
                 </div>
-                <div class="table-inbox-wrap ">
+                <div class="table-inbox-wrap">
                   <table id="data-container" class="table table-inbox table-hover">
                     <tbody>
                     </tbody>
-                     <!-- <div class="card-footer text-muted text-center">
-                      <div id="pagination-container"></div>
-                     </div> -->
                   </table>
                   <nav id="pagination-container" aria-label="Page navigation example">
-
                   </nav>
                 </div>
               </div>

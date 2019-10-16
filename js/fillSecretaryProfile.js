@@ -2,13 +2,14 @@ var username = getParameterByName('userName');
 var datos;
 var lastDoc;
 var url = 'profile.php?userName=' + username;
-var urlCorreo = 'mail_compose_user.php?userName=' + username;
+var urlCorreo = 'inbox_secretary.php?userName=' + username;
 
 $(document).ready(function () {
 
     console.log('Documento fill Secretary cargado');
     getUser();
     selectDepartamentos();
+    setHrefs();
     setTimeout(function () {
         combo = document.getElementById("departamento");
         selected = combo.options[combo.selectedIndex].text;
@@ -52,7 +53,6 @@ function getLocation(datos) {
 
 function setHrefs() {
 
-    $("#btnEditarPerfil").attr("href", url);
     $("#btnCorreo").attr("href", urlCorreo);
     $("#btnLogout").hover(function () {
         $(this).fadeOut(100);

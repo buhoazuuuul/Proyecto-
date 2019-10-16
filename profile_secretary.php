@@ -245,7 +245,7 @@
             </a>
           </li>
           <li>
-            <a href="inbox_secretary.php">
+            <a id="btnCorreo" href="">
               <i class=" fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">2</span>

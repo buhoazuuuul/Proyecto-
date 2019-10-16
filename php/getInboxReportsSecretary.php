@@ -11,8 +11,7 @@
 
   //Inner join tables
   $data = $DB->query("SELECT * FROM reporte INNER JOIN reportes_x_respuestas ON reporte.id = reportes_x_respuestas.reporte_id 
-                                    WHERE reportes_x_respuestas.secretario_id = ? ORDER BY reporte.fecha_hora DESC", array( $_POST['id_secretario']));
-  
+                                    INNER JOIN usuario ON usuario.id = reportes_x_respuestas.usuario_id  WHERE reportes_x_respuestas.secretario_id = ? ORDER BY reporte.fecha_hora DESC", array( $_POST['id_secretario']));
   $DB->closeConnection();
 
   if ($data) {
