@@ -236,8 +236,8 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile_secretary.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 id="nombre" class="centered">Sam Soffes</h5>
+          <p class="centered"><a><img id="profileImage" src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <h5 id="userName" class="centered">Sam Soffes</h5>
           <li class="mt">
             <a href="profile_secretary.php">
               <i class="fa fa-dashboard"></i>
@@ -282,7 +282,7 @@
               <header class="panel-heading wht-bg">
                 <h4 class="gen-case">
                     Redactar una respuesta
-                    <form action="#" class="pull-right mail-src-position">
+                    <form id="respuesta_reporte" class="pull-right mail-src-position">
                       <div class="input-append">
                         <input type="text" class="form-control " placeholder="Buscar correo">
                       </div>
@@ -291,19 +291,19 @@
               </header>
               <div class="panel-body">
                 <div class="compose-mail">
-                  <form role="form-horizontal" method="post">
+                  <form onSubmit="sendResponse()" role="form-horizontal" method="post">
                     <div class="form-group">
-                      <label for="subject" id="asunto" class="">Asunto:</label>
+                      <label for="subject" class="">Asunto:</label>
                       <input type="text" tabindex="1" id="asunto" class="form-control">
                     </div>
                     <div class="compose-editor">
                       <textarea id="mensaje" class="wysihtml5 form-control" rows="9"></textarea>
-                      <input id="adjunto" type="file" class="default">
+                      <span id="uploaded_image"></span>
+                      <input type="file" name="file" id="file" class="default">
                     </div>
                     <div class="compose-btn">
-                      <button class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
+                      <button id="btnEnviar" class="btn btn-theme btn-sm"><i class="fa fa-check"></i>Enviar</button>
                       <button class="btn btn-sm"><i class="fa fa-times"></i> Descartar</button>
-                      <button class="btn btn-sm">Eliminar</button>
                     </div>
                   </form>
                 </div>
@@ -334,7 +334,8 @@
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="lib/jquery.scrollTo.min.js"></script>
   <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
@@ -343,7 +344,9 @@
   <!--script for this page-->
   <script type="text/javascript" src="lib/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
   <script type="text/javascript" src="lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
-
+  <script src="js/upload_image.js"></script>
+  <script src="js/answer_compose_secretary.js"></script>
+  <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
   <script type="text/javascript">
     //wysihtml5 start
 

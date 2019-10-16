@@ -26,6 +26,7 @@ function setHrefs() {
     $("#btnInicio").attr("href", urlPerfil);
 
 
+
 }
 
 function simpleTemplating(data) {

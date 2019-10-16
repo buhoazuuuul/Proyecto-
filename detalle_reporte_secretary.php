@@ -238,8 +238,8 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="Secretario/profile_secretary.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <p class="centered"><a href=""><img id="profileImage" src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <h5 id="userName" class="centered">Sam Soffes</h5>
           <li class="mt">
             <a href="profile_secretary.php">
               <i class="fa fa-dashboard"></i>
@@ -305,11 +305,11 @@
                   </div>
                   <div class="showback">
                         <h4><i class="fa fa-angle-right"></i></h4>
-                        <div class="alert alert-success"><b id="departamento">Departamento</b></div>
-                        <div class="alert alert-success"><b id="municipio">Municipio</b></div> 
-                        <div class="alert alert-danger"><b id="categoria">Tipo de emergencia</b></div>
-                        <div class="alert alert-info"><b id="prioridad">Prioridad</b></div>
-                        <div class="alert alert-warning"><b id="confidencialidad">Confidencialidad</b></div>
+                        <div class="alert alert-success"><h5>Departamento</h5><b id="departamento">Departamento</b></div>
+                        <div class="alert alert-success"><h5>Municipio</h5><b id="municipio">Municipio</b></div> 
+                        <div class="alert alert-danger"><h5>Tipo de emergencia</h5><b id="categoria">Tipo de emergencia</b></div>
+                        <div class="alert alert-info"><h5>Prioridad</h5><b id="prioridad">Prioridad</b></div>
+                        <div class="alert alert-warning"><h5>Confidencialidad</h5><b id="confidencialidad">Confidencialidad</b></div>
                       </div>
                 </div>
                 <div id="texto" class="view-mail">
@@ -330,7 +330,7 @@
                   </ul>
                 </div>
                 <div class="compose-btn pull-left">
-                  <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
+                  <a id="responder_reporte" class="btn btn-sm btn-theme"><i  class="fa fa-reply"></i>Responder</a>
                   <button class="btn btn-sm "><i class="fa fa-arrow-right"></i> Forward</button>
                   <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
                   <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
@@ -375,6 +375,7 @@
   <script src="lib/bootbox.js"></script>
   <script src="lib/bootbox.locales.js"></script>
   <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
+  <script type="text/javascript" src="js/getReportDetail.js"></script>
 
 
 </body>
