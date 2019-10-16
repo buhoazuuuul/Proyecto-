@@ -2,6 +2,7 @@
 const userName = getParameterByName('userName');
 const urlPerfil = 'profile.php?userName=' + userName;
 const urlCorreo = 'mail_compose_user.php?userName=' + userName;
+const urlEnviados = 'outbox_user.php?userName=' + userName;
 $(document).ready(function () {
     var dialog = bootbox.dialog({
         title: 'Cargando tu perfil',
@@ -27,7 +28,7 @@ $(document).ready(function () {
 function setHrefs() {
 
     $("#btnEditarPerfil").attr("href", urlPerfil);
-    $("#btnCorreo").attr("href", urlCorreo);
+    $("#btnEnviados").attr("href", urlEnviados);
 
 }
 function setUserName() {

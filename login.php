@@ -20,16 +20,12 @@
   <!-- Custom styles for this template -->
   <link href="css/styleLogin.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
+  <!-- icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 
 </head>
 
 <body>
-  <?php
-  // session_start();
-  // if (!empty($_SESSION['login_user'])) {
-  //   header('Location: userProfile.php');
-  // }
-  ?>
   <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -38,11 +34,12 @@
       <form method="post" role="form" class="form-login" id="login-form">
         <h2 class="form-login-heading">Entre ahora a INNEXU</h2>
         <div class="login-wrap">
-          <input type="text" name="nomUsuario" id="nomUsuario" class="form-control" placeholder="Nombre de usuario" autofocus>
+          <input type="text" id="nomUsuario" id="nomUsuario" class="form-control" placeholder="Nombre de usuario" autofocus>
           <br>
-          <input type="password" name="passUsuario" class="form-control" placeholder="Contraseña">
+          <input type="password" id="passUsuario" class="form-control" placeholder="Contraseña">
           <label class="checkbox">
-            <input class="mt-3" type="checkbox" value="remember-me">Recordarme
+          <i class="fas fa-user-secret mr-2"></i>
+            <input id="isSecretario" class="mt-3" type="checkbox" value="Ser Secretario">Soy un Secretario
             <span class="mt-3"><br>
               <a data-toggle="modal" href="login.php#myModal">Olvidaste la contraseña?</a>
             </span>
@@ -57,26 +54,6 @@
             </a>
           </div>
         </div>
-        <!-- Modal -->
-        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Forgot Password ?</h4>
-              </div>
-              <div class="modal-body">
-                <p>Enter your e-mail address below to reset your password.</p>
-                <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
-              </div>
-              <div class="modal-footer">
-                <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-                <button class="btn btn-theme" type="button">Submit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- modal -->
       </form>
     </div>
   </div>
@@ -86,8 +63,10 @@
   <!--BACKSTRETCH-->
   <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
   <script type="text/javascript" src="lib/jquery/jquery.backstretch.min.js"></script>
+   <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
+   <!-- Propios js -->
   <script type="text/javascript" src="js/login.js"></script>
-  <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
+ 
   <script>
   $.backstretch("img/gallery/fotos/iglesia3.jpg", {
       speed: 500

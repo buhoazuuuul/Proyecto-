@@ -1,13 +1,18 @@
 var usuario;
 var pass;
 var url;
+var isSecretary = false;
 var depMunicipios;
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('#btnLogin').on('click', function() {
+    $("#isSecretario").change(function () {
+        isSecretary = $('#isSecretario').is(":checked");
+    });
+
+    $('#btnLogin').on('click', function () {
         usuario = $('#nomUsuario').val();
-        pass = $('#passUsuario').val();
+        pass = document.getElementById("passUsuario").value;
         url = 'profile.php?userName=' + usuario;
         submitForm();
 
@@ -20,44 +25,47 @@ $(document).ready(function() {
 
 function submitForm() {
 
-    var data = $("#login-form").serialize();
-
     $.ajax({
         url: 'php/login.php',
         type: 'POST',
-        data: data,
-        beforeSend: function() {
+        data: {
+            nomUsuario: usuario,
+            passUsuario: pass,
+            isSecretary: isSecretary
+        },
+        beforeSend: function () {
             console.log('Enviando...');
         },
-        success: function(response) {
-            if (response == "Password Matches") {
+        success: function (response) {
+            // if (response == "Password Matches") {
 
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                });
+            //     const Toast = Swal.mixin({
+            //         toast: true,
+            //         position: 'top-end',
+            //         showConfirmButton: false,
+            //         timer: 3000
+            //     });
 
-                Toast.fire({
-                    type: 'success',
-                    title: 'Datos de inicio de sesion correctos'
-                })
+            //     Toast.fire({
+            //         type: 'success',
+            //         title: 'Datos de inicio de sesion correctos'
+            //     })
 
-                //Redireccionamos
-                setTimeout(function() { window.location = url; }, 3000);
+            //     //Redireccionamos
+            //     setTimeout(function() { window.location = url; }, 3000);
 
 
-            } else {
+            // } else {
 
-                Swal.fire({
-                    position: 'center',
-                    type: 'error',
-                    title: response,
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            }
+            //     Swal.fire({
+            //         position: 'center',
+            //         type: 'error',
+            //         title: response,
+            //         showConfirmButton: false,
+            //         timer: 1500
+            //     })
+            // }
+            console.log(response);
         },
     });
 
@@ -69,10 +77,10 @@ function getSecretarios() {
         url: 'php/getSecretarios.php',
         type: 'GET',
         data: "",
-        beforeSend: function() {
+        beforeSend: function () {
             console.log('Enviando...');
         },
-        success: function(response) {
+        success: function (response) {
             console.log(response);
         },
     });

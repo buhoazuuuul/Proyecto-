@@ -225,7 +225,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="../login.php">Cerrar sesíon</a></li>
+          <li><a class="logout" href="login.php">Cerrar sesíon</a></li>
         </ul>
       </div>
     </header>
@@ -238,19 +238,18 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-                    <p class="centered"><a href=""><img id="profileImage" class="img-circle" width="80"></a></p>
-                    <h5 id="userName" class="centered">Sam Soffes</h5>
-                    <li class="mt">
-                        <a id='btnEditarPerfil'>
-              <i class="fa fa-cogs"></i>
+               <p class="centered"><a href=""><img id="profileImage" class="img-circle" width="80"></a></p>
+               <h5 id="userName" class="centered">Sam Soffes</h5>
+            <li>
+            <a id="btnInicio" class="" href="">
+              <i class="fa fa-envelope"></i>
               <span>Inicio</span>
-            </a>
+              </a>
           </li>
           <li>
-            <a class="active" href="inbox.html">
+            <a class="active" href="">
               <i class="fa fa-envelope"></i>
               <span>Reportar</span>
-              <span class="label label-theme pull-right mail-info">3</span>
               </a>
           </li>
         </ul>

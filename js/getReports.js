@@ -1,12 +1,32 @@
 var username = getParameterByName('userName');
+const urlPerfil = 'profile.php?userName=' + username;
 var datos;
 var reportes = [];
 
 $(document).ready(function () {
     console.warn('Get reports loaded!')
     getUser();
+    setHrefs();
+    var dialog = bootbox.dialog({
+        title: 'Obteniendo tus reportes enviados',
+        message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando...</p>'
+    });
+    dialog.init(function () {
+        setTimeout(function () {
+            dialog.find('.bootbox-body').html('Listo!');
+        }, 3000);
+    });
+
+    setTimeout(function () { dialog.modal('hide') }, 2000);
     setTimeout(() => { getReports() }, 1000);
 });
+
+function setHrefs() {
+
+    $("#btnInicio").attr("href", urlPerfil);
+
+
+}
 
 function simpleTemplating(data) {
     var html;
