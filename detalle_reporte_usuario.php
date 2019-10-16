@@ -307,10 +307,21 @@
                         <div class="alert alert-success">
                         <h6>Departamento</h6>
                         <b id="departamento">Departamento</b></div>
-                        <div class="alert alert-success"><b id="municipio">Municipio</b></div> 
-                        <div class="alert alert-danger"><b id="categoria">Tipo de emergencia</b></div>
-                        <div class="alert alert-info"><b id="prioridad">Prioridad</b></div>
-                        <div class="alert alert-warning"><b id="confidencialidad">Confidencialidad</b></div>
+                        <div class="alert alert-success">
+                        <h6>Municipio</h6>
+                        <b id="municipio">Municipio</b></div>
+                        <div class="alert alert-success">
+                        <h6>Vereda</h6>
+                        <b id="vereda">Vereda</b></div>
+                        <div class="alert alert-danger">
+                        <h6>Tipo de emergencia</h6>
+                        <b id="categoria">Tipo de emergencia</b></div>
+                        <div class="alert alert-info">
+                        <h6>Prioridad</h6>
+                        <b id="prioridad">Prioridad</b></div>
+                        <div class="alert alert-warning">
+                        <h6>Confidencialidad</h6>
+                        <b id="confidencialidad">Confidencialidad</b></div>
                       </div>
                 </div>
                 <div id="texto" class="view-mail">
