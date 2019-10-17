@@ -37,20 +37,41 @@ function simpleTemplating(data) {
     $.each(data, function (index, item) {
         if (item.prioridad == 'Muy prioritario') {
             let url = 'detalle_reporte_secretary.php?userName=' + username + '&id_report=' + item.reporte_id;
-            html += '<tr><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
+            if (item.adjunto != "") {
+                html += '<tr><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
                     <td class="inbox-small-cells"><i style="color:red;" style class="fa fa-star"></i></td>\
                     <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
                     <td id="asunto" class="view-message "><a href='+ url + '>' + item.asunto + '</a></td>\
-                    <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
+                    <td id="" class="view-message  inbox-small-cells"><i class="fas fa-paperclip"></i></td>\
                     <td id="fecha_hora" class="view-message  text-right">'+ item.fecha_hora + '</td>c';
+            } else {
+                html += '<tr><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
+                    <td class="inbox-small-cells"><i style="color:red;" style class="fa fa-star"></i></td>\
+                    <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
+                    <td id="asunto" class="view-message "><a href='+ url + '>' + item.asunto + '</a></td>\
+                    <td id="" class="view-message  inbox-small-cells"><i class="fas fa-unlink"></i></td>\
+                    <td id="fecha_hora" class="view-message  text-right">'+ item.fecha_hora + '</td>c';
+
+            }
         } else {
             let url = 'detalle_reporte_secretary.php?userName=' + username + '&id_report=' + item.reporte_id;
-            html += '<tr href=' + url + '><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
-                    <td class="inbox-small-cells"><i style="color:green;" style class="fa fa-star"></i></td>\
-                    <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
-                    <td id="asunto" class="view-message "><a href='+ url + '> ' + item.asunto + '</a ></td >\
-            <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
+            if (item.adjunto != "") {
+                html += '<tr href=' + url + '><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
+            <td class="inbox-small-cells"><i style="color:green;" style class="fa fa-star"></i></td>\
+            <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
+            <td id="asunto" class="view-message "><a href='+ url + '> ' + item.asunto + '</a ></td >\
+            <td id="" class="view-message  inbox-small-cells"><i class="fas fa-paperclip"></i></td>\
             <td id="fecha_hora" class="view-message text-right">'+ item.fecha_hora + '</td>v';
+
+            } else {
+                html += '<tr href=' + url + '><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
+            <td class="inbox-small-cells"><i style="color:green;" style class="fa fa-star"></i></td>\
+            <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
+            <td id="asunto" class="view-message "><a href='+ url + '> ' + item.asunto + '</a ></td >\
+            <td id="" class="view-message  inbox-small-cells"><i class="fas fa-unlink"</td>\
+            <td id="fecha_hora" class="view-message text-right">'+ item.fecha_hora + '</td>v';
+            }
+
         }
     });
 

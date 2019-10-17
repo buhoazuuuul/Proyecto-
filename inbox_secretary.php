@@ -16,7 +16,7 @@
   <!-- Bootstrap core CSS -->
   <link href="Secretario/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
-  <link href="Secretario/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/bce4f1bc0b.js" crossorigin="anonymous"></script>
   <!-- Custom styles for this template -->
   <link href="Secretario/css/style.css" rel="stylesheet">
   <link href="Secretario/css/style-responsive.css" rel="stylesheet">
