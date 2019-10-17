@@ -1,13 +1,27 @@
 var reporte_id = getParameterByName('id_report');
 var username = getParameterByName('userName');
+const urlPerfil = 'profile_secretary.php?userName=' + username;
+const urlRecibidos = 'inbox_secretary.php?userName=' + username;
+const urlEnviados = 'outbox_secretary.php?userName=' + username;
+const urlCorreo = 'inbox_secretary.php?userName=' + username;
 var report;
 var datos;
 $(document).ready(function () {
     console.warn('Get report detail loaded!');
     getReportDetail();
     getUser();
+    setHrefs();
 
 });
+
+function setHrefs() {
+
+    $("#btnInicio").attr("href", urlPerfil);
+    $("#btnRecibidos").attr("href", urlRecibidos);
+    $("#btnRespuestasEnviadas").attr("href", urlEnviados);
+    $("#correo").attr("href", urlCorreo);
+
+}
 
 function getReportDetail() {
     $.ajax({

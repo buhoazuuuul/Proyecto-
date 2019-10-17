@@ -38,7 +38,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>IN<span>NEXU</span></b></a>
+      <a class="logo"><b>IN<span>NEXU</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
@@ -227,7 +227,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="../login.php">Cerrar sesíon</a></li>
+          <li><a class="logout" onclick="linkar()">Cerrar sesíon</a></li>
         </ul>
       </div>
     </header>
@@ -243,13 +243,13 @@
           <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Sam Soffes</h5>
           <li class="sub-menu">
-            <a href="profile_secretary.php">
+            <a id="btnInicio">
               <i class="fa fa-cogs"></i>
               <span>Inicio</span>
             </a>
           </li>
           <li>
-            <a class="active" href="inbox_secretary.php">
+            <a class="active" id="btnCorreo">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">3</span>
@@ -271,12 +271,9 @@
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-               <a href="answer_compose_secretary.php" class="btn btn-compose">
-                  <i class="fa fa-pencil"></i> Reportar un problema
-                  </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                <li><a href="inbox_secretary.php"> <i class="fa fa-inbox"></i> Reportes recibidos<span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li class="active"><a href="outbox_secretary.php"> <i class="fa fa-envelope-o"></i> Respuestas enviadas</a></li>
+                <li><a id="btnRecibidos"> <i class="fa fa-inbox"></i> Reportes recibidos<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li class="active"><a id="btnRespuestasEnviadas"> <i class="fa fa-envelope-o"></i> Respuestas enviadas</a></li>
                 </ul>
               </div>
             </section>
@@ -350,21 +347,13 @@
                     </li>
                   </ul>
                 </div>
-                <div class="table-inbox-wrap ">
-                  <table class="table table-inbox table-hover">
-                  <tbody>
-                      <tr class="unread">
-                        <td class="inbox-small-cells">
-                          <input type="checkbox" class="mail-checkbox">
-                        </td>
-                        <!--<td class="inbox-small-cells"><i class="fa fa-star"></i></td>-->
-                        <td id="nombreSecretario" class="view-message  dont-show"><a href="answer_view_secretary.php">Secretario.</a></td>
-                        <td id="asunto" class="view-message "><a href="answer_view_secretary.php">Asunto.</a></td>
-                        <td id="adjunto" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                        <td id="fecha_hora" class="view-message  text-right">08:10 AM</td>
-                      </tr>
+                  <div class="table-inbox-wrap">
+                  <table id="data-container" class="table table-inbox table-hover">
+                    <tbody>
                     </tbody>
                   </table>
+                  <nav id="pagination-container" aria-label="Page navigation example">
+                  </nav>
                 </div>
               </div>
             </section>
@@ -405,6 +394,9 @@
    <!-- bootbox code -->
    <script src="lib/bootbox.js"></script>
    <script src="lib/bootbox.locales.js"></script>
+   <script src="js/logout.js"></script>
+   <script src="js/outbox_secretary.js"></script>
+   <script type="text/javascript" src="js/components/pagination-with-styles.js"></script>
    <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
 
 </body>

@@ -236,17 +236,17 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile_secretary.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 id="nombre" class="centered">Sam Soffes</h5>
+          <p class="centered"><a ><img id="profileImage" src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <h5 id="userName" class="centered">Sam Soffes</h5>
           <li class="mt">
-            <a href="profile_secretary.php">
+            <a id="btnInicio">
               <i class="fa fa-dashboard"></i>
               <span>Inicio</span>
               </a>
           </li>
           <li>
-            <a class="active" href="inbox_secretary.php">
-              <i class="fa fa-envelope"></i>
+            <a class="active" id="btnCorreo">
+              <i  class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">3</span>
               </a>
@@ -267,12 +267,9 @@
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-              <a href="answer_compose_secretary.php" class="btn btn-compose">
-                  <i class="fa fa-pencil"></i> Redactar una respuesta
-                  </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li><a href="inbox_secretary.php"> <i class="fa fa-inbox"></i> Reportes recibidos<span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li class="active"><a href="outbox_secretary.php"> <i class="fa fa-envelope-o"></i> Respuestas enviadas</a></li>
+                  <li><a id="btnRecibidos"> <i class="fa fa-inbox"></i> Reportes recibidos<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li class="active"><a id="btnRespuestasEnviadas"> <i class="fa fa-envelope-o"></i> Respuestas enviadas</a></li>
                 </ul>
               </div>
             </section>
@@ -365,7 +362,7 @@
   <!--common script for all pages-->
   <script src="Usuario/lib/common-scripts.js"></script>
   <!--script for this page-->
-
+  <script src="js/answer_view_secretary.js"></script>
 </body>
 
 </html>

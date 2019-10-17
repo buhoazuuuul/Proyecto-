@@ -34,7 +34,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>IN<span>NEXU</span></b></a>
+      <a  class="logo"><b>IN<span>NEXU</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
@@ -223,7 +223,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="../login.php">Cerrar sesíon</a></li>
+          <li><a onclick="linkar()" class="logout" >Cerrar sesíon</a></li>
         </ul>
       </div>
     </header>
@@ -239,13 +239,13 @@
           <p class="centered"><a href=""><img id="profileImage" src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 id="userName" class="centered">Sam Soffes</h5>
           <li class="sub-menu">
-            <a href="profile_secretary.php">
+            <a id="btnInicio" href="">
               <i class="fa fa-cogs"></i>
               <span>Inicio</span>
             </a>
           </li>
           <li>
-            <a class="active" href="inbox_secretary.php">
+            <a id="correo" class="active" >
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
               <span class="label label-theme pull-right mail-info">3</span>
@@ -267,12 +267,9 @@
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-              <a href="answer_compose_secretary.php" class="btn btn-compose">
-                  <i class="fa fa-pencil"></i> Redactar una respuesta
-                  </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li class="active"><a href="inbox_secretary.php"> <i class="fa fa-inbox"></i> Reportes recibidos<span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li><a href="outbox_secretary.php"> <i class="fa fa-envelope-o"></i> Respuestas enviadas</a></li>
+                  <li class="active"><a id="btnRecibidos"> <i class="fa fa-inbox"></i> Reportes recibidos<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li><a id="btnRespuestasEnviadas"> <i class="fa fa-envelope-o"></i> Respuestas enviadas</a></li>
                 </ul>
               </div>
             </section>
@@ -456,6 +453,7 @@
   <!--script for this page-->
   <script type="text/javascript" src="js/components/pagination-with-styles.js"></script>
   <script type="text/javascript" src="js/getReportsSecretary.js"></script>
+  <script type="text/javascript" src="js/logout.js"></script>
  
 
 </body>

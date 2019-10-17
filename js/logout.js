@@ -1,28 +1,18 @@
-$(document).ready(function () {
 
-    console.log('Documento logout cargado');
-    $("#btnLogout").click(function () {
-        logout();
-    });
+function linkar() {
 
-
-});
-
-function logout() {
-
-    $.ajax({
-        url: 'php/logout.php',
-        type: 'POST',
-        data: "",
-        beforeSend: function () {
-            console.log('Saliendo..');
-        },
-        success: function (response) {
-
-            window.location = response;
-
-        },
-    });
-
+    Swal.fire({
+        title: 'Estas seguro?',
+        text: "Salir, voy a regresar luego a gestionar los regiesgos!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, salir!'
+    }).then((result) => {
+        if (result.value) {
+            window.location.href = 'logout.php';
+        }
+    })
 
 }
