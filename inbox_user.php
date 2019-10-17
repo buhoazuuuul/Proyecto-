@@ -223,7 +223,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="../login.php">Cerrar sesíon</a></li>
+          <li><a class="logout" onclick="linkar()">Cerrar sesíon</a></li>
         </ul>
       </div>
     </header>
@@ -245,7 +245,7 @@
             </a>
           </li>
           <li>
-            <a class="active" href="inbox_user.html">
+            <a class="active" id="inbox_user">
               <i class="fa fa-envelope"></i>
               <span>Reportar</span>
               <span class="label label-theme pull-right mail-info">3</span>
@@ -267,12 +267,12 @@
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-                <a href="mail_compose_user.php" class="btn btn-compose">
+                <a id="report" class="btn btn-compose">
                   <i class="fa fa-pencil"></i> Reportar un problema
                   </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li class="active"><a href="inbox_user.php"> <i class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li><a href="outbox_user.php"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
+                  <li class="active"><a id="inbox"> <i  class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li><a id="outbox"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
                 </ul>
               </div>
             </section>
@@ -396,6 +396,7 @@
     <script type="text/javascript" src="js/components/pagination-with-styles.js"></script>
    <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
    <script type="text/javascript" src="js/inbox_user.js"></script>
+   <script type="text/javascript" src="js/logout.js"></script>
    
 
 </body>

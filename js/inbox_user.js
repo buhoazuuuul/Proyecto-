@@ -9,6 +9,7 @@ var respuestas = [];
 $(document).ready(function () {
     console.warn('Get responses loaded!')
     getUser();
+    setHrefs();
     var dialog = bootbox.dialog({
         title: 'Obteniendo respuestas',
         message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando...</p>'
@@ -26,10 +27,13 @@ $(document).ready(function () {
 function setHrefs() {
 
     $("#btnInicio").attr("href", urlPerfil);
+    $("#btnEditarPerfil").attr("href", urlPerfil);
     $("#home").attr("href", urlPerfil);
     $("#enviarReporte").attr("href", urlsendReport);
     $("#inbox").attr("href", urlInbox);
+    $("#inbox_user").attr("href", urlInbox);
     $("#outbox").attr("href", urlOutbox);
+    $("#report").attr("href", urlsendReport);
 
 }
 
@@ -37,7 +41,7 @@ function simpleTemplating(data) {
     var html;
     $.each(data, function (index, item) {
         if (item.prioridad == 'Muy prioritario') {
-            let url = 'detalle_reporte_usuario.php?id_report=' + item.report_id;
+            let url = 'detalle_reporte_usuario.php?userName=' + username + '&id_report=' + item.report_id;
             html += '<tr><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
                     <td class="inbox-small-cells"><i style="color:red;" style class="fa fa-star"></i></td>\
                     <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
@@ -45,7 +49,7 @@ function simpleTemplating(data) {
                     <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
                     <td id="fecha_hora" class="view-message  text-right">'+ item.report_asunto + '</td>c';
         } else {
-            let url = 'detalle_reporte_usuario.php?id_report=' + item.report_id;
+            let url = 'detalle_reporte_usuario.php?userName=' + username + '&id_report=' + item.report_id;
             html += '<tr href=' + url + '><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
                     <td class="inbox-small-cells"><i style="color:green;" style class="fa fa-star"></i></td>\
                     <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
@@ -68,7 +72,6 @@ function pagination(reportes) {
         autoHideNext: true,
         className: 'paginationjs-theme-blue',
         callback: function (data, pagination) {
-            console.log(data);
             var html = simpleTemplating(data);
             $('#data-container').html(html);
 
@@ -88,7 +91,6 @@ function getReports() {
         },
         success: function (response) {
             let reports = JSON.parse(response);
-            console.log(reports);
             simpleTemplating(reports);
             pagination(reports);
         },
@@ -105,7 +107,6 @@ function getParameterByName(name) {
 function getUser() {
 
     let dataString = 'userName=' + username;
-    let data;
     $.ajax({
         url: 'php/getUser.php',
         type: 'POST',
@@ -115,6 +116,9 @@ function getUser() {
         },
         success: function (response) {
             datos = JSON.parse(response);
+            console.log(datos);
+            $("#userName").text(datos[0].nombre);
+            $("#profileImage").attr("src", datos[0].img);
         }
     });
 

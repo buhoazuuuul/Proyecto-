@@ -69,7 +69,6 @@ function pagination(reportes) {
         autoHideNext: true,
         className: 'paginationjs-theme-blue',
         callback: function (data, pagination) {
-            console.log(data);
             var html = simpleTemplating(data);
             $('#data-container').html(html);
 
@@ -89,7 +88,6 @@ function getReports() {
         },
         success: function (response) {
             let reports = JSON.parse(response);
-            console.log(reports);
             simpleTemplating(reports);
             reports.forEach(element => {
                 reportes.push(element);
@@ -109,7 +107,6 @@ function getParameterByName(name) {
 function getUser() {
 
     let dataString = 'userName=' + username;
-    let data;
     $.ajax({
         url: 'php/getUser.php',
         type: 'POST',
@@ -119,6 +116,8 @@ function getUser() {
         },
         success: function (response) {
             datos = JSON.parse(response);
+            $('#userName').text(datos[0].nombre + ' ' + datos[0].apellido);
+            $('#profileImage').attr('src', datos[0].img);
         }
     });
 

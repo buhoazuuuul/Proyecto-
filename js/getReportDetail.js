@@ -1,9 +1,10 @@
 var reporte_id = getParameterByName('id_report');
 var username = getParameterByName('userName');
-const urlPerfil = 'profile_secretary.php?userName=' + username;
-const urlRecibidos = 'inbox_secretary.php?userName=' + username;
-const urlEnviados = 'outbox_secretary.php?userName=' + username;
-const urlCorreo = 'inbox_secretary.php?userName=' + username;
+const urlPerfil = 'profile.php?userName=' + username;
+const urlRecibidos = 'inbox_user.php?userName=' + username;
+const urlEnviados = 'outbox_user.php?userName=' + username;
+const urlCorreo = 'inbox_user.php?userName=' + username;
+const urlsendReport = 'mail_compose_user.php?userName=' + username;
 var report;
 var datos;
 $(document).ready(function () {
@@ -17,8 +18,10 @@ $(document).ready(function () {
 function setHrefs() {
 
     $("#btnInicio").attr("href", urlPerfil);
+    $("#btnEditarPerfil").attr("href", urlPerfil);
     $("#btnRecibidos").attr("href", urlRecibidos);
     $("#btnRespuestasEnviadas").attr("href", urlEnviados);
+    $("#sendReport").attr("href", urlsendReport);
     $("#correo").attr("href", urlCorreo);
 
 }
@@ -60,14 +63,15 @@ function getParameterByName(name) {
 function getUser() {
 
     $.ajax({
-        url: 'php/getSecretary.php',
+        url: 'php/getUser.php',
         type: 'POST',
-        data: { user: username },
+        data: { userName: username },
         beforeSend: function () {
             console.log('Enviando..');
         },
         success: function (response) {
             datos = JSON.parse(response);
+            console.log(datos);
             $('#userName').text(datos[0].nombre + ' ' + datos[0].apellido);
             $('#profileImage').attr('src', datos[0].img);
 

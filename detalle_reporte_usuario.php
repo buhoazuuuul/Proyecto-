@@ -35,7 +35,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>IN<span>NEXU</span></b></a>
+      <a  class="logo"><b>IN<span>NEXU</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
@@ -237,8 +237,8 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">Sam Soffes</h5>
+          <p class="centered"><a href="profile.php"><img id="profileImage" class="img-circle" width="80"></a></p>
+          <h5 id="userName" class="centered">Sam Soffes</h5>
           <li class="mt">
             <a id='btnEditarPerfil'>
               <i class="fa fa-dashboard"></i>
@@ -246,7 +246,7 @@
               </a>
           </li>
           <li>
-            <a class="active" href="inbox_user.php">
+            <a class="active" id="sendReport">
               <i class="fa fa-envelope"></i>
               <span>Reportar</span>
               <span class="label label-theme pull-right mail-info">3</span>
@@ -268,12 +268,12 @@
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-                <a href="answer_compose.html" class="btn btn-compose">
+                <a id="correo" class="btn btn-compose">
                   <i class="fa fa-pencil"></i>Redactar una respuesta
                   </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                <li><a href="inbox_user.php"> <i class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li class="active"><a href="outbox_user.php"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
+                <li><a id="btnRecibidos"> <i class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li class="active"><a id="btnRespuestasEnviadas"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
                 </ul>
               </div>
             </section>
