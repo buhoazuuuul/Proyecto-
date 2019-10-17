@@ -4,14 +4,13 @@ const urlOutbox = 'outbox_user.php?userName=' + username;
 const urlInbox = 'inbox_user.php?userName=' + username;
 const urlsendReport = 'mail_compose_user.php?userName=' + username;
 var datos;
-var reportes = [];
+var respuestas = [];
 
 $(document).ready(function () {
-    console.warn('Get reports loaded!')
+    console.warn('Get responses loaded!')
     getUser();
-    setHrefs();
     var dialog = bootbox.dialog({
-        title: 'Obteniendo tus reportes enviados',
+        title: 'Obteniendo respuestas',
         message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando...</p>'
     });
     dialog.init(function () {
@@ -38,21 +37,21 @@ function simpleTemplating(data) {
     var html;
     $.each(data, function (index, item) {
         if (item.prioridad == 'Muy prioritario') {
-            let url = 'detalle_reporte_usuario.php?id_report=' + item.id;
+            let url = 'detalle_reporte_usuario.php?id_report=' + item.report_id;
             html += '<tr><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
                     <td class="inbox-small-cells"><i style="color:red;" style class="fa fa-star"></i></td>\
                     <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
-                    <td id="asunto" class="view-message "><a href='+ url + '>' + item.asunto + '</a></td>\
+                    <td id="asunto" class="view-message "><a href='+ url + '>' + item.report_asunto + '</a></td>\
                     <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
-                    <td id="fecha_hora" class="view-message  text-right">'+ item.fecha_hora + '</td>c';
+                    <td id="fecha_hora" class="view-message  text-right">'+ item.report_asunto + '</td>c';
         } else {
-            let url = 'detalle_reporte_usuario.php?id_report=' + item.id;
+            let url = 'detalle_reporte_usuario.php?id_report=' + item.report_id;
             html += '<tr href=' + url + '><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
                     <td class="inbox-small-cells"><i style="color:green;" style class="fa fa-star"></i></td>\
                     <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
-                    <td id="asunto" class="view-message "><a href='+ url + '> ' + item.asunto + '</a ></td >\
+                    <td id="asunto" class="view-message "><a href='+ url + '> ' + item.report_asunto + '</a ></td >\
             <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
-            <td id="fecha_hora" class="view-message text-right">'+ item.fecha_hora + '</td>v';
+            <td id="fecha_hora" class="view-message text-right">'+ item.report_asunto + '</td>v';
         }
     });
 
@@ -80,7 +79,7 @@ function pagination(reportes) {
 function getReports() {
 
     $.ajax({
-        url: 'php/getReportsUser.php',
+        url: 'php/getInboxUser.php',
         type: 'POST',
         data: { id_usuario: datos[0].id },
         beforeSend: function () {
@@ -91,9 +90,6 @@ function getReports() {
             let reports = JSON.parse(response);
             console.log(reports);
             simpleTemplating(reports);
-            reports.forEach(element => {
-                reportes.push(element);
-            });
             pagination(reports);
         },
     });

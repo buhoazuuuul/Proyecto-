@@ -346,21 +346,13 @@
                     </li>
                   </ul>
                 </div>
-                <div class="table-inbox-wrap ">
-                  <table class="table table-inbox table-hover">
+                <div class="table-inbox-wrap">
+                  <table id="data-container" class="table table-inbox table-hover">
                     <tbody>
-                      <tr class="unread">
-                        <td class="inbox-small-cells">
-                          <input type="checkbox" class="mail-checkbox">
-                        </td>
-                        <!--<td class="inbox-small-cells"><i class="fa fa-star"></i></td>-->
-                        <td id="nombreSecretario" class="view-message  dont-show"><a href="answer_view_user.php">Secretario.</a></td>
-                        <td id="asunto" class="view-message "><a href="answer_view_user.php">Asunto.</a></td>
-                        <td id="adjunto" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                        <td id="fecha_hora" class="view-message  text-right">08:10 AM</td>
-                      </tr>
                     </tbody>
                   </table>
+                  <nav id="pagination-container" aria-label="Page navigation example">
+                  </nav>
                 </div>
               </div>
             </section>
@@ -401,7 +393,10 @@
    <!-- bootbox code -->
    <script src="lib/bootbox.js"></script>
    <script src="lib/bootbox.locales.js"></script>
+    <script type="text/javascript" src="js/components/pagination-with-styles.js"></script>
    <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
+   <script type="text/javascript" src="js/inbox_user.js"></script>
+   
 
 </body>
 

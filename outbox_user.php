@@ -36,7 +36,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>IN<span>NEXU</span></b></a>
+      <a id="home"class="logo"><b>IN<span>NEXU</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
@@ -268,12 +268,12 @@
           <div class="col-sm-3">
             <section class="panel">
               <div class="panel-body">
-                <a href="../sendMail.php" class="btn btn-compose">
+                <a id="enviarReporte" class="btn btn-compose">
                   <i class="fa fa-pencil"></i> Reportar un problema
                   </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li><a href="inbox_user.php"> <i class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li class="active"><a href="outbox_user.php"> <i class="fa fa-envelope-o"></i> Reportes enviados</a></li>
+                  <li><a id="inbox"> <i class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li class="active"><a id="outbox"> <i class="fa fa-envelope-o"></i>Reportes enviados</a></li>
                 </ul>
               </div>
             </section>
