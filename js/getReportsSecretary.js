@@ -21,7 +21,27 @@ $(document).ready(function () {
 
     setTimeout(function () { dialog.modal('hide') }, 2000);
     setTimeout(() => { getReports() }, 1000);
+    demo();
+    var myVar = setInterval(getReports, 1000);
 });
+
+
+
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds) {
+            break;
+        }
+    }
+}
+
+function demo() {
+
+    sleep(2000);
+}
+
+
 
 function setHrefs() {
 
@@ -88,7 +108,6 @@ function pagination(reportes) {
         autoHideNext: true,
         className: 'paginationjs-theme-blue',
         callback: function (data, pagination) {
-            console.log(data);
             var html = simpleTemplating(data);
             $('#data-container').html(html);
 
@@ -103,7 +122,7 @@ function getReports() {
     $.ajax({
         url: 'php/getInboxReportsSecretary.php',
         type: 'POST',
-        data: { id_secretario: datos[0].id },
+        data: { id_secretario: 6 },
         beforeSend: function () {
 
             console.log('Enviando..');

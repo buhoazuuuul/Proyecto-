@@ -30,6 +30,8 @@ function getUser() {
         },
         success: function (response) {
             datos = JSON.parse(response);
+            $('#userName').text(datos[0].nombre + ' ' + datos[0].apellido);
+            $('#profileImage').attr('src', datos[0].img);
             getReports();
         },
     });
@@ -106,6 +108,7 @@ function getReports() {
                 reportes.push(element);
             });
             pagination(reports);
+
         },
     });
 
