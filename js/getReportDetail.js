@@ -2,7 +2,7 @@ var reporte_id = getParameterByName('id_report');
 var username = getParameterByName('userName');
 const urlPerfil = 'profile.php?userName=' + username;
 const urlRecibidos = 'inbox_user.php?userName=' + username;
-const urlEnviados = 'outbox_user.php?userName=' + username;
+const urlEnviados = 'outbox_secretary.php?userName=' + username;
 const urlCorreo = 'inbox_user.php?userName=' + username;
 const urlsendReport = 'mail_compose_user.php?userName=' + username;
 var report;
