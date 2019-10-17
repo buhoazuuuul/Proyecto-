@@ -223,7 +223,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="../login.php">Cerrar sesión</a></li>
+          <li><a class="logout" onclick="linkar()">Cerrar sesión</a></li>
         </ul>
       </div>
     </header>
@@ -268,7 +268,7 @@
             <section class="panel">
               <div class="panel-body">
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li><a id="btnRecibidos"> <i class="fa fa-inbox"></i> Reportes recibidos<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                <li><a id="btnRecibidos"> <i class="fa fa-inbox"></i> Reportes recibidos<span class="label label-theme pull-right inbox-notification">3</span></a></li>
                   <li class="active"><a id="btnRespuestasEnviadas"> <i class="fa fa-envelope-o"></i> Respuestas enviadas</a></li>
                 </ul>
               </div>
@@ -277,14 +277,8 @@
           <div class="col-sm-9">
             <section class="panel">
               <header class="panel-heading wht-bg">
-                <h4 id="asunto" class="gen-case">
-                    Asunto
-                    <form action="#" class="pull-right mail-src-position">
-                      <div class="input-append">
-                        <input type="text" class="form-control " placeholder="Buscar">
-                      </div>
-                    </form>
-                  </h4>
+              <h5>Asunto de la respuesta</h5>
+                <h4 id="asunto_respuesta" class="gen-case">Asunto</h4>
               </header>
               <div class="panel-body ">
                 <div class="mail-header row">
@@ -298,14 +292,18 @@
                   <div class="row">
                     <div class="col-md-8">
                       <img id="img" src="img/ui-zac.jpg" id="fotoSecretario" alt="">
-                      <strong id="nombreSecretario">Nombre secretario</strong>
+                      <h5>Nombre del usuario al que se le envio la respuesta</h5>
+                      <strong id="nombreUsuario">Nombre secretario</strong>
                     </div>
                     <div class="col-md-4">
+                    <h6 class="date">Fecha de repuesta</h6>
                       <p id="fecha_hora" class="date"> 10:15AM 02 FEB 2014</p>
                     </div>
                   </div>
                 </div>
                 <div id="mensaje" class="view-mail">
+                <h4>Mensaje de la respuesta</h4>
+                <hr/>
                   <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
                     of the setting of the eyes, and the thin straight lips, and the markings in the nose, curved with a sarcasm that looked handsomely diabolic. </p>
                   <p>"Yes," repeated the Marquis. "A Doctor with a daughter. Yes. So commences the new philosophy! You are fatigued. Good night!"</p>
@@ -317,7 +315,60 @@
                   <ul>
                     <li>
                       <a class="atch-thumb" href="#">
-                        <img id="adjunto" src="img/instagram.jpg">
+                        <h4>Adjunto enviado en la respuesta</h4>
+                        <img id="adjunto_resp" src="img/instagram.jpg">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="compose-btn pull-left">
+                  <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
+                  <button class="btn btn-sm "><i class="fa fa-arrow-right"></i> Forward</button>
+                  <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
+                  <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="row mt">
+          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-9">
+            <section class="panel">
+              <header class="panel-heading wht-bg">
+              <h5>Asunto del reporte</h5>
+                <h4 id="asunto_reporte" class="gen-case">Asunto</h4>
+              </header>
+              <div class="panel-body ">
+                <div class="mail-header row">
+                  <div class="col-md-8">
+                    
+                  </div>
+                  <div class="col-md-4">
+                  </div>
+                </div>
+                <div class="mail-sender">
+                  <div class="row">
+                    <div class="col-md-4">
+                    <h6 class="">Fecha del reporte</h6>
+                      <p id="fecha_hora_reporte" class=""> 10:15AM 02 FEB 2014</p>
+                    </div>
+                  </div>
+                </div>
+                <div id="mensaje" class="view-mail">
+                <h4>Mensaje del reporte</h4>
+                <hr/>
+                  <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
+                    of the setting of the eyes, and the thin straight lips, and the markings in the nose, curved with a sarcasm that looked handsomely diabolic. </p>
+                 
+                </div>
+                <div class="attachment-mail">
+                  <ul>
+                    <li>
+                      <a class="atch-thumb" href="#">
+                        <h4>Adjunto enviado en el reporte</h4>
+                        <img id="adjunto_reporte" src="img/instagram.jpg">
                       </a>
                     </li>
                   </ul>
@@ -335,6 +386,7 @@
       </section> 
       <!-- /wrapper -->
     </section>
+    
     <!-- /MAIN CONTENT -->
     <!--main content end-->
     <!--footer start-->
@@ -362,7 +414,9 @@
   <!--common script for all pages-->
   <script src="Usuario/lib/common-scripts.js"></script>
   <!--script for this page-->
+  <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
   <script src="js/answer_view_secretary.js"></script>
+  <script src="js/logout.js"></script>
 </body>
 
 </html>

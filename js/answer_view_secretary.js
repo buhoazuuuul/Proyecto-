@@ -1,12 +1,16 @@
 var username = getParameterByName('userName');
+var id_respuesta = getParameterByName('id_resp');
 const urlPerfil = 'profile_secretary.php?userName=' + username;
 const urlRecibidos = 'inbox_secretary.php?userName=' + username;
 const urlEnviados = 'outbox_secretary.php?userName=' + username;
 var datos;
+var reportDetail;
 
 $(document).ready(function () {
     console.warn('Answer view loaded!');
     getUser();
+    setHrefs();
+    getAnswerDetail();
 });
 
 function setHrefs() {
@@ -38,6 +42,25 @@ function getUser() {
             datos = JSON.parse(response);
             $('#userName').text(datos[0].nombre + ' ' + datos[0].apellido);
             $('#profileImage').attr('src', datos[0].img);
+
+        },
+    });
+
+}
+
+function getAnswerDetail() {
+
+    $.ajax({
+        url: 'php/getAnswerDetailSecretary.php',
+        type: 'POST',
+        data: { id_respuesta: id_respuesta },
+        beforeSend: function () {
+            console.log('Enviando..');
+        },
+        success: function (response) {
+            let data = JSON.parse(response);
+            reportDetail = data;
+            console.log(data);
 
         },
     });
