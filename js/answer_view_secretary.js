@@ -1,5 +1,4 @@
-var username = getParameterByName('userName');
-var id_respuesta = getParameterByName('id_resp');
+var username = getParameterByName('userName'); var id_respuesta = getParameterByName('id_resp');
 const urlPerfil = 'profile_secretary.php?userName=' + username;
 const urlRecibidos = 'inbox_secretary.php?userName=' + username;
 const urlEnviados = 'outbox_secretary.php?userName=' + username;
@@ -60,7 +59,16 @@ function getAnswerDetail() {
         success: function (response) {
             let data = JSON.parse(response);
             reportDetail = data;
-            console.log(data);
+            console.log(reportDetail);
+            $("#asunto_respuesta").text(reportDetail[0].asunto_respuesta);
+            $("#nombreUsuario").text(reportDetail[0].nombre);
+            $("#fecha_hora_respuesta").text(reportDetail[0].fecha_respuesta);
+            $("#msm_respuesta").text(reportDetail[0].msm_respuesta);
+            $("#asunto_reporte").text(reportDetail[0].msm_respuesta);
+            $("#adjunto_resp").attr("src", reportDetail[0].adjunto_respuesta);
+            $("#adjunto_reporte").attr("src", reportDetail[0].adjunto_reporte);
+            $("#fecha_hora_reporte").text(reportDetail[0].fecha_reporte);
+            $("#msm_reporte").text(reportDetail[0].texto_reporte);
 
         },
     });

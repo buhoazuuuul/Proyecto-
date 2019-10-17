@@ -293,24 +293,18 @@
                     <div class="col-md-8">
                       <img id="img" src="img/ui-zac.jpg" id="fotoSecretario" alt="">
                       <h5>Nombre del usuario al que se le envio la respuesta</h5>
-                      <strong id="nombreUsuario">Nombre secretario</strong>
+                      <h2><strong id="nombreUsuario">Nombre secretario</strong></h2>
                     </div>
                     <div class="col-md-4">
                     <h6 class="date">Fecha de repuesta</h6>
-                      <p id="fecha_hora" class="date"> 10:15AM 02 FEB 2014</p>
+                      <p id="fecha_hora_respuesta" class="date"> 10:15AM 02 FEB 2014</p>
                     </div>
                   </div>
                 </div>
                 <div id="mensaje" class="view-mail">
                 <h4>Mensaje de la respuesta</h4>
                 <hr/>
-                  <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
-                    of the setting of the eyes, and the thin straight lips, and the markings in the nose, curved with a sarcasm that looked handsomely diabolic. </p>
-                  <p>"Yes," repeated the Marquis. "A Doctor with a daughter. Yes. So commences the new philosophy! You are fatigued. Good night!"</p>
-                  <p>It would have been of as much avail to interrogate any stone face outside the chateau as to interrogate that face of his. The nephew looked at him, in vain, in passing on to the door. </p>
-                  <p>"Good night!" said the uncle. "I look to the pleasure of seeing you again in the morning. Good repose! Light Monsieur my nephew to his chamber there!--And burn Monsieur my nephew in his bed, if you will," he added to himself, before
-                    he rang his little bell again, and summoned his valet to his own bedroom.</p>
-                </div>
+                  <p id="msm_respuesta"></p>
                 <div class="attachment-mail">
                   <ul>
                     <li>
@@ -359,9 +353,7 @@
                 <div id="mensaje" class="view-mail">
                 <h4>Mensaje del reporte</h4>
                 <hr/>
-                  <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
-                    of the setting of the eyes, and the thin straight lips, and the markings in the nose, curved with a sarcasm that looked handsomely diabolic. </p>
-                 
+                  <p id="msm_reporte"></p>
                 </div>
                 <div class="attachment-mail">
                   <ul>
