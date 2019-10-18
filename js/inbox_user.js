@@ -32,8 +32,9 @@ function setHrefs() {
     $("#enviarReporte").attr("href", urlsendReport);
     $("#inbox").attr("href", urlInbox);
     $("#inbox_user").attr("href", urlInbox);
-    $("#outbox").attr("href", urlOutbox);
     $("#report").attr("href", urlsendReport);
+    $("#outbox").attr("href", urlOutbox);
+
 
 }
 
