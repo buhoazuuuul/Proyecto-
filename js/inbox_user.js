@@ -45,17 +45,17 @@ function simpleTemplating(data) {
             html += '<tr><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
                     <td class="inbox-small-cells"><i style="color:red;" style class="fa fa-star"></i></td>\
                     <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
-                    <td id="asunto" class="view-message "><a href='+ url + '>' + item.report_asunto + '</a></td>\
+                    <td id="asunto" class="view-message "><a href='+ url + '>' + item.reponse_asunto + '</a></td>\
                     <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
-                    <td id="fecha_hora" class="view-message  text-right">'+ item.report_asunto + '</td>c';
+                    <td id="fecha_hora" class="view-message  text-right">'+ item.reponse_fecha + '</td>c';
         } else {
             let url = 'detalle_reporte_usuario.php?userName=' + username + '&id_report=' + item.report_id;
             html += '<tr href=' + url + '><td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>\
                     <td class="inbox-small-cells"><i style="color:green;" style class="fa fa-star"></i></td>\
                     <td id = "nombreUsuario" class= "view-message  dont-show" > <a>'+ item.nombre + '</a></td>\
-                    <td id="asunto" class="view-message "><a href='+ url + '> ' + item.report_asunto + '</a ></td >\
+                    <td id="asunto" class="view-message "><a href='+ url + '> ' + item.reponse_asunto + '</a ></td >\
             <td id="" class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>\
-            <td id="fecha_hora" class="view-message text-right">'+ item.report_asunto + '</td>v';
+            <td id="fecha_hora" class="view-message text-right">'+ item.reponse_fecha + '</td>v';
         }
     });
 
@@ -91,6 +91,7 @@ function getReports() {
         },
         success: function (response) {
             let reports = JSON.parse(response);
+            console.log(reports);
             simpleTemplating(reports);
             pagination(reports);
         },

@@ -386,7 +386,6 @@
     <script src="js/sendUserMessage.js"></script>
     <script src="js/components/emergencias_Naturales.js"></script>
     <script src="js/components/getUrlParams.js"></script>
-    <script src="js/components/getUser.js"></script>
     <script src="js/upload_image.js"></script>
     <script src="js/mail_compose_user.js"></script>
 </body>
