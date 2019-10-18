@@ -4,6 +4,7 @@ const urlPerfil = 'profile.php?userName=' + userName;
 const urlCorreo = 'mail_compose_user.php?userName=' + userName;
 const urlEnviados = 'outbox_user.php?userName=' + userName;
 const urlInbox = 'inbox_user.php?userName=' + userName;
+var datos;
 $(document).ready(function () {
     var dialog = bootbox.dialog({
         title: 'Cargando tu perfil',
@@ -11,7 +12,7 @@ $(document).ready(function () {
     });
 
     getVeredas();
-    getUser(userName);
+    getUser();
     setHrefs();
 
     dialog.init(function () {
@@ -52,4 +53,23 @@ function getVeredas() {
         });
     });
     $("#vereda")[0].selectedIndex = 0;
+}
+function getUser() {
+
+    let dataString = 'userName=' + userName;
+    $.ajax({
+        url: 'php/getUser.php',
+        type: 'POST',
+        data: dataString,
+        beforeSend: function () {
+            console.log('Enviando..');
+        },
+        success: function (response) {
+            datos = JSON.parse(response);
+            console.log(datos);
+            $("#userName").text(datos[0].nombre);
+            $("#profileImage").attr("src", datos[0].img);
+        }
+    });
+
 }
