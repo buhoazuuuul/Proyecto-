@@ -1,5 +1,5 @@
 var selected;
-var combo;
+var combo = document.getElementById("departamento");
 
 $(document).ready(function () {
 
@@ -19,8 +19,6 @@ $(document).ready(function () {
     });
 
 });
-
-
 function selectMunicipiosPorDep(departamento) {
 
     $('#municipio').empty();
@@ -35,7 +33,6 @@ function selectMunicipiosPorDep(departamento) {
     });
 
 }
-
 function selectDepartamentos() {
 
     $.getJSON("https://www.datos.gov.co/resource/xdk5-pm3f.json?$query=select distinct departamento", function (result) {
@@ -48,7 +45,6 @@ function selectDepartamentos() {
     });
     $("#departamento")[0].selectedIndex = 0;
 }
-
 function getVeredas() {
 
     $.getJSON("php/getVeredas.php", function (result) {

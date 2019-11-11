@@ -31,7 +31,6 @@ function linkar() {
 }
 
 function getLocation() {
-
     buscarDepartamento(datos[0].departamento);
     buscarMunicipio(datos[0].municipio);
     buscarTipoDocumento(datos[0].tipo_doc);
@@ -51,7 +50,6 @@ function setHrefs() {
 function getUser() {
 
     var dataString = 'userName=' + username;
-
     $.ajax({
         url: 'php/getUser.php',
         type: 'POST',
@@ -61,8 +59,10 @@ function getUser() {
         },
         success: function (response) {
             datos = JSON.parse(response);
+            console.log(datos);
+            sleep(1000);
             setUserName(datos);
-            getLocation(datos);
+            getLocation();
 
         },
     });
@@ -70,13 +70,11 @@ function getUser() {
 }
 
 function setUserName(array) {
-
     $('#userName').text(array[0].nombre + ' ' + array[0].apellido);
     $('#profileImage').attr('src', array[0].img);
     $('#mainImgProile').attr('src', array[0].img);
     filluserForm();
 }
-
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -131,7 +129,6 @@ function buscarMunicipio(municipio) {
     }
 }
 
-
 function filluserForm() {
 
     var dialog = bootbox.dialog({
@@ -180,4 +177,12 @@ function getTiposDeDocumentos() {
         });
     });
 
+}
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds) {
+            break;
+        }
+    }
 }

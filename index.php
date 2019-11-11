@@ -140,7 +140,7 @@
                   </div>
                   <div class="form-group col-lg-6">
                     <label class="control-label">Vereda</label>
-                    <h6 style="font-size:8px;margin:0px;padding:0%;">Si no reside en una vereda,seleccione "ninguna"</h6>
+                    <h5 style="font-size:8px;margin:0px;padding:0%;">Si no reside en una vereda,seleccione "Zona urbana" al final de las opciones</h5>
                     <select name="vereda" class="form-control" id="vereda" placeholder="" data-validate-field="text">
                     <option value="Ninguna">Ninguna</option>
                     </select>
