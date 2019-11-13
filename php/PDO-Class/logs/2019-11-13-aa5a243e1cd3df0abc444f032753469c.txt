@@ -1,0 +1,19 @@
+Time : 23:19:43
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`innexu`.`usuario`, CONSTRAINT `fk_usuario_vereda1` FOREIGN KEY (`vereda_id`) REFERENCES `vereda` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc=:num_doc, tipo_doc = :tipo_doc, nombre = :nombre, apellido=:apellido, telefono=:telefono,email =:email, departamento=:departamento, municipio = :municipio, fecha=:fecha, usuario=:usuario, sexo=:sexo, img=:img WHERE id = :id
+
+Time : 23:19:32
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`innexu`.`usuario`, CONSTRAINT `fk_usuario_vereda1` FOREIGN KEY (`vereda_id`) REFERENCES `vereda` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc=:num_doc, tipo_doc = :tipo_doc, nombre = :nombre, apellido=:apellido, telefono=:telefono,email =:email, departamento=:departamento, municipio = :municipio, fecha=:fecha, usuario=:usuario, sexo=:sexo, img=:img WHERE id = :id
+
+Time : 23:19:31
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`innexu`.`usuario`, CONSTRAINT `fk_usuario_vereda1` FOREIGN KEY (`vereda_id`) REFERENCES `vereda` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc=:num_doc, tipo_doc = :tipo_doc, nombre = :nombre, apellido=:apellido, telefono=:telefono,email =:email, departamento=:departamento, municipio = :municipio, fecha=:fecha, usuario=:usuario, sexo=:sexo, img=:img WHERE id = :id
+
+Time : 23:19:31
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`innexu`.`usuario`, CONSTRAINT `fk_usuario_vereda1` FOREIGN KEY (`vereda_id`) REFERENCES `vereda` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc=:num_doc, tipo_doc = :tipo_doc, nombre = :nombre, apellido=:apellido, telefono=:telefono,email =:email, departamento=:departamento, municipio = :municipio, fecha=:fecha, usuario=:usuario, sexo=:sexo, img=:img WHERE id = :id
+
+Time : 23:19:29
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`innexu`.`usuario`, CONSTRAINT `fk_usuario_vereda1` FOREIGN KEY (`vereda_id`) REFERENCES `vereda` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Raw SQL : UPDATE usuario SET vereda_id=:vereda_id, num_doc=:num_doc, tipo_doc = :tipo_doc, nombre = :nombre, apellido=:apellido, telefono=:telefono,email =:email, departamento=:departamento, municipio = :municipio, fecha=:fecha, usuario=:usuario, sexo=:sexo, img=:img WHERE id = :id

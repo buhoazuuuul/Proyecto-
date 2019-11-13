@@ -12,7 +12,6 @@ $DB = new Db(DBHost, DBPort, DBName, DBUser, DBPassword);
 $doc = intval($_POST['num_doc']);
 $id = intval($_POST['id']);
 $tel = intval($_POST['telefono']);
-$id_vereda = intval($_POST['vereda_id']);
 $pass = $_POST['pass'];
 $new_pass ;
 
@@ -20,7 +19,7 @@ $new_pass ;
 if (isset($_POST['new_pass'])) { 
   $new_pass = password_hash($_POST['new_pass'], PASSWORD_DEFAULT);
     if (verifyPassword($pass,$id)) {
-        echo $DB->query("UPDATE usuario SET vereda_id=:vereda_id, num_doc=:num_doc, tipo_doc = :tipo_doc, nombre = :nombre, apellido=:apellido, telefono=:telefono,email =:email, departamento=:departamento, municipio = :municipio, fecha=:fecha, usuario=:usuario,pass=:pass, sexo=:sexo, img=:img WHERE id = :id", array("pass"=>$new_pass,"id"=>$id,"vereda_id"=>$id_vereda,"num_doc"=>$doc,"tipo_doc"=> $_POST['tipo_doc'],"nombre"=>$_POST['nombre'],"apellido"=>$_POST['apellido'],"telefono"=> $tel,"email"=>$_POST['email'],"departamento"=>$_POST['departamento'],"municipio"=>$_POST['municipio'],"fecha"=>$_POST['fecha'],"usuario"=>$_POST['usuario'],"sexo"=>$_POST['sexo'],"img"=>$_POST['img']));
+        echo $DB->query("UPDATE usuario SET num_doc=:num_doc, tipo_doc = :tipo_doc, nombre = :nombre, apellido=:apellido, telefono=:telefono,email =:email, departamento=:departamento, municipio = :municipio, fecha=:fecha, usuario=:usuario,pass=:pass, sexo=:sexo, img=:img WHERE id = :id", array("pass"=>$new_pass,"num_doc"=>$doc,"tipo_doc"=> $_POST['tipo_doc'],"nombre"=>$_POST['nombre'],"apellido"=>$_POST['apellido'],"telefono"=> $tel,"email"=>$_POST['email'],"departamento"=>$_POST['departamento'],"municipio"=>$_POST['municipio'],"fecha"=>$_POST['fecha'],"usuario"=>$_POST['usuario'],"sexo"=>$_POST['sexo'],"img"=>$_POST['img']));
 } else {
   echo "Contraseña incorrecta con actualizacion";
 }
@@ -28,7 +27,7 @@ if (isset($_POST['new_pass'])) {
 }else{
 
 if (verifyPassword($pass,$id)) {
-    echo $DB->query("UPDATE usuario SET vereda_id=:vereda_id, num_doc=:num_doc, tipo_doc = :tipo_doc, nombre = :nombre, apellido=:apellido, telefono=:telefono,email =:email, departamento=:departamento, municipio = :municipio, fecha=:fecha, usuario=:usuario, sexo=:sexo, img=:img WHERE id = :id", array("id"=>$id,"vereda_id"=>$id_vereda,"num_doc"=>$doc,"tipo_doc"=> $_POST['tipo_doc'],"nombre"=>$_POST['nombre'],"apellido"=>$_POST['apellido'],"telefono"=> $tel,"email"=>$_POST['email'],"departamento"=>$_POST['departamento'],"municipio"=>$_POST['municipio'],"fecha"=>$_POST['fecha'],"usuario"=>$_POST['usuario'],"sexo"=>$_POST['sexo'],"img"=>$_POST['img']));
+    echo $DB->query("UPDATE usuario SET  num_doc=:num_doc, tipo_doc = :tipo_doc, nombre = :nombre, apellido=:apellido, telefono=:telefono,email =:email, departamento=:departamento, municipio = :municipio, fecha=:fecha, usuario=:usuario, sexo=:sexo, img=:img WHERE id = :id", array("id"=>$id,"num_doc"=>$doc,"tipo_doc"=> $_POST['tipo_doc'],"nombre"=>$_POST['nombre'],"apellido"=>$_POST['apellido'],"telefono"=> $tel,"email"=>$_POST['email'],"departamento"=>$_POST['departamento'],"municipio"=>$_POST['municipio'],"fecha"=>$_POST['fecha'],"usuario"=>$_POST['usuario'],"sexo"=>$_POST['sexo'],"img"=>$_POST['img']));
 } else {
     echo "Contraseña incorrecta";
     } 

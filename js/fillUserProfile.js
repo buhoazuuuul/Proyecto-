@@ -3,13 +3,19 @@ var datos;
 var lastDoc;
 var url = 'profile.php?userName=' + username;
 var urlCorreo = 'mail_compose_user.php?userName=' + username;
+var selected;
+var combo;
 
 $(document).ready(function () {
 
     console.log('Documento filluserProfile cargado');
     setHrefs();
-    getTiposDeDocumentos();
     getUser();
+    $("#departamento").change(function () {
+        combo = document.getElementById("departamento");
+        selected = combo.options[combo.selectedIndex].text;
+        selectMunicipiosPorDep(selected);
+    });
 });
 
 function linkar() {
@@ -30,12 +36,6 @@ function linkar() {
 
 }
 
-function getLocation() {
-    buscarDepartamento(datos[0].departamento);
-    buscarMunicipio(datos[0].municipio);
-    buscarTipoDocumento(datos[0].tipo_doc);
-}
-
 function setHrefs() {
 
     $("#btnEditarPerfil").attr("href", url);
@@ -48,7 +48,6 @@ function setHrefs() {
 }
 
 function getUser() {
-
     var dataString = 'userName=' + username;
     $.ajax({
         url: 'php/getUser.php',
@@ -60,13 +59,22 @@ function getUser() {
         success: function (response) {
             datos = JSON.parse(response);
             console.log(datos);
-            sleep(1000);
+            getTiposDeDocumentos();
+            selectDepartamentos(datos[0].departamento, datos[0].municipio);
+            setSex(datos[0].sexo);
             setUserName(datos);
-            getLocation();
-
         },
     });
 
+}
+
+function setSex(sex) {
+    console.log(sex);
+    if (sex == "Mujer") {
+        $("#female").attr('checked', 'checked');
+    } else {
+        $("#male").attr('checked', 'checked');
+    }
 }
 
 function setUserName(array) {
@@ -81,54 +89,35 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
 function buscarTipoDocumento(tipo_doc) {
 
     let select = document.getElementById("tipo_doc");
-
     for (var i = 1; i < select.length; i++) {
-        console.log('Documento buscando');
         if (select.options[i].text == tipo_doc) {
             select.selectedIndex = i;
             console.log(select.options[i]);
         }
     }
 }
-
 function buscarDepartamento(dep) {
-    console.log('buscando departamento');
-    // creamos un variable que hace referencia al select
     let select = document.getElementById("departamento");
-
-    // obtenemos el valor a buscar
-    let buscar = dep;
-
-    // recorremos todos los valores del select
     for (var i = 1; i < select.length; i++) {
-        if (select.options[i].text == buscar) {
-            // seleccionamos el valor que coincide
+        if (select.options[i].text == dep) {
             select.selectedIndex = i;
-            console.log(select.options[i].text);
+            console.log(select.options[i]);
         }
     }
 }
-
 function buscarMunicipio(municipio) {
-    // creamos un variable que hace referencia al select
-    console.log('buscando municipio');
+
     let select = document.getElementById("municipio");
-    // obtenemos el valor a buscar
-    let buscar = municipio;
-    // recorremos todos los valores del select
     for (var i = 1; i < select.length; i++) {
-        if (select.options[i].text == buscar) {
-            // seleccionamos el valor que coincide
+        if (select.options[i].text == municipio) {
             select.selectedIndex = i;
-            console.log(select.options[i].text);
+            console.log(select.options[i]);
         }
     }
 }
-
 function filluserForm() {
 
     var dialog = bootbox.dialog({
@@ -160,11 +149,7 @@ function filluserForm() {
         }, 1000);
     });
     setTimeout(function () { dialog.modal('hide') }, 1000);
-
-
-
 }
-
 function getTiposDeDocumentos() {
 
     $('#tipo_doc').empty();
@@ -175,14 +160,38 @@ function getTiposDeDocumentos() {
                 text: field.nomtipodocumento
             }));
         });
+        buscarTipoDocumento(datos[0].tipo_doc);
+
     });
 
 }
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-        if ((new Date().getTime() - start) > milliseconds) {
-            break;
-        }
-    }
+function selectMunicipiosPorDep(departamento) {
+
+    $('#municipio').empty();
+    $.getJSON("https://www.datos.gov.co/resource/xdk5-pm3f.json?departamento=" + departamento, function (result) {
+        $.each(result, function (i, field) {
+            $('#municipio').append($('<option>', {
+                value: field.municipio,
+                text: field.municipio
+            }));
+        });
+
+    });
+
+}
+function selectDepartamentos(dep, mun) {
+    $.getJSON("https://www.datos.gov.co/resource/xdk5-pm3f.json?$query=select distinct departamento", function (result) {
+        $.each(result, function (i, field) {
+            $('#departamento').append($('<option>', {
+                value: field.departamento,
+                text: field.departamento
+            }));
+        });
+        selectMunicipiosPorDep(dep);
+        buscarDepartamento(dep);
+        setTimeout(() => {
+            buscarMunicipio(mun);
+        }, 1000);
+
+    });
 }

@@ -364,16 +364,8 @@
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Municipio</label>
                             <div class="col-lg-6">
-                              <select class="form-control" id="municipio" name="municipio">
+                              <select class="form-control" id="municipio">
                               </select>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Vereda</label>
-                            <div class="col-lg-6">
-                            <h6 style="font-size:8px;margin:0px;padding:0%;">Si no reside en una vereda, deje esta opcion en blanco</h6>
-                              <select name="vereda" class="form-control" id="vereda" placeholder="" data-validate-field="text">
-                            </select>
                             </div>
                           </div>
                           <div class="form-group">
@@ -391,8 +383,8 @@
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Sexo</label>
                             <div class="col-lg-6">
-                            <label><input type="radio" name="sexo" value="Hombre" class="form__radio">Hombre</label>
-                            <label><input type="radio" name="sexo" value="Mujer" class="form__radio">Mujer</label>
+                            <label><input id="male" type="radio" name="sexo" value="Hombre" class="form__radio">Hombre</label>
+                            <label><input id="female" type="radio" name="sexo" value="Mujer" class="form__radio">Mujer</label>
                             </div>
                           </div>
                           <div class="custom-control custom-switch">
@@ -498,7 +490,6 @@
     });
   </script>
   <script src="js/logout.js"></script>
-  <script src="js/departamentos_municipios.js"></script>
   <script src="js/upload_image.js"></script>
   <script src="js/editProfile.js"></script>
     <script src="js/fillUserProfile.js"></script>

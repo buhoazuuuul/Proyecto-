@@ -25,8 +25,6 @@ $(document).ready(function () {
 
 });
 
-
-
 function obtenerDatos() {
 
     vereda_id = $("#vereda :selected").val();
@@ -126,9 +124,9 @@ function updateUser() {
                     type: 'error',
                     title: 'Ocurrio un error, intenta de nuevo. ' + data,
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 1500,
+                    onAfterClose: location.reload()
                 });
-
             }
 
         }
