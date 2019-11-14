@@ -39,7 +39,8 @@
           <input type="password" id="passUsuario" class="form-control" placeholder="Contraseña">
           <label class="checkbox">
           <i class="fas fa-user-secret mr-2"></i>
-            <input id="isSecretario" class="mt-3" type="checkbox" value="Ser Secretario">Soy un Secretario
+            <input id="isSecretario" name="login" class="mt-3" type="checkbox" value="Ser Secretario">Soy un Secretario
+            <input id="isAdmin" name="login" class="mt-3" type="checkbox" value="Ser Admin">Soy administrador
             <span class="mt-3"><br>
               <a data-toggle="modal" href="login.php#myModal">Olvidaste la contraseña?</a>
             </span>

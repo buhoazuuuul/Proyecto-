@@ -60,15 +60,18 @@ function getAnswerDetail() {
             let data = JSON.parse(response);
             reportDetail = data;
             console.log(reportDetail);
+            let nombrec = reportDetail[0].nombre + ' ' + reportDetail[0].apellido;
             $("#asunto_respuesta").text(reportDetail[0].asunto_respuesta);
-            $("#nombreUsuario").text(reportDetail[0].nombre);
+            $("#nombreUsuario").text(nombrec);
             $("#fecha_hora_respuesta").text(reportDetail[0].fecha_respuesta);
             $("#msm_respuesta").text(reportDetail[0].msm_respuesta);
-            $("#asunto_reporte").text(reportDetail[0].msm_respuesta);
+            $("#asunto_reporte").text(reportDetail[0].reporte_asunto);
             $("#adjunto_resp").attr("src", reportDetail[0].adjunto_respuesta);
             $("#adjunto_reporte").attr("src", reportDetail[0].adjunto_reporte);
+            $("#foto").attr("src", reportDetail[0].imgUser);
             $("#fecha_hora_reporte").text(reportDetail[0].fecha_reporte);
             $("#msm_reporte").text(reportDetail[0].texto_reporte);
+
 
         },
     });

@@ -124,7 +124,7 @@
                 <div class="mail-sender">
                   <div class="row">
                     <div class="col-md-8">
-                      <img id="img" src="img/ui-zac.jpg" id="fotoSecretario" alt="">
+                      <img  src="img/ui-zac.jpg" id="foto" alt="">
                       <h5>Nombre del usuario al que se le envio la respuesta</h5>
                       <h2><strong id="nombreUsuario">Nombre secretario</strong></h2>
                     </div>
@@ -148,13 +148,6 @@
                     </li>
                   </ul>
                 </div>
-                <div class="compose-btn pull-left">
-                  <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
-                  <button class="btn btn-sm "><i class="fa fa-arrow-right"></i> Forward</button>
-                  <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
-                  <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
-                </div>
-              </div>
             </section>
           </div>
         </div>
@@ -197,12 +190,6 @@
                       </a>
                     </li>
                   </ul>
-                </div>
-                <div class="compose-btn pull-left">
-                  <a href="answer_compose.html" class="btn btn-sm btn-theme"><i class="fa fa-reply"></i> Responder</a>
-                  <button class="btn btn-sm "><i class="fa fa-arrow-right"></i> Forward</button>
-                  <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
-                  <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
                 </div>
               </div>
             </section>
