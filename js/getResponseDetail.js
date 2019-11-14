@@ -9,6 +9,17 @@ var simpleReport;
 var datos;
 $(document).ready(function () {
     console.warn('Get report detail loaded!');
+    var dialog = bootbox.dialog({
+        title: 'Obteniendo la respuesta',
+        message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando...</p>'
+    });
+    dialog.init(function () {
+        setTimeout(function () {
+            dialog.find('.bootbox-body').html('Listo!');
+        }, 3000);
+    });
+
+    setTimeout(function () { dialog.modal('hide') }, 2000);
     getReportDetail();
     getUser();
     setHrefs();
@@ -40,18 +51,20 @@ function getReportDetail() {
             console.log(simpleReport);
 
             //Show info
-            $('#asunto').text(report[0].asunto);
-            $('#nombreUsuario').text(report[0].nombre + '  ' + report[0].apellido);
-            $('#fecha_hora').text(report[0].fecha_hora);
-            $('#departamento').text(report[0].departamento);
-            $('#municipio').text(report[0].municipio);
+            $('#report_asunto').text(report[0].report_asunto);
+            $('#response_asunto').text(report[0].response_asunto);
+            $('#nombreSecretario').text(report[0].secretario);
+            $('#response_fecha').text(report[0].response_fecha);
+            $('#departamento').text(report[0].report_departement);
+            $('#municipio').text(report[0].report_municipio);
             $('#categoria').text(report[0].categoria);
             $('#prioridad').text(report[0].prioridad);
             $('#confidencialidad').text(report[0].confidencialidad);
-            $('#texto').text(report[0].texto);
-            $('#adjunto').attr("src", report[0].adjunto);
+            $('#response_text').text(report[0].response_text);
+            $('#response_adjunto').attr("src", report[0].response_adjunto);
+            $('#report_text').text(report[0].report_text);
+            $('#report_adjunto').attr("src", report[0].report_adjunto);
             $('#fotoSecretario').attr("src", report[0].img);
-            $("#responder_reporte").attr("href", urlResponse);
         },
     });
 }

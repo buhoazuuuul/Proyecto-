@@ -288,7 +288,7 @@
               </header>
               <header class="panel-heading wht-bg">
               <h5>Asunto del reporte</h5>
-                <h4 id="asunto" class="gen-case">
+                <h4 id="report_asunto" class="gen-case">
                   Asunto de la respuesta
                 </h4>
               </header>
@@ -300,10 +300,11 @@
                     <div class="col-md-8">
                     <h5>Secretario que redacto la respuesta</h5>
                       <img style="heigh:60px;width:60px" src="img/ui-zac.jpg" id="fotoSecretario" alt="">
-                      <strong id="nombreUsuario"></strong>
+                      <strong id="nombreSecretario"></strong>
                   </div>
-                  <div class="col-md-4">
-                      <p id="fecha_hora" class="date">10:15AM 02 FEB 2014</p>
+                  </div>
+                  <div class="col-md-12">
+                      <p id="response_fecha" class="date">10:15AM 02 FEB 2014</p>
                     </div>
                   <div class="showback">
                         <h4><i class="fa fa-angle-right"></i></h4>
@@ -325,20 +326,15 @@
                       </div>
                 </div>
                 <h2>Respuesta del reporte</h2>
-                <div id="report_text" class="view-mail">
-                  <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
-                    of the setting of the eyes, and the thin straight lips, and the markings in the nose, curved with a sarcasm that looked handsomely diabolic. </p>
-                  <p>"Yes," repeated the Marquis. "A Doctor with a daughter. Yes. So commences the new philosophy! You are fatigued. Good night!"</p>
-                  <p>It would have been of as much avail to interrogate any stone face outside the chateau as to interrogate that face of his. The nephew looked at him, in vain, in passing on to the door. </p>
-                  <p>"Good night!" said the uncle. "I look to the pleasure of seeing you again in the morning. Good repose! Light Monsieur my nephew to his chamber there!--And burn Monsieur my nephew in his bed, if you will," he added to himself, before
-                    he rang his little bell again, and summoned his valet to his own bedroom.</p>
+                <div id="response_text" class="view-mail">
+                
                 </div>
-                <h2>adjunto de la respuesta</h2>
+                <h5>adjunto de la respuesta</h5>
                 <div class="attachment-mail">
                   <ul>
                     <li>
                       <a class="atch-thumb" href="#">
-                        <img id="adjunto" src="img/instagram.jpg">
+                        <img id="response_adjunto" src="img/instagram.jpg">
                         </a>
                     </li>
                   </ul>
@@ -346,19 +342,14 @@
                 <hr/>
                   <h2>Mensaje del reporte</h2>
                 <div id="report_text" class="view-mail">
-                  <p>As he bent his head in his most courtly manner, there was a secrecy in his smiling face, and he conveyed an air of mystery to those words, which struck the eyes and ears of his nephew forcibly. At the same time, the thin straight lines
-                    of the setting of the eyes, and the thin straight lips, and the markings in the nose, curved with a sarcasm that looked handsomely diabolic. </p>
-                  <p>"Yes," repeated the Marquis. "A Doctor with a daughter. Yes. So commences the new philosophy! You are fatigued. Good night!"</p>
-                  <p>It would have been of as much avail to interrogate any stone face outside the chateau as to interrogate that face of his. The nephew looked at him, in vain, in passing on to the door. </p>
-                  <p>"Good night!" said the uncle. "I look to the pleasure of seeing you again in the morning. Good repose! Light Monsieur my nephew to his chamber there!--And burn Monsieur my nephew in his bed, if you will," he added to himself, before
-                    he rang his little bell again, and summoned his valet to his own bedroom.</p>
+        
                 </div>
-                <h2>adjunto enviado en el reporte</h2>
+                <h5>adjunto enviado en el reporte</h5>
                 <div class="attachment-mail">
                   <ul>
                     <li>
                       <a class="atch-thumb" href="#">
-                        <img id="adjunto" src="img/instagram.jpg">
+                        <img id="report_adjunto" src="img/instagram.jpg">
                         </a>
                     </li>
                   </ul>
