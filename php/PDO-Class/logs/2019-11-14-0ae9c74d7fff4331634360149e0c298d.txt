@@ -1,0 +1,13 @@
+Time : 22:39:52
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'reporte.vereda' in 'field list'
+Raw SQL : SELECT reporte.categoria,reporte.vereda,reporte.fecha_hora,reporte.departamento,reporte.municipio,reporte.prioridad,reporte.confidencialidad,reporte.texto, reporte.adjunto, reporte.asunto, usuario.nombre , usuario.apellido,usuario.img 
+                      FROM reporte INNER JOIN reportes_x_respuestas ON reporte.id = reportes_x_respuestas.reporte_id 
+                      INNER JOIN usuario ON reportes_x_respuestas.secretario_id = usuario.id 
+                      INNER JOIN vereda ON vereda.id = reporte.vereda_id 
+                      WHERE reporte.id = ?
+
+Time : 21:29:04
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ?' at line 3
+Raw SQL : SELECT respuesta_mens.id AS idRespuesta, reporte.prioridad, usuario.nombre, usuario.apellido, reporte.asunto AS asunto_reporte , respuesta_mens.asunto AS asunto_respuesta, respuesta_mens.fecha_hora  FROM `respuesta_mens`
+                     INNER JOIN reportes_x_respuestas ON respuesta_mens.id = reportes_x_respuestas.respuesta_mens_id 
+                     INNER JOIN reporte ON reporte.id = reportes_x_respuestas.reporte_id INNER JOIN usuario ON usuario.id = reportes_x_respuestas.usuario_id  WHERE reportes_x_respuestas.secretario_id ORDER BY respuesta_mens.fecha_hora DESC  = ?

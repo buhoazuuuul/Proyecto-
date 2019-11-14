@@ -33,7 +33,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>IN<span>NEXU</span></b></a>
+      <a class="logo"><b>IN<span>NEXU</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
@@ -52,7 +52,6 @@
         </ul>
         <!--  notification end -->
       </div>
-          
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
           <!--<li><i style="font-size: 18px;" id="btnLogout" class="logout fa fa-sign-out"></i></li>-->
@@ -115,9 +114,6 @@
                 <h3 id="secondUserName"></h3>
                 <h6>Secretario Innexu</h6>
                 <p id="pMunicipio">Eres uno de los funcionarios que trabaja para mejorar la gestion del riesgo del municipio de </p>
-
-                <br>
-                <p><button class="mt-5 btn btn-theme"><i class="fa fa-thermometer-three-quarters"></i>Responder</button></p>
               </div>
               <!-- /col-md-4 -->
               <div class="col-md-4 centered">
@@ -204,17 +200,19 @@
                                <input type="text" placeholder=" " id="email" class="form-control">
                             </div>
                           </div>
-                          <div class="form-group col-lg-6">
-                            <label class="control-label">Departamento</label>
-                            <select class="form-control" id="departamento" name="departamento" data-validate-field="text">
-                            </select>
-                            <div class="validation"></div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Departamento</label>
+                            <div class="col-lg-6">
+                              <select class="form-control" id="departamento" name="departamento">
+                              </select>
+                            </div>
                           </div>
-                          <div class="form-group col-lg-6">
-                            <label class="control-label">Municipio</label>
-                            <select class="form-control" id="municipio" name="municipio" data-validate-field="text">
-                            </select>
-                            <div class="validation"></div>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Municipio</label>
+                            <div class="col-lg-6">
+                              <select class="form-control" id="municipio">
+                              </select>
+                            </div>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Usuario</label>
@@ -222,19 +220,34 @@
                               <input type="text" placeholder=" " id="usuario" class="form-control">
                             </div>
                           </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Contraseña</label>
-                            <div class="text-danger col-lg-6">
-                              <input type="text" placeholder=" " id="pass" class="form-control">
+                            <div class="form-group">
+                            <label class="col-lg-2 control-label">Contraseña Actual</label>
+                            <div class="col-lg-6">
+                              <input type="password" placeholder=" " id="pass" class="form-control">
                             </div>
                           </div>
-                          <div class="form-group col-lg-6">
-                            <label class="control-label">Sexo</label>
-                            <label><input type="radio" name="sexo" value="Hombre" class="form__radio">Hombre</label>
-                            <label><input type="radio" name="sexo" value="Mujer" class="form__radio">Mujer</label>
-                            <div class="validation"></div>
+                          <br>
+                          <div class="form-group">
+                            <label class="col-lg-2 control-label">Sexo</label>
+                            <div class="col-lg-6">
+                            <label><input id="male" type="radio" name="sexo" value="Hombre" class="form__radio">Hombre</label>
+                            <label><input id="female" type="radio" name="sexo" value="Mujer" class="form__radio">Mujer</label>
+                            </div>
                           </div>
-                          
+                          <div class="custom-control custom-switch">
+                             <p>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Cambiar contraseña
+                            </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                              <div class="form-group">
+                            <label class="col-lg-2 control-label">Nueva</label>
+                            <div class="col-lg-6">
+                              <input type="password" placeholder=" " id="new_pass" class="form-control">
+                            </div>
+                          </div>
+                            </div>
                           <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
                               <button id="btnUpdateUser" class="btn btn-theme" type="button">Guardar</button>
@@ -303,29 +316,6 @@
   <!-- Propios js -->
   <script type="text/javascript" src="js/fillSecretaryProfile.js"></script>
   <script type="text/javascript" src="js/getNumLessResponse.js"></script>
- 
-  <script>
-    $('.contact-map').click(function() {
-
-      //google map in tab click initialize
-      function initialize() {
-        var myLatlng = new google.maps.LatLng(40.6700, -73.9400);
-        var mapOptions = {
-          zoom: 11,
-          scrollwheel: false,
-          center: myLatlng,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-          title: 'Dashio Admin Theme!'
-        });
-      }
-      google.maps.event.addDomListener(window, 'click', initialize);
-    });
-  </script>
 </body>
 
 </html>

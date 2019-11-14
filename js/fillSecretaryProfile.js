@@ -8,14 +8,7 @@ $(document).ready(function () {
 
     console.log('Documento fill Secretary cargado');
     getUser();
-    selectDepartamentos();
     setHrefs();
-    setTimeout(function () {
-        combo = document.getElementById("departamento");
-        selected = combo.options[combo.selectedIndex].text;
-        selectMunicipiosPorDep(selected);
-    }, 1000, "JavaScript");
-
     $("#departamento").change(function () {
         combo = document.getElementById("departamento");
         selected = combo.options[combo.selectedIndex].text;
@@ -44,13 +37,6 @@ function linkar() {
 
 }
 
-function getLocation(datos) {
-
-    buscarDepartamento(datos[0].departamento);
-    buscarMunicipio(datos[0].municipio);
-    buscarTipoDocumento(datos[0].tipo_doc);
-}
-
 function setHrefs() {
 
     $("#btnCorreo").attr("href", urlCorreo);
@@ -73,12 +59,23 @@ function getUser() {
         success: function (response) {
             datos = JSON.parse(response);
             setUserName_img(datos);
-            getLocation(datos);
             filluserForm(datos);
             getTiposDeDocumentos();
+            selectDepartamentos(datos[0].departamento, datos[0].municipio);
+            setSex(datos[0].sexo);
+            setUserName(datos);
+
         },
     });
 
+}
+function setSex(sex) {
+    console.log(sex);
+    if (sex == "Mujer") {
+        $("#female").attr('checked', 'checked');
+    } else {
+        $("#male").attr('checked', 'checked');
+    }
 }
 
 function setUserName_img(array) {
@@ -99,51 +96,31 @@ function getParameterByName(name) {
 function buscarTipoDocumento(tipo_doc) {
 
     let select = document.getElementById("tipo_doc");
-
     for (var i = 1; i < select.length; i++) {
-        console.log('Documento buscando');
         if (select.options[i].text == tipo_doc) {
             select.selectedIndex = i;
             console.log(select.options[i]);
         }
     }
 }
-
 function buscarDepartamento(dep) {
-    console.log('buscando departamento' + dep);
-    // creamos un variable que hace referencia al select
     let select = document.getElementById("departamento");
-
-    // obtenemos el valor a buscar
-    let buscar = dep;
-
-    // recorremos todos los valores del select
     for (var i = 1; i < select.length; i++) {
-        console.log(i);
-        if (select.options[i].text == buscar) {
-            // seleccionamos el valor que coincide
+        if (select.options[i].text == dep) {
             select.selectedIndex = i;
-            console.log(select.options[i].text);
+            console.log(select.options[i]);
         }
     }
 }
-
 function buscarMunicipio(municipio) {
-    // creamos un variable que hace referencia al select
-    console.log('buscando municipio');
+
     let select = document.getElementById("municipio");
-    // obtenemos el valor a buscar
-    let buscar = municipio;
-    // recorremos todos los valores del select
     for (var i = 1; i < select.length; i++) {
-        if (select.options[i].text == buscar) {
-            // seleccionamos el valor que coincide
+        if (select.options[i].text == municipio) {
             select.selectedIndex = i;
-            console.log(select.options[i].text);
         }
     }
 }
-
 
 function filluserForm(datos) {
 
@@ -193,6 +170,8 @@ function getTiposDeDocumentos() {
                 text: field.nomtipodocumento
             }));
         });
+        buscarTipoDocumento(datos[0].tipo_doc);
+
     });
 
 }
@@ -210,9 +189,7 @@ function selectMunicipiosPorDep(departamento) {
     });
 
 }
-
-function selectDepartamentos() {
-
+function selectDepartamentos(dep, mun) {
     $.getJSON("https://www.datos.gov.co/resource/xdk5-pm3f.json?$query=select distinct departamento", function (result) {
         $.each(result, function (i, field) {
             $('#departamento').append($('<option>', {
@@ -220,6 +197,11 @@ function selectDepartamentos() {
                 text: field.departamento
             }));
         });
+        selectMunicipiosPorDep(dep);
+        buscarDepartamento(dep);
+        setTimeout(() => {
+            buscarMunicipio(mun);
+        }, 1000);
+
     });
-    $("#departamento")[0].selectedIndex = 0;
 }

@@ -1,17 +1,27 @@
 var reporte_id = getParameterByName('id_report');
 var username = getParameterByName('userName');
-const urlPerfil = 'profile.php?userName=' + username;
-const urlOutbox = 'outbox_user.php?userName=' + username;
-const urlInbox = 'inbox_user.php?userName=' + username;
-const urlsendReport = 'mail_compose_user.php?userName=' + username;
+const urlPerfil = 'profile_secretary.php?userName=' + username;
+const urlOutbox = 'outbox_secretary.php?userName=' + username;
+const urlInbox = 'inbox_secretary.php?userName=' + username;
 var report;
+var simpleReport;
 var datos;
 $(document).ready(function () {
     console.warn('Get report detail loaded!');
+    var dialog = bootbox.dialog({
+        title: 'Obteniendo la respuesta',
+        message: '<p><i class="fa fa-spin fa-spinner"></i> Cargando...</p>'
+    });
+    dialog.init(function () {
+        setTimeout(function () {
+            dialog.find('.bootbox-body').html('Listo!');
+        }, 3000);
+    });
+
+    setTimeout(function () { dialog.modal('hide') }, 2000);
     getReportDetail();
     getUser();
     setHrefs();
-
 });
 
 function setHrefs() {
@@ -19,17 +29,13 @@ function setHrefs() {
     $("#btnInicio").attr("href", urlPerfil);
     $("#btnEditarPerfil").attr("href", urlPerfil);
     $("#home").attr("href", urlPerfil);
-    $("#enviarReporte").attr("href", urlsendReport);
     $("#inbox").attr("href", urlInbox);
-    $("#inbox_user").attr("href", urlInbox);
-    $("#report").attr("href", urlsendReport);
     $("#outbox").attr("href", urlOutbox);
 
 }
-
 function getReportDetail() {
     $.ajax({
-        url: 'php/getReportDetail.php',
+        url: 'php/getReportDetailSecretary.php',
         type: 'POST',
         data: { reporte_id: reporte_id },
         beforeSend: function () {
@@ -38,8 +44,6 @@ function getReportDetail() {
         success: function (response) {
             report = JSON.parse(response);
             let urlResponse = "answer_compose_secretary.php?userName=" + username + "&id_report=" + reporte_id;
-            console.log(report[0]);
-            //Show info
             $('#asunto').text(report[0].asunto);
             $('#nombreUsuario').text(report[0].nombre + '  ' + report[0].apellido);
             $('#fecha_hora').text(report[0].fecha_hora);
@@ -63,17 +67,15 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 function getUser() {
-
     $.ajax({
-        url: 'php/getUser.php',
+        url: 'php/getSecretary.php',
         type: 'POST',
-        data: { userName: username },
+        data: { user: username },
         beforeSend: function () {
             console.log('Enviando..');
         },
         success: function (response) {
             datos = JSON.parse(response);
-            console.log(datos);
             $('#userName').text(datos[0].nombre + ' ' + datos[0].apellido);
             $('#profileImage').attr('src', datos[0].img);
 

@@ -250,7 +250,6 @@
             <a class="active" id="correo">
               <i class="fa fa-envelope"></i>
               <span>Correo</span>
-              <span class="label label-theme pull-right mail-info">3</span>
               </a>
           </li>
         </ul>
@@ -270,8 +269,8 @@
             <section class="panel">
               <div class="panel-body">
                 <ul class="nav nav-pills nav-stacked mail-nav">
-                  <li class="active"><a id="btnRecibidos"> <i class="fa fa-inbox"></i> Reportes recibidos<span class="label label-theme pull-right inbox-notification">3</span></a></li>
-                  <li><a id="btnRespuestasEnviadas"> <i class="fa fa-envelope-o"></i> Respuestas enviadas</a></li>
+                  <li class="active"><a id="inbox"> <i class="fa fa-inbox"></i> Reportes recibidos<span class="label label-theme pull-right inbox-notification">3</span></a></li>
+                  <li><a id="outbox"> <i class="fa fa-envelope-o"></i> Respuestas enviadas</a></li>
                 </ul>
               </div>
             </section>
@@ -328,9 +327,6 @@
                 </div>
                 <div class="compose-btn pull-left">
                   <a id="responder_reporte" class="btn btn-sm btn-theme"><i  class="fa fa-reply"></i>Responder</a>
-                  <button class="btn btn-sm "><i class="fa fa-arrow-right"></i> Forward</button>
-                  <button class="btn  btn-sm tooltips" data-original-title="Print" type="button" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-print"></i> </button>
-                  <button class="btn btn-sm tooltips" data-original-title="Trash" data-toggle="tooltip" data-placement="top" title=""><i class="fa fa-trash-o"></i></button>
                 </div>
               </div>
             </section>
@@ -372,7 +368,7 @@
   <script src="lib/bootbox.js"></script>
   <script src="lib/bootbox.locales.js"></script>
   <script type="text/javascript" src="lib/sweetalert2.all.min.js"></script>
-  <script type="text/javascript" src="js/getReportDetail.js"></script>
+  <script type="text/javascript" src="js/getReportDetailSecretary.js"></script>
   <script type="text/javascript" src="js/logout.js"></script>
 
 

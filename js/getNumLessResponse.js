@@ -16,7 +16,6 @@ function getNum() {
             var data = JSON.parse(response);
             console.log(data);
             var num_reports = 0;
-
             data.forEach(element => {
                 num_reports += 1;
                 let url = 'detalle_reporte_secretary.php?userName=' + username + '&id_report=' + element.id;
@@ -40,11 +39,11 @@ function getNum() {
         },
     });
 
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
 
+}
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
