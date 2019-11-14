@@ -268,7 +268,7 @@
             <section class="panel">
               <div class="panel-body">
                 <a id="report" class="btn btn-compose">
-                  <i class="fa fa-pencil"></i> Reportar un problema
+                  <i class="fa fa-pencil"></i> Reportar un riesgo
                   </a>
                 <ul class="nav nav-pills nav-stacked mail-nav">
                   <li class="active"><a id="inbox"> <i  class="fa fa-inbox"></i> Respuestas recibidas <span class="label label-theme pull-right inbox-notification">3</span></a></li>
