@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-09-2019 a las 02:18:08
+-- Tiempo de generación: 15-11-2019 a las 00:01:18
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.8
 
@@ -30,15 +30,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `reporte` (
   `id` bigint(10) NOT NULL,
-  `categoria` varchar(30) NOT NULL,
+  `categoria` varchar(45) DEFAULT NULL,
   `vereda_id` int(11) NOT NULL,
   `adjunto` varchar(20) DEFAULT NULL,
   `asunto` varchar(60) DEFAULT NULL,
   `departamento` varchar(45) DEFAULT NULL,
   `municipio` varchar(45) NOT NULL,
   `fecha_hora` datetime DEFAULT NULL,
-  `prioridad` varchar(20) DEFAULT NULL,
-  `confidencialidad` varchar(20) DEFAULT NULL,
+  `prioridad` varchar(30) DEFAULT NULL,
+  `confidencialidad` varchar(30) DEFAULT NULL,
   `texto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -47,10 +47,17 @@ CREATE TABLE `reporte` (
 --
 
 INSERT INTO `reporte` (`id`, `categoria`, `vereda_id`, `adjunto`, `asunto`, `departamento`, `municipio`, `fecha_hora`, `prioridad`, `confidencialidad`, `texto`) VALUES
-(13, '0', 4, 'php/upload/849.png', 'aaaaa', 'Sucre', 'Corozal', '2019-09-16 21:45:00', '2', '1', 'aaaaaaaaaaaaaa'),
-(14, '0', 1, 'php/upload/525.png', 'aaaaa', 'Sucre', 'Corozal', '2019-09-16 21:48:21', '0', '0', 'aaaaaaaaaaaa'),
-(15, '0', 1, 'php/upload/864.png', 'caida', 'Sucre', 'Corozal', '2019-09-16 21:49:28', '0', '0', 'eso si'),
-(16, '0', 1, 'php/upload/510.jpg', 'aaaaaaaaaaaaaaaa', 'Sucre', 'Corozal', '2019-09-16 21:51:33', 'Muy prioritario', 'Poco Confidencial', 'aaaaaaaaaaaaaaaa');
+(1, 'INCENDIO', 70, 'php/upload/871.png', 'Incendio en restaurante', 'Antioquia', 'Abejorral', '2019-11-13 04:09:00', 'Muy prioritario', 'Poco confidencial', 'Ayuda!!!'),
+(2, 'SISMO', 70, 'php/upload/958.jpg', 'Caida de un arbol', 'Meta', 'Acacias', '2019-11-13 17:29:59', 'Muy prioritario', 'Poco Confidencial', 'El arbol obstaculizo el paso'),
+(3, 'Otra emergencia', 70, 'php/upload/851.jpg\r\n', 'Estudios de mi hijo', 'Meta', 'Acacias', '2019-11-14 15:14:26', 'Medianamente prioritario', 'Muy Confidencial', 'Hola Carlos Diego, mi hijo esta perdiendo la motivacion por el estudio.Esta en grado Noveno y me dice que no quiere estudiar.En realidad quiero que el se gradue. Puedess ayudarme?');
+
+--
+-- Disparadores `reporte`
+--
+DELIMITER $$
+CREATE TRIGGER `REPORT_INSERT` AFTER INSERT ON `reporte` FOR EACH ROW INSERT INTO reportes_x_respuestas(reporte_id) VALUES (NEW.ID)
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -60,11 +67,20 @@ INSERT INTO `reporte` (`id`, `categoria`, `vereda_id`, `adjunto`, `asunto`, `dep
 
 CREATE TABLE `reportes_x_respuestas` (
   `id` bigint(10) NOT NULL,
-  `reporte_id` bigint(10) NOT NULL,
-  `secretario_id` int(11) NOT NULL,
+  `reporte_id` bigint(10) DEFAULT NULL,
+  `secretario_id` int(11) DEFAULT NULL,
   `respuesta_mens_id` bigint(10) DEFAULT NULL,
-  `usuario_id` int(11) NOT NULL
+  `usuario_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `reportes_x_respuestas`
+--
+
+INSERT INTO `reportes_x_respuestas` (`id`, `reporte_id`, `secretario_id`, `respuesta_mens_id`, `usuario_id`) VALUES
+(1, 1, 1, 1, 1),
+(2, 2, 1, 2, 1),
+(3, 3, 1, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -76,8 +92,18 @@ CREATE TABLE `respuesta_mens` (
   `id` bigint(10) NOT NULL,
   `mensaje` varchar(255) NOT NULL,
   `asunto` varchar(45) DEFAULT NULL,
-  `adjunto` varchar(255) DEFAULT NULL
+  `adjunto` varchar(255) DEFAULT NULL,
+  `fecha_hora` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `respuesta_mens`
+--
+
+INSERT INTO `respuesta_mens` (`id`, `mensaje`, `asunto`, `adjunto`, `fecha_hora`) VALUES
+(1, 'No te preocupes', 'La ayuda va en camino', 'php/upload/879.jpg', '2019-11-21 01:08:08'),
+(2, 'Hola amigo, los bomberos estan llegando, no te preocupes.<br>', 'Tranquilo', 'php/upload/851.jpg', '2019-11-14 11:20:54'),
+(3, 'Hola Karyme, podemos agendar un cita. Te parece el lunes 12 a las 4pm?', 'Estudios de tu hijo', ' php/upload/851.jpg\r\n', '2019-11-14 15:24:30');
 
 -- --------------------------------------------------------
 
@@ -108,12 +134,10 @@ CREATE TABLE `secretario` (
 --
 
 INSERT INTO `secretario` (`id`, `num_doc`, `tipo_doc`, `nombre`, `apellido`, `cargo`, `dependencia`, `departamento`, `municipio`, `telefono`, `email`, `usuario`, `pass`, `sexo`, `img`) VALUES
-(1, 437666315, 'Cédula de Ciudadanía', 'Roberto', 'Amariles', 'Ingeniero', 'Secretaria de Hacienda', 'Antioquia', 'Abejorral', 3214548909, 'roberto@gmail.com', 'Roberto', '1234', 'Hombre', ''),
-(2, 437666395, 'Cédula de Ciudadanía', 'Julian', 'Garcia', 'Ingeniero Agronomo', 'Secretaría de Agricultura, Medio Ambiente y D', 'Antioquia', 'Abejorral', 3214548908, 'Julian@gmail.com', 'Julian', '1234', 'Hombre', ''),
-(3, 427666395, 'Cédula de Ciudadanía', 'Juliana', 'Perez', 'Promotor de Deportes', 'Unidad deportiva-Gimnasio', 'Antioquia', 'Abejorral', 3114548908, 'Juliana@gmail.com', 'Juliana', '1234', 'Mujer', ''),
-(4, 427686395, 'Cédula de Ciudadanía', 'Luis', 'Gomez', 'Aux. Servicios Generales', 'Empresas Públicas de Abejorral EPA', 'Antioquia', 'Abejorral', 3014548908, 'Luis@gmail.com', 'Luis', '1234', 'Hombre', ''),
-(5, 427686395, 'Cédula de Ciudadanía', 'Luisa', 'Vargas', 'Promotor deportivo', 'Unidad deportiva José Antonio Villegas', 'Antioquia', 'Abejorral', 3014548900, 'Luisa@gmail.com', 'Luisa', '1234', 'Mujer', ''),
-(6, 427286395, 'Cédula de Ciudadanía', 'Mime', 'Cardona', 'Atención al usuario', 'Palacio Municipal - Recepción', 'Antioquia', 'Abejorral', 3014548000, 'Mime@gmail.com', 'Mime', '1234', 'Mujer', '');
+(1, 1222641, 'Cedula de ciudadania', 'Carlos Diego ', 'Cortes ', 'Secretario de educacion ', 'Secretaria de educacion', 'Antioquia', 'Abejorral', 3212354313, 'carlos@abejorral.com', 'carlos', '$2y$10$BLjdbFQBr0GTgM/LStlY4OWzFiL8yDSooPnPoLCiZJdJ6CtE5Veu2', 'Hombre', 'php/upload/742.png'),
+(2, 10220399652, 'Cédula de Ciudadania', 'Jose Manuel', 'Echeverri Palacio', 'Gerontologo', 'Centro Vida - Casa del adulto mayor', 'Antioquia', 'Abejorral', 32254437771, 'jose.echeverri@abejorral.goc.co', 'jose', '$2y$10$BLjdbFQBr0GTgM/LStlY4OWzFiL8yDSooPnPoLCiZJdJ6CtE5Veu2', 'Hombre', 'php/upload/742.png'),
+(3, 102311545, 'Cédula de Ciudadania', 'Juan Camilo', 'Echavarria', 'veterinario', 'Secretaría de Salud, Protección y Bienestar S', 'Antioquia', 'Abejorral', 144224214, 'echavarria@abejorral.gov.co', 'juan', '$2y$10$ECJojrD6ziqKjVldAibrjesQfa.4EEK4bwsmM3/e.wFh35.W7Vq86', 'Hombre', 'php/upload/742.png'),
+(4, 12132435512, 'Cedula de ciudadania', 'Monica ', 'Carsdoso', 'Coordinador Oficina de la Mujer', 'Centro de Bienestar Carmen Londoño', 'Antioquia', 'Abejorral', 32254614541, 'monica@abejorral.gov.co', 'monica', '$2y$10$9ipau5lO8Y6fXDX4VsZEeuI7kzazkCa.7hw54hYJ5yupZ/CEjde42', 'Mujer', 'php/upload/742.png');
 
 -- --------------------------------------------------------
 
@@ -145,7 +169,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `vereda_id`, `num_doc`, `tipo_doc`, `nombre`, `apellido`, `telefono`, `email`, `departamento`, `municipio`, `fecha`, `usuario`, `pass`, `tipo_usuario`, `sexo`, `img`) VALUES
-(1, 1, 1022036395, 'Cédula de Ciudadanía', 'Jose Manuel', 'Echeverri Palacio', 3225446984, 'palacio.90@hotmail.com', 'Sucre', 'Corozal', '1998-10-01', 'jmep', '$2y$10$LqlWRiCBijgPvrDM/I/f.OO1R/qXC/lpzwtE5TExVmOdMcZ/bHKQa', 0, 'Hombre', 'img/INNEXU1.png');
+(1, 1, 102203266, 'Pasaporte', 'Karyme', 'Botero', 3193468668, 'mime@hotmail.com', 'Meta', 'Acacias', '2019-11-13', 'mello', '$2y$10$XKNAkjy6W0FbCRftyXJ7/.eJ7dRSjgin1BhIcY1UWBa/BIl8H29jC', 0, 'Mujer', 'img/INNEXU1.png');
 
 -- --------------------------------------------------------
 
@@ -292,31 +316,31 @@ ALTER TABLE `vereda`
 -- AUTO_INCREMENT de la tabla `reporte`
 --
 ALTER TABLE `reporte`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `reportes_x_respuestas`
 --
 ALTER TABLE `reportes_x_respuestas`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `respuesta_mens`
 --
 ALTER TABLE `respuesta_mens`
-  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `secretario`
 --
 ALTER TABLE `secretario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `vereda`
