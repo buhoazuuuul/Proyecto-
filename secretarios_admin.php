@@ -9,24 +9,20 @@
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
   <title>Innexu-Administrador</title>
   <!-- DataTable buttons -->
-  <link rel="stylesheet" type="text/css" href="css/buttons.dataTables.css">
-  <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css" />
-  <!-- Editor dataTables -->
-  <link rel="stylesheet" href="libUsuarios/lib/EditorPHP/css/editor.dataTables.min.css" class="stylesheet">
-   <!-- Favicons -->
-   <link href="img/INNEXU1.png" rel="icon">
-   <link href="img/INNEXU1.png" rel="apple-touch-icon">
   <!-- Bootstrap core CSS -->
   <link href="libUsuarios/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
   <link href="libUsuarios/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link href="libUsuarios/lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
-  <link href="libUsuarios/lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
-  <link rel="stylesheet" href="lib/advanced-datatable/css/DT_bootstrap.css" />
   <!-- Custom styles for this template -->
   <link href="Admin/css/style.css" rel="stylesheet">
   <link href="libUsuarios/css/style-responsive.css" rel="stylesheet">
+  <!-- Datatables responsive css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+</head>
 </head>
 
 <body>
@@ -292,9 +288,10 @@
           <!-- page start-->
           <div class="content-panel">
             <div class="adv-table">
-              <table cellpadding="0" cellspacing="0" class="display" style="width:100%" id="userTable">
-                <thead>
-                  <tr>
+            <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>id</th>
                     <th>Numero de documento</th>
                     <th>Tipo de documento</th>
                     <th>Nombre</th>
@@ -309,27 +306,9 @@
                     <th>Contraseña</th>
                     <th>Sexo</th>
                     <th>Imagen</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>s
-                    <th>Numero de documento</th>
-                    <th>Tipo de documento</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Cargo</th>
-                    <th>Dependencia</th>
-                    <th>Departamento</th>
-                    <th>Municipio</th>
-                    <th>Telefono</th>
-                    <th>Correo electronico</th>
-                    <th>Usuario</th>
-                    <th>Contraseña</th>
-                    <th>Sexo</th>
-                    <th>Imagen</th>
-                  </tr>
-                </tfoot>
-              </table>
+                </tr>
+              </thead>
+            </table>
             </div>
           </div>
           <!-- page end-->
@@ -362,64 +341,49 @@
     </footer>
     <!--footer end-->
   </section>
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <!-- DataTable scripts -->
-  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+ <!-- js placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="lib/jquery.scrollTo.min.js"></script>
+  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" type="text/javascript"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js" type="text/javascript"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js" type="text/javascript"></script>
+  <!--common script for all pages-->
+  <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
-  <script src="js/fill-secretario-dataTable.js" type="text/javascript"></script>
-  <script>
+  <script type="text/javascript">
     $(document).ready(function() {
-      $('#userTable').DataTable({
+    $('#example').DataTable( {
+       responsive: true,
         "processing": true,
         "serverSide": true,
-        "ajax": "php/getSecretarios.php",
-        "columns": [{
-            "data": "id"
-          },
-          {
-            "data": "num_doc"
-          },
-          {
-            "data": "tipo_doc"
-          },
-          {
-            "data": "nombre"
-          },
-          {
-            "data": "apellido"
-          },
-          {
-            "data": "cargo"
-          },
-          {
-            "data": "dependencia"
-          },
-          {
-            "data": "municipio"
-          },
-          {
-            "data": "telefono"
-          },
-          {
-            "data": "email"
-          },
-          {
-            "data": "usuario"
-          },
-          {
-            "data": "pass"
-          },
-          {
-            "data": "sexo"
-          },
-          {
-            "data": "img"
-          }
+        "ajax": {
+            "url": "php/getSecretariosReporte.php",
+            "dataSrc": ""
+        },
+        "columns": [
+            { "data": "id" },
+            { "data": "num_doc" },
+            { "data": "tipo_doc" },
+            { "data": "nombre" },
+            { "data": "apellido" },
+            { "data": "cargo" },
+            { "data": "dependencia" },
+            { "data": "departamento" },
+            { "data": "municipio" },
+            { "data": "telefono" },
+            { "data": "email" },
+            { "data": "usuario" },
+            { "data": "pass" },
+            { "data": "sexo" },
+            { "data": "img" },
         ]
-      });
-
-    });
+    } );
+} );
   </script>
 </body>
 

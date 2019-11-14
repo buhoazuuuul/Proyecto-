@@ -8,10 +8,9 @@ try {
     //Datos a insertar
     $mipdosword = password_hash($_POST['pass'], PASSWORD_BCRYPT);
     //Ejecucion de la query
-    $sql = "INSERT INTO secretario (id,num_doc,tipo_doc,nombre,apellido,cargo,dependencia,departamento, municipio,telefono,email,usuario,pass,sexo,img) 
-    VALUES   (:id,:num_doc,:tipo_doc,:nombre,:apellido,:cargo,:dependencia,:departamento,:municipio,:telefono,:email,:usuario,:pass,:sexo,:img)";
+    $sql = "INSERT INTO secretario (num_doc,tipo_doc,nombre,apellido,cargo,dependencia,departamento, municipio,telefono,email,usuario,pass,sexo,img) 
+    VALUES   (:num_doc,:tipo_doc,:nombre,:apellido,:cargo,:dependencia,:departamento,:municipio,:telefono,:email,:usuario,:pass,:sexo,:img)";
     $sth = $db->prepare($sql);
-    $sth->bindParam(':id', $_POST['id']);
     $sth->bindParam(':num_doc', $_POST['num_doc']);
     $sth->bindParam(':tipo_doc', $_POST['tipo_doc']);
     $sth->bindParam(':nombre', $_POST['nombre']);

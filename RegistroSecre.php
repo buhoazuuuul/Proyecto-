@@ -286,7 +286,7 @@
           <div class="col-lg-12">
             <div class="form-panel">
               <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="php/createSecretario.php">
+                <form class="cmxform form-horizontal style-form">
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Numero de documento</label>
                     <div class="col-lg-10">
@@ -320,28 +320,28 @@
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Cargo</label>
                     <div class="col-lg-10">
-                      <select name="cargo" class="form-control" id="cargo" data-rule="minlen:4">
+                      <select class="form-control" id="cargo" data-rule="minlen:4">
                       </select>
                     </div>
                   </div>
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Dependencia</label>
                     <div class="col-lg-10">
-                      <select name="dependencia" class="form-control" id="dependencia" data-rule="minlen:4">
+                      <select  class="form-control" id="dependencia" data-rule="minlen:4">
                       </select>
                     </div>
                   </div>
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Departamento de la dependencia</label>
                     <div class="col-lg-10">
-                      <select name="tipo_doc" class="form-control" id="departamento" placeholder="departamento" data-rule="minlen:4">
+                      <select class="form-control" id="departamento" placeholder="departamento" data-rule="minlen:4">
                       </select>
                     </div>
                   </div>
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Municipio de la dependencia</label>
                     <div class="col-lg-10">
-                      <select name="tipo_doc" class="form-control" id="municipio" placeholder="municipio" data-rule="minlen:4">
+                      <select class="form-control" id="municipio" placeholder="municipio" data-rule="minlen:4">
                       </select>
                     </div>
                   </div>
@@ -377,8 +377,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <input type="submit" class="btn btn-theme" id="btnRegistrar" value="Guardar">
-                      <button class="btn btn-theme04" type="button">Cancelar</button>
+                      <button id="btn_guardar" class="btn btn-theme02" type="button">Guardar</button>
                     </div>
                   </div>
                 </form>
@@ -428,8 +427,7 @@
   <script src="libUsuarios/lib/form-validation-script.js"></script>
   <!-- Sweet alert plugin -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-  <!-- Open data -->
-  <script src="js/departamentos_municipios.js"></script>
+
   <!-- Instituciones de Abejorral - Dependencias -->
   <script src="js/Directorio_de _nstituciones_Abejorral.js"></script>
   <!-- bootbox code -->

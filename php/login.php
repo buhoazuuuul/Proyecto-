@@ -13,16 +13,7 @@ $type_user = $_POST['isSecretary'];
 
 if ($type_user == "true") {
   $query = $mipdo->query("SELECT * FROM secretario WHERE usuario = :usuario", array("usuario" => $username));
-
-  if (count($query) > 0) {
-   if($query[0]["pass"] == $pass){
-    echo 'Contraseña correcta';
-  }else{
-    echo "Contraseña incorrecta";
-  }
-  } else {
-   echo "No esta registrado como secretario";
-  }
+  validatePass($pass,$query);
   
 } else {
 

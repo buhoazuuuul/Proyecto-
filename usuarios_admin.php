@@ -298,6 +298,7 @@
                 <tr>
                   <th>id</th>
                   <th>Id Vereda</th>
+                  <th>Id Vereda</th>
                   <th>Documento</th>
                   <th>Tipo de Documento</th>
                   <th>Nombre</th>
