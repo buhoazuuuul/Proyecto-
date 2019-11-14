@@ -37,10 +37,7 @@ $(document).ready(function () {
 
     });
     console.log('Documento login.js cargado');
-
-
 });
-
 
 function submitForm() {
 
