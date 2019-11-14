@@ -16,11 +16,10 @@ $(document).ready(function () {
     dialog.init(function () {
         setTimeout(function () {
             dialog.find('.bootbox-body').html('Listo!');
-        }, 3000);
+        }, 1000);
     });
 
-    setTimeout(function () { dialog.modal('hide') }, 2000);
-    setTimeout(() => { getReports() }, 1000);
+    setTimeout(function () { dialog.modal('hide') }, 5000);
     demo();
     var myVar = setInterval(getReports, 1000);
 });
@@ -122,7 +121,7 @@ function getReports() {
     $.ajax({
         url: 'php/getInboxReportsSecretary.php',
         type: 'POST',
-        data: { id_secretario: 6 },
+        data: { id_secretario: datos[0].id },
         beforeSend: function () {
 
             console.log('Enviando..');

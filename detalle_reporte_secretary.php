@@ -293,10 +293,10 @@
                 </div>
                 <div class="mail-sender">
                   <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                       <img src="img/ui-zac.jpg" id="fotoUsuario" alt="">
                       <strong id="nombreUsuario">Nombre del Usuario</strong>
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                       <p id="fecha_hora" class="date"> 10:15AM 02 FEB 2014</p>
                     </div>
                   </div>
